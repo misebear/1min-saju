@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title><%= content_for(:title) || "사주냥이 🐱 나만의 사주풀이" %></title>
+    <title><%= content_for(:title) || "1분 사주 ⏱️ 빠르고 정확한 사주풀이" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="사주냥이">
+    <meta name="application-name" content="1분 사주">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#1a1a2e">
-    <meta name="description" content="귀여운 스노우캣과 함께하는 나만의 사주풀이! 오늘의 운세, 궁합, 대운까지 한눈에 ✨">
+    <meta name="description" content="1분만에 보는 정확한 사주풀이! 서머타임·지역시차 보정, AI 챗봇, 궁합, 인연풀이까지 ✨">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -27,8 +27,8 @@
     <header class="desktop-header">
       <div class="desktop-header-inner">
         <a href="<%= root_path %>" class="logo">
-          <%= image_tag "snowcat/icon_cat_snowcat_1771224905251.png", class: "logo-img", alt: "사주냥이" %>
-          <span class="logo-text">사주냥이</span>
+          <%= image_tag "logo_1min_saju.png", class: "logo-img", alt: "1분 사주" %>
+          <span class="logo-text">1분 사주</span>
         </a>
         <nav class="desktop-nav">
           <a href="<%= root_path %>" class="desktop-nav-item <%= 'active' if controller_name == 'home' %>">
@@ -64,9 +64,9 @@
       <!-- Desktop Sidebar (hidden on mobile) -->
       <aside class="desktop-sidebar">
         <div class="sidebar-card">
-          <%= image_tag "snowcat/icon_cat_snowcat_1771224986693.png", class: "sidebar-mascot", alt: "사주냥이" %>
-          <h3>사주냥이</h3>
-          <p class="text-muted text-small">나만의 사주풀이 🐱</p>
+          <%= image_tag "logo_1min_saju.png", class: "sidebar-mascot", alt: "1분 사주" %>
+          <h3>1분 사주</h3>
+          <p class="text-muted text-small">빠르고 정확한 사주풀이 ⏱️</p>
         </div>
 
         <nav class="sidebar-nav">
@@ -95,7 +95,7 @@
 
         <div class="sidebar-footer">
           <p class="text-muted text-small">
-            © 2025 사주냥이<br>
+            © 2025 1분 사주<br>
             Powered by Snowcat ✨
           </p>
         </div>

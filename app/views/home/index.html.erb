@@ -1,95 +1,230 @@
-<% content_for(:title) { "사주냥이 🐱 나만의 사주풀이" } %>
+<% content_for(:title) { "1분 사주 ⏱️ 빠르고 정확한 사주풀이" } %>
 
 <% if @analysis %>
-  <!-- Dashboard with fortune data -->
-  <div class="welcome-section animate-fadeIn">
-    <%= image_tag "snowcat/icon_cat_snowcat_1771224905251.png", class: "snowcat-mascot", alt: "사주냥이" %>
-    <div class="welcome-text">
-      <h2>안녕! 오늘도 좋은 하루 ✨</h2>
-      <p><%= Date.today.strftime("%Y년 %m월 %d일") %> · <%= @daily[:label] %></p>
+  <%
+    saju = @analysis[:saju]
+    day_element = SajuEngine::HeavenlyStems.element(saju[:day][:stem])
+
+    # Fortune color mapping
+    fortune_colors = {
+      "매우좋음" => "#22c55e",
+      "좋음" => "#3b82f6",
+      "보통" => "#a78bfa",
+      "주의" => "#f59e0b",
+      "설렘" => "#ec4899",
+      "기회" => "#06b6d4"
+    }
+
+    # Lucky color mapping
+    color_hex = {
+      "빨간색" => "#EF4444", "파란색" => "#3B82F6", "노란색" => "#EAB308",
+      "초록색" => "#22C55E", "흰색" => "#94A3B8", "검은색" => "#374151",
+      "보라색" => "#8B5CF6", "주황색" => "#F97316", "분홍색" => "#EC4899",
+      "하늘색" => "#38BDF8", "갈색" => "#A16207", "금색" => "#D4A017"
+    }
+
+    lucky_color = @daily[:lucky][:color]
+    lucky_hex = color_hex[lucky_color] || "#E8775F"
+
+    # Ten god color mapping
+    ten_god_colors = {
+      "정관" => "#3B82F6", "편관" => "#6366F1", "정인" => "#8B5CF6",
+      "편인" => "#A855F7", "비견" => "#22C55E", "겁재" => "#10B981",
+      "식신" => "#F59E0B", "상관" => "#F97316", "정재" => "#EC4899",
+      "편재" => "#EF4444"
+    }
+    ten_god = @daily[:ten_god]
+    ten_god_color = ten_god_colors[ten_god] || "#E8775F"
+
+    # Direction mapping
+    direction_map = {
+      "동" => [85, 50], "서" => [15, 50], "남" => [50, 85], "북" => [50, 15],
+      "중앙" => [50, 50], "동남" => [75, 75], "동북" => [75, 25],
+      "서남" => [25, 75], "서북" => [25, 25]
+    }
+    dir = @daily[:lucky][:direction]
+    dir_pos = direction_map[dir] || [50, 50]
+
+    # Deterministic fortune values based on ten_god
+    fortune_values = {
+      "정관" => { money: "좋음", love: "보통", health: "좋음", career: "매우좋음" },
+      "편관" => { money: "주의", love: "보통", health: "주의", career: "좋음" },
+      "정인" => { money: "보통", love: "좋음", health: "매우좋음", career: "좋음" },
+      "편인" => { money: "보통", love: "주의", health: "좋음", career: "보통" },
+      "비견" => { money: "보통", love: "좋음", health: "좋음", career: "보통" },
+      "겁재" => { money: "주의", love: "설렘", health: "보통", career: "기회" },
+      "식신" => { money: "매우좋음", love: "좋음", health: "좋음", career: "좋음" },
+      "상관" => { money: "좋음", love: "설렘", health: "보통", career: "기회" },
+      "정재" => { money: "매우좋음", love: "매우좋음", health: "보통", career: "좋음" },
+      "편재" => { money: "좋음", love: "설렘", health: "보통", career: "기회" }
+    }
+    fv = fortune_values[ten_god] || fortune_values["비견"]
+
+    # Lucky number colors (lottery style)
+    lotto_colors = ["#F44336", "#FF9800", "#FFC107", "#4CAF50", "#2196F3", "#9C27B0", "#E91E63"]
+  %>
+
+  <!-- Hero Greeting -->
+  <div class="hero-greeting animate-fadeIn">
+    <div class="hero-greeting-bg"></div>
+    <div class="hero-greeting-content">
+      <div class="hero-date"><%= Date.today.strftime("%Y년 %m월 %d일") %> · <%= @daily[:label] %></div>
+      <h2 class="hero-title">
+        안녕! 오늘도
+        <span class="hero-highlight" style="background: linear-gradient(135deg, <%= ten_god_color %>, <%= lucky_hex %>); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">좋은 하루</span> ✨
+      </h2>
+      <p class="hero-message">
+        오늘은 <span class="keyword-badge" style="background: <%= ten_god_color %>15; color: <%= ten_god_color %>; border: 1px solid <%= ten_god_color %>40;"><%= ten_god %></span>의 기운이 흐르는 날!
+        <span class="keyword-badge" style="background: <%= lucky_hex %>15; color: <%= lucky_hex %>; border: 1px solid <%= lucky_hex %>40;"><%= lucky_color %></span> 컬러를 활용하면 행운이 찾아올거야~
+      </p>
     </div>
   </div>
 
-  <div class="speech-bubble animate-fadeInUp">
-    오늘은 <strong><%= @daily[:ten_god] %></strong>의 기운이 흐르는 날이야! 
-    <%= @daily[:lucky][:element_emoji] %> 
-    <strong><%= @daily[:lucky][:color] %></strong> 컬러를 활용하면 행운이 찾아올거야~
+  <!-- Today's Fortune Score - Premium Design -->
+  <div class="card fortune-hero-card mt-lg animate-fadeInUp">
+    <div class="fortune-hero-header">
+      <h3>⭐ 오늘의 운세</h3>
+      <span class="fortune-hero-date"><%= Date.today.strftime("%m/%d") %></span>
+    </div>
+
+    <div class="fortune-score-hero">
+      <div class="score-ring-premium">
+        <svg viewBox="0 0 140 140">
+          <defs>
+            <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#FF6B6B"/>
+              <stop offset="50%" style="stop-color:#E8775F"/>
+              <stop offset="100%" style="stop-color:#AF8EF5"/>
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <circle cx="70" cy="70" r="60" fill="none" stroke="#f0f0f5" stroke-width="8"/>
+          <circle cx="70" cy="70" r="60" fill="none" stroke="url(#scoreGrad)" stroke-width="8"
+            stroke-linecap="round" filter="url(#glow)"
+            stroke-dasharray="<%= (2 * Math::PI * 60).round %>"
+            stroke-dashoffset="<%= ((1 - @daily[:score] / 100.0) * 2 * Math::PI * 60).round %>"
+            transform="rotate(-90 70 70)"/>
+        </svg>
+        <div class="score-number"><%= @daily[:score] %></div>
+        <div class="score-unit">점</div>
+      </div>
+      <div class="score-grade">
+        <% grade = case @daily[:score]; when 90..100 then "최고"; when 75..89 then "좋음"; when 50..74 then "보통"; else "주의"; end %>
+        <% grade_color = case grade; when "최고" then "#22c55e"; when "좋음" then "#3b82f6"; when "보통" then "#a78bfa"; else "#f59e0b"; end %>
+        <span class="grade-badge" style="background: <%= grade_color %>18; color: <%= grade_color %>; border: 1px solid <%= grade_color %>30;">오늘의 운세: <%= grade %></span>
+      </div>
+    </div>
+
+    <!-- Fortune Grid -->
+    <div class="fortune-grid-premium">
+      <% [
+        { emoji: "💰", label: "재물운", value: fv[:money] },
+        { emoji: "💕", label: "애정운", value: fv[:love] },
+        { emoji: "💪", label: "건강운", value: fv[:health] },
+        { emoji: "💼", label: "직업운", value: fv[:career] }
+      ].each do |f|
+        fc = fortune_colors[f[:value]] || "#8E8E93"
+      %>
+        <div class="fortune-item-premium">
+          <span class="fortune-emoji"><%= f[:emoji] %></span>
+          <span class="fortune-label"><%= f[:label] %></span>
+          <span class="fortune-value" style="color: <%= fc %>; background: <%= fc %>12; border: 1px solid <%= fc %>25;"><%= f[:value] %></span>
+        </div>
+      <% end %>
+    </div>
   </div>
 
-  <!-- Today's Fortune Score -->
-  <div class="card fortune-score-card mt-lg animate-fadeInUp">
-    <div class="section-header" style="justify-content: center;">
-      <span class="emoji">⭐</span>
-      <h3>오늘의 운세</h3>
-    </div>
-
-    <div class="score-ring">
-      <svg viewBox="0 0 120 120">
-        <defs>
-          <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style="stop-color:#FFB088"/>
-            <stop offset="100%" style="stop-color:#E8775F"/>
-          </linearGradient>
-        </defs>
-        <circle class="ring-bg" cx="60" cy="60" r="52"/>
-        <circle class="ring-fill" cx="60" cy="60" r="52"
-          stroke-dasharray="<%= (2 * Math::PI * 52).round %>"
-          stroke-dashoffset="<%= ((1 - @daily[:score] / 100.0) * 2 * Math::PI * 52).round %>"/>
-      </svg>
-      <div class="score-value"><%= @daily[:score] %></div>
-    </div>
-    <p class="score-label">오늘의 종합 운세 점수</p>
-
-    <div class="fortune-grid">
-      <div class="fortune-item">
-        <span class="emoji">💰</span>
-        <span class="label">재물운</span>
-        <span class="value"><%= %w[좋음 보통 매우좋음 주의].sample %></span>
-      </div>
-      <div class="fortune-item">
-        <span class="emoji">💕</span>
-        <span class="label">애정운</span>
-        <span class="value"><%= %w[좋음 보통 매우좋음 설렘].sample %></span>
-      </div>
-      <div class="fortune-item">
-        <span class="emoji">💪</span>
-        <span class="label">건강운</span>
-        <span class="value"><%= %w[좋음 보통 매우좋음 주의].sample %></span>
-      </div>
-      <div class="fortune-item">
-        <span class="emoji">💼</span>
-        <span class="label">직업운</span>
-        <span class="value"><%= %w[좋음 보통 매우좋음 기회].sample %></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Lucky Items -->
-  <div class="card animate-fadeInUp">
+  <!-- Lucky Items - Premium Design -->
+  <div class="card lucky-card animate-fadeInUp">
     <div class="section-header">
       <span class="emoji">🍀</span>
       <h3>오늘의 행운</h3>
     </div>
-    <div class="lucky-items">
-      <span class="lucky-tag">
-        <span class="tag-emoji">🎨</span> 행운색: <%= @daily[:lucky][:color] %>
-      </span>
-      <span class="lucky-tag">
-        <span class="tag-emoji">🔢</span> 행운숫자: <%= @daily[:lucky][:number] %>
-      </span>
-      <span class="lucky-tag">
-        <span class="tag-emoji">🧭</span> 행운방위: <%= @daily[:lucky][:direction] %>
-      </span>
+
+    <div class="lucky-grid-premium">
+      <!-- Lucky Color -->
+      <div class="lucky-item-premium">
+        <div class="lucky-icon-circle" style="background: <%= lucky_hex %>;">
+          <span>🎨</span>
+        </div>
+        <div class="lucky-detail">
+          <span class="lucky-detail-label">행운의 색</span>
+          <span class="lucky-detail-value" style="color: <%= lucky_hex %>; font-weight: 700;"><%= lucky_color %></span>
+        </div>
+      </div>
+
+      <!-- Lucky Numbers (Lottery Style) -->
+      <div class="lucky-item-premium">
+        <div class="lucky-icon-circle" style="background: #6366F1;">
+          <span>🔢</span>
+        </div>
+        <div class="lucky-detail">
+          <span class="lucky-detail-label">행운의 숫자</span>
+          <div class="lotto-numbers">
+            <% @daily[:lucky][:number].to_s.split(", ").each_with_index do |num, i| %>
+              <span class="lotto-ball" style="background: <%= lotto_colors[i % lotto_colors.size] %>;"><%= num.strip %></span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lucky Direction (Compass) -->
+      <div class="lucky-item-premium">
+        <div class="lucky-icon-circle" style="background: #10B981;">
+          <span>🧭</span>
+        </div>
+        <div class="lucky-detail">
+          <span class="lucky-detail-label">행운의 방위</span>
+          <div class="compass-mini">
+            <div class="compass-ring">
+              <span class="compass-n">N</span>
+              <span class="compass-e">E</span>
+              <span class="compass-s">S</span>
+              <span class="compass-w">W</span>
+              <div class="compass-dot" style="left: <%= dir_pos[0] %>%; top: <%= dir_pos[1] %>%;"></div>
+              <div class="compass-label"><%= dir %></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Zodiac -->
+  <!-- Zodiac Badge -->
   <div class="card text-center animate-fadeInUp">
-    <div class="zodiac-badge">
-      <span class="emoji"><%= @analysis[:saju][:zodiac_emoji] %></span>
-      <span><%= @analysis[:saju][:zodiac] %>띠</span>
+    <div class="zodiac-badge-premium">
+      <span class="zodiac-emoji"><%= @analysis[:saju][:zodiac_emoji] %></span>
+      <div class="zodiac-info">
+        <span class="zodiac-name"><%= @analysis[:saju][:zodiac] %>띠</span>
+        <span class="zodiac-element" style="color: var(--el-<%= { '목' => 'wood', '화' => 'fire', '토' => 'earth', '금' => 'metal', '수' => 'water' }[day_element] %>);"><%= day_element %>의 기운</span>
+      </div>
     </div>
   </div>
+
+  <% if @famous_people&.any? %>
+  <!-- Famous People with Similar Saju -->
+  <div class="card animate-fadeInUp">
+    <div class="section-header">
+      <span class="emoji">🌟</span>
+      <h3>나와 비슷한 유명인</h3>
+    </div>
+    <p class="text-muted text-small" style="margin-bottom: 12px;"><%= saju[:day][:stem] %><%= saju[:day][:branch] %>일주 기반</p>
+    <div class="famous-people-list">
+      <% @famous_people.each do |person| %>
+        <div class="famous-person-card">
+          <div class="famous-avatar"><%= person[:emoji] %></div>
+          <div class="famous-info">
+            <span class="famous-name"><%= person[:name] %></span>
+            <span class="famous-desc"><%= person[:desc] %></span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
 
   <!-- Quick Menu -->
   <div class="quick-menu animate-fadeInUp">
@@ -105,20 +240,24 @@
       <div class="icon-circle">💕</div>
       <span class="label">궁합 보기</span>
     </a>
+    <a href="<%= chat_path %>" class="quick-item">
+      <div class="icon-circle">💬</div>
+      <span class="label">AI 챗봇</span>
+    </a>
   </div>
 
 <% else %>
   <!-- Empty state - no birth data -->
   <div class="empty-state">
     <div class="mascot-wrapper">
-      <%= image_tag "snowcat/icon_cat_snowcat_1771224986693.png", class: "snowcat-mascot snowcat-mascot-lg", alt: "사주냥이" %>
+      <%= image_tag "logo_1min_saju.png", class: "snowcat-mascot snowcat-mascot-lg", alt: "1분 사주" %>
     </div>
-    <h2>반가워! 나는 <span class="text-pink">사주냥이</span>야 🐱</h2>
+    <h2>반가워! <span class="text-pink">1분 사주</span>야 ⏱️</h2>
     <p>
       생년월일시를 알려주면<br>
-      너만의 사주를 풀어줄게! ✨
+      1분만에 사주를 풀어줄게! ✨
     </p>
-    
+
     <div class="speech-bubble" style="text-align: left;">
       사주풀이는 태어난 날의 하늘과 땅의 기운으로<br>
       너의 성격, 재능, 운세를 알아보는 거야!<br>
