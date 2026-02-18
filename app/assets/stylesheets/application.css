@@ -2038,3 +2038,356 @@ select.form-control {
   font-size: 12px;
   color: var(--text-3);
 }
+
+/* ═══════════════════════════════════
+   SAJU RESULT PAGE - 2026 Redesign
+   ═══════════════════════════════════ */
+
+/* Hero Header */
+.saju-result-hero {
+  background: linear-gradient(135deg, #667eea08, #764ba215, #f093fb08);
+  border-radius: var(--r-xl);
+  padding: 28px 24px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.result-hero-badges {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.result-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.result-hero-badge.zodiac {
+  background: #f5f3ff;
+  color: #7c3aed;
+  border: 1px solid #ddd6fe;
+}
+
+.result-hero-title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.result-hero-subtitle {
+  font-size: 14px;
+  color: var(--text-3);
+}
+
+/* Modern Section Titles */
+.section-title-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 12px;
+  color: var(--text-3);
+  font-weight: 400;
+}
+
+/* Pillar Element Tags */
+.pillar-element-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.pillar-sublabel {
+  font-size: 10px;
+  color: var(--text-4);
+  font-weight: 400;
+}
+
+/* Bar Tags */
+.bar-tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 6px;
+  margin-left: 4px;
+  font-weight: 700;
+}
+
+.bar-tag.dominant {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.bar-tag.weak {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+/* Balance Summary */
+.balance-summary {
+  margin-top: 12px;
+  padding: 10px;
+  background: var(--bg-grouped);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.balance-chip {
+  background: var(--tint-light);
+  color: var(--tint);
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.balance-desc {
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+/* Yongshin Premium */
+.yongshin-box-premium {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.yongshin-icon-big {
+  font-size: 36px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-lg);
+  flex-shrink: 0;
+}
+
+.yongshin-content {
+  flex: 1;
+}
+
+.yongshin-name-premium {
+  font-size: 17px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.yongshin-tip {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #fffbeb;
+  border-radius: var(--r-sm);
+  border-left: 3px solid #f59e0b;
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+/* Daeun Timeline */
+.daeun-timeline {
+  display: flex;
+  overflow-x: auto;
+  gap: 8px;
+  padding-bottom: 8px;
+}
+
+.daeun-item-premium {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: var(--r-md);
+  background: var(--bg-grouped);
+  min-width: 90px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.daeun-current {
+  background: linear-gradient(135deg, #ede9fe, #dbeafe) !important;
+  border: 2px solid var(--lavender);
+}
+
+.daeun-now-badge {
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  background: var(--lavender);
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+/* Reading Text Premium */
+.reading-text-premium {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-2);
+  word-break: keep-all;
+}
+
+/* Ten God Grid Modern */
+.tengod-grid-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tengod-card-modern {
+  padding: 14px;
+  border-radius: var(--r-md);
+  background: var(--bg-grouped);
+}
+
+.tengod-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.tengod-emoji-big {
+  font-size: 28px;
+}
+
+.tengod-names {
+  display: flex;
+  flex-direction: column;
+}
+
+.tengod-names strong {
+  font-size: 16px;
+}
+
+.tengod-pos-label {
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.tengod-meaning {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.tengod-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tengod-kw-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(139, 92, 246, 0.08);
+  color: #7c3aed;
+}
+
+/* Star Cards Modern */
+.stars-grid-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.star-card-modern {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--r-sm);
+  background: var(--bg-grouped);
+}
+
+.star-emoji-big {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.star-desc {
+  font-size: 13px;
+  color: var(--text-2);
+  margin: 4px 0;
+}
+
+.star-effect {
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+/* Trend Card */
+.trend-card {
+  border-left: 3px solid var(--coral);
+}
+
+.trend-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.trend-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background: var(--bg-grouped);
+  border-radius: var(--r-sm);
+}
+
+.trend-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.trend-item strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.trend-item p {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+.trend-advice {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: #fef2f2;
+  border-radius: var(--r-sm);
+  border-left: 3px solid var(--coral);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-2);
+}

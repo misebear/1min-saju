@@ -7,22 +7,40 @@
   element_class = { '목' => 'wood', '화' => 'fire', '토' => 'earth', '금' => 'metal', '수' => 'water' }
   element_names = { '목' => '나무', '화' => '불', '토' => '흙', '금' => '쇠', '수' => '물' }
   element_icons = { '목' => '🌿', '화' => '🔥', '토' => '🪨', '금' => '🪙', '수' => '💧' }
+  element_colors = { '목' => '#4CAF50', '화' => '#EF5350', '토' => '#E6A23C', '금' => '#90A4AE', '수' => '#42A5F5' }
   pillar_names = ['년주', '월주', '일주', '시주']
+  pillar_labels = ['출생 연도', '출생 월', '출생 일', '출생 시간']
   pillars = [saju[:year], saju[:month], saju[:day], saju[:hour]]
+
+  day_element = SajuEngine::HeavenlyStems.element(saju[:day][:stem])
+  day_yinyang = SajuEngine::HeavenlyStems.yinyang(saju[:day][:stem])
+
+  # 일간 쉬운 설명
+  day_master_easy = {
+    '목' => { '양' => '큰 나무 🌳', '음' => '부드러운 풀 🌿' },
+    '화' => { '양' => '뜨거운 태양 ☀️', '음' => '따뜻한 촛불 🕯️' },
+    '토' => { '양' => '넓은 대지 ⛰️', '음' => '기름진 정원 🌱' },
+    '금' => { '양' => '단단한 강철 ⚡', '음' => '빛나는 보석 💎' },
+    '수' => { '양' => '깊은 바다 🌊', '음' => '맑은 시냇물 💧' }
+  }
+  my_nature = day_master_easy.dig(day_element, day_yinyang) || '특별한 존재 ✨'
 %>
 
-<!-- Page Title -->
-<div class="result-header">
-  <h1>사주 분석 결과</h1>
-  <div class="result-subtitle">
-    <span class="badge"><%= saju[:zodiac_emoji] %> <%= saju[:zodiac] %>띠</span>
-    <span class="badge">일간 <%= saju[:day_master] %>(<%= SajuEngine::HeavenlyStems.element(saju[:day_master]) %>)</span>
+<!-- Hero Header -->
+<div class="saju-result-hero animate-fadeIn">
+  <div class="result-hero-top">
+    <div class="result-hero-badges">
+      <span class="result-hero-badge zodiac"><%= saju[:zodiac_emoji] %> <%= saju[:zodiac] %>띠</span>
+      <span class="result-hero-badge element" style="background: <%= element_colors[day_element] %>18; color: <%= element_colors[day_element] %>; border: 1px solid <%= element_colors[day_element] %>30;"><%= element_icons[day_element] %> <%= day_element %>(<%= day_yinyang %>)</span>
+    </div>
+    <h1 class="result-hero-title">나는 <span style="color: <%= element_colors[day_element] %>"><%= my_nature %></span> 타입!</h1>
+    <p class="result-hero-subtitle">일간 <strong><%= saju[:day_master] %></strong> · <%= element_names[day_element] %>의 기운을 타고났어요</p>
   </div>
 </div>
 
 <!-- 시간 보정 정보 -->
 <% if @correction && @correction[:applied] %>
-  <div class="correction-banner">
+  <div class="correction-banner animate-fadeInUp">
     <div class="correction-title">🔧 시간 보정 적용됨</div>
     <div class="correction-details">
       <% @correction[:corrections].each do |c| %>
@@ -46,54 +64,106 @@
   <div class="result-col-left">
 
     <!-- 사주 네 기둥 -->
-    <section class="section-card">
-      <h2 class="section-title">사주 네 기둥 <span class="term-note">사주(四柱) — 태어난 년·월·일·시의 네 기둥이에요</span></h2>
+    <section class="section-card animate-fadeInUp">
+      <h2 class="section-title-modern">
+        📋 나의 사주 네 기둥
+        <span class="section-subtitle">태어난 년·월·일·시의 하늘과 땅의 기운</span>
+      </h2>
       <div class="pillars-row">
         <% pillars.each_with_index do |pillar, i| %>
           <div class="pillar-card">
             <span class="pillar-label"><%= pillar_names[i] %></span>
+            <span class="pillar-sublabel"><%= pillar_labels[i] %></span>
             <div class="pillar-char stem el-<%= element_class[pillar[:element]] %>"><%= pillar[:stem] %></div>
             <div class="pillar-char branch el-<%= element_class[SajuEngine::EarthlyBranches.element(pillar[:branch])] %>"><%= pillar[:branch] %></div>
-            <span class="pillar-desc"><%= element_names[pillar[:element]] %> · <%= pillar[:yinyang] %></span>
+            <span class="pillar-element-tag" style="background:<%= element_colors[pillar[:element]] %>15; color:<%= element_colors[pillar[:element]] %>;"><%= element_icons[pillar[:element]] %> <%= element_names[pillar[:element]] %></span>
           </div>
         <% end %>
       </div>
     </section>
 
     <!-- 오행 분포 -->
-    <section class="section-card">
-      <h2 class="section-title">오행 분포 <span class="term-note">오행(五行) — 나무·불·흙·쇠·물, 세상을 이루는 다섯 에너지</span></h2>
+    <section class="section-card animate-fadeInUp">
+      <h2 class="section-title-modern">
+        ⚖️ 오행 에너지 밸런스
+        <span class="section-subtitle">나무·불·흙·쇠·물 — 내 안의 다섯 에너지</span>
+      </h2>
       <% total = distribution.values.sum.to_f %>
       <% distribution.each do |element, count| %>
         <% ratio = total > 0 ? (count / total * 100).round : 0 %>
+        <% is_dominant = ratio >= 30 %>
+        <% is_weak = ratio <= 10 && count > 0 || count == 0 %>
         <div class="bar-row">
           <span class="bar-label"><%= element_icons[element] %> <%= element_names[element] %></span>
           <div class="bar-track">
             <div class="bar-fill el-bg-<%= element_class[element] %>" style="width: <%= [ratio, 4].max %>%"></div>
           </div>
-          <span class="bar-value"><%= count %>개 (<%= ratio %>%)</span>
+          <span class="bar-value">
+            <%= count %>개
+            <% if is_dominant %>
+              <span class="bar-tag dominant">강함</span>
+            <% elsif is_weak %>
+              <span class="bar-tag weak">부족</span>
+            <% end %>
+          </span>
         </div>
       <% end %>
+      <div class="balance-summary">
+        <% if balance %>
+          <span class="balance-chip"><%= balance[:type] %></span>
+          <span class="balance-desc"><%= balance[:description] %></span>
+        <% end %>
+      </div>
     </section>
 
     <!-- 용신 -->
-    <section class="section-card highlight-card">
-      <h2 class="section-title">용신 <span class="term-note">용신(用神) — 내 사주에서 가장 부족한 기운, 이걸 보충하면 운이 좋아져요!</span></h2>
-      <div class="yongshin-box">
-        <span class="yongshin-icon"><%= element_icons[saju[:yongshin][:element]] %></span>
-        <div>
-          <strong class="yongshin-name"><%= saju[:yongshin][:name] %>(<%= saju[:yongshin][:element] %>)</strong>
+    <section class="section-card highlight-card animate-fadeInUp">
+      <h2 class="section-title-modern">
+        🎯 나의 핵심 용신
+        <span class="section-subtitle">부족한 에너지를 채워주는 행운의 열쇠!</span>
+      </h2>
+      <div class="yongshin-box-premium">
+        <div class="yongshin-icon-big" style="background: <%= element_colors[saju[:yongshin][:element]] %>15; color: <%= element_colors[saju[:yongshin][:element]] %>;">
+          <%= element_icons[saju[:yongshin][:element]] %>
+        </div>
+        <div class="yongshin-content">
+          <strong class="yongshin-name-premium" style="color: <%= element_colors[saju[:yongshin][:element]] %>;">
+            <%= saju[:yongshin][:name] %> (<%= element_names[saju[:yongshin][:element]] %>의 기운)
+          </strong>
           <p class="yongshin-reason"><%= saju[:yongshin][:reason] %></p>
+          <div class="yongshin-tip">
+            💡 <strong>실생활 팁:</strong>
+            <% case saju[:yongshin][:element] %>
+            <% when '목' %>
+              초록색 옷 입기, 공원 산책, 식물 키우기, 동쪽 방향이 유리해요
+            <% when '화' %>
+              빨간색/핑크 소품 활용, 양초 명상, 남쪽 방향이 유리해요
+            <% when '토' %>
+              노란색/베이지 톤, 등산/자연 활동, 중앙이 유리해요
+            <% when '금' %>
+              흰색/은색 액세서리, 규칙적인 생활, 서쪽 방향이 유리해요
+            <% when '수' %>
+              검정/파랑 컬러, 수영/목욕, 북쪽 방향이 유리해요
+            <% end %>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- 대운 -->
-    <section class="section-card">
-      <h2 class="section-title">대운 <span class="term-note">대운(大運) — 10년 단위로 찾아오는 인생의 큰 흐름이에요</span></h2>
-      <div class="daeun-grid">
+    <section class="section-card animate-fadeInUp">
+      <h2 class="section-title-modern">
+        🔄 10년 대운 타임라인
+        <span class="section-subtitle">10년 단위로 찾아오는 인생의 큰 흐름</span>
+      </h2>
+      <div class="daeun-timeline">
+        <% current_age = Date.today.year - Date.parse(session[:birth_date]).year %>
         <% @major_fortune.first(6).each do |fortune| %>
-          <div class="daeun-item">
+          <% is_current = current_age >= fortune[:start_age] && current_age <= fortune[:end_age] %>
+          <div class="daeun-item-premium <%= 'daeun-current' if is_current %>">
+            <% if is_current %>
+              <span class="daeun-now-badge">NOW</span>
+            <% end %>
             <span class="daeun-age"><%= fortune[:start_age] %>~<%= fortune[:end_age] %>세</span>
             <span class="daeun-ganzi el-<%= element_class[fortune[:element]] || 'water' %>"><%= fortune[:label] %></span>
             <span class="daeun-year"><%= fortune[:start_year] %>~<%= fortune[:end_year] %></span>
@@ -107,105 +177,152 @@
   <!-- RIGHT COLUMN -->
   <div class="result-col-right">
 
+    <!-- 성격 & 적성 -->
+    <section class="section-card animate-fadeInUp">
+      <h2 class="section-title-modern">
+        😊 나의 성격 분석
+        <span class="section-subtitle"><%= my_nature %> 타입의 특징</span>
+      </h2>
+      <p class="reading-text-premium"><%= @analysis[:personality] %></p>
+    </section>
+
+    <!-- 추천 직업 -->
+    <section class="section-card animate-fadeInUp">
+      <h2 class="section-title-modern">
+        💼 딱 맞는 직업
+        <span class="section-subtitle"><%= element_names[day_element] %>의 기운에 어울리는 분야</span>
+      </h2>
+      <p class="reading-text-premium"><%= @analysis[:career] %></p>
+    </section>
+
+    <!-- 연애 스타일 -->
+    <section class="section-card animate-fadeInUp">
+      <h2 class="section-title-modern">
+        💕 연애 스타일
+        <span class="section-subtitle">나의 사랑법은?</span>
+      </h2>
+      <p class="reading-text-premium"><%= @analysis[:love] %></p>
+    </section>
+
     <!-- 십성 분석 -->
-    <section class="section-card">
-      <h2 class="section-title">십성 분석 <span class="term-note">십성(十星) — 나를 중심으로 주변 기운과의 관계를 나타내요</span></h2>
-      <div class="tengod-row">
-        <% [
-          { pos: '년주', god: @ten_gods[:year_stem] },
-          { pos: '월주', god: @ten_gods[:month_stem] },
-          { pos: '시주', god: @ten_gods[:hour_stem] }
-        ].each do |item| %>
+    <section class="section-card animate-fadeInUp">
+      <h2 class="section-title-modern">
+        🌟 십성 분석
+        <span class="section-subtitle">나를 둘러싼 관계의 에너지</span>
+      </h2>
+      <div class="tengod-grid-modern">
+        <%
+          ten_god_items = [
+            { pos: '년주', label: '조상/사회', god: @ten_gods[:year_stem] },
+            { pos: '월주', label: '부모/직장', god: @ten_gods[:month_stem] },
+            { pos: '시주', label: '자녀/미래', god: @ten_gods[:hour_stem] }
+          ]
+        %>
+        <% ten_god_items.each do |item| %>
           <% if item[:god] && SajuEngine::TenGods::GOD_DESCRIPTIONS[item[:god]] %>
-            <div class="tengod-chip">
-              <span class="tenod-emoji"><%= SajuEngine::TenGods::GOD_DESCRIPTIONS[item[:god]][:emoji] %></span>
-              <strong><%= item[:god] %></strong>
-              <span class="tenod-pos"><%= item[:pos] %></span>
+            <% desc = SajuEngine::TenGods::GOD_DESCRIPTIONS[item[:god]] %>
+            <div class="tengod-card-modern">
+              <div class="tengod-header">
+                <span class="tengod-emoji-big"><%= desc[:emoji] %></span>
+                <div class="tengod-names">
+                  <strong><%= item[:god] %></strong>
+                  <span class="tengod-pos-label"><%= item[:label] %></span>
+                </div>
+              </div>
+              <p class="tengod-meaning"><%= desc[:meaning] %></p>
+              <div class="tengod-keywords">
+                <% desc[:keyword].split(', ').each do |kw| %>
+                  <span class="tengod-kw-tag"><%= kw %></span>
+                <% end %>
+              </div>
             </div>
           <% end %>
         <% end %>
       </div>
-      <% [
-        { pos: '년주', god: @ten_gods[:year_stem] },
-        { pos: '월주', god: @ten_gods[:month_stem] },
-        { pos: '시주', god: @ten_gods[:hour_stem] }
-      ].each do |item| %>
-        <% if item[:god] && SajuEngine::TenGods::GOD_DESCRIPTIONS[item[:god]] %>
-          <% desc = SajuEngine::TenGods::GOD_DESCRIPTIONS[item[:god]] %>
-          <div class="info-note">
-            <strong><%= desc[:emoji] %> <%= item[:god] %></strong> <span class="term-badge"><%= item[:pos] %></span><br>
-            <%= desc[:meaning] %><br>
-            <span class="muted">키워드: <%= desc[:keyword] %></span>
-            <% if desc[:tooltip] %>
-              <div class="term-tooltip"><%= desc[:tooltip] %></div>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
     </section>
 
     <!-- 신살 -->
     <% if @special_stars.any? %>
-      <section class="section-card">
-        <h2 class="section-title">특별한 별 — 신살</h2>
-        <% @special_stars.each do |star| %>
-          <div class="star-row">
-            <span class="star-icon"><%= star[:emoji] %></span>
-            <div>
-              <strong><%= star[:name] %></strong>
-              <p class="muted"><%= star[:meaning] %> · <%= star[:effect] %></p>
+      <section class="section-card animate-fadeInUp">
+        <h2 class="section-title-modern">
+          ⭐ 특별한 별 — 신살
+          <span class="section-subtitle">사주에 깃든 특별한 에너지</span>
+        </h2>
+        <div class="stars-grid-modern">
+          <% @special_stars.each do |star| %>
+            <div class="star-card-modern">
+              <span class="star-emoji-big"><%= star[:emoji] %></span>
+              <div>
+                <strong><%= star[:name] %></strong>
+                <p class="star-desc"><%= star[:meaning] %></p>
+                <p class="star-effect"><%= star[:effect] %></p>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </section>
     <% end %>
 
     <!-- 2026 트렌드 -->
     <% if @analysis[:trend_2026] %>
-      <section class="section-card highlight-card">
-        <h2 class="section-title">🐴 2026 병오년 <span class="term-note">올해는 '<%= @analysis[:trend_2026][:year_info][:nickname] %>' — 화(火)의 기운이 강한 해예요</span></h2>
-        <p class="reading-text"><%= @analysis[:trend_2026][:general] %></p>
-        <div class="divider"></div>
-        <div class="info-note">
-          <strong>💼 올해의 커리어 포인트</strong><br>
-          <%= @analysis[:trend_2026][:career] %>
-        </div>
-        <div class="info-note">
-          <strong>💕 올해의 연애 포인트</strong><br>
-          <%= @analysis[:trend_2026][:love] %>
+      <section class="section-card trend-card animate-fadeInUp">
+        <h2 class="section-title-modern">
+          🐴 2026 병오년 운세
+          <span class="section-subtitle"><%= @analysis[:trend_2026][:year_info][:nickname] %> — 올해는 불(火)의 기운이 강해요</span>
+        </h2>
+        <p class="reading-text-premium"><%= @analysis[:trend_2026][:general] %></p>
+        <div class="trend-grid">
+          <div class="trend-item">
+            <span class="trend-icon">💼</span>
+            <div>
+              <strong>커리어 포인트</strong>
+              <p><%= @analysis[:trend_2026][:career] %></p>
+            </div>
+          </div>
+          <div class="trend-item">
+            <span class="trend-icon">💕</span>
+            <div>
+              <strong>연애 포인트</strong>
+              <p><%= @analysis[:trend_2026][:love] %></p>
+            </div>
+          </div>
         </div>
         <% if @analysis[:trend_2026][:ten_god_advice] %>
-          <div class="term-tooltip">
-            📌 오늘의 십성 조언: <%= @analysis[:trend_2026][:ten_god_advice] %>
+          <div class="trend-advice">
+            📌 <strong>올해의 핵심 조언:</strong> <%= @analysis[:trend_2026][:ten_god_advice] %>
           </div>
         <% end %>
       </section>
     <% end %>
 
-    <!-- 성격 & 적성 -->
-    <section class="section-card">
-      <h2 class="section-title">성격 & 적성</h2>
-      <p class="reading-text"><%= @analysis[:personality] %></p>
-    </section>
-
-    <!-- 추천 직업 -->
-    <section class="section-card">
-      <h2 class="section-title">추천 직업</h2>
-      <p class="reading-text"><%= @analysis[:career] %></p>
-    </section>
-
-    <!-- 연애 스타일 -->
-    <section class="section-card">
-      <h2 class="section-title">연애 스타일</h2>
-      <p class="reading-text"><%= @analysis[:love] %></p>
-    </section>
+    <!-- 나와 같은 유명인 -->
+    <% if @famous_people&.any? %>
+      <section class="section-card animate-fadeInUp">
+        <h2 class="section-title-modern">
+          🌟 나와 비슷한 유명인
+          <span class="section-subtitle"><%= saju[:day][:stem] %><%= saju[:day][:branch] %>일주 기반</span>
+        </h2>
+        <div class="famous-people-list">
+          <% @famous_people.each do |person| %>
+            <div class="famous-person-card">
+              <div class="famous-avatar"><%= person[:emoji] %></div>
+              <div class="famous-info">
+                <span class="famous-name"><%= person[:name] %></span>
+                <span class="famous-desc"><%= person[:desc] %></span>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </section>
+    <% end %>
 
   </div>
 </div>
 
 <!-- Bottom Actions -->
-<div class="action-row">
-  <a href="<%= daily_fortune_path %>" class="action-btn primary">오늘의 운세 보기</a>
-  <a href="<%= new_compatibility_path %>" class="action-btn secondary">궁합 보러가기</a>
-  <a href="<%= new_saju_path %>" class="action-btn secondary">다시 풀어보기</a>
+<div class="action-row animate-fadeInUp">
+  <a href="<%= daily_fortune_path %>" class="action-btn primary">📅 오늘의 운세 보기</a>
+  <a href="<%= new_compatibility_path %>" class="action-btn secondary">💕 궁합 보러가기</a>
+  <a href="<%= chat_path %>" class="action-btn secondary">💬 AI 챗봇</a>
+  <a href="<%= new_saju_path %>" class="action-btn secondary">🔄 다시 풀어보기</a>
 </div>

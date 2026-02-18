@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class SajuController < ApplicationController
+  include FamousPeople
+
   def new
     @city_options = SajuEngine::TimezoneCorrection.city_options
   end
@@ -48,5 +50,9 @@ class SajuController < ApplicationController
     @special_stars = @analysis[:special_stars]
     @major_fortune = @analysis[:major_fortune]
     @city = city
+
+    # Famous people with similar day pillar
+    saju = @analysis[:saju]
+    @famous_people = find_famous_people(saju[:day][:stem], saju[:day][:branch])
   end
 end
