@@ -1,0 +1,147 @@
+<% content_for(:title) { "사주냥이 🐱 나만의 사주풀이" } %>
+
+<% if @analysis %>
+  <!-- Dashboard with fortune data -->
+  <div class="welcome-section animate-fadeIn">
+    <%= image_tag "snowcat/icon_cat_snowcat_1771224905251.png", class: "snowcat-mascot", alt: "사주냥이" %>
+    <div class="welcome-text">
+      <h2>안녕! 오늘도 좋은 하루 ✨</h2>
+      <p><%= Date.today.strftime("%Y년 %m월 %d일") %> · <%= @daily[:label] %></p>
+    </div>
+  </div>
+
+  <div class="speech-bubble animate-fadeInUp">
+    오늘은 <strong><%= @daily[:ten_god] %></strong>의 기운이 흐르는 날이야! 
+    <%= @daily[:lucky][:element_emoji] %> 
+    <strong><%= @daily[:lucky][:color] %></strong> 컬러를 활용하면 행운이 찾아올거야~
+  </div>
+
+  <!-- Today's Fortune Score -->
+  <div class="card fortune-score-card mt-lg animate-fadeInUp">
+    <div class="section-header" style="justify-content: center;">
+      <span class="emoji">⭐</span>
+      <h3>오늘의 운세</h3>
+    </div>
+
+    <div class="score-ring">
+      <svg viewBox="0 0 120 120">
+        <defs>
+          <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#FFB088"/>
+            <stop offset="100%" style="stop-color:#E8775F"/>
+          </linearGradient>
+        </defs>
+        <circle class="ring-bg" cx="60" cy="60" r="52"/>
+        <circle class="ring-fill" cx="60" cy="60" r="52"
+          stroke-dasharray="<%= (2 * Math::PI * 52).round %>"
+          stroke-dashoffset="<%= ((1 - @daily[:score] / 100.0) * 2 * Math::PI * 52).round %>"/>
+      </svg>
+      <div class="score-value"><%= @daily[:score] %></div>
+    </div>
+    <p class="score-label">오늘의 종합 운세 점수</p>
+
+    <div class="fortune-grid">
+      <div class="fortune-item">
+        <span class="emoji">💰</span>
+        <span class="label">재물운</span>
+        <span class="value"><%= %w[좋음 보통 매우좋음 주의].sample %></span>
+      </div>
+      <div class="fortune-item">
+        <span class="emoji">💕</span>
+        <span class="label">애정운</span>
+        <span class="value"><%= %w[좋음 보통 매우좋음 설렘].sample %></span>
+      </div>
+      <div class="fortune-item">
+        <span class="emoji">💪</span>
+        <span class="label">건강운</span>
+        <span class="value"><%= %w[좋음 보통 매우좋음 주의].sample %></span>
+      </div>
+      <div class="fortune-item">
+        <span class="emoji">💼</span>
+        <span class="label">직업운</span>
+        <span class="value"><%= %w[좋음 보통 매우좋음 기회].sample %></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lucky Items -->
+  <div class="card animate-fadeInUp">
+    <div class="section-header">
+      <span class="emoji">🍀</span>
+      <h3>오늘의 행운</h3>
+    </div>
+    <div class="lucky-items">
+      <span class="lucky-tag">
+        <span class="tag-emoji">🎨</span> 행운색: <%= @daily[:lucky][:color] %>
+      </span>
+      <span class="lucky-tag">
+        <span class="tag-emoji">🔢</span> 행운숫자: <%= @daily[:lucky][:number] %>
+      </span>
+      <span class="lucky-tag">
+        <span class="tag-emoji">🧭</span> 행운방위: <%= @daily[:lucky][:direction] %>
+      </span>
+    </div>
+  </div>
+
+  <!-- Zodiac -->
+  <div class="card text-center animate-fadeInUp">
+    <div class="zodiac-badge">
+      <span class="emoji"><%= @analysis[:saju][:zodiac_emoji] %></span>
+      <span><%= @analysis[:saju][:zodiac] %>띠</span>
+    </div>
+  </div>
+
+  <!-- Quick Menu -->
+  <div class="quick-menu animate-fadeInUp">
+    <a href="<%= saju_result_path %>" class="quick-item">
+      <div class="icon-circle">🔮</div>
+      <span class="label">사주 상세</span>
+    </a>
+    <a href="<%= daily_fortune_path %>" class="quick-item">
+      <div class="icon-circle">📅</div>
+      <span class="label">운세 상세</span>
+    </a>
+    <a href="<%= new_compatibility_path %>" class="quick-item">
+      <div class="icon-circle">💕</div>
+      <span class="label">궁합 보기</span>
+    </a>
+  </div>
+
+<% else %>
+  <!-- Empty state - no birth data -->
+  <div class="empty-state">
+    <div class="mascot-wrapper">
+      <%= image_tag "snowcat/icon_cat_snowcat_1771224986693.png", class: "snowcat-mascot snowcat-mascot-lg", alt: "사주냥이" %>
+    </div>
+    <h2>반가워! 나는 <span class="text-pink">사주냥이</span>야 🐱</h2>
+    <p>
+      생년월일시를 알려주면<br>
+      너만의 사주를 풀어줄게! ✨
+    </p>
+    
+    <div class="speech-bubble" style="text-align: left;">
+      사주풀이는 태어난 날의 하늘과 땅의 기운으로<br>
+      너의 성격, 재능, 운세를 알아보는 거야!<br>
+      재밌으니까 한번 해볼래? 😸
+    </div>
+
+    <a href="<%= new_saju_path %>" class="btn-primary mt-lg" style="display: inline-block; text-decoration: none; max-width: 300px;">
+      🔮 사주풀이 시작하기
+    </a>
+
+    <div class="quick-menu mt-lg">
+      <a href="<%= new_saju_path %>" class="quick-item">
+        <div class="icon-circle">🔮</div>
+        <span class="label">사주풀이</span>
+      </a>
+      <a href="<%= new_compatibility_path %>" class="quick-item">
+        <div class="icon-circle">💕</div>
+        <span class="label">궁합</span>
+      </a>
+      <a href="<%= new_saju_path %>" class="quick-item">
+        <div class="icon-circle">⭐</div>
+        <span class="label">운세</span>
+      </a>
+    </div>
+  </div>
+<% end %>

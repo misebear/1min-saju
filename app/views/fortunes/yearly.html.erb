@@ -1,0 +1,76 @@
+<% content_for(:title) { "#{@yearly[:year]}년 운세 - 사주냥이" } %>
+
+<%
+  element_emojis = { '목' => '🌳', '화' => '🔥', '토' => '⛰️', '금' => '⚔️', '수' => '💧' }
+  element_names = { '목' => '나무', '화' => '불', '토' => '흙', '금' => '쇠', '수' => '물' }
+  element_class = { '목' => 'wood', '화' => 'fire', '토' => 'earth', '금' => 'metal', '수' => 'water' }
+%>
+
+<div class="page-header animate-fadeIn">
+  <h1><%= @yearly[:year] %>년 운세</h1>
+  <p class="subtitle"><%= @yearly[:label] %></p>
+</div>
+
+<div class="card text-center animate-fadeInUp">
+  <div class="yearly-header">
+    <div class="year-label"><%= @yearly[:year] %></div>
+    <div class="year-ganzi">
+      <%= element_emojis[@yearly[:element]] %> 
+      <%= @yearly[:stem] %><%= @yearly[:branch] %> 
+      (<%= @yearly[:animal] %>띠 해)
+    </div>
+  </div>
+
+  <div class="zodiac-badge" style="margin: 0 auto;">
+    <span class="emoji"><%= SajuEngine::EarthlyBranches::BRANCH_EMOJIS[@yearly[:branch]] %></span>
+    <span><%= @yearly[:animal] %>의 해</span>
+  </div>
+</div>
+
+<div class="card card-gradient-pink animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">⭐</span>
+    <h3>올해의 십성: <%= @yearly[:ten_god] %></h3>
+  </div>
+  <% if SajuEngine::TenGods::GOD_DESCRIPTIONS[@yearly[:ten_god]] %>
+    <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.8;">
+      <%= SajuEngine::TenGods::GOD_DESCRIPTIONS[@yearly[:ten_god]][:emoji] %>
+      <strong><%= @yearly[:ten_god] %></strong> - 
+      <%= SajuEngine::TenGods::GOD_DESCRIPTIONS[@yearly[:ten_god]][:meaning] %><br>
+      <span class="text-muted text-small">키워드: <%= SajuEngine::TenGods::GOD_DESCRIPTIONS[@yearly[:ten_god]][:keyword] %></span>
+    </p>
+  <% end %>
+</div>
+
+<!-- 대운 타임라인 -->
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">📊</span>
+    <h3>대운 흐름</h3>
+  </div>
+  <p class="text-small text-muted mb-md">인생의 큰 흐름을 10년 단위로 보여줘요</p>
+
+  <div class="fortune-timeline">
+    <% @major_fortune.first(8).each do |fortune| %>
+      <div class="timeline-item">
+        <div class="timeline-age"><%= fortune[:start_age] %>~<%= fortune[:end_age] %>세</div>
+        <div class="timeline-ganzi">
+          <span class="element-<%= element_class[fortune[:element]] || 'water' %>"><%= fortune[:label] %></span>
+        </div>
+        <div class="timeline-detail">
+          <%= fortune[:start_year] %>~<%= fortune[:end_year] %>년 · 
+          <%= fortune[:ten_god] %> · 
+          <%= element_emojis[fortune[:element]] %> <%= element_names[fortune[:element]] %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="card text-center animate-fadeInUp">
+  <%= image_tag "snowcat/icon_dog_snowcat_1771225147086.png", class: "snowcat-mascot snowcat-mascot-sm", alt: "사주멍이" %>
+  <p class="mt-sm text-small text-muted" style="line-height: 1.8;">
+    운세는 큰 흐름을 보여줄 뿐이야~<br>
+    결국 너의 노력이 인생을 만들어가는 거야! 🐶✨
+  </p>
+</div>

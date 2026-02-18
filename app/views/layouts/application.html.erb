@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title><%= content_for(:title) || "사주냥이 🐱 나만의 사주풀이" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="사주냥이">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="귀여운 스노우캣과 함께하는 나만의 사주풀이! 오늘의 운세, 궁합, 대운까지 한눈에 ✨">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <%= yield :head %>
+    <link rel="icon" href="/icon.png" type="image/png">
+
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <!-- Desktop Top Nav (hidden on mobile) -->
+    <header class="desktop-header">
+      <div class="desktop-header-inner">
+        <a href="<%= root_path %>" class="logo">
+          <%= image_tag "snowcat/icon_cat_snowcat_1771224905251.png", class: "logo-img", alt: "사주냥이" %>
+          <span class="logo-text">사주냥이</span>
+        </a>
+        <nav class="desktop-nav">
+          <a href="<%= root_path %>" class="desktop-nav-item <%= 'active' if controller_name == 'home' %>">
+            <span class="nav-icon">🏠</span>
+            <span>홈</span>
+          </a>
+          <a href="<%= new_saju_path %>" class="desktop-nav-item <%= 'active' if controller_name == 'saju' %>">
+            <span class="nav-icon">🔮</span>
+            <span>사주풀이</span>
+          </a>
+          <a href="<%= daily_fortune_path %>" class="desktop-nav-item <%= 'active' if controller_name == 'fortunes' %>">
+            <span class="nav-icon">⭐</span>
+            <span>운세</span>
+          </a>
+          <a href="<%= new_compatibility_path %>" class="desktop-nav-item <%= 'active' if controller_name == 'compatibility' %>">
+            <span class="nav-icon">💕</span>
+            <span>궁합</span>
+          </a>
+          <a href="<%= chat_path %>" class="desktop-nav-item <%= 'active' if controller_name == 'chat' %>">
+            <span class="nav-icon">💬</span>
+            <span>챗봇</span>
+          </a>
+          <a href="<%= new_solo_destiny_path %>" class="desktop-nav-item <%= 'active' if controller_name == 'solo_destiny' %>">
+            <span class="nav-icon">💘</span>
+            <span>인연</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Desktop Layout Wrapper -->
+    <div class="page-wrapper">
+      <!-- Desktop Sidebar (hidden on mobile) -->
+      <aside class="desktop-sidebar">
+        <div class="sidebar-card">
+          <%= image_tag "snowcat/icon_cat_snowcat_1771224986693.png", class: "sidebar-mascot", alt: "사주냥이" %>
+          <h3>사주냥이</h3>
+          <p class="text-muted text-small">나만의 사주풀이 🐱</p>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="<%= root_path %>" class="sidebar-link <%= 'active' if controller_name == 'home' %>">
+            <span>🏠</span> 홈
+          </a>
+          <a href="<%= new_saju_path %>" class="sidebar-link <%= 'active' if controller_name == 'saju' %>">
+            <span>🔮</span> 사주풀이
+          </a>
+          <a href="<%= daily_fortune_path %>" class="sidebar-link <%= 'active' if controller_name == 'fortunes' %>">
+            <span>⭐</span> 오늘의 운세
+          </a>
+          <a href="<%= yearly_fortune_path %>" class="sidebar-link <%= 'active' if controller_name == 'fortunes' && action_name == 'yearly' %>">
+            <span>📅</span> 연간 운세
+          </a>
+          <a href="<%= new_compatibility_path %>" class="sidebar-link <%= 'active' if controller_name == 'compatibility' %>">
+            <span>💕</span> 궁합
+          </a>
+          <a href="<%= chat_path %>" class="sidebar-link <%= 'active' if controller_name == 'chat' %>">
+            <span>💬</span> AI 챗봇
+          </a>
+          <a href="<%= new_solo_destiny_path %>" class="sidebar-link <%= 'active' if controller_name == 'solo_destiny' %>">
+            <span>💘</span> 인연 풀이
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <p class="text-muted text-small">
+            © 2025 사주냥이<br>
+            Powered by Snowcat ✨
+          </p>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <div class="app-container">
+        <main class="main-content">
+          <%= yield %>
+        </main>
+      </div>
+
+      <!-- Desktop Right Panel (hidden on mobile) -->
+      <aside class="desktop-right-panel">
+        <div class="sidebar-card">
+          <div class="section-header">
+            <span class="emoji">🗓️</span>
+            <h3>오늘</h3>
+          </div>
+          <p class="text-small text-muted"><%= Date.today.strftime("%Y년 %m월 %d일") %></p>
+          <p class="text-small mt-sm">
+            <%
+              stems = %w[갑 을 병 정 무 기 경 신 임 계]
+              branches = %w[자 축 인 묘 진 사 오 미 신 유 술 해]
+              day_stem = stems[(Date.today.jd) % 10]
+              day_branch = branches[(Date.today.jd) % 12]
+            %>
+            오늘의 간지: <strong class="text-pink"><%= day_stem %><%= day_branch %></strong>
+          </p>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="section-header">
+            <span class="emoji">💡</span>
+            <h3>꿀팁</h3>
+          </div>
+          <p class="text-small text-muted" style="line-height: 1.8;">
+            사주는 태어난 년, 월, 일, 시를 천간과 지지로 나타낸 네 개의 기둥이에요.<br><br>
+            정확한 태어난 시간을 알수록 더 정확한 분석이 가능해요! ✨
+          </p>
+        </div>
+
+        <div class="sidebar-card">
+          <%= image_tag "snowcat/icon_dog_snowcat_1771225209824.png", class: "snowcat-mascot snowcat-mascot-sm", alt: "사주멍이", style: "margin: 0 auto; display: block;" %>
+          <p class="text-small text-muted text-center mt-sm">
+            사주는 참고용이야~<br>
+            너의 노력이 제일 중요해! 🐶
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Mobile Bottom Nav (hidden on desktop) -->
+    <nav class="bottom-nav">
+      <a href="<%= root_path %>" class="nav-item <%= 'active' if controller_name == 'home' %>">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">홈</span>
+      </a>
+      <a href="<%= new_saju_path %>" class="nav-item <%= 'active' if controller_name == 'saju' %>">
+        <span class="nav-icon">🔮</span>
+        <span class="nav-label">사주풀이</span>
+      </a>
+      <a href="<%= daily_fortune_path %>" class="nav-item <%= 'active' if controller_name == 'fortunes' %>">
+        <span class="nav-icon">⭐</span>
+        <span class="nav-label">운세</span>
+      </a>
+      <a href="<%= new_compatibility_path %>" class="nav-item <%= 'active' if controller_name == 'compatibility' %>">
+        <span class="nav-icon">💕</span>
+        <span class="nav-label">궁합</span>
+      </a>
+      <a href="<%= chat_path %>" class="nav-item <%= 'active' if controller_name == 'chat' %>">
+        <span class="nav-icon">💬</span>
+        <span class="nav-label">챗봇</span>
+      </a>
+    </nav>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<% content_for(:title) { "나의 솔로 인연 분석 - 사주냥이" } %>
+
+<%
+  saju = @analysis[:saju]
+  element_class = { '목' => 'wood', '화' => 'fire', '토' => 'earth', '금' => 'metal', '수' => 'water' }
+%>
+
+<div class="result-header animate-fadeIn">
+  <h1>나는솔로 인연 분석 💘</h1>
+  <div class="result-subtitle">
+    <span class="badge"><%= saju[:zodiac_emoji] %> <%= saju[:zodiac] %>띠</span>
+    <span class="badge"><%= @gender == "남" ? "🙋‍♂️" : "🙋‍♀️" %> <%= @gender == "남" ? "영수/광수/상철" : "영숙/정숙/순자" %> 후보</span>
+  </div>
+</div>
+
+<!-- 내 아키타입 -->
+<section class="section-card animate-fadeInUp">
+  <h2 class="section-title">🎯 나는솔로에 나가면 나는...</h2>
+
+  <div class="archetype-card">
+    <div class="archetype-emoji"><%= @archetype[:emoji] %></div>
+    <div class="archetype-name"><%= @archetype[:name] %></div>
+    <div style="font-size: 16px; font-weight: 600; color: var(--tint); margin-bottom: 12px;">
+      "<%= @archetype[:title] %>"
+    </div>
+    <div class="archetype-desc"><%= @archetype[:desc] %></div>
+  </div>
+</section>
+
+<!-- 연애 스타일 -->
+<section class="section-card animate-fadeInUp">
+  <h2 class="section-title">💕 연애 스타일</h2>
+  <div class="card highlight-card" style="padding: 16px;">
+    <p style="line-height: 1.8; margin: 0;">
+      ❤️ <strong>연애 방식:</strong> <%= @archetype[:love_style] %><br><br>
+      🎯 <strong>이상형:</strong> <%= @archetype[:ideal] %>
+    </p>
+  </div>
+</section>
+
+<!-- 나솔 시나리오 -->
+<section class="section-card animate-fadeInUp">
+  <h2 class="section-title">📺 나솔에서 나는...</h2>
+  <div class="card" style="padding: 16px;">
+    <p style="line-height: 1.8; margin: 0; font-size: 14px;">
+      <%= @archetype[:solo_scenario] %>
+    </p>
+  </div>
+</section>
+
+<!-- 잘 맞는 상대 타입 -->
+<section class="section-card animate-fadeInUp">
+  <h2 class="section-title">💑 나와 찰떡인 상대 유형</h2>
+
+  <% @matches.first(4).each do |match| %>
+    <div class="match-card">
+      <div class="match-emoji"><%= match[:emoji] %></div>
+      <div class="match-info">
+        <div class="match-name"><%= match[:name] %></div>
+        <div class="match-desc">
+          "<%= match[:title] %>"<br>
+          <span class="term-note"><%= match[:desc].truncate(60) %></span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</section>
+
+<!-- 매칭 시나리오 (첫 번째 매칭) -->
+<% if @matches.any? %>
+  <%
+    first_match = @matches.first
+    scenario = SajuEngine::SoloDestiny.solo_scenario(@analysis[:saju], first_match[:key])
+  %>
+  <section class="section-card animate-fadeInUp">
+    <h2 class="section-title">🎬 베스트 매칭 시나리오</h2>
+    <div class="card highlight-card" style="padding: 16px;">
+      <div style="display: flex; justify-content: center; gap: 16px; align-items: center; margin-bottom: 16px;">
+        <div style="text-align: center;">
+          <div style="font-size: 32px;"><%= @archetype[:emoji] %></div>
+          <div style="font-size: 12px; color: var(--text-3);"><%= @archetype[:name] %></div>
+        </div>
+        <div style="font-size: 24px;">💕</div>
+        <div style="text-align: center;">
+          <div style="font-size: 32px;"><%= first_match[:emoji] %></div>
+          <div style="font-size: 12px; color: var(--text-3);"><%= first_match[:name] %></div>
+        </div>
+      </div>
+      <div class="correction-chip" style="margin-bottom: 12px;"><%= scenario[:relation][:label] %></div>
+      <p style="line-height: 1.8; margin: 0; font-size: 14px; white-space: pre-line;"><%= scenario[:story] %></p>
+    </div>
+  </section>
+<% end %>
+
+<!-- 2026 연애 트렌드 -->
+<% if @analysis[:trend_2026] %>
+  <section class="section-card animate-fadeInUp">
+    <h2 class="section-title">🐴 2026년 연애 트렌드</h2>
+    <div class="card" style="padding: 16px;">
+      <p style="line-height: 1.8; margin: 0; font-size: 14px;">
+        <%= @analysis[:trend_2026][:love] %>
+      </p>
+    </div>
+  </section>
+<% end %>
+
+<!-- 하단 버튼 -->
+<div class="mt-lg animate-fadeInUp" style="display: flex; gap: 10px; flex-wrap: wrap;">
+  <a href="<%= new_solo_destiny_path %>" class="btn-primary" style="flex: 1; text-align: center; text-decoration: none;">
+    🔄 다시 분석하기
+  </a>
+  <a href="<%= new_compatibility_path %>" class="btn-primary" style="flex: 1; text-align: center; text-decoration: none; background: var(--lavender);">
+    💕 진짜 궁합 보기
+  </a>
+</div>

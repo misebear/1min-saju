@@ -1,0 +1,129 @@
+<% content_for(:title) { "AI 사주 챗봇 - 사주냥이" } %>
+
+<div class="page-header animate-fadeIn">
+  <%= image_tag "snowcat/icon_cat_snowcat_1771225044956.png", class: "snowcat-mascot", alt: "사주냥이" %>
+  <h1>사주냥이 챗봇 💬</h1>
+  <p class="subtitle">사주에 대해 뭐든 물어봐! 🐱</p>
+</div>
+
+<div class="card chat-container animate-fadeInUp">
+  <!-- 채팅 메시지 영역 -->
+  <div class="chat-messages" id="chatMessages">
+    <!-- 초기 인사 -->
+    <div class="chat-avatar">
+      <%= image_tag "snowcat/icon_cat_snowcat_1771225044956.png", alt: "사주냥이" %>
+      <div class="chat-bubble bot">
+        안녕! 나는 사주냥이야~ 😸<br>
+        너의 사주를 바탕으로 이것저것 알려줄 수 있어!<br>
+        아래 버튼을 눌러도 되고, 직접 질문해도 돼!
+      </div>
+    </div>
+  </div>
+
+  <!-- 추천 질문 버튼 -->
+  <div class="chat-suggestion-row" id="suggestionRow">
+    <button class="chat-suggestion" onclick="sendSuggestion('오늘의 운세')">🔮 오늘의 운세</button>
+    <button class="chat-suggestion" onclick="sendSuggestion('연애운')">💕 연애운</button>
+    <button class="chat-suggestion" onclick="sendSuggestion('재물운')">💰 재물운</button>
+    <button class="chat-suggestion" onclick="sendSuggestion('커리어')">💼 커리어</button>
+    <button class="chat-suggestion" onclick="sendSuggestion('건강')">🏥 건강</button>
+    <button class="chat-suggestion" onclick="sendSuggestion('인간관계')">👥 인간관계</button>
+    <button class="chat-suggestion" onclick="sendSuggestion('올해 운세')">🐴 2026 운세</button>
+    <button class="chat-suggestion" onclick="sendSuggestion('성격')">🔍 내 성격</button>
+  </div>
+
+  <!-- 입력 영역 -->
+  <div class="chat-input-area">
+    <input type="text" class="chat-input" id="chatInput"
+           placeholder="궁금한 걸 물어봐!" autocomplete="off"
+           onkeydown="if(event.key==='Enter') sendMessage()">
+    <button class="chat-send-btn" onclick="sendMessage()">보내기</button>
+  </div>
+</div>
+
+<script>
+const chatMessages = document.getElementById('chatMessages');
+const chatInput = document.getElementById('chatInput');
+const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
+function addUserBubble(text) {
+  const div = document.createElement('div');
+  div.className = 'chat-bubble user';
+  div.textContent = text;
+  chatMessages.appendChild(div);
+  scrollToBottom();
+}
+
+function addBotBubble(text) {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'chat-avatar';
+
+  const img = document.createElement('img');
+  img.src = '<%= asset_path("snowcat/icon_cat_snowcat_1771225044956.png") %>';
+  img.alt = '사주냥이';
+
+  const bubble = document.createElement('div');
+  bubble.className = 'chat-bubble bot';
+  bubble.innerHTML = text.replace(/\n/g, '<br>');
+
+  wrapper.appendChild(img);
+  wrapper.appendChild(bubble);
+  chatMessages.appendChild(wrapper);
+  scrollToBottom();
+}
+
+function addTypingIndicator() {
+  const div = document.createElement('div');
+  div.className = 'typing-indicator';
+  div.id = 'typingIndicator';
+  div.innerHTML = '<span></span><span></span><span></span>';
+  chatMessages.appendChild(div);
+  scrollToBottom();
+}
+
+function removeTypingIndicator() {
+  const el = document.getElementById('typingIndicator');
+  if (el) el.remove();
+}
+
+function scrollToBottom() {
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+async function sendMessage() {
+  const text = chatInput.value.trim();
+  if (!text) return;
+
+  chatInput.value = '';
+  addUserBubble(text);
+  addTypingIndicator();
+
+  try {
+    const response = await fetch('/chat/message', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': csrfToken
+      },
+      body: JSON.stringify({ question: text })
+    });
+
+    const data = await response.json();
+    removeTypingIndicator();
+
+    // 순차적으로 메시지 표시 (타이핑 효과)
+    for (let i = 0; i < data.messages.length; i++) {
+      await new Promise(r => setTimeout(r, 300 + i * 200));
+      addBotBubble(data.messages[i]);
+    }
+  } catch (err) {
+    removeTypingIndicator();
+    addBotBubble('으앙 에러가 났어 😿 다시 한번 시도해줘!');
+  }
+}
+
+function sendSuggestion(text) {
+  chatInput.value = text;
+  sendMessage();
+}
+</script>

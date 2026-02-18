@@ -1,0 +1,145 @@
+<% content_for(:title) { "궁합 보기 - 사주냥이" } %>
+
+<div class="page-header animate-fadeIn">
+  <%= image_tag "snowcat/icon_human_snowcat_1771224922818.png", class: "snowcat-mascot", alt: "사주냥이" %>
+  <h1>궁합 보기</h1>
+  <p class="subtitle">두 사람의 사주 궁합을 알아봐! 💕</p>
+</div>
+
+<%= form_tag compatibility_path, method: :post do %>
+  <!-- Person 1 -->
+  <div class="person-section animate-fadeInUp">
+    <div class="person-title">
+      <%= image_tag "snowcat/icon_cat_snowcat_1771225044956.png", class: "snowcat-mascot snowcat-mascot-sm", alt: "" %>
+      첫 번째 사람
+    </div>
+    
+    <div class="form-section">
+      <label class="form-label">📅 생년월일</label>
+      <div class="form-row">
+        <div class="form-group">
+          <select name="year1" class="form-control" required>
+            <option value="">년도</option>
+            <% (1940..2025).reverse_each do |y| %>
+              <option value="<%= y %>" <%= 'selected' if y == 2000 %>><%= y %>년</option>
+            <% end %>
+          </select>
+        </div>
+        <div class="form-group">
+          <select name="month1" class="form-control" required>
+            <option value="">월</option>
+            <% (1..12).each do |m| %>
+              <option value="<%= m %>"><%= m %>월</option>
+            <% end %>
+          </select>
+        </div>
+        <div class="form-group">
+          <select name="day1" class="form-control" required>
+            <option value="">일</option>
+            <% (1..31).each do |d| %>
+              <option value="<%= d %>"><%= d %>일</option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">🕐 태어난 시간</label>
+        <select name="hour1" class="form-control" required>
+          <option value="0">자시 🐭</option>
+          <option value="1">축시 🐮</option>
+          <option value="3">인시 🐯</option>
+          <option value="5">묘시 🐰</option>
+          <option value="7">진시 🐲</option>
+          <option value="9">사시 🐍</option>
+          <option value="11" selected>오시 🐴</option>
+          <option value="13">미시 🐑</option>
+          <option value="15">신시 🐵</option>
+          <option value="17">유시 🐔</option>
+          <option value="19">술시 🐶</option>
+          <option value="21">해시 🐷</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">👤 성별</label>
+        <select name="gender1" class="form-control">
+          <option value="남">🙋‍♂️ 남자</option>
+          <option value="여">🙋‍♀️ 여자</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center" style="font-size: 32px; margin: -8px 0;">💕</div>
+
+  <!-- Person 2 -->
+  <div class="person-section animate-fadeInUp">
+    <div class="person-title">
+      <%= image_tag "snowcat/icon_dog_snowcat_1771224973007.png", class: "snowcat-mascot snowcat-mascot-sm", alt: "" %>
+      두 번째 사람
+    </div>
+    
+    <div class="form-section">
+      <label class="form-label">📅 생년월일</label>
+      <div class="form-row">
+        <div class="form-group">
+          <select name="year2" class="form-control" required>
+            <option value="">년도</option>
+            <% (1940..2025).reverse_each do |y| %>
+              <option value="<%= y %>" <%= 'selected' if y == 2000 %>><%= y %>년</option>
+            <% end %>
+          </select>
+        </div>
+        <div class="form-group">
+          <select name="month2" class="form-control" required>
+            <option value="">월</option>
+            <% (1..12).each do |m| %>
+              <option value="<%= m %>"><%= m %>월</option>
+            <% end %>
+          </select>
+        </div>
+        <div class="form-group">
+          <select name="day2" class="form-control" required>
+            <option value="">일</option>
+            <% (1..31).each do |d| %>
+              <option value="<%= d %>"><%= d %>일</option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">🕐 태어난 시간</label>
+        <select name="hour2" class="form-control" required>
+          <option value="0">자시 🐭</option>
+          <option value="1">축시 🐮</option>
+          <option value="3">인시 🐯</option>
+          <option value="5">묘시 🐰</option>
+          <option value="7">진시 🐲</option>
+          <option value="9">사시 🐍</option>
+          <option value="11" selected>오시 🐴</option>
+          <option value="13">미시 🐑</option>
+          <option value="15">신시 🐵</option>
+          <option value="17">유시 🐔</option>
+          <option value="19">술시 🐶</option>
+          <option value="21">해시 🐷</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">👤 성별</label>
+        <select name="gender2" class="form-control">
+          <option value="여">🙋‍♀️ 여자</option>
+          <option value="남">🙋‍♂️ 남자</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn-primary mt-md">
+    💕 궁합 보기
+  </button>
+<% end %>

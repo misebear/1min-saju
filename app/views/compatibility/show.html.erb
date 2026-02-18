@@ -1,0 +1,129 @@
+<% content_for(:title) { "궁합 결과 - 사주냥이" } %>
+
+<%
+  element_names = { '목' => '나무', '화' => '불', '토' => '흙', '금' => '쇠', '수' => '물' }
+  element_emojis = { '목' => '🌳', '화' => '🔥', '토' => '⛰️', '금' => '⚔️', '수' => '💧' }
+  p1 = @person1[:saju]
+  p2 = @person2[:saju]
+%>
+
+<div class="page-header animate-fadeIn">
+  <h1>궁합 결과</h1>
+</div>
+
+<!-- VS Display -->
+<div class="card card-glass animate-fadeInUp">
+  <div class="vs-container">
+    <div class="vs-person">
+      <%= image_tag "snowcat/icon_cat_snowcat_1771224905251.png", class: "snowcat-mascot", alt: "Person 1" %>
+      <p class="mt-sm text-small"><%= p1[:zodiac_emoji] %> <%= p1[:zodiac] %>띠</p>
+      <p class="text-small text-muted">
+        <%= element_emojis[p1[:day][:element]] %> 
+        <%= element_names[p1[:day][:element]] %>
+      </p>
+    </div>
+    <div class="vs-divider">💕</div>
+    <div class="vs-person">
+      <%= image_tag "snowcat/icon_dog_snowcat_1771224888733.png", class: "snowcat-mascot", alt: "Person 2" %>
+      <p class="mt-sm text-small"><%= p2[:zodiac_emoji] %> <%= p2[:zodiac] %>띠</p>
+      <p class="text-small text-muted">
+        <%= element_emojis[p2[:day][:element]] %> 
+        <%= element_names[p2[:day][:element]] %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Score -->
+<div class="card compatibility-score animate-fadeInUp">
+  <div class="heart-score">💕</div>
+  <div class="compatibility-percent"><%= @compatibility[:score] %>점</div>
+  <div class="compatibility-grade"><%= @compatibility[:grade] %></div>
+</div>
+
+<!-- Analysis -->
+<div class="card card-gradient-pink animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">💌</span>
+    <h3>궁합 분석</h3>
+  </div>
+  <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.8;">
+    <%= @compatibility[:analysis] %>
+  </p>
+</div>
+
+<!-- Five Elements Comparison -->
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">☯️</span>
+    <h3>오행 비교</h3>
+  </div>
+  
+  <div class="fortune-grid">
+    <div class="fortune-item">
+      <span class="emoji"><%= element_emojis[p1[:day][:element]] %></span>
+      <span class="label">첫 번째 사람</span>
+      <span class="value"><%= element_names[p1[:day][:element]] %>(<%=p1[:day][:element]%>)</span>
+    </div>
+    <div class="fortune-item">
+      <span class="emoji"><%= element_emojis[p2[:day][:element]] %></span>
+      <span class="label">두 번째 사람</span>
+      <span class="value"><%= element_names[p2[:day][:element]] %>(<%=p2[:day][:element]%>)</span>
+    </div>
+  </div>
+
+  <div class="mt-md">
+    <% if SajuEngine::FiveElements.generates?(p1[:day][:element], p2[:day][:element]) %>
+      <div class="star-item">
+        <span class="star-emoji">💕</span>
+        <div class="star-info">
+          <div class="name">상생 관계!</div>
+          <div class="desc"><%= element_names[p1[:day][:element]] %>이(가) <%= element_names[p2[:day][:element]] %>을(를) 도와주는 아름다운 관계</div>
+        </div>
+      </div>
+    <% elsif SajuEngine::FiveElements.generates?(p2[:day][:element], p1[:day][:element]) %>
+      <div class="star-item">
+        <span class="star-emoji">💕</span>
+        <div class="star-info">
+          <div class="name">상생 관계!</div>
+          <div class="desc"><%= element_names[p2[:day][:element]] %>이(가) <%= element_names[p1[:day][:element]] %>을(를) 도와주는 아름다운 관계</div>
+        </div>
+      </div>
+    <% elsif p1[:day][:element] == p2[:day][:element] %>
+      <div class="star-item">
+        <span class="star-emoji">🤝</span>
+        <div class="star-info">
+          <div class="name">같은 오행!</div>
+          <div class="desc">서로 잘 이해하고 공감하는 동지 같은 관계</div>
+        </div>
+      </div>
+    <% else %>
+      <div class="star-item">
+        <span class="star-emoji">⚡</span>
+        <div class="star-info">
+          <div class="name">다양한 조합</div>
+          <div class="desc">서로 다른 점을 인정하고 배려하면 더 강해지는 관계!</div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- Snowcat Advice -->
+<div class="card text-center animate-fadeInUp">
+  <%= image_tag "snowcat/icon_cat_snowcat_1771225160958.png", class: "snowcat-mascot snowcat-mascot-sm", alt: "사주냥이" %>
+  <div class="speech-bubble mt-sm">
+    궁합은 참고용이야~ 😸<br>
+    어떤 관계든 서로 <strong class="text-pink">이해하고 노력하면</strong><br>
+    최고의 궁합이 될 수 있어! ✨
+  </div>
+</div>
+
+<div class="mt-md mb-lg">
+  <a href="<%= new_compatibility_path %>" class="btn-primary" style="text-decoration: none; display: block;">
+    💕 다시 궁합 보기
+  </a>
+  <a href="<%= root_path %>" class="btn-secondary mt-sm" style="text-decoration: none;">
+    🏠 홈으로 돌아가기
+  </a>
+</div>
