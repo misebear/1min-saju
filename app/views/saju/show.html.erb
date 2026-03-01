@@ -57,11 +57,7 @@
   </div>
 <% end %>
 
-<!-- Desktop 2-Column Grid -->
-<div class="result-grid">
-
-  <!-- LEFT COLUMN -->
-  <div class="result-col-left">
+<!-- 사주 분석 결과 - 단일 칼럼 레이아웃 -->
 
     <!-- 사주 네 기둥 -->
     <section class="section-card animate-fadeInUp">
@@ -80,6 +76,34 @@
           </div>
         <% end %>
       </div>
+    </section>
+
+    <!-- 성격 & 적성 (2칼럼 나란히) -->
+    <div class="saju-two-col animate-fadeInUp">
+      <section class="section-card">
+        <h2 class="section-title-modern">
+          😊 나의 성격 분석
+          <span class="section-subtitle"><%= my_nature %> 타입의 특징</span>
+        </h2>
+        <p class="reading-text-premium"><%= @analysis[:personality] %></p>
+      </section>
+
+      <section class="section-card">
+        <h2 class="section-title-modern">
+          💼 딱 맞는 직업
+          <span class="section-subtitle"><%= element_names[day_element] %>의 기운에 어울리는 분야</span>
+        </h2>
+        <p class="reading-text-premium"><%= @analysis[:career] %></p>
+      </section>
+    </div>
+
+    <!-- 연애 스타일 -->
+    <section class="section-card animate-fadeInUp">
+      <h2 class="section-title-modern">
+        💕 연애 스타일
+        <span class="section-subtitle">나의 사랑법은?</span>
+      </h2>
+      <p class="reading-text-premium"><%= @analysis[:love] %></p>
     </section>
 
     <!-- 오행 분포 -->
@@ -150,60 +174,6 @@
       </div>
     </section>
 
-    <!-- 대운 -->
-    <section class="section-card animate-fadeInUp">
-      <h2 class="section-title-modern">
-        🔄 10년 대운 타임라인
-        <span class="section-subtitle">10년 단위로 찾아오는 인생의 큰 흐름</span>
-      </h2>
-      <div class="daeun-timeline">
-        <% current_age = Date.today.year - Date.parse(session[:birth_date]).year %>
-        <% @major_fortune.first(6).each do |fortune| %>
-          <% is_current = current_age >= fortune[:start_age] && current_age <= fortune[:end_age] %>
-          <div class="daeun-item-premium <%= 'daeun-current' if is_current %>">
-            <% if is_current %>
-              <span class="daeun-now-badge">NOW</span>
-            <% end %>
-            <span class="daeun-age"><%= fortune[:start_age] %>~<%= fortune[:end_age] %>세</span>
-            <span class="daeun-ganzi el-<%= element_class[fortune[:element]] || 'water' %>"><%= fortune[:label] %></span>
-            <span class="daeun-year"><%= fortune[:start_year] %>~<%= fortune[:end_year] %></span>
-          </div>
-        <% end %>
-      </div>
-    </section>
-
-  </div>
-
-  <!-- RIGHT COLUMN -->
-  <div class="result-col-right">
-
-    <!-- 성격 & 적성 -->
-    <section class="section-card animate-fadeInUp">
-      <h2 class="section-title-modern">
-        😊 나의 성격 분석
-        <span class="section-subtitle"><%= my_nature %> 타입의 특징</span>
-      </h2>
-      <p class="reading-text-premium"><%= @analysis[:personality] %></p>
-    </section>
-
-    <!-- 추천 직업 -->
-    <section class="section-card animate-fadeInUp">
-      <h2 class="section-title-modern">
-        💼 딱 맞는 직업
-        <span class="section-subtitle"><%= element_names[day_element] %>의 기운에 어울리는 분야</span>
-      </h2>
-      <p class="reading-text-premium"><%= @analysis[:career] %></p>
-    </section>
-
-    <!-- 연애 스타일 -->
-    <section class="section-card animate-fadeInUp">
-      <h2 class="section-title-modern">
-        💕 연애 스타일
-        <span class="section-subtitle">나의 사랑법은?</span>
-      </h2>
-      <p class="reading-text-premium"><%= @analysis[:love] %></p>
-    </section>
-
     <!-- 십성 분석 -->
     <section class="section-card animate-fadeInUp">
       <h2 class="section-title-modern">
@@ -237,6 +207,28 @@
               </div>
             </div>
           <% end %>
+        <% end %>
+      </div>
+    </section>
+
+    <!-- 대운 -->
+    <section class="section-card animate-fadeInUp">
+      <h2 class="section-title-modern">
+        🔄 10년 대운 타임라인
+        <span class="section-subtitle">10년 단위로 찾아오는 인생의 큰 흐름</span>
+      </h2>
+      <div class="daeun-timeline">
+        <% current_age = Date.today.year - Date.parse(session[:birth_date]).year %>
+        <% @major_fortune.first(6).each do |fortune| %>
+          <% is_current = current_age >= fortune[:start_age] && current_age <= fortune[:end_age] %>
+          <div class="daeun-item-premium <%= 'daeun-current' if is_current %>">
+            <% if is_current %>
+              <span class="daeun-now-badge">NOW</span>
+            <% end %>
+            <span class="daeun-age"><%= fortune[:start_age] %>~<%= fortune[:end_age] %>세</span>
+            <span class="daeun-ganzi el-<%= element_class[fortune[:element]] || 'water' %>"><%= fortune[:label] %></span>
+            <span class="daeun-year"><%= fortune[:start_year] %>~<%= fortune[:end_year] %></span>
+          </div>
         <% end %>
       </div>
     </section>
@@ -304,8 +296,14 @@
         </h2>
         <div class="famous-people-list">
           <% @famous_people.each do |person| %>
-            <div class="famous-person-card">
-              <div class="famous-avatar"><%= person[:emoji] %></div>
+            <% cached_url = CelebrityImage.cached_url(person[:name]) %>
+            <div class="famous-person-card" data-celebrity-name="<%= person[:name] %>">
+              <% if cached_url %>
+                <img src="<%= cached_url %>" alt="<%= person[:name] %>" class="famous-avatar-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="famous-avatar" style="display: none;"><%= person[:emoji] %></div>
+              <% else %>
+                <div class="famous-avatar famous-avatar-placeholder" data-name="<%= person[:name] %>"><%= person[:emoji] %></div>
+              <% end %>
               <div class="famous-info">
                 <span class="famous-name"><%= person[:name] %></span>
                 <span class="famous-desc"><%= person[:desc] %></span>
@@ -316,8 +314,35 @@
       </section>
     <% end %>
 
-  </div>
-</div>
+<script>
+// 유명인 사진 Lazy Fetch
+document.addEventListener('DOMContentLoaded', function() {
+  const placeholders = document.querySelectorAll('.famous-avatar-placeholder');
+  if (placeholders.length === 0) return;
+  const names = Array.from(placeholders).map(el => el.dataset.name);
+  fetch('/api/celebrity_images', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': document.querySelector('meta[name=csrf-token]')?.content },
+    body: JSON.stringify({ names: names })
+  })
+  .then(r => r.json())
+  .then(data => {
+    Object.entries(data).forEach(([name, url]) => {
+      if (!url) return;
+      const card = document.querySelector(`[data-celebrity-name="${name}"]`);
+      if (!card) return;
+      const placeholder = card.querySelector('.famous-avatar-placeholder');
+      if (!placeholder) return;
+      const img = document.createElement('img');
+      img.src = url; img.alt = name; img.className = 'famous-avatar-img'; img.loading = 'lazy';
+      img.onerror = function() { this.style.display = 'none'; placeholder.style.display = 'flex'; };
+      placeholder.style.display = 'none';
+      card.insertBefore(img, placeholder);
+    });
+  })
+  .catch(e => console.log('Celebrity image fetch error:', e));
+});
+</script>
 
 <!-- Bottom Actions -->
 <div class="action-row animate-fadeInUp">

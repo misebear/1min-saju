@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+require "net/http"
+require "json"
+require "uri"
+
 # 유명인 사진 검색 서비스
 # Google Custom Search (무료 100회/일) 또는 위키피디아 API 사용
 class CelebrityImageService

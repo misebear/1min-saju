@@ -82,6 +82,16 @@
           <p class="text-muted text-small">빠르고 정확한 사주풀이 ⏱️</p>
         </div>
 
+        <% if @has_birth_data %>
+          <div class="user-birth-badge">
+            <span class="badge-icon">🎂</span>
+            <div>
+              <span class="badge-label">내 정보</span>
+              <span class="badge-value"><%= @user_birth_label %></span>
+            </div>
+          </div>
+        <% end %>
+
         <nav class="sidebar-nav">
           <a href="<%= root_path %>" class="sidebar-link <%= 'active' if controller_name == 'home' %>">
             <span>🏠</span> 홈

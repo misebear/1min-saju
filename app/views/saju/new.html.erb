@@ -15,7 +15,7 @@
         <select name="year" class="form-control" required>
           <option value="">년도</option>
           <% (1940..2025).reverse_each do |y| %>
-            <option value="<%= y %>" <%= 'selected' if y == 2000 %>><%= y %>년</option>
+            <option value="<%= y %>" <%= 'selected' if @user_birth_date && y == @user_birth_date.year %>><%= y %>년</option>
           <% end %>
         </select>
       </div>
@@ -23,7 +23,7 @@
         <select name="month" class="form-control" required>
           <option value="">월</option>
           <% (1..12).each do |m| %>
-            <option value="<%= m %>"><%= m %>월</option>
+            <option value="<%= m %>" <%= 'selected' if @user_birth_date && m == @user_birth_date.month %>><%= m %>월</option>
           <% end %>
         </select>
       </div>
@@ -31,7 +31,7 @@
         <select name="day" class="form-control" required>
           <option value="">일</option>
           <% (1..31).each do |d| %>
-            <option value="<%= d %>"><%= d %>일</option>
+            <option value="<%= d %>" <%= 'selected' if @user_birth_date && d == @user_birth_date.day %>><%= d %>일</option>
           <% end %>
         </select>
       </div>
@@ -43,18 +43,18 @@
     <label class="form-label">🕐 태어난 시간</label>
     <select name="hour" class="form-control" required>
       <option value="">시간을 선택하세요</option>
-      <option value="0">자시 (23:00~01:00) 🐭</option>
-      <option value="1">축시 (01:00~03:00) 🐮</option>
-      <option value="3">인시 (03:00~05:00) 🐯</option>
-      <option value="5">묘시 (05:00~07:00) 🐰</option>
-      <option value="7">진시 (07:00~09:00) 🐲</option>
-      <option value="9">사시 (09:00~11:00) 🐍</option>
-      <option value="11">오시 (11:00~13:00) 🐴</option>
-      <option value="13">미시 (13:00~15:00) 🐑</option>
-      <option value="15">신시 (15:00~17:00) 🐵</option>
-      <option value="17">유시 (17:00~19:00) 🐔</option>
-      <option value="19">술시 (19:00~21:00) 🐶</option>
-      <option value="21">해시 (21:00~23:00) 🐷</option>
+      <option value="0" <%= 'selected' if @has_birth_data && @user_birth_hour == 0 %>>자시 (23:00~01:00) 🐭</option>
+      <option value="1" <%= 'selected' if @has_birth_data && @user_birth_hour == 1 %>>축시 (01:00~03:00) 🐮</option>
+      <option value="3" <%= 'selected' if @has_birth_data && @user_birth_hour == 3 %>>인시 (03:00~05:00) 🐯</option>
+      <option value="5" <%= 'selected' if @has_birth_data && @user_birth_hour == 5 %>>묘시 (05:00~07:00) 🐰</option>
+      <option value="7" <%= 'selected' if @has_birth_data && @user_birth_hour == 7 %>>진시 (07:00~09:00) 🐲</option>
+      <option value="9" <%= 'selected' if @has_birth_data && @user_birth_hour == 9 %>>사시 (09:00~11:00) 🐍</option>
+      <option value="11" <%= 'selected' if @has_birth_data && @user_birth_hour == 11 %>>오시 (11:00~13:00) 🐴</option>
+      <option value="13" <%= 'selected' if @has_birth_data && @user_birth_hour == 13 %>>미시 (13:00~15:00) 🐑</option>
+      <option value="15" <%= 'selected' if @has_birth_data && @user_birth_hour == 15 %>>신시 (15:00~17:00) 🐵</option>
+      <option value="17" <%= 'selected' if @has_birth_data && @user_birth_hour == 17 %>>유시 (17:00~19:00) 🐔</option>
+      <option value="19" <%= 'selected' if @has_birth_data && @user_birth_hour == 19 %>>술시 (19:00~21:00) 🐶</option>
+      <option value="21" <%= 'selected' if @has_birth_data && @user_birth_hour == 21 %>>해시 (21:00~23:00) 🐷</option>
     </select>
   </div>
 
@@ -63,7 +63,7 @@
     <label class="form-label">📍 출생지 <span class="term-note">지역 시차 + 서머타임 자동 보정에 사용돼요</span></label>
     <select name="city" class="form-control">
       <% @city_options.each do |label, key| %>
-        <option value="<%= key %>" <%= 'selected' if key == '서울' %>><%= label %></option>
+        <option value="<%= key %>" <%= 'selected' if (@has_birth_data && @user_city == key) || (!@has_birth_data && key == '서울') %>><%= label %></option>
       <% end %>
     </select>
   </div>
@@ -72,12 +72,12 @@
   <div class="form-section">
     <label class="form-label">👤 성별</label>
     <div class="gender-toggle">
-      <label class="gender-btn active" id="gender-male" onclick="selectGender('남', this)">
-        <input type="radio" name="gender" value="남" checked>
+      <label class="gender-btn <%= @user_gender != '여' ? 'active' : '' %>" id="gender-male" onclick="selectGender('남', this)">
+        <input type="radio" name="gender" value="남" <%= 'checked' if @user_gender != '여' %>>
         🙋‍♂️ 남자
       </label>
-      <label class="gender-btn" id="gender-female" onclick="selectGender('여', this)">
-        <input type="radio" name="gender" value="여">
+      <label class="gender-btn <%= @user_gender == '여' ? 'active' : '' %>" id="gender-female" onclick="selectGender('여', this)">
+        <input type="radio" name="gender" value="여" <%= 'checked' if @user_gender == '여' %>>
         🙋‍♀️ 여자
       </label>
     </div>

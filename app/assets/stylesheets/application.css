@@ -2482,3 +2482,51 @@ select.form-control {
   font-size: 12px;
   color: var(--text-3);
 }
+
+/* ─── Saju Result Two-Column (성격 + 직업) ─── */
+.saju-two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .saju-two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .saju-two-col .section-card {
+    margin-bottom: 0;
+  }
+}
+
+/* ─── User Birth Info Badge (사이드바) ─── */
+.user-birth-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--tint-light);
+  border-radius: var(--r-md);
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: var(--text-2);
+  border: 1px solid var(--tint-lighter);
+}
+
+.user-birth-badge .badge-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.user-birth-badge .badge-label {
+  font-weight: 600;
+  color: var(--tint);
+  display: block;
+  font-size: 11px;
+}
+
+.user-birth-badge .badge-value {
+  font-size: 12px;
+  font-weight: 500;
+}
