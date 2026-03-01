@@ -77,6 +77,23 @@
         오늘은 <span class="keyword-badge" style="background: <%= ten_god_color %>15; color: <%= ten_god_color %>; border: 1px solid <%= ten_god_color %>40;"><%= ten_god %></span>의 기운이 흐르는 날!
         <span class="keyword-badge" style="background: <%= lucky_hex %>15; color: <%= lucky_hex %>; border: 1px solid <%= lucky_hex %>40;"><%= lucky_color %></span> 컬러를 활용하면 행운이 찾아올거야~
       </p>
+      <%
+        ten_god_desc = {
+          "정관" => "규율과 질서의 기운! 오늘은 계획대로 움직이면 좋아. 약속을 지키면 신뢰가 UP! 📋",
+          "편관" => "변화와 도전의 기운! 예상 못한 기회가 찾아올 수 있어. 과감하게 도전해봐! ⚡",
+          "정인" => "학습과 지혜의 기운! 새로운 지식을 쌓기 좋은 날이야. 차분히 공부해봐! 📚",
+          "편인" => "직감과 영감의 기운! 번뜩이는 아이디어가 떠오를 수 있어. 창의적 활동에 집중! 💡",
+          "비견" => "동료와 우정의 기운! 같은 뜻을 가진 사람과 함께하면 시너지 UP! 🤝",
+          "겁재" => "경쟁과 추진력의 기운! 승부욕이 강해지는 날. 적극적으로 행동해봐! 🔥",
+          "식신" => "풍요와 재능의 기운! 맛있는 것도 먹고, 취미도 즐기면 행복해지는 날~ 🍽️",
+          "상관" => "표현과 감성의 기운! 감정을 솔직하게 표현하면 좋아. 예술적 영감이 샘솟아! 🎨",
+          "정재" => "재물과 안정의 기운! 돈 관련된 일이 잘 풀릴 수 있어. 알뜰한 소비 추천! 💰",
+          "편재" => "투자와 모험의 기운! 새로운 수입원이 생길 수 있어. 기회를 잘 살펴봐! 🎯"
+        }
+      %>
+      <p class="text-small" style="color: var(--text-3); margin-top: 8px; line-height: 1.6;">
+        <%= ten_god_desc[ten_god] || "오늘도 좋은 기운이 함께해! ✨" %>
+      </p>
     </div>
   </div>
 
@@ -214,8 +231,14 @@
     <p class="text-muted text-small" style="margin-bottom: 12px;"><%= saju[:day][:stem] %><%= saju[:day][:branch] %>일주 기반</p>
     <div class="famous-people-list">
       <% @famous_people.each do |person| %>
-        <div class="famous-person-card">
-          <div class="famous-avatar"><%= person[:emoji] %></div>
+        <% cached_url = CelebrityImage.cached_url(person[:name]) %>
+        <div class="famous-person-card" data-celebrity-name="<%= person[:name] %>">
+          <% if cached_url %>
+            <img src="<%= cached_url %>" alt="<%= person[:name] %>" class="famous-avatar-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="famous-avatar" style="display: none;"><%= person[:emoji] %></div>
+          <% else %>
+            <div class="famous-avatar famous-avatar-placeholder" data-name="<%= person[:name] %>"><%= person[:emoji] %></div>
+          <% end %>
           <div class="famous-info">
             <span class="famous-name"><%= person[:name] %></span>
             <span class="famous-desc"><%= person[:desc] %></span>
@@ -224,6 +247,44 @@
       <% end %>
     </div>
   </div>
+
+  <script>
+  // 유명인 사진 Lazy Fetch — 페이지 로드 후 백그라운드에서 검색
+  document.addEventListener('DOMContentLoaded', function() {
+    const placeholders = document.querySelectorAll('.famous-avatar-placeholder');
+    if (placeholders.length === 0) return;
+
+    const names = Array.from(placeholders).map(el => el.dataset.name);
+    
+    // 비동기로 사진 가져오기
+    fetch('/api/celebrity_images', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': document.querySelector('meta[name=csrf-token]')?.content },
+      body: JSON.stringify({ names: names })
+    })
+    .then(r => r.json())
+    .then(data => {
+      Object.entries(data).forEach(([name, url]) => {
+        if (!url) return;
+        const card = document.querySelector(`[data-celebrity-name="${name}"]`);
+        if (!card) return;
+        const placeholder = card.querySelector('.famous-avatar-placeholder');
+        if (!placeholder) return;
+        
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = name;
+        img.className = 'famous-avatar-img';
+        img.loading = 'lazy';
+        img.onerror = function() { this.style.display = 'none'; placeholder.style.display = 'flex'; };
+        
+        placeholder.style.display = 'none';
+        card.insertBefore(img, placeholder);
+      });
+    })
+    .catch(e => console.log('Celebrity image fetch error:', e));
+  });
+  </script>
   <% end %>
 
   <!-- Quick Menu -->
