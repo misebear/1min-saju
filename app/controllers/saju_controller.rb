@@ -54,5 +54,22 @@ class SajuController < ApplicationController
     # Famous people with similar day pillar
     saju = @analysis[:saju]
     @famous_people = find_famous_people(saju[:day][:stem], saju[:day][:branch])
+
+    # DB에 기록 저장 (중복 방지: 같은 날 같은 생일이면 저장 안 함)
+    unless SajuRecord.where(birth_date: birth_date, birth_hour: birth_hour, gender: gender)
+                     .where("created_at >= ?", Date.today.beginning_of_day).exists?
+      SajuRecord.create(
+        birth_date: birth_date,
+        birth_hour: birth_hour,
+        gender: gender,
+        city: city,
+        result_json: @analysis.to_json
+      )
+    end
+  end
+
+  # 사주 기록 목록
+  def history
+    @records = SajuRecord.order(created_at: :desc).limit(50)
   end
 end

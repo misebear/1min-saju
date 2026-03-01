@@ -11,6 +11,9 @@ require_relative "saju_engine/trends_2026"
 require_relative "saju_engine/timezone_correction"
 require_relative "saju_engine/chat_engine"
 require_relative "saju_engine/solo_destiny"
+require_relative "saju_engine/dream_engine"
+require_relative "saju_engine/zodiac_engine"
+require_relative "saju_engine/auspicious_date_engine"
 
 module SajuEngine
   # 전체 사주 분석 실행

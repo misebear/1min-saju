@@ -17,9 +17,14 @@
 
     <%= yield :head %>
     <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icon.png">
 
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <!-- Kakao SDK -->
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" integrity="sha384-DKYJZ8NLiK8MN4/C5P2ezmFnkrysYIcCY1LSB/CgOl0LBYqFN6N5ZU2g0MKx8rB" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -54,6 +59,14 @@
           <a href="<%= new_solo_destiny_path %>" class="desktop-nav-item <%= 'active' if controller_name == 'solo_destiny' %>">
             <span class="nav-icon">💘</span>
             <span>인연</span>
+          </a>
+          <a href="<%= new_dream_path %>" class="desktop-nav-item <%= 'active' if controller_name == 'dreams' %>">
+            <span class="nav-icon">🌙</span>
+            <span>꿈해몽</span>
+          </a>
+          <a href="<%= zodiac_path %>" class="desktop-nav-item <%= 'active' if controller_name == 'zodiac' %>">
+            <span class="nav-icon">⭐</span>
+            <span>별자리</span>
           </a>
         </nav>
       </div>
@@ -90,6 +103,18 @@
           </a>
           <a href="<%= new_solo_destiny_path %>" class="sidebar-link <%= 'active' if controller_name == 'solo_destiny' %>">
             <span>💘</span> 인연 풀이
+          </a>
+          <a href="<%= new_dream_path %>" class="sidebar-link <%= 'active' if controller_name == 'dreams' %>">
+            <span>🌙</span> 꿈해몽
+          </a>
+          <a href="<%= zodiac_path %>" class="sidebar-link <%= 'active' if controller_name == 'zodiac' %>">
+            <span>⭐</span> 별자리 운세
+          </a>
+          <a href="<%= new_auspicious_date_path %>" class="sidebar-link <%= 'active' if controller_name == 'auspicious_dates' %>">
+            <span>📅</span> 택일
+          </a>
+          <a href="<%= saju_history_path %>" class="sidebar-link <%= 'active' if controller_name == 'saju' && action_name == 'history' %>">
+            <span>📋</span> 사주 기록
           </a>
         </nav>
 
@@ -169,6 +194,10 @@
       <a href="<%= chat_path %>" class="nav-item <%= 'active' if controller_name == 'chat' %>">
         <span class="nav-icon">💬</span>
         <span class="nav-label">챗봇</span>
+      </a>
+      <a href="<%= new_dream_path %>" class="nav-item <%= 'active' if controller_name == 'dreams' %>">
+        <span class="nav-icon">🌙</span>
+        <span class="nav-label">꿈해몽</span>
       </a>
     </nav>
   </body>

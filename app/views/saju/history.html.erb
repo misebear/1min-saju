@@ -1,0 +1,55 @@
+<% content_for(:title) { "사주 기록 - 1분 사주" } %>
+
+<div class="page-header animate-fadeIn">
+  <%= image_tag "snowcat/icon_cat_snowcat_1771225044956.png", class: "snowcat-mascot", alt: "1분 사주" %>
+  <h1>사주 기록 📋</h1>
+  <p class="subtitle">지금까지 풀어본 사주 기록이야! 🐱</p>
+</div>
+
+<% if @records.any? %>
+  <% @records.each do |record| %>
+    <%
+      result = record.parsed_result
+      saju = result[:saju] || {}
+      day_stem = saju.dig(:day, :stem) || "?"
+      day_branch = saju.dig(:day, :branch) || "?"
+    %>
+    <div class="card animate-fadeInUp" style="margin-bottom: 12px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <strong style="font-size: 1.05em;"><%= day_stem %><%= day_branch %>일주</strong>
+          <span class="text-muted text-small"> · <%= record.gender %></span>
+        </div>
+        <span class="text-muted text-small"><%= record.created_at.strftime("%Y.%m.%d %H:%M") %></span>
+      </div>
+      <div style="margin-top: 8px; font-size: 0.85em; color: #888;">
+        생일: <%= record.birth_date.strftime("%Y년 %m월 %d일") %> · 
+        출생지: <%= record.city %>
+      </div>
+      <% if record.memo.present? %>
+        <div style="margin-top: 4px; font-size: 0.82em; color: #aaa;">
+          메모: <%= record.memo %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="card text-center animate-fadeInUp" style="padding: 40px 16px;">
+    <div style="font-size: 3em; margin-bottom: 12px;">📋</div>
+    <p class="text-muted">아직 사주 기록이 없어요!</p>
+    <a href="<%= new_saju_path %>" class="btn-primary mt-md" style="display: inline-block; text-decoration: none;">
+      🔮 사주풀이 하러 가기
+    </a>
+  </div>
+<% end %>
+
+<div class="quick-menu animate-fadeInUp" style="margin-top: 24px;">
+  <a href="<%= root_path %>" class="quick-item">
+    <div class="icon-circle">🏠</div>
+    <span class="label">홈으로</span>
+  </a>
+  <a href="<%= new_saju_path %>" class="quick-item">
+    <div class="icon-circle">🔮</div>
+    <span class="label">사주풀이</span>
+  </a>
+</div>

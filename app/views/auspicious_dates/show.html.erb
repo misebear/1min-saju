@@ -1,0 +1,114 @@
+<% content_for(:title) { "#{@config[:label]} 택일 결과 - 1분 사주" } %>
+
+<%
+  grade_colors = {
+    "대길" => "#22c55e",
+    "길" => "#3b82f6",
+    "보통" => "#a78bfa",
+    "흉" => "#f59e0b",
+    "대흉" => "#ef4444"
+  }
+%>
+
+<!-- 히어로 -->
+<div class="card animate-fadeIn" style="text-align: center; padding: 24px 16px;">
+  <div style="font-size: 3em; margin-bottom: 8px;"><%= @config[:emoji] %></div>
+  <h2 style="margin: 0 0 4px;"><%= @config[:label] %> 택일 결과</h2>
+  <p class="text-muted text-small"><%= @start_date.strftime("%Y.%m.%d") %> ~ <%= @end_date.strftime("%Y.%m.%d") %></p>
+  <% if @has_saju %>
+    <span class="keyword-badge" style="background: rgba(34,197,94,0.12); color: #22c55e; border: 1px solid rgba(34,197,94,0.3); font-size: 0.8em; margin-top: 8px;">
+      ✅ 사주 맞춤 분석 적용
+    </span>
+  <% end %>
+</div>
+
+<!-- TOP 5 추천일 -->
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">🏆</span>
+    <h3>추천 길일 TOP <%= @best_dates.size %></h3>
+  </div>
+
+  <% @best_dates.each_with_index do |day, idx| %>
+    <%
+      gc = grade_colors[day[:grade]] || "#888"
+      rank_emoji = case idx; when 0 then "🥇"; when 1 then "🥈"; when 2 then "🥉"; else "#{idx + 1}"; end
+    %>
+    <div style="background: rgba(175,142,245,0.06); border-radius: 16px; padding: 16px; margin-bottom: 12px; border: 1px solid rgba(175,142,245,0.15);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.3em;"><%= rank_emoji %></span>
+          <div>
+            <strong style="font-size: 1.05em;"><%= day[:date].strftime("%m월 %d일") %></strong>
+            <span class="text-muted text-small"> (<%= day[:weekday] %>요일)</span>
+          </div>
+        </div>
+        <span class="grade-badge" style="background: <%= gc %>18; color: <%= gc %>; border: 1px solid <%= gc %>30;">
+          <%= day[:grade] %> · <%= day[:score] %>점
+        </span>
+      </div>
+      <div style="font-size: 0.85em; color: #888; margin-bottom: 4px;">
+        간지: <strong><%= day[:day_stem] %><%= day[:day_branch] %>일</strong>
+      </div>
+      <% if day[:reasons].any? %>
+        <div style="margin-top: 8px;">
+          <% day[:reasons].each do |reason| %>
+            <div style="font-size: 0.82em; line-height: 1.6; padding: 2px 0;">
+              <span style="color: <%= gc %>">•</span> <%= reason %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<!-- 전체 날짜 달력 -->
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">📅</span>
+    <h3>전체 날짜 분석</h3>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); gap: 6px; margin-top: 12px;">
+    <% @all_dates.sort_by { |d| d[:date] }.each do |day| %>
+      <%
+        gc = grade_colors[day[:grade]] || "#888"
+        bg_alpha = case day[:grade]; when "대길" then "15"; when "길" then "10"; else "05"; end
+      %>
+      <div style="text-align: center; padding: 8px 4px; border-radius: 10px; background: <%= gc %><%= bg_alpha %>; border: 1px solid <%= gc %>20;">
+        <div style="font-size: 0.7em; color: #888;"><%= day[:date].strftime("%m/%d") %></div>
+        <div style="font-size: 0.8em; font-weight: 600;"><%= day[:day_stem] %><%= day[:day_branch] %></div>
+        <div style="font-size: 0.65em; color: <%= gc %>; font-weight: 600;"><%= day[:grade] %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- 조언 -->
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">💡</span>
+    <h3>택일 팁</h3>
+  </div>
+  <p style="line-height: 1.8;"><%= @config[:advice] %></p>
+</div>
+
+<!-- 하단 액션 -->
+<div class="quick-menu animate-fadeInUp">
+  <a href="<%= new_auspicious_date_path %>" class="quick-item">
+    <div class="icon-circle">📅</div>
+    <span class="label">다시 택일</span>
+  </a>
+  <a href="<%= root_path %>" class="quick-item">
+    <div class="icon-circle">🏠</div>
+    <span class="label">홈으로</span>
+  </a>
+  <a href="<%= new_saju_path %>" class="quick-item">
+    <div class="icon-circle">🔮</div>
+    <span class="label">사주풀이</span>
+  </a>
+  <a href="<%= chat_path %>" class="quick-item">
+    <div class="icon-circle">💬</div>
+    <span class="label">AI 챗봇</span>
+  </a>
+</div>

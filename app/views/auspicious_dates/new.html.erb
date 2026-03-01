@@ -1,0 +1,71 @@
+<% content_for(:title) { "택일 - 1분 사주" } %>
+
+<div class="page-header animate-fadeIn">
+  <%= image_tag "snowcat/icon_cat_snowcat_1771225044956.png", class: "snowcat-mascot", alt: "1분 사주" %>
+  <h1>택일 📅</h1>
+  <p class="subtitle">특별한 날을 위한 길일을 찾아줄게! 🐱</p>
+</div>
+
+<%= form_tag auspicious_dates_path, method: :post, class: "animate-fadeInUp" do %>
+  <div class="form-section">
+    <label class="form-label">🎯 어떤 목적으로 택일할까?</label>
+    <div class="gender-toggle" style="flex-wrap: wrap; gap: 8px;">
+      <% @purposes.each_with_index do |(key, config), i| %>
+        <label class="gender-btn <%= 'active' if i == 0 %>" onclick="selectPurpose('<%= key %>', this)">
+          <input type="radio" name="purpose" value="<%= key %>" <%= 'checked' if i == 0 %>>
+          <%= config[:emoji] %> <%= config[:label] %>
+        </label>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-section">
+    <label class="form-label">📅 희망 기간</label>
+    <div class="form-row">
+      <div class="form-group">
+        <input type="date" name="start_date" class="form-control" value="<%= Date.today.to_s %>" required>
+      </div>
+      <div class="form-group" style="display: flex; align-items: center; justify-content: center; max-width: 40px;">
+        <span>~</span>
+      </div>
+      <div class="form-group">
+        <input type="date" name="end_date" class="form-control" value="<%= (Date.today + 30).to_s %>" required>
+      </div>
+    </div>
+  </div>
+
+  <% unless session[:birth_date].present? %>
+    <div class="card" style="background: rgba(232,119,95,0.08); border: 1px solid rgba(232,119,95,0.2); margin-top: 12px;">
+      <p class="text-small text-muted">
+        💡 <strong>사주 정보가 있으면 더 정확해!</strong><br>
+        먼저 <a href="<%= new_saju_path %>" style="color: #E8775F;">사주풀이</a>를 하면 본인 사주와의 궁합도 함께 분석해줄게!
+      </p>
+    </div>
+  <% end %>
+
+  <div class="divider"></div>
+
+  <button type="submit" class="btn-primary">
+    📅 길일 찾기
+  </button>
+<% end %>
+
+<div class="card mt-lg animate-fadeInUp">
+  <div class="section-header">
+    <%= image_tag "snowcat/icon_dog_snowcat_1771224888733.png", class: "snowcat-mascot snowcat-mascot-sm", alt: "사주멍이" %>
+    <h3>택일이란?</h3>
+  </div>
+  <p class="text-small text-muted" style="line-height: 1.8;">
+    📅 택일(擇日)은 중요한 일을 할 때 좋은 날을 고르는 거야!<br>
+    ☯️ 천간지지의 기운을 분석해서 목적에 맞는 길일을 찾아줘~<br>
+    💡 이사, 결혼, 개업, 계약, 여행 — 각각 좋은 날이 달라!
+  </p>
+</div>
+
+<script>
+function selectPurpose(value, el) {
+  document.querySelectorAll('.gender-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  el.querySelector('input').checked = true;
+}
+</script>

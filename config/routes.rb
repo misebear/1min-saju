@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "saju/new", to: "saju#new", as: :new_saju
   post "saju", to: "saju#create", as: :saju
   get "saju/result", to: "saju#show", as: :saju_result
+  get "saju/history", to: "saju#history", as: :saju_history
 
   # 운세
   get "fortunes/daily", to: "fortunes#daily", as: :daily_fortune
@@ -23,6 +24,19 @@ Rails.application.routes.draw do
   get "solo_destiny/new", to: "solo_destiny#new", as: :new_solo_destiny
   post "solo_destiny", to: "solo_destiny#create", as: :solo_destiny
   get "solo_destiny/result", to: "solo_destiny#show", as: :solo_destiny_result
+
+  # 꿈해몽
+  get "dreams/new", to: "dreams#new", as: :new_dream
+  post "dreams", to: "dreams#create", as: :dreams
+  get "dreams/result", to: "dreams#show", as: :dream_result
+
+  # 별자리 운세
+  get "zodiac", to: "zodiac#show", as: :zodiac
+
+  # 택일 (살풀이)
+  get "auspicious_dates/new", to: "auspicious_dates#new", as: :new_auspicious_date
+  post "auspicious_dates", to: "auspicious_dates#create", as: :auspicious_dates
+  get "auspicious_dates/result", to: "auspicious_dates#show", as: :auspicious_date_result
 
   # PWA
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest

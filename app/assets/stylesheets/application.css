@@ -2391,3 +2391,37 @@ select.form-control {
   line-height: 1.6;
   color: var(--text-2);
 }
+
+/* ─── Kakao Share Button ─── */
+.btn-kakao-share {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: #FEE500;
+  color: #191919;
+  border: none;
+  border-radius: var(--r-md);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  max-width: 320px;
+}
+
+.btn-kakao-share:hover {
+  background: #F5DC00;
+  transform: translateY(-1px);
+}
+
+.btn-kakao-share:active {
+  transform: scale(0.98);
+}
+
+/* ─── Quick Menu 4-col for more items ─── */
+.quick-menu {
+  grid-template-columns: repeat(4, 1fr);
+}

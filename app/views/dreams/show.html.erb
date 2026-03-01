@@ -1,0 +1,170 @@
+<% content_for(:title) { "꿈해몽 결과 - 1분 사주" } %>
+
+<%
+  score = @result[:overall_score]
+  score_color = case score
+                when 80..100 then "#22c55e"
+                when 65..79 then "#3b82f6"
+                when 50..64 then "#a78bfa"
+                else "#f59e0b"
+                end
+%>
+
+<!-- 꿈해몽 점수 -->
+<div class="card fortune-hero-card animate-fadeIn">
+  <div class="fortune-hero-header">
+    <h3>🌙 꿈해몽 결과</h3>
+    <span class="fortune-hero-date"><%= Date.today.strftime("%m/%d") %></span>
+  </div>
+
+  <div class="fortune-score-hero">
+    <div class="score-ring-premium">
+      <svg viewBox="0 0 140 140">
+        <defs>
+          <linearGradient id="dreamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#7E57C2"/>
+            <stop offset="50%" style="stop-color:#AF8EF5"/>
+            <stop offset="100%" style="stop-color:#42A5F5"/>
+          </linearGradient>
+          <filter id="dreamGlow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <circle cx="70" cy="70" r="60" fill="none" stroke="#f0f0f5" stroke-width="8"/>
+        <circle cx="70" cy="70" r="60" fill="none" stroke="url(#dreamGrad)" stroke-width="8"
+          stroke-linecap="round" filter="url(#dreamGlow)"
+          stroke-dasharray="<%= (2 * Math::PI * 60).round %>"
+          stroke-dashoffset="<%= ((1 - score / 100.0) * 2 * Math::PI * 60).round %>"
+          transform="rotate(-90 70 70)"/>
+      </svg>
+      <div class="score-number"><%= score %></div>
+      <div class="score-unit">점</div>
+    </div>
+    <div class="score-grade">
+      <span class="grade-badge" style="background: <%= score_color %>18; color: <%= score_color %>; border: 1px solid <%= score_color %>30;">
+        <%= @result[:overall_message] %>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- 입력한 꿈 -->
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">💭</span>
+    <h3>꿈 내용</h3>
+  </div>
+  <p class="text-muted" style="line-height: 1.8; font-style: italic;">
+    "<%= @dream_text %>"
+  </p>
+</div>
+
+<!-- 발견된 키워드 & 해석 -->
+<% if @result[:keywords].any? %>
+  <div class="card animate-fadeInUp">
+    <div class="section-header">
+      <span class="emoji">🔮</span>
+      <h3>꿈 속 상징 해석</h3>
+    </div>
+
+    <% @result[:interpretations].each do |interp| %>
+      <div class="dream-interp-card" style="background: rgba(175,142,245,0.06); border-radius: 16px; padding: 16px; margin-bottom: 12px; border: 1px solid rgba(175,142,245,0.15);">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+          <span style="font-size: 2em;"><%= interp[:emoji] %></span>
+          <div>
+            <span class="keyword-badge" style="background: <%= score_color %>15; color: <%= score_color %>; border: 1px solid <%= score_color %>30; font-size: 0.85em;">
+              <%= interp[:category] %>
+            </span>
+            <span style="font-weight: 700; font-size: 0.9em; margin-left: 4px;"><%= interp[:score] %>점</span>
+          </div>
+        </div>
+        <p style="margin: 0; line-height: 1.7; font-size: 0.92em;"><%= interp[:meaning] %></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<!-- 오행 보조 해석 -->
+<% if @element_advice %>
+  <div class="card animate-fadeInUp">
+    <div class="section-header">
+      <span class="emoji">☯️</span>
+      <h3>오행 해석</h3>
+    </div>
+    <p style="line-height: 1.8;"><%= @element_advice %></p>
+  </div>
+<% end %>
+
+<!-- 행운의 숫자 -->
+<% if @result[:lucky_numbers] %>
+  <div class="card animate-fadeInUp">
+    <div class="section-header">
+      <span class="emoji">🔢</span>
+      <h3>꿈에서 받은 행운의 숫자</h3>
+    </div>
+    <div class="lotto-numbers" style="justify-content: center; margin-top: 12px;">
+      <% lotto_colors = ["#F44336", "#FF9800", "#4CAF50", "#2196F3", "#9C27B0"] %>
+      <% @result[:lucky_numbers].each_with_index do |num, i| %>
+        <span class="lotto-ball" style="background: <%= lotto_colors[i % lotto_colors.size] %>; font-size: 1.2em; width: 48px; height: 48px; line-height: 48px;"><%= num %></span>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<!-- 조언 -->
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">💡</span>
+    <h3>오늘의 조언</h3>
+  </div>
+  <p style="line-height: 1.8;"><%= @result[:advice] %></p>
+</div>
+
+<!-- 하단 액션 -->
+<div class="quick-menu animate-fadeInUp">
+  <a href="<%= new_dream_path %>" class="quick-item">
+    <div class="icon-circle">🌙</div>
+    <span class="label">다시 해몽</span>
+  </a>
+  <a href="<%= root_path %>" class="quick-item">
+    <div class="icon-circle">🏠</div>
+    <span class="label">홈으로</span>
+  </a>
+  <a href="<%= daily_fortune_path %>" class="quick-item">
+    <div class="icon-circle">⭐</div>
+    <span class="label">오늘 운세</span>
+  </a>
+  <a href="<%= chat_path %>" class="quick-item">
+    <div class="icon-circle">💬</div>
+    <span class="label">AI 챗봇</span>
+  </a>
+</div>
+
+<!-- 카카오톡 공유 -->
+<div class="card text-center animate-fadeInUp" style="margin-top: 16px;">
+  <button onclick="shareKakao('dream')" class="btn-kakao-share" id="kakao-share-dream">
+    💬 카카오톡으로 공유하기
+  </button>
+</div>
+
+<script>
+function shareKakao(type) {
+  if (typeof Kakao === 'undefined') { alert('카카오 SDK 로딩 중...'); return; }
+  if (!Kakao.isInitialized()) Kakao.init('7d614af7b2a6e40d9c74c26cca5cf866');
+
+  Kakao.Share.sendDefault({
+    objectType: 'feed',
+    content: {
+      title: '🌙 꿈해몽 결과: <%= score %>점!',
+      description: '<%= @result[:overall_message].gsub("'", "\\\\'") %>',
+      imageUrl: window.location.origin + '/icon.png',
+      link: { mobileWebUrl: window.location.origin, webUrl: window.location.origin }
+    },
+    buttons: [{
+      title: '나도 꿈해몽 해보기',
+      link: { mobileWebUrl: window.location.origin + '/dreams/new', webUrl: window.location.origin + '/dreams/new' }
+    }]
+  });
+}
+</script>

@@ -1,0 +1,48 @@
+<% content_for(:title) { "꿈해몽 - 1분 사주" } %>
+
+<div class="page-header animate-fadeIn">
+  <%= image_tag "snowcat/icon_cat_snowcat_1771225044956.png", class: "snowcat-mascot", alt: "1분 사주" %>
+  <h1>꿈해몽 🌙</h1>
+  <p class="subtitle">어젯밤 꾼 꿈을 알려줘! 해석해줄게~ 🐱</p>
+</div>
+
+<%= form_tag dreams_path, method: :post, class: "animate-fadeInUp" do %>
+  <div class="form-section">
+    <label class="form-label">🌙 꿈 내용을 알려줘!</label>
+    <textarea name="dream_text" class="form-control" rows="5" placeholder="예: 큰 뱀이 나오는 꿈을 꿨어, 하늘을 날았어, 돈을 주웠어..." required style="resize: vertical; font-size: 16px; line-height: 1.8;"></textarea>
+  </div>
+
+  <div class="card mt-md" style="background: rgba(175,142,245,0.08); border: 1px solid rgba(175,142,245,0.2);">
+    <div class="section-header">
+      <span class="emoji">💡</span>
+      <h3>이런 키워드를 포함해봐!</h3>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
+      <% %w[뱀 용 호랑이 돼지 물고기 비행기 돈 바다 꽃 산 불 물 해 달 결혼 아기].each do |kw| %>
+        <span class="keyword-badge" style="cursor: pointer; background: rgba(175,142,245,0.12); color: #AF8EF5; border: 1px solid rgba(175,142,245,0.3);"
+              onclick="document.querySelector('textarea[name=dream_text]').value += ' <%= kw %>'">
+          <%= kw %>
+        </span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <button type="submit" class="btn-primary">
+    🌙 꿈 해석하기
+  </button>
+<% end %>
+
+<div class="card mt-lg animate-fadeInUp">
+  <div class="section-header">
+    <%= image_tag "snowcat/icon_dog_snowcat_1771224888733.png", class: "snowcat-mascot snowcat-mascot-sm", alt: "사주멍이" %>
+    <h3>꿈해몽이란?</h3>
+  </div>
+  <p class="text-small text-muted" style="line-height: 1.8;">
+    💡 꿈해몽은 꿈 속에 나타난 상징들을 해석하는 거야!<br>
+    🐍 뱀, 용, 돼지 등 동물 꿈은 재물운과 관련이 많아~<br>
+    🌊 자연현상 꿈은 마음의 상태를 반영하기도 해!<br>
+    ✨ 사주 정보가 있으면 오행 기반 보조 해석도 해줄게!
+  </p>
+</div>
