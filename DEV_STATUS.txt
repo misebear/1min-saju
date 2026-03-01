@@ -2,104 +2,104 @@
   1분 사주 (1min-saju) - 개발 현황
 ============================================
 
-📌 현재 진행 상태: Railway 배포 완료 ✅ → 도메인 연결 + Play Store 런칭 진행 중
-🕐 마지막 업데이트: 2026-03-01 17:10 KST
+📌 현재 진행 상태: 🟢 배포 완료 + Play Store 등록 진행 중
 
 ============================================
 ✅ 완료된 작업
 ============================================
 
-[UI/디자인]
-- Y2K Kawaii Pastel 디자인 시스템 적용 완료
-- 스노우캣 마스코트 아이콘 생성 및 적용
-- 글래스모피즘 카드, 파스텔 그라디언트 버튼
-- 사이드바 애니메이션 + 네비게이션 스타일링
-
-[핵심 기능]
-- 사주풀이 (생년월일시 입력 → AI 분석)
-- 오늘의 운세 / 연간 운세
-- 궁합 분석
-- AI 챗봇 상담
-- 인연 풀이
-- 꿈해몽
+[Rails 웹앱 개발]
+- 사주팔자 분석 엔진 (SajuEngine) 구현
+- 오늘의 운세, 연간 운세 기능
+- 궁합 분석 기능
+- 꿈해몽 AI 분석
+- AI 채팅 (사주 전문가)
 - 별자리 운세
-- 택일
-- 사주 기록 (히스토리)
+- 유명인 사주 분석
+- 사용자 인증 (Devise + Google OAuth)
 
-[배포 - Railway]
-- GitHub 레포: misebear/1min-saju (public)
-- Railway 프로젝트 생성 + GitHub 자동 배포 연동
-- PostgreSQL DB 프로비저닝 + 연결 완료
-- 환경변수: DATABASE_URL, RAILS_MASTER_KEY, GEMINI_API_KEY, RAILS_ENV, RAILS_SERVE_STATIC_FILES
-- 프로덕션 URL: https://1min-saju-production.up.railway.app ✅
+[배포]
+- Railway 배포 완료 (PostgreSQL)
+- 기본 URL: https://1min-saju-production.up.railway.app
+- 커스텀 도메인: www.1minsaju.com (DNS 전파 대기 중)
+- 가비아 도메인 구매 (1minsaju.com, 19,800원/년)
+- DNS 설정: CNAME www→r1pnxgcd.up.railway.app, TXT _railway-verify.www
 
-[코드 수정 (배포 호환)]
-- debug gem require: "debug/prelude" 제거
-- solid_cache/queue/cable → dev/test 그룹 이동 (production SQLite 의존 제거)
-- production.rb: memory_store, async queue, hosts.clear
-- database.yml: production PostgreSQL 전용 (SQLite 완전 제거)
-- Dockerfile: libpq5/libpq-dev 추가
-
-[PWA/TWA 준비]
-- manifest.json 생성 (앱 이름, 아이콘, 테마색)
-- service-worker.js 생성 (network-first 캐싱)
-- icon-192.png, icon-512.png 생성
-- theme-color 메타태그 + SW 등록 스크립트 추가
+[Google Play Store]
+- PWA 파일: manifest.json, service-worker.js, icon-192/512.png
+- PWABuilder로 TWA APK/AAB 빌드 완료
+  - 1분사주.aab (3.6MB) - Play Store 업로드용
+  - 1분사주.apk (3.5MB) - 직접 설치용
+  - signing.keystore + assetlinks.json
+- Play Console 앱 생성 (JejuBucketList 계정)
+- AAB 업로드 완료 (프로덕션 트랙, v1.0.0)
+- 스토어 설명 입력 완료
+- 데이터 보안 선언 완료 (데이터 미수집)
+- 콘텐츠 등급 완료 (전체이용가)
+- 카테고리: Lifestyle, 연락처: db0192a@gmail.com
+- 광고/건강/금융/정부앱 선언 모두 완료
+- 국가/지역: 전세계
 
 ============================================
-📋 다음에 할 작업 (우선순위)
+📋 다음에 할 작업
 ============================================
 
-1. [진행중] 가비아에서 1minsaju.com 도메인 구매
-2. [진행중] Railway 커스텀 도메인 연결
-3. [ ] TWA APK 빌드 (Bubblewrap)
-4. [ ] Play Store 스토어 리스팅 (스크린샷, 설명)
-5. [ ] Play Store 제출
+[Play Store 등록 완료 - 이미지 업로드 필요]
+1. ⭐ Play Console > 기본 스토어 등록정보에서 이미지 업로드:
+   - 앱 아이콘: C:\development\saju\playstore\icon-512.png (512x512)
+   - 그래픽 이미지: C:\development\saju\playstore\feature_graphic.png (1024x500)
+   - 스크린샷: 최소 2장 (핸드폰 캡처 또는 개발자도구 모바일 모드)
+2. 저장 후 프로덕션 > 검토 > Google에 제출 → 심사 시작
+
+[도메인]
+- www.1minsaju.com DNS 전파 완료 확인 (Railway "Waiting for DNS update" 상태)
+- assetlinks.json을 /.well-known/ 경로에 배포 (TWA 인증용)
 
 ============================================
 ⚠️ 주의사항
 ============================================
-
-- Railway Hobby 플랜: $5/월 (~₩6,500), 항상 켜짐
-- Gemini API Key: 무료 Tier (AI Studio)
-- PostgreSQL: Railway 내장 (추가 비용 없음)
-- 도메인: 1minsaju.com (가비아에서 구매 예정)
+- Railway 무료 플랜: 30일 또는 $4.99 한도
+- 키스토어 비밀번호: minsaju123 (alias: minsaju)
+- PWABuilder 서명 키: C:\development\saju\twa\android-pkg\signing.keystore
+- GEMINI_API_KEY 환경변수 필요 (AI 기능)
+- RAILS_MASTER_KEY 환경변수 필요 (프로덕션)
 
 ============================================
-🗂️ 프로젝트 구조
+📂 프로젝트 구조
 ============================================
-
 c:\development\saju\
-├── app/
-│   ├── controllers/     (saju, fortunes, compatibility, chat 등)
-│   ├── models/          (saju_record, saju_engine concerns)
-│   ├── views/           (각 기능별 ERB 템플릿)
-│   └── assets/
-│       └── stylesheets/ (application.css - Y2K Kawaii 디자인)
-├── config/
-│   ├── database.yml     (dev:SQLite, prod:PostgreSQL)
-│   ├── routes.rb
-│   └── environments/
-│       └── production.rb (memory_store, async, hosts.clear)
-├── public/
-│   ├── manifest.json    (PWA)
-│   ├── service-worker.js (PWA)
-│   ├── icon-192.png     (PWA 아이콘)
-│   └── icon-512.png     (PWA 아이콘)
-├── Dockerfile           (PostgreSQL 지원)
-├── Gemfile              (solid gems dev/test 전용)
-└── DEV_STATUS.txt
+├── app/                     # Rails MVC 코드
+│   ├── controllers/         # 컨트롤러 (home, saju, fortunes, chat 등)
+│   ├── models/concerns/     # SajuEngine 모듈
+│   ├── views/               # ERB 뷰 템플릿
+│   └── assets/              # CSS, JS
+├── config/                  # Rails 설정
+├── public/                  # 정적 파일 (manifest.json, SW, 아이콘)
+├── twa/                     # TWA 빌드 프로젝트
+│   ├── android-pkg/         # PWABuilder 생성 APK/AAB
+│   │   ├── 1분사주.aab
+│   │   ├── 1분사주.apk
+│   │   ├── assetlinks.json
+│   │   └── signing.keystore
+│   ├── twa-manifest.json
+│   └── minsaju-keystore.jks
+├── playstore/               # Play Store 그래픽 자산
+│   ├── icon-512.png
+│   ├── app_icon_512.png
+│   └── feature_graphic.png
+└── Dockerfile               # Railway 배포용
 
 ============================================
 🚀 실행 방법
 ============================================
-
-[로컬 개발]
+# 로컬 개발 서버
 $env:PATH = "C:\Ruby33-x64\bin;$env:PATH"
-$env:GEMINI_API_KEY = "AIzaSyCNRuwLWXvrDABK7HMTFF9Lv2_LmpPwj5E"
-cd c:\development\saju
+$env:GEMINI_API_KEY = "YOUR_KEY"
 rails server
 
-[프로덕션]
-- Railway 자동 배포 (GitHub push → 자동 빌드)
-- URL: https://1min-saju-production.up.railway.app
+# 프로덕션 접속
+https://1min-saju-production.up.railway.app
+
+============================================
+마지막 업데이트: 2026-03-01 20:50 KST
+============================================
