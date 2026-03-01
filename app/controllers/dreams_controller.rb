@@ -11,7 +11,6 @@ class DreamsController < ApplicationController
       return
     end
 
-    # 세션에 저장
     session[:dream_text] = @dream_text
     redirect_to dream_result_path
   end
@@ -21,7 +20,19 @@ class DreamsController < ApplicationController
     redirect_to new_dream_path unless @dream_text.present?
     return unless @dream_text.present?
 
-    @result = SajuEngine::DreamEngine.interpret(@dream_text)
+    # 키워드 추출
+    keywords = SajuEngine::DreamEngine.find_keywords_public(@dream_text)
+
+    # DB 캐시 확인 (동일 키워드 조합이면 캐시 사용)
+    cached = DreamInterpretation.find_cached(keywords) if keywords.any?
+    if cached
+      @result = cached.parsed_result
+      cached.increment!(:use_count)
+    else
+      @result = SajuEngine::DreamEngine.interpret(@dream_text)
+      # DB에 캐시 저장
+      DreamInterpretation.cache_result(@dream_text, keywords, @result) if keywords.any?
+    end
 
     # 사주 정보가 있으면 오행 보조 해석 추가
     if session[:birth_date].present?

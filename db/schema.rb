@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_01_000002) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_01_000003) do
   create_table "celebrity_images", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "fetched_at"
@@ -18,6 +18,16 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_01_000002) do
     t.string "name", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_celebrity_images_on_name", unique: true
+  end
+
+  create_table "dream_interpretations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.text "dream_text", null: false
+    t.string "keywords_key", null: false
+    t.text "result_json", null: false
+    t.datetime "updated_at", null: false
+    t.integer "use_count", default: 1
+    t.index ["keywords_key"], name: "index_dream_interpretations_on_keywords_key"
   end
 
   create_table "saju_records", force: :cascade do |t|

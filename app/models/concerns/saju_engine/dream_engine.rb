@@ -5,21 +5,21 @@ module SajuEngine
     # 꿈 카테고리별 키워드 → 해몽 매핑
     DREAM_DB = {
       # 동물 꿈
-      "뱀" => { meaning: "재물이 들어올 징조! 큰 뱀일수록 큰 재물운이에요.", score: 88, category: "재물", emoji: "🐍", element: "수" },
-      "용" => { meaning: "대길! 승진, 합격, 대박의 꿈이에요. 최고의 길몽!", score: 95, category: "성공", emoji: "🐲", element: "목" },
-      "호랑이" => { meaning: "권위와 힘의 상징! 큰 일을 앞두고 있다면 좋은 결과가 있을 거예요.", score: 85, category: "성공", emoji: "🐯", element: "금" },
-      "돼지" => { meaning: "재물운 대박! 로또 사볼까? 돼지꿈은 돈이 들어오는 꿈이에요.", score: 92, category: "재물", emoji: "🐷", element: "토" },
-      "물고기" => { meaning: "재물과 풍요의 상징! 특히 잉어나 큰 물고기일수록 좋아요.", score: 82, category: "재물", emoji: "🐟", element: "수" },
-      "개" => { meaning: "충직한 친구나 동료가 도움을 줄 수 있어요. 인간관계에 주목!", score: 70, category: "인간관계", emoji: "🐕", element: "토" },
-      "고양이" => { meaning: "직감이 날카로워지는 시기! 주변 사람의 속마음을 잘 살펴봐.", score: 65, category: "인간관계", emoji: "🐱", element: "목" },
-      "새" => { meaning: "자유와 희망의 상징! 새로운 기회가 날아올 수 있어요.", score: 78, category: "기회", emoji: "🕊️", element: "화" },
-      "말" => { meaning: "빠른 전진! 하던 일이 속도가 붙을 거예요.", score: 80, category: "성공", emoji: "🐴", element: "화" },
-      "소" => { meaning: "근면과 성실의 보상! 노력한 만큼 결실이 맺히는 시기.", score: 75, category: "성공", emoji: "🐂", element: "토" },
-      "거북이" => { meaning: "장수와 건강의 상징! 건강 걱정은 내려놔도 좋아요.", score: 80, category: "건강", emoji: "🐢", element: "수" },
-      "토끼" => { meaning: "사랑운 상승! 새로운 만남이나 관계 발전이 있을 수 있어요.", score: 72, category: "연애", emoji: "🐰", element: "목" },
-      "곰" => { meaning: "아들을 상징하는 태몽일 수 있어요. 또는 강한 보호자의 등장!", score: 78, category: "가족", emoji: "🐻", element: "토" },
-      "나비" => { meaning: "변화와 변신! 인생의 전환점이 다가오고 있어요.", score: 75, category: "변화", emoji: "🦋", element: "화" },
-      "벌레" => { meaning: "사소한 걱정거리가 있을 수 있어요. 하지만 금방 해결될 거야!", score: 45, category: "주의", emoji: "🐛", element: "토" },
+      "뱀" => { meaning: "뱀꿈은 전통적으로 '재물의 신'이 찾아오는 꿈으로 해석돼요. 특히 큰 구렁이가 집에 들어오거나, 뱀이 몸을 감싸는 꿈은 예상치 못한 큰 돈이 들어올 조짐이에요. 뱀이 허물을 벗는 꿈이라면 인생의 새로운 전환기를 맞이하게 된다는 뜻! 다만 뱀에게 물리는 꿈이라면 건강 관리에 신경 쓰라는 경고일 수 있어요.", score: 88, category: "재물", emoji: "🐍", element: "수" },
+      "용" => { meaning: "용꿈은 동양에서 최고의 길몽으로 꼽혀요! 하늘을 나는 용은 승진·합격·대박을 의미하고, 용이 여의주를 물고 있으면 큰 소원이 이루어질 징조예요. 황금색 용은 재물운, 청룡은 건강과 성장, 흑룡은 권력과 명예를 상징해요. 용꿈을 꿨다면 지금 도전하고 있는 일에 자신감을 가져도 좋아요!", score: 95, category: "성공", emoji: "🐲", element: "목" },
+      "호랑이" => { meaning: "호랑이는 권위·용기·리더십의 상징이에요. 호랑이가 다가오는 꿈은 직장에서 승진하거나 사업에서 성공할 수 있다는 뜻이에요. 특히 호랑이를 타고 다니는 꿈은 큰 권력을 얻게 될 길몽! 하지만 호랑이에게 쫓기는 꿈이라면 현실에서 부담감이나 두려움을 느끼고 있다는 신호일 수 있어요. 용기를 내서 문제를 직접 맞서보세요.", score: 85, category: "성공", emoji: "🐯", element: "금" },
+      "돼지" => { meaning: "돼지꿈은 '돈꿈'의 대명사! 통통한 돼지가 집안으로 들어오는 꿈은 뜻밖의 재물이 생길 조짐이에요. 새끼 돼지를 안고 있으면 작은 수입이 꾸준히 생기고, 금색 돼지는 대박 재물운! 돼지고기를 먹는 꿈도 재운 상승을 의미해요. 이 꿈을 꿨다면 로또를 사보는 것도 좋겠어요. 🎰", score: 92, category: "재물", emoji: "🐷", element: "토" },
+      "물고기" => { meaning: "물고기 꿈은 풍요와 번성의 상징이에요. 큰 잉어를 잡는 꿈은 입학·취업 등 기쁜 소식이 올 징조이고, 금붕어는 소소한 행운을, 활짝 뛰는 물고기는 사업 번창을 의미해요. 물고기떼가 헤엄치는 꿈이면 재물이 쏟아질 수 있어요! 다만 죽은 물고기는 기회를 놓칠 수 있다는 경고.", score: 82, category: "재물", emoji: "🐟", element: "수" },
+      "개" => { meaning: "개꿈은 인간관계의 거울이에요. 순한 개가 꼬리를 치며 다가오면 충직한 친구나 동료의 도움을 받을 수 있어요. 큰 개가 집을 지키면 집안이 안전하다는 뜻이고, 강아지는 새로운 인연의 등장! 하지만 개에게 물리는 꿈이라면 가까운 사람과의 다툼에 주의하세요.", score: 70, category: "인간관계", emoji: "🐕", element: "토" },
+      "고양이" => { meaning: "고양이 꿈은 직감과 감성이 예민해지는 시기를 뜻해요. 고양이가 무릎에 올라오면 편안한 일상이, 야옹하고 우는 고양이는 누군가 당신의 관심을 원한다는 신호예요. 검은 고양이는 숨겨진 진실이 드러날 수 있고, 흰 고양이는 순수한 애정이 찾아올 수 있어요.", score: 65, category: "인간관계", emoji: "🐱", element: "목" },
+      "새" => { meaning: "새 꿈은 자유와 새로운 기회를 상징해요. 하늘 높이 나는 새는 현재의 한계를 뛰어넘을 수 있다는 뜻이고, 아름다운 새소리는 기쁜 소식이 찾아올 징조예요. 새가 둥지를 틀면 가정의 안정을, 새가 알을 낳으면 창작이나 새 프로젝트의 성공을 의미해요!", score: 78, category: "기회", emoji: "🕊️", element: "화" },
+      "말" => { meaning: "말꿈은 속도와 진취의 상징! 말을 타고 달리는 꿈은 하던 일이 빠르게 성과를 내는 길몽이에요. 백마는 순수한 성공을, 검은 말은 강한 추진력을, 날개 달린 말은 상상 이상의 도약을 의미해요. 말이 힘차게 울면 좋은 소식이 멀리서 찾아올 수 있어요.", score: 80, category: "성공", emoji: "🐴", element: "화" },
+      "소" => { meaning: "소 꿈은 근면·성실의 보상을 뜻해요. 논밭에서 일하는 소는 꾸준한 노력이 결실을 맺을 거라는 메시지이고, 황소는 강인한 의지력을 상징해요. 소가 새끼를 낳는 꿈이면 가정에 경사가 생길 수 있고, 젖소 꿈은 풍요와 여유를 의미합니다.", score: 75, category: "성공", emoji: "🐂", element: "토" },
+      "거북이" => { meaning: "거북이 꿈은 장수·건강·지혜의 상징이에요. 큰 바다거북은 인생에서 안정적인 기반을 쌓게 될 거라는 뜻이고, 거북이 등에 올라타면 귀인의 도움을 받을 수 있어요. 거북이가 알을 낳으면 재물이 불어날 징조! 느리지만 확실한 성공을 의미하는 꿈이에요.", score: 80, category: "건강", emoji: "🐢", element: "수" },
+      "토끼" => { meaning: "토끼 꿈은 사랑과 행운의 메신저! 하얀 토끼는 순수한 사랑이 찾아오고, 달에서 떡을 찧는 토끼는 소원성취의 길몽이에요. 토끼가 뛰어다니면 활발한 사교활동이 예상되고, 아기 토끼는 새로운 연인의 출현을 암시할 수 있어요.", score: 72, category: "연애", emoji: "🐰", element: "목" },
+      "곰" => { meaning: "곰은 힘과 보호의 상징으로, 태몽일 경우 아들을 상징하는 대표적인 꿈이에요. 곰이 숲에서 나타나면 든든한 보호자나 조력자가 나타날 징조이고, 아기 곰은 귀여운 인연이나 새 프로젝트를 의미해요. 겨울잠에서 깨어나는 곰은 긴 준비 기간이 끝나고 드디어 성과를 낼 때!", score: 78, category: "가족", emoji: "🐻", element: "토" },
+      "나비" => { meaning: "나비 꿈은 아름다운 변화와 성장의 메시지예요. 화려한 나비는 인생의 전환점이 다가오고 있다는 뜻이고, 나비가 꽃에 앉으면 사랑이 이루어질 징조! 호랑나비는 재물운, 노란 나비는 행복한 소식을 의미하고, 나비가 몸에 앉으면 귀인이 찾아올 수 있어요.", score: 75, category: "변화", emoji: "🦋", element: "화" },
+      "벌레" => { meaning: "벌레 꿈은 사소하지만 신경 쓰이는 일이 있다는 뜻이에요. 하지만 걱정 마세요! 벌레를 잡거나 없애면 곧 해결된다는 긍정적 신호예요. 많은 벌레떼는 복잡한 인간관계를, 예쁜 무당벌레는 작은 행운을 의미해요.", score: 45, category: "주의", emoji: "🐛", element: "토" },
 
       # 자연/날씨 꿈
       "비" => { meaning: "정화와 새로운 시작! 마음의 짐을 내려놓을 때가 왔어요.", score: 70, category: "변화", emoji: "🌧️", element: "수" },
@@ -141,19 +141,27 @@ module SajuEngine
 
     # 오행 기반 보조 해석
     def self.element_advice(dream_result, user_element)
+      return "꿈에서 특별한 오행 기운을 찾지 못했어!" unless dream_result[:interpretations]&.any?
+
       dream_elements = dream_result[:interpretations].map { |i| i[:element] }
       most_common = dream_elements.group_by(&:itself).max_by { |_, v| v.size }&.first
 
       return "꿈에서 특별한 오행 기운을 찾지 못했어!" unless most_common
 
-      relation = SajuEngine::FiveElements.relationship(user_element, most_common)
-
-      case relation
-      when :생 then "너의 #{user_element} 기운이 꿈의 #{most_common} 기운을 생(生)해줘! 꿈이 현실로 이어질 가능성이 높아요! 🌟"
-      when :극 then "너의 #{user_element} 기운과 꿈의 #{most_common} 기운이 충돌해. 꿈의 메시지를 잘 되새겨봐! 💪"
-      when :비 then "너의 #{user_element} 기운과 꿈의 #{most_common} 기운이 같아! 강력한 메시지야! ⭐"
-      else "꿈의 #{most_common} 기운이 네게 새로운 에너지를 줄 수 있어! ✨"
+      if SajuEngine::FiveElements.generates?(user_element, most_common)
+        "너의 #{user_element} 기운이 꿈의 #{most_common} 기운을 생(生)해줘! 꿈이 현실로 이어질 가능성이 높아요! 🌟"
+      elsif SajuEngine::FiveElements.overcomes?(user_element, most_common)
+        "너의 #{user_element} 기운이 꿈의 #{most_common} 기운을 극(剋)해. 꿈의 메시지를 잘 되새겨봐! 💪"
+      elsif user_element == most_common
+        "너의 #{user_element} 기운과 꿈의 #{most_common} 기운이 같아! 강력한 메시지야! ⭐"
+      else
+        "꿈의 #{most_common} 기운이 네게 새로운 에너지를 줄 수 있어! ✨"
       end
+    end
+
+    # 외부에서 호출 가능한 키워드 검색
+    def self.find_keywords_public(text)
+      find_keywords(text)
     end
 
     private
