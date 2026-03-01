@@ -1,39 +1,46 @@
 /* ============================================
-   1분 사주 2026 — iPhone-Style Clean Design
-   Inter font · Minimal icons · Desktop 2-col
+   1분 사주 2026 — Y2K Kawaii Pastel Design ✨
+   Spline Sans · Glass-morphism · Sparkles
+   2026 여고생 감성 UI
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  --bg: #F2F2F7;
-  --bg-card: #FFFFFF;
-  --bg-grouped: #F2F2F7;
-  --text-1: #1C1C1E;
-  --text-2: #3A3A3C;
-  --text-3: #8E8E93;
-  --text-4: #AEAEB2;
-  --separator: rgba(60, 60, 67, 0.06);
-  --tint: #E8775F;
-  --tint-light: rgba(232, 119, 95, 0.08);
-  --tint-lighter: rgba(232, 119, 95, 0.04);
-  --coral: #E8775F;
-  --peach: #FFB088;
-  --lavender: #AF8EF5;
-  --sky: #64B5F6;
-  --mint: #5EC6A2;
-  --gold: #F5C842;
-  --rose: #F06292;
-  --el-wood: #4CAF50;
-  --el-fire: #EF5350;
-  --el-earth: #E6A23C;
-  --el-metal: #90A4AE;
-  --el-water: #42A5F5;
-  --r-sm: 12px;
-  --r-md: 16px;
-  --r-lg: 20px;
-  --r-xl: 28px;
+  --font: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --bg: #F8F0FF;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-grouped: #F5EEFF;
+  --text-1: #2D1B4E;
+  --text-2: #4A3570;
+  --text-3: #9B8BB4;
+  --text-4: #C4B8D9;
+  --separator: rgba(180, 140, 220, 0.12);
+  --tint: #B47AE8;
+  --tint-light: rgba(180, 122, 232, 0.12);
+  --tint-lighter: rgba(180, 122, 232, 0.06);
+  --coral: #F5A6C8;
+  --peach: #FFD1DC;
+  --lavender: #C5A3E8;
+  --sky: #A8D8F0;
+  --mint: #A8E8D0;
+  --gold: #FFE5A0;
+  --rose: #F5A6C8;
+  --el-wood: #7BC89E;
+  --el-fire: #F5A0A0;
+  --el-earth: #F0D080;
+  --el-metal: #B8C8D8;
+  --el-water: #90C0F0;
+  --r-sm: 16px;
+  --r-md: 20px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 8px 32px rgba(180, 122, 232, 0.08);
+  --gradient-hero: linear-gradient(135deg, #E8D5F5 0%, #FFD6E8 50%, #D5F5E8 100%);
+  --gradient-card: linear-gradient(135deg, rgba(232, 213, 245, 0.3) 0%, rgba(255, 214, 232, 0.3) 100%);
+  --gradient-btn: linear-gradient(135deg, #C5A3E8 0%, #F5A6C8 100%);
 }
 
 *,
@@ -153,13 +160,16 @@ strong {
   letter-spacing: -0.02em;
 }
 
-/* ─── Card (legacy compat) ─── */
+/* ─── Card (Glass-morphism) ─── */
 .card {
-  background: var(--bg-card);
-  border-radius: var(--r-lg);
-  padding: 20px;
-  margin-bottom: 12px;
-  box-shadow: 0 0.5px 0 rgba(0, 0, 0, 0.04);
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--r-xl);
+  padding: 24px;
+  margin-bottom: 16px;
+  box-shadow: var(--glass-shadow);
+  border: 1px solid var(--glass-border);
 }
 
 /* ─── Page Headers ─── */
@@ -602,26 +612,27 @@ select.form-control {
 /* ─── Buttons ─── */
 .btn-primary {
   width: 100%;
-  padding: 16px;
-  background: var(--tint);
+  padding: 16px 24px;
+  background: var(--gradient-btn);
   border: none;
-  border-radius: var(--r-md);
+  border-radius: var(--r-xl);
   color: white;
   font-size: 16px;
   font-weight: 600;
   font-family: var(--font);
   cursor: pointer;
-  transition: all 0.2s;
-  letter-spacing: -0.01em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 16px rgba(180, 122, 232, 0.25);
 }
 
 .btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(180, 122, 232, 0.35);
 }
 
 .btn-primary:active {
-  transform: scale(0.99);
+  transform: scale(0.98) translateY(0);
 }
 
 .btn-secondary {
