@@ -1,101 +1,105 @@
-========================================
- 1분 사주 (Saju) - DEV_STATUS
- 마지막 업데이트: 2026-03-01 14:32 KST
-========================================
+============================================
+  1분 사주 (1min-saju) - 개발 현황
+============================================
 
-## 📌 현재 진행 상태: 개발 중 🔧
+📌 현재 진행 상태: Railway 배포 완료 ✅ → 도메인 연결 + Play Store 런칭 진행 중
+🕐 마지막 업데이트: 2026-03-01 17:10 KST
 
-## ✅ 완료된 작업
+============================================
+✅ 완료된 작업
+============================================
 
-### 핵심 기능
-- 사주팔자 분석 (4주, 오행, 용신, 십성, 신살, 대운)
+[UI/디자인]
+- Y2K Kawaii Pastel 디자인 시스템 적용 완료
+- 스노우캣 마스코트 아이콘 생성 및 적용
+- 글래스모피즘 카드, 파스텔 그라디언트 버튼
+- 사이드바 애니메이션 + 네비게이션 스타일링
+
+[핵심 기능]
+- 사주풀이 (생년월일시 입력 → AI 분석)
 - 오늘의 운세 / 연간 운세
-- AI 챗봇 (Gemini API)
 - 궁합 분석
-- 나는솔로 인연 풀이
-- 꿈해몽 (풍부한 해석 + DB 캐시)
+- AI 챗봇 상담
+- 인연 풀이
+- 꿈해몽
 - 별자리 운세
-- 택일 (길일 선택)
-- 시간 보정 (지역시차 + 서머타임 + 야자시)
-- 2026 병오년 트렌드 분석
-- 사주 기록 히스토리
+- 택일
+- 사주 기록 (히스토리)
 
-### 세션 기반 개인화 (2026-03-01)
-- ApplicationController에 before_action load_user_birth_info 추가
-- 사주 입력 폼 세션 데이터 자동 채움 (년/월/일/시/출생지/성별)
-- 사이드바에 "내 정보" 뱃지 표시 (1982.02.22 유시 · 남)
-- 모든 기능에서 세션 데이터 기반 개인화
+[배포 - Railway]
+- GitHub 레포: misebear/1min-saju (public)
+- Railway 프로젝트 생성 + GitHub 자동 배포 연동
+- PostgreSQL DB 프로비저닝 + 연결 완료
+- 환경변수: DATABASE_URL, RAILS_MASTER_KEY, GEMINI_API_KEY, RAILS_ENV, RAILS_SERVE_STATIC_FILES
+- 프로덕션 URL: https://1min-saju-production.up.railway.app ✅
 
-### 사주 결과 레이아웃 개선 (2026-03-01)
-- 2칼럼 그리드 → 단일칼럼 세로 레이아웃 변경
-- 성격 분석 + 딱 맞는 직업: 데스크톱에서 나란히 2칼럼(responsive)
-- 나머지 섹션(연애/오행/용신/십성/대운 등): 전체 너비 가독성 ↑
+[코드 수정 (배포 호환)]
+- debug gem require: "debug/prelude" 제거
+- solid_cache/queue/cable → dev/test 그룹 이동 (production SQLite 의존 제거)
+- production.rb: memory_store, async queue, hosts.clear
+- database.yml: production PostgreSQL 전용 (SQLite 완전 제거)
+- Dockerfile: libpq5/libpq-dev 추가
 
-### 꿈해몽 확장 (2026-03-01)
-- 동물 키워드 15종 해석을 3~4줄 상세 전통 해몽으로 확장
-- dream_interpretations DB 캐시 테이블 생성
-- 동일 키워드 조합이면 DB 캐시에서 즉시 반환
-- FiveElements.relationship 에러 수정 (generates?/overcomes? 사용)
+[PWA/TWA 준비]
+- manifest.json 생성 (앱 이름, 아이콘, 테마색)
+- service-worker.js 생성 (network-first 캐싱)
+- icon-192.png, icon-512.png 생성
+- theme-color 메타태그 + SW 등록 스크립트 추가
 
-### 유명인 사진 시스템 (2026-03-01)
-- celebrity_images DB 테이블 + Wikipedia API 연동
-- Lazy loading: 이모지 → 사진 자동 갱신
-- Net::HTTP require 누락 수정
+============================================
+📋 다음에 할 작업 (우선순위)
+============================================
 
-### 십성 해석 (2026-03-01)
-- 홈 히어로 섹션에 십성(편인 등) 간단 해석 표시
-- GOD_DESCRIPTIONS 해시 참조
+1. [진행중] 가비아에서 1minsaju.com 도메인 구매
+2. [진행중] Railway 커스텀 도메인 연결
+3. [ ] TWA APK 빌드 (Bubblewrap)
+4. [ ] Play Store 스토어 리스팅 (스크린샷, 설명)
+5. [ ] Play Store 제출
 
-## 🔧 다음에 할 작업
-- [ ] 나머지 꿈 키워드(자연/사물/행동 등) 해석도 풍부하게 확장
-- [ ] 사주기록(history) 페이지 에러 확인 및 수정
-- [ ] 별자리 운세 세션 개인화 연동
-- [ ] 모바일 반응형 최적화
-- [ ] 카카오 로그인 연동
+============================================
+⚠️ 주의사항
+============================================
 
-## ⚠️ 주의사항
-- Gemini API Key 필요: GEMINI_API_KEY 환경변수
-- Ruby 3.3 + Rails 8.1.2
-- 포트: 3150
+- Railway Hobby 플랜: $5/월 (~₩6,500), 항상 켜짐
+- Gemini API Key: 무료 Tier (AI Studio)
+- PostgreSQL: Railway 내장 (추가 비용 없음)
+- 도메인: 1minsaju.com (가비아에서 구매 예정)
 
-## 📁 프로젝트 구조
+============================================
+🗂️ 프로젝트 구조
+============================================
+
 c:\development\saju\
 ├── app/
-│   ├── controllers/
-│   │   ├── application_controller.rb (세션 로딩 before_action)
-│   │   ├── saju_controller.rb
-│   │   ├── home_controller.rb
-│   │   ├── dreams_controller.rb (DB 캐시 적용)
-│   │   ├── fortunes_controller.rb
-│   │   ├── zodiac_controller.rb
-│   │   ├── auspicious_dates_controller.rb
-│   │   ├── compatibility_controller.rb
-│   │   ├── solo_destiny_controller.rb
-│   │   ├── chat_controller.rb
-│   │   └── api/celebrity_images_controller.rb
-│   ├── models/
-│   │   ├── celebrity_image.rb
-│   │   ├── dream_interpretation.rb (DB 캐시 모델)
-│   │   └── concerns/saju_engine/ (사주 엔진 모듈)
-│   ├── services/
-│   │   └── celebrity_image_service.rb
-│   └── views/
-│       ├── layouts/application.html.erb (사이드바 뱃지)
-│       ├── saju/show.html.erb (단일칼럼 레이아웃)
-│       ├── saju/new.html.erb (세션 자동 채움)
-│       └── dreams/show.html.erb
-├── db/migrate/
-│   ├── 20260301000002_create_celebrity_images.rb
-│   └── 20260301000003_create_dream_interpretations.rb
-└── config/routes.rb
+│   ├── controllers/     (saju, fortunes, compatibility, chat 등)
+│   ├── models/          (saju_record, saju_engine concerns)
+│   ├── views/           (각 기능별 ERB 템플릿)
+│   └── assets/
+│       └── stylesheets/ (application.css - Y2K Kawaii 디자인)
+├── config/
+│   ├── database.yml     (dev:SQLite, prod:PostgreSQL)
+│   ├── routes.rb
+│   └── environments/
+│       └── production.rb (memory_store, async, hosts.clear)
+├── public/
+│   ├── manifest.json    (PWA)
+│   ├── service-worker.js (PWA)
+│   ├── icon-192.png     (PWA 아이콘)
+│   └── icon-512.png     (PWA 아이콘)
+├── Dockerfile           (PostgreSQL 지원)
+├── Gemfile              (solid gems dev/test 전용)
+└── DEV_STATUS.txt
 
-## 🚀 실행 방법
+============================================
+🚀 실행 방법
+============================================
+
+[로컬 개발]
 $env:PATH = "C:\Ruby33-x64\bin;$env:PATH"
 $env:GEMINI_API_KEY = "AIzaSyCNRuwLWXvrDABK7HMTFF9Lv2_LmpPwj5E"
 cd c:\development\saju
-rails server -p 3150
+rails server
 
-## 🐛 현재 디버깅 중인 이슈
-- 사주기록(/saju/history) 페이지 에러 발생 중 (브라우저 탭에서 확인됨)
-  - 원인: 미확인 (ActionController 에러)
-  - 상태: ❌ 미해결
+[프로덕션]
+- Railway 자동 배포 (GitHub push → 자동 빌드)
+- URL: https://1min-saju-production.up.railway.app
