@@ -1,0 +1,18 @@
+Starting Container
+Waiting 5 seconds for Railway internal DNS and network to stabilize...
+
+Caused by:
+Waiting 5 seconds for Railway internal DNS and network to stabilize...
+PG::ConnectionBad: connection to server at "fd12:215c:fb0d:1:2000:a0:3b05:db57", port 5432 failed: Connection timed out (PG::ConnectionBad)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "10.133.219.87", port 5432 failed: Connection timed out
+	Is the server running on that host and accepting TCP/IP connections?
+
+Tasks: TOP => db:prepare
+(See full trace by running task with --trace)
+bin/rails aborted!
+ActiveRecord::ConnectionNotEstablished: connection to server at "fd12:215c:fb0d:1:2000:a0:3b05:db57", port 5432 failed: Connection timed out (ActiveRecord::ConnectionNotEstablished)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "10.133.219.87", port 5432 failed: Connection timed out
+	Is the server running on that host and accepting TCP/IP connections?
+

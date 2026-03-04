@@ -107,7 +107,9 @@ https://1min-saju-production.up.railway.app
 ============================================
 🐛 현재 디버깅 중인 이슈
 ============================================
-- 에러명: Connection timed out (Postgres Internal DB)
-- 원인 추정: Railway에서 제공하는 Postgres 내부 네트워크에 앱 컨테이너가 정상적으로 라우팅되지 않는 고질적 네트워크 문제.
-- 시도한 해결책: Postgres 연결을 과감히 포기하고, 빠르고 즉각적인 작동을 위해 Production DB를 SQLite3로 전환 완료 (Gemfile, database.yml 수정). 빌드 대기 중.
-- 현재 상태: 🟢 (문제 우회 완료, 빌드 중)
+- 에러명: 502 Bad Gateway (Silent crash, Thruster Port 80, Frozen Gemfile)
+- 원인 추정: 
+  1. (최근) Dockerfile의 `BUNDLE_DEPLOYMENT="1"`(frozen mode)로 인해 sqlite3 Gemfile 변경사항이 빌드 실패를 일으켜 계속 구버전 컨테이너가 실행되고 있었음.
+  2. (기존) Rails 8 (Thruster)이 non-root `rails` 유저로 실행되나, 고정된 PORT=80에 바인딩하려다 EACCES 권한 부족 크래시.
+- 시도한 해결책: `BUNDLE_DEPLOYMENT` 환경변수를 제거하여 빌드 오류를 해결하고, `PORT` 주입 삭제 및 `RAILS_LOG_TO_STDOUT=1` 추가.
+- 현재 상태: 🟡 (최종 빌드 및 컨테이너 가동 대기 중)

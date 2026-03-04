@@ -1,0 +1,34 @@
+{"message":"Starting Container","timestamp":"2026-03-04T06:14:20.753778369Z","level":"info"}
+{"message":"Waiting 5 seconds for Railway internal DNS and network to stabilize...","timestamp":"2026-03-04T06:14:21.292652322Z","level":"info"}
+{"level":"error","timestamp":"2026-03-04T06:23:29.651059889Z","message":""}
+{"timestamp":"2026-03-04T06:23:29.651069851Z","message":"Caused by:","level":"error"}
+{"message":"Waiting 5 seconds for Railway internal DNS and network to stabilize...","timestamp":"2026-03-04T06:23:29.651075583Z","level":"info"}
+{"message":"PG::ConnectionBad: connection to server at \"fd12:215c:fb0d:1:2000:a0:3b05:db57\", port 5432 failed: Connection timed out (PG::ConnectionBad)","level":"error","timestamp":"2026-03-04T06:23:29.651078156Z"}
+{"timestamp":"2026-03-04T06:23:29.651084919Z","level":"error","message":"\tIs the server running on that host and accepting TCP/IP connections?"}
+{"timestamp":"2026-03-04T06:23:29.651092682Z","message":"connection to server at \"10.133.219.87\", port 5432 failed: Connection timed out","level":"error"}
+{"message":"\tIs the server running on that host and accepting TCP/IP connections?","timestamp":"2026-03-04T06:23:29.651099080Z","level":"error"}
+{"message":"","level":"error","timestamp":"2026-03-04T06:23:29.651105857Z"}
+{"level":"error","message":"Tasks: TOP => db:prepare","timestamp":"2026-03-04T06:23:29.651112553Z"}
+{"level":"error","message":"(See full trace by running task with --trace)","timestamp":"2026-03-04T06:23:29.651119855Z"}
+{"message":"bin/rails aborted!","level":"error","timestamp":"2026-03-04T06:23:29.651158720Z"}
+{"message":"ActiveRecord::ConnectionNotEstablished: connection to server at \"fd12:215c:fb0d:1:2000:a0:3b05:db57\", port 5432 failed: Connection timed out (ActiveRecord::ConnectionNotEstablished)","level":"error","timestamp":"2026-03-04T06:23:29.651168512Z"}
+{"level":"error","message":"\tIs the server running on that host and accepting TCP/IP connections?","timestamp":"2026-03-04T06:23:29.651176060Z"}
+{"message":"connection to server at \"10.133.219.87\", port 5432 failed: Connection timed out","level":"error","timestamp":"2026-03-04T06:23:29.651182492Z"}
+{"timestamp":"2026-03-04T06:23:29.651189272Z","message":"\tIs the server running on that host and accepting TCP/IP connections?","level":"error"}
+{"level":"error","message":"","timestamp":"2026-03-04T06:23:29.651197583Z"}
+{"level":"error","message":"bin/rails aborted!","timestamp":"2026-03-04T06:32:33.344673079Z"}
+{"level":"error","message":"ActiveRecord::ConnectionNotEstablished: connection to server at \"fd12:215c:fb0d:1:2000:a0:3b05:db57\", port 5432 failed: Connection timed out (ActiveRecord::ConnectionNotEstablished)","timestamp":"2026-03-04T06:32:33.344682381Z"}
+{"message":"Caused by:","timestamp":"2026-03-04T06:32:33.344691245Z","level":"error"}
+{"message":"\tIs the server running on that host and accepting TCP/IP connections?","timestamp":"2026-03-04T06:32:33.344692537Z","level":"error"}
+{"timestamp":"2026-03-04T06:32:33.344703397Z","level":"error","message":"connection to server at \"10.133.219.87\", port 5432 failed: Connection timed out"}
+{"timestamp":"2026-03-04T06:32:33.344710251Z","level":"error","message":"PG::ConnectionBad: connection to server at \"fd12:215c:fb0d:1:2000:a0:3b05:db57\", port 5432 failed: Connection timed out (PG::ConnectionBad)"}
+{"level":"error","message":"\tIs the server running on that host and accepting TCP/IP connections?","timestamp":"2026-03-04T06:32:33.344719543Z"}
+{"message":"\tIs the server running on that host and accepting TCP/IP connections?","level":"error","timestamp":"2026-03-04T06:32:33.344722741Z"}
+{"level":"error","message":"","timestamp":"2026-03-04T06:32:33.344729802Z"}
+{"message":"","level":"error","timestamp":"2026-03-04T06:32:33.344739087Z"}
+{"timestamp":"2026-03-04T06:32:33.344829111Z","message":"connection to server at \"10.133.219.87\", port 5432 failed: Connection timed out","level":"error"}
+{"level":"error","message":"\tIs the server running on that host and accepting TCP/IP connections?","timestamp":"2026-03-04T06:32:33.344836093Z"}
+{"message":"","timestamp":"2026-03-04T06:32:33.344843581Z","level":"error"}
+{"message":"Tasks: TOP => db:prepare","level":"error","timestamp":"2026-03-04T06:32:33.344850304Z"}
+{"timestamp":"2026-03-04T06:32:33.344857611Z","level":"error","message":"(See full trace by running task with --trace)"}
+{"message":"Waiting 5 seconds for Railway internal DNS and network to stabilize...","level":"info","timestamp":"2026-03-04T06:32:34.564513782Z"}
