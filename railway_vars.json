@@ -1,5 +1,5 @@
 {
-  "DATABASE_URL": "postgresql://postgres:pIBnGZUsqYnNtSqkMQVeCvelsbzEYmkl@postgres.railway.internal:5432/railway",
+  "DATABASE_URL": "$postgresql://postgres:pIBnGZUsqYnNtSqkMQVeCvelsbzEYmkl@postgres.railway.internal:5432/railway",
   "GEMINI_API_KEY": "AIzaSyCNRuwLWXvrDABK7HMTFF9Lv2_LmpPwj5E",
   "PORT": "80",
   "RAILS_MASTER_KEY": "3922006881bc884c8d0267d154699f8c",
