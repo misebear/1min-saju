@@ -2,9 +2,8 @@
 
 # If running the rails server then create or migrate existing database
 if [ "${@: -2:1}" == "./bin/rails" ] && [ "${@: -1:1}" == "server" ]; then
-  echo "Waiting 5 seconds for Railway internal DNS and network to stabilize..."
-  sleep 5
-  ./bin/rails db:prepare
+  echo "Running db:prepare with trace..."
+  ./bin/rails db:prepare --trace
 fi
 
 exec "${@}"
