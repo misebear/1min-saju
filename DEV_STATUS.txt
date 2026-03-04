@@ -108,6 +108,6 @@ https://1min-saju-production.up.railway.app
 🐛 현재 디버깅 중인 이슈
 ============================================
 - 에러명: PG::ConnectionBad (server closed the connection unexpectedly)
-- 원인 추정: Railway TCP Proxy 포트(66.33.22.254:10326)를 통한 Public 접속 시 SSL Handshake 문제로 연결이 강제 종료됨.
-- 시도한 해결책: DATABASE_URL 환경 변수 끝에 `?sslmode=disable` 파라미터를 명시적으로 추가하여 TCP Proxy를 통과하도록 우회 설정 중.
+- 원인 추정: Rails 7.1+의 기본 Prepared Statements 기능이 Railway TCP Proxy(또는 Transaction Pooler)와 충돌하여 연결이 끊어지는 것으로 유력하게 추정됨.
+- 시도한 해결책: DATABASE_URL 환경 변수 끝에 `?sslmode=disable&prepared_statements=false` 옵션을 추가하여 해결 시도 중.
 - 현재 상태: ❌ (재배포 대기 중)
