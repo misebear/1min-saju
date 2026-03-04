@@ -107,9 +107,10 @@ https://1min-saju-production.up.railway.app
 ============================================
 🐛 현재 디버깅 중인 이슈
 ============================================
-- 에러명: 502 Bad Gateway (Silent crash, Thruster Port 80, Frozen Gemfile)
-- 원인 추정: 
-  1. (최근) Dockerfile의 `BUNDLE_DEPLOYMENT="1"`(frozen mode)로 인해 sqlite3 Gemfile 변경사항이 빌드 실패를 일으켜 계속 구버전 컨테이너가 실행되고 있었음.
-  2. (기존) Rails 8 (Thruster)이 non-root `rails` 유저로 실행되나, 고정된 PORT=80에 바인딩하려다 EACCES 권한 부족 크래시.
-- 시도한 해결책: `BUNDLE_DEPLOYMENT` 환경변수를 제거하여 빌드 오류를 해결하고, `PORT` 주입 삭제 및 `RAILS_LOG_TO_STDOUT=1` 추가.
-- 현재 상태: 🟡 (최종 빌드 및 컨테이너 가동 대기 중)
+- 에러명: 502 Bad Gateway (완벽히 해결됨)
+- 원인 및 해결: 
+  1. Railway의 `BUNDLE_DEPLOYMENT="1"` 문제로 sqlite3 변경이 반영되지 않던 빌드 캐시 문제 -> Gemfile.lock 삭제/Dockerfile 수정으로 우회 배포 성공.
+  2. Thruster 프록시와 Railway Ingress 간의 포트 맵핑 충돌 -> Dockerfile CMD에서 Thruster 제거 + `PORT=3000` 명시 후 Puma 다이렉트 바인딩.
+  3. `docker-entrypoint` 스크립트 파라미터 매치 오류 -> bash `$1`, `$2` 검사로 수정해 `db:prepare` 정상 가동 완료.
+  4. 커스텀 도메인 매핑 오류 -> 기존 실패 프로젝트(`ideal-dedication`의 `1min-saju`)에서 `www.1minsaju.com` 도메인 점유 해제 후, 신규 프로덕션(`1min-saju-prod`) 포트 3000으로 정상 연결 완료.
+- 현재 상태: 🟢 (모든 배포 및 서버 이슈 해결, 200 OK 접속 가능. 사용자 DNS 설정 대기 중)

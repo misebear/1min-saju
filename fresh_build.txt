@@ -1,0 +1,1054 @@
+[INFO] Get:8 http://deb.debian.org/debian trixie/main amd64 libsframe1 amd64 2.44-3 [78.4 kB]
+
+[INFO] Get:9 http://deb.debian.org/debian trixie/main amd64 binutils-common amd64 2.44-3 [2509 kB]
+
+[INFO] Get:10 http://deb.debian.org/debian trixie/main amd64 libbinutils amd64 2.44-3 [534 kB]
+
+[INFO] Get:11 http://deb.debian.org/debian trixie/main amd64 libgprofng0 amd64 2.44-3 [808 kB]
+
+[INFO] Get:12 http://deb.debian.org/debian trixie/main amd64 libctf-nobfd0 amd64 2.44-3 [156 kB]
+
+[INFO] Get:13 http://deb.debian.org/debian trixie/main amd64 libctf0 amd64 2.44-3 [88.6 kB]
+
+[INFO] Get:14 http://deb.debian.org/debian trixie/main amd64 libjansson4 amd64 2.14-2+b3 [39.8 kB]
+
+[INFO] Get:15 http://deb.debian.org/debian trixie/main amd64 binutils-x86-64-linux-gnu amd64 2.44-3 [1014 kB]
+
+[INFO] Get:16 http://deb.debian.org/debian trixie/main amd64 binutils amd64 2.44-3 [265 kB]
+
+[INFO] Get:17 http://deb.debian.org/debian trixie/main amd64 libc-dev-bin amd64 2.41-12+deb13u1 [58.5 kB]
+
+[INFO] Get:18 http://deb.debian.org/debian-security trixie-security/main amd64 linux-libc-dev all 6.12.73-1 [2745 kB]
+
+[INFO] Get:19 http://deb.debian.org/debian trixie/main amd64 libcrypt-dev amd64 1:4.4.38-1 [119 kB]
+
+[INFO] Get:20 http://deb.debian.org/debian trixie/main amd64 rpcsvc-proto amd64 1.4.3-1 [63.3 kB]
+
+[INFO] Get:21 http://deb.debian.org/debian trixie/main amd64 libc6-dev amd64 2.41-12+deb13u1 [1994 kB]
+
+[INFO] Get:22 http://deb.debian.org/debian trixie/main amd64 libisl23 amd64 0.27-1 [659 kB]
+
+[INFO] Get:23 http://deb.debian.org/debian trixie/main amd64 libmpfr6 amd64 4.2.2-1 [729 kB]
+
+[INFO] Get:24 http://deb.debian.org/debian trixie/main amd64 libmpc3 amd64 1.3.1-1+b3 [52.2 kB]
+
+[INFO] Get:25 http://deb.debian.org/debian trixie/main amd64 cpp-14-x86-64-linux-gnu amd64 14.2.0-19 [11.0 MB]
+
+[INFO] Get:26 http://deb.debian.org/debian trixie/main amd64 cpp-14 amd64 14.2.0-19 [1280 B]
+
+[INFO] Get:27 http://deb.debian.org/debian trixie/main amd64 cpp-x86-64-linux-gnu amd64 4:14.2.0-1 [4840 B]
+
+[INFO] Get:28 http://deb.debian.org/debian trixie/main amd64 cpp amd64 4:14.2.0-1 [1568 B]
+
+[INFO] Get:29 http://deb.debian.org/debian trixie/main amd64 libcc1-0 amd64 14.2.0-19 [42.8 kB]
+
+[INFO] Get:30 http://deb.debian.org/debian trixie/main amd64 libitm1 amd64 14.2.0-19 [26.0 kB]
+
+[INFO] Get:31 http://deb.debian.org/debian trixie/main amd64 libasan8 amd64 14.2.0-19 [2725 kB]
+
+[INFO] Get:32 http://deb.debian.org/debian trixie/main amd64 liblsan0 amd64 14.2.0-19 [1204 kB]
+
+[INFO] Get:33 http://deb.debian.org/debian trixie/main amd64 libtsan2 amd64 14.2.0-19 [2460 kB]
+
+[INFO] Get:34 http://deb.debian.org/debian trixie/main amd64 libubsan1 amd64 14.2.0-19 [1074 kB]
+
+[INFO] Get:35 http://deb.debian.org/debian trixie/main amd64 libhwasan0 amd64 14.2.0-19 [1488 kB]
+
+[INFO] Get:36 http://deb.debian.org/debian trixie/main amd64 libquadmath0 amd64 14.2.0-19 [145 kB]
+
+[INFO] Get:37 http://deb.debian.org/debian trixie/main amd64 libgcc-14-dev amd64 14.2.0-19 [2672 kB]
+
+[INFO] Get:38 http://deb.debian.org/debian trixie/main amd64 gcc-14-x86-64-linux-gnu amd64 14.2.0-19 [21.4 MB]
+
+[INFO] Get:39 http://deb.debian.org/debian trixie/main amd64 gcc-14 amd64 14.2.0-19 [540 kB]
+
+[INFO] Get:40 http://deb.debian.org/debian trixie/main amd64 gcc-x86-64-linux-gnu amd64 4:14.2.0-1 [1436 B]
+
+[INFO] Get:41 http://deb.debian.org/debian trixie/main amd64 gcc amd64 4:14.2.0-1 [5136 B]
+
+[INFO] Get:42 http://deb.debian.org/debian trixie/main amd64 libstdc++-14-dev amd64 14.2.0-19 [2376 kB]
+
+[INFO] Get:43 http://deb.debian.org/debian trixie/main amd64 g++-14-x86-64-linux-gnu amd64 14.2.0-19 [12.1 MB]
+
+[INFO] Get:44 http://deb.debian.org/debian trixie/main amd64 g++-14 amd64 14.2.0-19 [22.5 kB]
+
+[INFO] Get:45 http://deb.debian.org/debian trixie/main amd64 g++-x86-64-linux-gnu amd64 4:14.2.0-1 [1200 B]
+
+[INFO] Get:46 http://deb.debian.org/debian trixie/main amd64 g++ amd64 4:14.2.0-1 [1344 B]
+
+[INFO] Get:47 http://deb.debian.org/debian trixie/main amd64 make amd64 4.4.1-2 [463 kB]
+
+[INFO] Get:48 http://deb.debian.org/debian trixie/main amd64 libdpkg-perl all 1.22.21 [650 kB]
+
+[INFO] Get:49 http://deb.debian.org/debian trixie/main amd64 patch amd64 2.8-2 [134 kB]
+
+[INFO] Get:50 http://deb.debian.org/debian trixie/main amd64 dpkg-dev all 1.22.21 [1338 kB]
+
+[INFO] Get:51 http://deb.debian.org/debian trixie/main amd64 build-essential amd64 12.12 [4624 B]
+
+[INFO] Get:52 http://deb.debian.org/debian trixie/main amd64 liberror-perl all 0.17030-1 [26.9 kB]
+
+[INFO] Get:53 http://deb.debian.org/debian trixie/main amd64 git-man all 1:2.47.3-0+deb13u1 [2205 kB]
+
+[INFO] Get:54 http://deb.debian.org/debian trixie/main amd64 git amd64 1:2.47.3-0+deb13u1 [8862 kB]
+
+[INFO] Get:55 http://deb.debian.org/debian trixie/main amd64 libpkgconf3 amd64 1.8.1-4 [36.4 kB]
+
+[INFO] Get:56 http://deb.debian.org/debian-security trixie-security/main amd64 libssl-dev amd64 3.5.4-1~deb13u2 [2958 kB]
+
+[INFO] Get:57 http://deb.debian.org/debian-security trixie-security/main amd64 libpq-dev amd64 17.8-0+deb13u1 [152 kB]
+
+[INFO] Get:58 http://deb.debian.org/debian trixie/main amd64 libyaml-dev amd64 0.2.5-2 [63.4 kB]
+
+[INFO] Get:59 http://deb.debian.org/debian trixie/main amd64 pkgconf-bin amd64 1.8.1-4 [30.2 kB]
+
+[INFO] Get:60 http://deb.debian.org/debian trixie/main amd64 pkgconf amd64 1.8.1-4 [26.2 kB]
+
+[INFO] Get:61 http://deb.debian.org/debian trixie/main amd64 pkg-config amd64 1.8.1-4 [14.0 kB]
+
+[INFO] debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+
+[INFO] debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 61.)
+debconf: falling back to frontend: Teletype
+
+[INFO] debconf: unable to initialize frontend: Teletype
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Noninteractive
+
+[INFO] Fetched 96.7 MB in 1s (141 MB/s)
+
+[INFO] Selecting previously unselected package bzip2.
+(Reading database ... 
+[INFO] (Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+[INFO] (Reading database ... 65%
+[INFO] (Reading database ... 70%
+[INFO] (Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%
+(Reading database ... 7754 files and directories currently installed.)
+
+[INFO] Preparing to unpack .../00-bzip2_1.0.8-6_amd64.deb ...
+
+[INFO] Unpacking bzip2 (1.0.8-6) ...
+
+[INFO] Selecting previously unselected package perl-modules-5.40.
+
+[INFO] Preparing to unpack .../01-perl-modules-5.40_5.40.1-6_all.deb ...
+
+[INFO] Unpacking perl-modules-5.40 (5.40.1-6) ...
+
+[INFO] Selecting previously unselected package libgdbm6t64:amd64.
+
+[INFO] Preparing to unpack .../02-libgdbm6t64_1.24-2_amd64.deb ...
+
+[INFO] Unpacking libgdbm6t64:amd64 (1.24-2) ...
+
+[INFO] Selecting previously unselected package libgdbm-compat4t64:amd64.
+
+[INFO] Preparing to unpack .../03-libgdbm-compat4t64_1.24-2_amd64.deb ...
+
+[INFO] Unpacking libgdbm-compat4t64:amd64 (1.24-2) ...
+
+[INFO] Selecting previously unselected package libperl5.40:amd64.
+
+[INFO] Preparing to unpack .../04-libperl5.40_5.40.1-6_amd64.deb ...
+
+[INFO] Unpacking libperl5.40:amd64 (5.40.1-6) ...
+
+[INFO] Selecting previously unselected package perl.
+
+[INFO] Preparing to unpack .../05-perl_5.40.1-6_amd64.deb ...
+
+[INFO] Unpacking perl (5.40.1-6) ...
+
+[INFO] Selecting previously unselected package xz-utils.
+
+[INFO] Preparing to unpack .../06-xz-utils_5.8.1-1_amd64.deb ...
+
+[INFO] Unpacking xz-utils (5.8.1-1) ...
+
+[INFO] Selecting previously unselected package libsframe1:amd64.
+
+[INFO] Preparing to unpack .../07-libsframe1_2.44-3_amd64.deb ...
+
+[INFO] Unpacking libsframe1:amd64 (2.44-3) ...
+
+[INFO] Selecting previously unselected package binutils-common:amd64.
+
+[INFO] Preparing to unpack .../08-binutils-common_2.44-3_amd64.deb ...
+
+[INFO] Unpacking binutils-common:amd64 (2.44-3) ...
+
+[INFO] Selecting previously unselected package libbinutils:amd64.
+
+[INFO] Preparing to unpack .../09-libbinutils_2.44-3_amd64.deb ...
+
+[INFO] Unpacking libbinutils:amd64 (2.44-3) ...
+
+[INFO] Selecting previously unselected package libgprofng0:amd64.
+
+[INFO] Preparing to unpack .../10-libgprofng0_2.44-3_amd64.deb ...
+
+[INFO] Unpacking libgprofng0:amd64 (2.44-3) ...
+
+[INFO] Selecting previously unselected package libctf-nobfd0:amd64.
+
+[INFO] Preparing to unpack .../11-libctf-nobfd0_2.44-3_amd64.deb ...
+
+[INFO] Unpacking libctf-nobfd0:amd64 (2.44-3) ...
+
+[INFO] Selecting previously unselected package libctf0:amd64.
+
+[INFO] Preparing to unpack .../12-libctf0_2.44-3_amd64.deb ...
+
+[INFO] Unpacking libctf0:amd64 (2.44-3) ...
+
+[INFO] Selecting previously unselected package libjansson4:amd64.
+
+[INFO] Preparing to unpack .../13-libjansson4_2.14-2+b3_amd64.deb ...
+
+[INFO] Unpacking libjansson4:amd64 (2.14-2+b3) ...
+
+[INFO] Selecting previously unselected package binutils-x86-64-linux-gnu.
+
+[INFO] Preparing to unpack .../14-binutils-x86-64-linux-gnu_2.44-3_amd64.deb ...
+
+[INFO] Unpacking binutils-x86-64-linux-gnu (2.44-3) ...
+
+[INFO] Selecting previously unselected package binutils.
+
+[INFO] Preparing to unpack .../15-binutils_2.44-3_amd64.deb ...
+
+[INFO] Unpacking binutils (2.44-3) ...
+
+[INFO] Selecting previously unselected package libc-dev-bin.
+
+[INFO] Preparing to unpack .../16-libc-dev-bin_2.41-12+deb13u1_amd64.deb ...
+
+[INFO] Unpacking libc-dev-bin (2.41-12+deb13u1) ...
+
+[INFO] Selecting previously unselected package linux-libc-dev.
+
+[INFO] Preparing to unpack .../17-linux-libc-dev_6.12.73-1_all.deb ...
+
+[INFO] Unpacking linux-libc-dev (6.12.73-1) ...
+
+[INFO] Selecting previously unselected package libcrypt-dev:amd64.
+
+[INFO] Preparing to unpack .../18-libcrypt-dev_1%3a4.4.38-1_amd64.deb ...
+
+[INFO] Unpacking libcrypt-dev:amd64 (1:4.4.38-1) ...
+
+[INFO] Selecting previously unselected package rpcsvc-proto.
+
+[INFO] Preparing to unpack .../19-rpcsvc-proto_1.4.3-1_amd64.deb ...
+
+[INFO] Unpacking rpcsvc-proto (1.4.3-1) ...
+
+[INFO] Selecting previously unselected package libc6-dev:amd64.
+
+[INFO] Preparing to unpack .../20-libc6-dev_2.41-12+deb13u1_amd64.deb ...
+
+[INFO] Unpacking libc6-dev:amd64 (2.41-12+deb13u1) ...
+
+[INFO] Selecting previously unselected package libisl23:amd64.
+
+[INFO] Preparing to unpack .../21-libisl23_0.27-1_amd64.deb ...
+
+[INFO] Unpacking libisl23:amd64 (0.27-1) ...
+
+[INFO] Selecting previously unselected package libmpfr6:amd64.
+
+[INFO] Preparing to unpack .../22-libmpfr6_4.2.2-1_amd64.deb ...
+
+[INFO] Unpacking libmpfr6:amd64 (4.2.2-1) ...
+
+[INFO] Selecting previously unselected package libmpc3:amd64.
+
+[INFO] Preparing to unpack .../23-libmpc3_1.3.1-1+b3_amd64.deb ...
+
+[INFO] Unpacking libmpc3:amd64 (1.3.1-1+b3) ...
+
+[INFO] Selecting previously unselected package cpp-14-x86-64-linux-gnu.
+
+[INFO] Preparing to unpack .../24-cpp-14-x86-64-linux-gnu_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking cpp-14-x86-64-linux-gnu (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package cpp-14.
+
+[INFO] Preparing to unpack .../25-cpp-14_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking cpp-14 (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package cpp-x86-64-linux-gnu.
+
+[INFO] Preparing to unpack .../26-cpp-x86-64-linux-gnu_4%3a14.2.0-1_amd64.deb ...
+
+[INFO] Unpacking cpp-x86-64-linux-gnu (4:14.2.0-1) ...
+
+[INFO] Selecting previously unselected package cpp.
+
+[INFO] Preparing to unpack .../27-cpp_4%3a14.2.0-1_amd64.deb ...
+
+[INFO] Unpacking cpp (4:14.2.0-1) ...
+
+[INFO] Selecting previously unselected package libcc1-0:amd64.
+
+[INFO] Preparing to unpack .../28-libcc1-0_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking libcc1-0:amd64 (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package libitm1:amd64.
+
+[INFO] Preparing to unpack .../29-libitm1_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking libitm1:amd64 (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package libasan8:amd64.
+
+[INFO] Preparing to unpack .../30-libasan8_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking libasan8:amd64 (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package liblsan0:amd64.
+
+[INFO] Preparing to unpack .../31-liblsan0_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking liblsan0:amd64 (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package libtsan2:amd64.
+
+[INFO] Preparing to unpack .../32-libtsan2_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking libtsan2:amd64 (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package libubsan1:amd64.
+
+[INFO] Preparing to unpack .../33-libubsan1_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking libubsan1:amd64 (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package libhwasan0:amd64.
+
+[INFO] Preparing to unpack .../34-libhwasan0_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking libhwasan0:amd64 (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package libquadmath0:amd64.
+
+[INFO] Preparing to unpack .../35-libquadmath0_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking libquadmath0:amd64 (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package libgcc-14-dev:amd64.
+
+[INFO] Preparing to unpack .../36-libgcc-14-dev_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking libgcc-14-dev:amd64 (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package gcc-14-x86-64-linux-gnu.
+
+[INFO] Preparing to unpack .../37-gcc-14-x86-64-linux-gnu_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking gcc-14-x86-64-linux-gnu (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package gcc-14.
+
+[INFO] Preparing to unpack .../38-gcc-14_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking gcc-14 (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package gcc-x86-64-linux-gnu.
+
+[INFO] Preparing to unpack .../39-gcc-x86-64-linux-gnu_4%3a14.2.0-1_amd64.deb ...
+
+[INFO] Unpacking gcc-x86-64-linux-gnu (4:14.2.0-1) ...
+
+[INFO] Selecting previously unselected package gcc.
+
+[INFO] Preparing to unpack .../40-gcc_4%3a14.2.0-1_amd64.deb ...
+
+[INFO] Unpacking gcc (4:14.2.0-1) ...
+
+[INFO] Selecting previously unselected package libstdc++-14-dev:amd64.
+
+[INFO] Preparing to unpack .../41-libstdc++-14-dev_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking libstdc++-14-dev:amd64 (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package g++-14-x86-64-linux-gnu.
+
+[INFO] Preparing to unpack .../42-g++-14-x86-64-linux-gnu_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking g++-14-x86-64-linux-gnu (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package g++-14.
+
+[INFO] Preparing to unpack .../43-g++-14_14.2.0-19_amd64.deb ...
+
+[INFO] Unpacking g++-14 (14.2.0-19) ...
+
+[INFO] Selecting previously unselected package g++-x86-64-linux-gnu.
+
+[INFO] Preparing to unpack .../44-g++-x86-64-linux-gnu_4%3a14.2.0-1_amd64.deb ...
+
+[INFO] Unpacking g++-x86-64-linux-gnu (4:14.2.0-1) ...
+
+[INFO] Selecting previously unselected package g++.
+
+[INFO] Preparing to unpack .../45-g++_4%3a14.2.0-1_amd64.deb ...
+
+[INFO] Unpacking g++ (4:14.2.0-1) ...
+
+[INFO] Selecting previously unselected package make.
+
+[INFO] Preparing to unpack .../46-make_4.4.1-2_amd64.deb ...
+
+[INFO] Unpacking make (4.4.1-2) ...
+
+[INFO] Selecting previously unselected package libdpkg-perl.
+
+[INFO] Preparing to unpack .../47-libdpkg-perl_1.22.21_all.deb ...
+
+[INFO] Unpacking libdpkg-perl (1.22.21) ...
+
+[INFO] Selecting previously unselected package patch.
+
+[INFO] Preparing to unpack .../48-patch_2.8-2_amd64.deb ...
+
+[INFO] Unpacking patch (2.8-2) ...
+
+[INFO] Selecting previously unselected package dpkg-dev.
+
+[INFO] Preparing to unpack .../49-dpkg-dev_1.22.21_all.deb ...
+
+[INFO] Unpacking dpkg-dev (1.22.21) ...
+
+[INFO] Selecting previously unselected package build-essential.
+
+[INFO] Preparing to unpack .../50-build-essential_12.12_amd64.deb ...
+
+[INFO] Unpacking build-essential (12.12) ...
+
+[INFO] Selecting previously unselected package liberror-perl.
+
+[INFO] Preparing to unpack .../51-liberror-perl_0.17030-1_all.deb ...
+
+[INFO] Unpacking liberror-perl (0.17030-1) ...
+
+[INFO] Selecting previously unselected package git-man.
+
+[INFO] Preparing to unpack .../52-git-man_1%3a2.47.3-0+deb13u1_all.deb ...
+
+[INFO] Unpacking git-man (1:2.47.3-0+deb13u1) ...
+
+[INFO] Selecting previously unselected package git.
+
+[INFO] Preparing to unpack .../53-git_1%3a2.47.3-0+deb13u1_amd64.deb ...
+
+[INFO] Unpacking git (1:2.47.3-0+deb13u1) ...
+
+[INFO] Selecting previously unselected package libpkgconf3:amd64.
+
+[INFO] Preparing to unpack .../54-libpkgconf3_1.8.1-4_amd64.deb ...
+
+[INFO] Unpacking libpkgconf3:amd64 (1.8.1-4) ...
+
+[INFO] Selecting previously unselected package libssl-dev:amd64.
+
+[INFO] Preparing to unpack .../55-libssl-dev_3.5.4-1~deb13u2_amd64.deb ...
+
+[INFO] Unpacking libssl-dev:amd64 (3.5.4-1~deb13u2) ...
+
+[INFO] Selecting previously unselected package libpq-dev.
+
+[INFO] Preparing to unpack .../56-libpq-dev_17.8-0+deb13u1_amd64.deb ...
+
+[INFO] Unpacking libpq-dev (17.8-0+deb13u1) ...
+
+[INFO] Selecting previously unselected package libyaml-dev:amd64.
+
+[INFO] Preparing to unpack .../57-libyaml-dev_0.2.5-2_amd64.deb ...
+
+[INFO] Unpacking libyaml-dev:amd64 (0.2.5-2) ...
+
+[INFO] Selecting previously unselected package pkgconf-bin.
+
+[INFO] Preparing to unpack .../58-pkgconf-bin_1.8.1-4_amd64.deb ...
+
+[INFO] Unpacking pkgconf-bin (1.8.1-4) ...
+
+[INFO] Selecting previously unselected package pkgconf:amd64.
+
+[INFO] Preparing to unpack .../59-pkgconf_1.8.1-4_amd64.deb ...
+
+[INFO] Unpacking pkgconf:amd64 (1.8.1-4) ...
+
+[INFO] Selecting previously unselected package pkg-config:amd64.
+
+[INFO] Preparing to unpack .../60-pkg-config_1.8.1-4_amd64.deb ...
+
+[INFO] Unpacking pkg-config:amd64 (1.8.1-4) ...
+
+[INFO] Setting up libgdbm6t64:amd64 (1.24-2) ...
+
+[INFO] Setting up libyaml-dev:amd64 (0.2.5-2) ...
+
+[INFO] Setting up libgdbm-compat4t64:amd64 (1.24-2) ...
+
+[INFO] Setting up binutils-common:amd64 (2.44-3) ...
+
+[INFO] Setting up linux-libc-dev (6.12.73-1) ...
+
+[INFO] Setting up libctf-nobfd0:amd64 (2.44-3) ...
+
+[INFO] Setting up bzip2 (1.0.8-6) ...
+
+[INFO] Setting up libsframe1:amd64 (2.44-3) ...
+
+[INFO] Setting up libjansson4:amd64 (2.14-2+b3) ...
+
+[INFO] Setting up libpkgconf3:amd64 (1.8.1-4) ...
+
+[INFO] Setting up rpcsvc-proto (1.4.3-1) ...
+
+[INFO] Setting up make (4.4.1-2) ...
+
+[INFO] Setting up libmpfr6:amd64 (4.2.2-1) ...
+
+[INFO] Setting up xz-utils (5.8.1-1) ...
+
+[INFO] update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
+
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/man1/lzma.1.gz because associated file /usr/share/man/man1/xz.1.gz (of link group lzma) doesn't exist
+
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/man1/unlzma.1.gz because associated file /usr/share/man/man1/unxz.1.gz (of link group lzma) doesn't exist
+
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/man1/lzcat.1.gz because associated file /usr/share/man/man1/xzcat.1.gz (of link group lzma) doesn't exist
+
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/man1/lzmore.1.gz because associated file /usr/share/man/man1/xzmore.1.gz (of link group lzma) doesn't exist
+
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/man1/lzless.1.gz because associated file /usr/share/man/man1/xzless.1.gz (of link group lzma) doesn't exist
+
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/man1/lzdiff.1.gz because associated file /usr/share/man/man1/xzdiff.1.gz (of link group lzma) doesn't exist
+
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/man1/lzcmp.1.gz because associated file /usr/share/man/man1/xzcmp.1.gz (of link group lzma) doesn't exist
+
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/man1/lzgrep.1.gz because associated file /usr/share/man/man1/xzgrep.1.gz (of link group lzma) doesn't exist
+
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/man1/lzegrep.1.gz because associated file /usr/share/man/man1/xzegrep.1.gz (of link group lzma) doesn't exist
+
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/man1/lzfgrep.1.gz because associated file /usr/share/man/man1/xzfgrep.1.gz (of link group lzma) doesn't exist
+
+[INFO] Setting up libquadmath0:amd64 (14.2.0-19) ...
+
+[INFO] Setting up libssl-dev:amd64 (3.5.4-1~deb13u2) ...
+
+[INFO] Setting up libmpc3:amd64 (1.3.1-1+b3) ...
+
+[INFO] Setting up patch (2.8-2) ...
+
+[INFO] Setting up pkgconf-bin (1.8.1-4) ...
+
+[INFO] Setting up libubsan1:amd64 (14.2.0-19) ...
+
+[INFO] Setting up perl-modules-5.40 (5.40.1-6) ...
+
+[INFO] Setting up libhwasan0:amd64 (14.2.0-19) ...
+
+[INFO] Setting up libcrypt-dev:amd64 (1:4.4.38-1) ...
+
+[INFO] Setting up libasan8:amd64 (14.2.0-19) ...
+
+[INFO] Setting up git-man (1:2.47.3-0+deb13u1) ...
+
+[INFO] Setting up libtsan2:amd64 (14.2.0-19) ...
+
+[INFO] Setting up libbinutils:amd64 (2.44-3) ...
+
+[INFO] Setting up libisl23:amd64 (0.27-1) ...
+
+[INFO] Setting up libc-dev-bin (2.41-12+deb13u1) ...
+
+[INFO] Setting up libcc1-0:amd64 (14.2.0-19) ...
+
+[INFO] Setting up liblsan0:amd64 (14.2.0-19) ...
+
+[INFO] Setting up libitm1:amd64 (14.2.0-19) ...
+
+[INFO] Setting up libctf0:amd64 (2.44-3) ...
+
+[INFO] Setting up libpq-dev (17.8-0+deb13u1) ...
+
+[INFO] Setting up pkgconf:amd64 (1.8.1-4) ...
+
+[INFO] Setting up libperl5.40:amd64 (5.40.1-6) ...
+
+[INFO] Setting up perl (5.40.1-6) ...
+
+[INFO] Setting up libgprofng0:amd64 (2.44-3) ...
+
+[INFO] Setting up pkg-config:amd64 (1.8.1-4) ...
+
+[INFO] Setting up cpp-14-x86-64-linux-gnu (14.2.0-19) ...
+
+[INFO] Setting up libdpkg-perl (1.22.21) ...
+
+[INFO] Setting up cpp-14 (14.2.0-19) ...
+
+[INFO] Setting up libc6-dev:amd64 (2.41-12+deb13u1) ...
+
+[INFO] Setting up libgcc-14-dev:amd64 (14.2.0-19) ...
+
+[INFO] Setting up libstdc++-14-dev:amd64 (14.2.0-19) ...
+
+[INFO] Setting up binutils-x86-64-linux-gnu (2.44-3) ...
+
+[INFO] Setting up cpp-x86-64-linux-gnu (4:14.2.0-1) ...
+
+[INFO] Setting up binutils (2.44-3) ...
+
+[INFO] Setting up dpkg-dev (1.22.21) ...
+
+[INFO] Setting up liberror-perl (0.17030-1) ...
+
+[INFO] Setting up git (1:2.47.3-0+deb13u1) ...
+
+[INFO] Setting up cpp (4:14.2.0-1) ...
+
+[INFO] Setting up gcc-14-x86-64-linux-gnu (14.2.0-19) ...
+
+[INFO] Setting up gcc-x86-64-linux-gnu (4:14.2.0-1) ...
+
+[INFO] Setting up gcc-14 (14.2.0-19) ...
+
+[INFO] Setting up g++-14-x86-64-linux-gnu (14.2.0-19) ...
+
+[INFO] Setting up g++-x86-64-linux-gnu (4:14.2.0-1) ...
+
+[INFO] Setting up g++-14 (14.2.0-19) ...
+
+[INFO] Setting up gcc (4:14.2.0-1) ...
+
+[INFO] Setting up g++ (4:14.2.0-1) ...
+
+[INFO] update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+
+[INFO] Setting up build-essential (12.12) ...
+
+[INFO] Processing triggers for libc-bin (2.41-12+deb13u1) ...
+
+[INFO] [build 1/8] RUN apt-get update -qq &&     apt-get install --no-install-recommends -y build-essential git libyaml-dev pkg-config libpq-dev &&     rm -rf /var/lib/apt/lists /var/cache/apt/archives
+[INFO] [build 2/8] COPY vendor/* ./vendor/
+[INFO] [build 2/8] COPY vendor/* ./vendor/
+[INFO] [build 3/8] COPY Gemfile ./
+[INFO] [build 3/8] COPY Gemfile ./
+[INFO] [build 4/8] RUN bundle install &&     rm -rf ~/.bundle/ "/usr/local/bundle"/ruby/*/cache "/usr/local/bundle"/ruby/*/bundler/gems/*/.git &&     bundle exec bootsnap precompile -j 1 --gemfile
+[INFO] Fetching gem metadata from https://rubygems.org/
+[INFO] .
+[INFO] .
+[INFO] .
+[INFO] .
+[INFO] .
+[INFO] .
+[INFO] .
+[INFO] .
+[INFO] .
+[INFO] .
+[INFO] 
+
+[INFO] Resolving dependencies...
+
+[INFO] Fetching rake 13.3.1
+
+[INFO] Installing rake 13.3.1
+
+[INFO] Fetching base64 0.3.0
+
+[INFO] Fetching bigdecimal 4.0.1
+Fetching concurrent-ruby 1.3.6
+Fetching connection_pool 3.0.2
+Fetching drb 2.2.3
+Fetching json 2.18.1
+Fetching logger 1.7.0
+Fetching prism 1.9.0
+Fetching securerandom 0.4.1
+Fetching uri 1.1.1
+Fetching builder 3.3.0
+Fetching erubi 1.13.1
+Fetching racc 1.8.1
+Fetching crass 1.0.6
+Fetching rack 3.2.5
+Fetching useragent 0.16.11
+Fetching prettyprint 0.2.0
+Fetching erb 6.0.2
+Fetching date 3.5.1
+Fetching stringio 3.2.0
+Fetching tsort 0.2.0
+Fetching io-console 0.8.2
+Fetching thor 1.5.0
+Fetching zeitwerk 2.7.5
+Fetching nio4r 2.7.5
+Fetching websocket-extensions 0.1.5
+Fetching timeout 0.6.0
+Fetching marcel 1.1.0
+Fetching mini_mime 1.1.5
+Fetching bcrypt_pbkdf 1.1.2
+Fetching msgpack 1.8.0
+Fetching dotenv 3.2.0
+Fetching ed25519 1.4.0
+Fetching ffi 1.17.3 (x86_64-linux-gnu)
+Fetching net-ssh 7.3.0
+Fetching ostruct 0.6.3
+Fetching sqlite3 2.9.1 (x86_64-linux-gnu)
+Fetching thruster 0.1.18 (x86_64-linux)
+
+[INFO] Installing base64 0.3.0
+
+[INFO] Installing bigdecimal 4.0.1 with native extensions
+
+[INFO] Installing connection_pool 3.0.2
+
+[INFO] Installing drb 2.2.3
+
+[INFO] Installing logger 1.7.0
+
+[INFO] Installing json 2.18.1 with native extensions
+
+[INFO] Installing concurrent-ruby 1.3.6
+
+[INFO] Installing securerandom 0.4.1
+
+[INFO] Fetching mini_magick 5.3.1
+
+[INFO] Installing uri 1.1.1
+
+[INFO] Installing builder 3.3.0
+
+[INFO] Installing erubi 1.13.1
+
+[INFO] Installing crass 1.0.6
+
+[INFO] Installing racc 1.8.1 with native extensions
+
+[INFO] Installing useragent 0.16.11
+
+[INFO] Installing prettyprint 0.2.0
+
+[INFO] Installing erb 6.0.2 with native extensions
+
+[INFO] Installing rack 3.2.5
+
+[INFO] Installing stringio 3.2.0 with native extensions
+
+[INFO] Installing tsort 0.2.0
+
+[INFO] Installing date 3.5.1 with native extensions
+
+[INFO] Installing io-console 0.8.2 with native extensions
+
+[INFO] Fetching pp 0.6.3
+
+[INFO] Installing websocket-extensions 0.1.5
+
+[INFO] Installing thor 1.5.0
+
+[INFO] Installing zeitwerk 2.7.5
+
+[INFO] Installing timeout 0.6.0
+
+[INFO] Installing mini_mime 1.1.5
+
+[INFO] Installing bcrypt_pbkdf 1.1.2 with native extensions
+
+[INFO] Installing marcel 1.1.0
+
+[INFO] Installing dotenv 3.2.0
+
+[INFO] Fetching websocket-driver 0.8.0
+
+[INFO] Installing nio4r 2.7.5 with native extensions
+
+[INFO] Installing msgpack 1.8.0 with native extensions
+
+[INFO] Fetching net-protocol 0.2.2
+
+[INFO] Installing prism 1.9.0 with native extensions
+
+[INFO] Installing ed25519 1.4.0 with native extensions
+
+[INFO] Installing ostruct 0.6.3
+
+[INFO] Installing net-ssh 7.3.0
+
+[INFO] Fetching rack-session 2.1.1
+
+[INFO] Fetching rack-test 2.2.0
+Fetching rackup 2.3.1
+
+[INFO] Installing ffi 1.17.3 (x86_64-linux-gnu)
+
+[INFO] Fetching nokogiri 1.19.1 (x86_64-linux-gnu)
+
+[INFO] Fetching i18n 1.14.8
+
+[INFO] Fetching tzinfo 2.0.6
+
+[INFO] Fetching net-scp 4.1.0
+
+[INFO] Fetching net-sftp 4.0.0
+
+[INFO] Fetching ruby-vips 2.3.0
+
+[INFO] Installing mini_magick 5.3.1
+
+[INFO] Installing pp 0.6.3
+
+[INFO] Installing websocket-driver 0.8.0 with native extensions
+
+[INFO] Installing net-protocol 0.2.2
+
+[INFO] Installing rack-session 2.1.1
+
+[INFO] Installing rack-test 2.2.0
+
+[INFO] Installing rackup 2.3.1
+
+[INFO] Installing i18n 1.14.8
+
+[INFO] Installing net-scp 4.1.0
+
+[INFO] Fetching net-pop 0.1.2
+
+[INFO] Fetching net-smtp 0.5.1
+
+[INFO] Installing net-sftp 4.0.0
+
+[INFO] Installing tzinfo 2.0.6
+
+[INFO] Installing net-pop 0.1.2
+
+[INFO] Installing net-smtp 0.5.1
+
+[INFO] Installing ruby-vips 2.3.0
+
+[INFO] Installing sqlite3 2.9.1 (x86_64-linux-gnu)
+
+[INFO] Fetching sshkit 1.25.0
+
+[INFO] Installing sshkit 1.25.0
+
+[INFO] Fetching image_processing 1.14.0
+
+[INFO] Installing image_processing 1.14.0
+
+[INFO] Installing nokogiri 1.19.1 (x86_64-linux-gnu)
+
+[INFO] Installing thruster 0.1.18 (x86_64-linux)
+
+[INFO] Fetching loofah 2.25.0
+
+[INFO] Installing loofah 2.25.0
+
+[INFO] Fetching rails-html-sanitizer 1.7.0
+
+[INFO] Installing rails-html-sanitizer 1.7.0
+
+[INFO] Fetching reline 0.6.3
+
+[INFO] Installing reline 0.6.3
+
+[INFO] Fetching puma 7.2.0
+
+[INFO] Installing puma 7.2.0 with native extensions
+
+[INFO] Fetching bootsnap 1.23.0
+
+[INFO] Installing bootsnap 1.23.0 with native extensions
+
+[INFO] Fetching psych 5.3.1
+
+[INFO] Fetching net-imap 0.6.3
+
+[INFO] Installing psych 5.3.1 with native extensions
+
+[INFO] Installing net-imap 0.6.3
+
+[INFO] Fetching mail 2.9.0
+
+[INFO] Installing mail 2.9.0
+
+[INFO] Fetching rdoc 7.2.0
+
+[INFO] Installing rdoc 7.2.0
+
+[INFO] [base 2/3] WORKDIR /rails
+[INFO] [base 2/3] WORKDIR /rails
+[INFO] Fetching minitest 6.0.2
+
+[INFO] Fetching irb 1.17.0
+
+[INFO] Installing minitest 6.0.2
+
+[INFO] Fetching activesupport 8.1.2
+
+[INFO] Installing irb 1.17.0
+
+[INFO] Installing activesupport 8.1.2
+
+[INFO] Fetching rails-dom-testing 2.3.0
+
+[INFO] Fetching globalid 1.3.0
+Fetching activemodel 8.1.2
+Fetching kamal 2.10.1
+
+[INFO] Installing rails-dom-testing 2.3.0
+
+[INFO] Fetching actionview 8.1.2
+
+[INFO] Installing globalid 1.3.0
+
+[INFO] Fetching activejob 8.1.2
+
+[INFO] Installing activemodel 8.1.2
+
+[INFO] Fetching activerecord 8.1.2
+
+[INFO] Installing kamal 2.10.1
+
+[INFO] Installing actionview 8.1.2
+
+[INFO] Installing activejob 8.1.2
+
+[INFO] Fetching actionpack 8.1.2
+
+[INFO] Installing activerecord 8.1.2
+
+[INFO] Installing actionpack 8.1.2
+
+[INFO] Fetching railties 8.1.2
+
+[INFO] Fetching actioncable 8.1.2
+Fetching actionmailer 8.1.2
+Fetching propshaft 1.3.1
+
+[INFO] Installing railties 8.1.2
+
+[INFO] Installing actioncable 8.1.2
+
+[INFO] Installing actionmailer 8.1.2
+
+[INFO] Installing propshaft 1.3.1
+
+[INFO] Fetching activestorage 8.1.2
+
+[INFO] Installing activestorage 8.1.2
+
+[INFO] Fetching actionmailbox 8.1.2
+
+[INFO] Installing actionmailbox 8.1.2
+
+[INFO] Fetching action_text-trix 2.1.16
+
+[INFO] Fetching importmap-rails 2.2.3
+Fetching stimulus-rails 1.3.4
+Fetching turbo-rails 2.0.23
+
+[INFO] Installing action_text-trix 2.1.16
+
+[INFO] Installing importmap-rails 2.2.3
+
+[INFO] Fetching actiontext 8.1.2
+
+[INFO] Installing stimulus-rails 1.3.4
+
+[INFO] Installing turbo-rails 2.0.23
+
+[INFO] Installing actiontext 8.1.2
+
+[INFO] Fetching rails 8.1.2
+
+[INFO] Installing rails 8.1.2
+
+[INFO] Bundle complete! 20 Gemfile dependencies, 89 gems now installed.
+
+[INFO] Gems in the groups 'development' and 'test' were not installed.
+
+[INFO] Bundled gems are installed into `/usr/local/bundle`
+
+[INFO] [build 4/8] RUN bundle install &&     rm -rf ~/.bundle/ "/usr/local/bundle"/ruby/*/cache "/usr/local/bundle"/ruby/*/bundler/gems/*/.git &&     bundle exec bootsnap precompile -j 1 --gemfile
+[INFO] [build 5/8] COPY . .
+[INFO] [build 5/8] COPY . .
+[INFO] [build 6/8] RUN bundle exec bootsnap precompile -j 1 app/ lib/
+[INFO] [build 6/8] RUN bundle exec bootsnap precompile -j 1 app/ lib/
+[INFO] [build 7/8] RUN chmod +x bin/* &&     sed -i "s/\r$//g" bin/* &&     sed -i 's/ruby\.exe$/ruby/' bin/*
+[INFO] [build 7/8] RUN chmod +x bin/* &&     sed -i "s/\r$//g" bin/* &&     sed -i 's/ruby\.exe$/ruby/' bin/*
+[INFO] [build 8/8] RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+[INFO] Writing snowcat/icon_dog_snowcat_1771225147086-1fe8f302.png
+Writing snowcat/media__1771224374747-6d920290.jpg
+Writing snowcat/icon_human_snowcat_1771224922818-1fe8f302.png
+Writing snowcat/icon_dog_snowcat_1771224973007-1fe8f302.png
+Writing snowcat/icon_cat_snowcat_1771224905251-1fe8f302.png
+Writing snowcat/media__1771224374742-8487a346.jpg
+Writing snowcat/icon_cat_snowcat_1771225104110-5a727bfd.png
+Writing snowcat/icon_dog_snowcat_1771225209824-1fe8f302.png
+Writing snowcat/icon_cat_snowcat_1771225044956-1fe8f302.png
+Writing snowcat/icon_dog_snowcat_1771225032054-612f286f.png
+Writing snowcat/icon_dog_snowcat_1771224888733-1fe8f302.png
+Writing snowcat/media__1771224374753-18ff4987.jpg
+Writing snowcat/media__1771224374712-d1041735.jpg
+Writing snowcat/icon_cat_snowcat_1771225160958-1fe8f302.png
+Writing snowcat/icon_dog_snowcat_1771225089637-154567cd.png
+Writing snowcat/icon_cat_snowcat_1771224986693-fe375bac.png
+Writing mascot-1fe8f302.png
+Writing logo_1min_saju-1fe8f302.png
+Writing application-419ade6a.css
+Writing controllers/application-3affb389.js
+Writing controllers/hello_controller-708796bd.js
+Writing controllers/index-ee64e1f1.js
+Writing application-bfcdf840.js
+Writing stimulus-d59b3b7f.js
+Writing stimulus-importmap-autoloader-64cc03e1.js
+Writing stimulus.min-4b1e420e.js
+Writing stimulus-autoloader-9d447422.js
+Writing stimulus-loading-1fc53fe7.js
+Writing stimulus.min-2395e199.js.map
+Writing turbo-736fb387.js
+Writing turbo.min-5eb167c2.js.map
+Writing turbo.min-9fd88cd5.js
+Writing action_cable-5212cfee.js
+Writing actioncable-ac25813f.js
+Writing actioncable.esm-e0ec9819.js
+Writing activestorage.esm-81bb34bc.js
+Writing activestorage-f9e46063.js
+Writing rails-ujs.esm-e925103b.js
+Writing rails-ujs-20eaf715.js
+
+[INFO] [build 8/8] RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+[INFO] [stage-2 2/3] COPY --chown=rails:rails --from=build /usr/local/bundle /usr/local/bundle
+[INFO] [stage-2 2/3] COPY --chown=rails:rails --from=build /usr/local/bundle /usr/local/bundle
+[INFO] [stage-2 3/3] COPY --chown=rails:rails --from=build /rails /rails
+[INFO] [stage-2 3/3] COPY --chown=rails:rails --from=build /rails /rails
+[INFO] [auth] sharing credentials for production-us-west2.railway-registry.com
+[INFO] [auth] sharing credentials for production-us-west2.railway-registry.com
+[INFO] importing to docker
+[INFO] importing to docker
+[92mBuild time: 72.98 seconds[0m

@@ -1,0 +1,21 @@
+{"level":"info","message":"Starting Container","timestamp":"2026-03-04T06:44:57.208557460Z"}
+{"level":"info","message":"Running db:prepare with trace...","timestamp":"2026-03-04T06:44:58.175511179Z"}
+{"level":"error","timestamp":"2026-03-04T06:44:58.175515298Z","message":"** Invoke db:prepare (first_time)"}
+{"timestamp":"2026-03-04T06:44:58.175518691Z","message":"** Invoke db:load_config (first_time)","level":"error"}
+{"message":"** Invoke environment (first_time)","level":"error","timestamp":"2026-03-04T06:44:58.175523684Z"}
+{"timestamp":"2026-03-04T06:44:58.175526731Z","message":"** Execute environment","level":"error"}
+{"level":"error","message":"** Execute db:load_config","timestamp":"2026-03-04T06:44:58.175529658Z"}
+{"level":"error","message":"** Execute db:prepare","timestamp":"2026-03-04T06:44:58.175532668Z"}
+{"time":"2026-03-04T06:44:57.675672872Z","timestamp":"2026-03-04T06:44:58.175535936Z","level":"info","http":":80","message":"Server started"}
+{"level":"info","message":"=> Booting Puma","timestamp":"2026-03-04T06:44:58.175539069Z"}
+{"message":"=> Rails 8.1.2 application starting in production ","timestamp":"2026-03-04T06:44:58.175541947Z","level":"info"}
+{"message":"=> Run `bin/rails server --help` for more startup options","level":"info","timestamp":"2026-03-04T06:44:58.175548495Z"}
+{"timestamp":"2026-03-04T06:44:58.385905199Z","message":"Puma starting in single mode...","level":"info"}
+{"level":"info","message":"* Puma version: 7.2.0 (\"On The Corner\")","timestamp":"2026-03-04T06:44:58.385913724Z"}
+{"timestamp":"2026-03-04T06:44:58.385919686Z","level":"info","message":"* Ruby version: ruby 3.3.10 (2025-10-23 revision 343ea05002) +YJIT [x86_64-linux]"}
+{"message":"*  Min threads: 3","timestamp":"2026-03-04T06:44:58.385924149Z","level":"info"}
+{"timestamp":"2026-03-04T06:44:58.385928013Z","level":"info","message":"*  Max threads: 3"}
+{"level":"info","message":"*  Environment: production","timestamp":"2026-03-04T06:44:58.385932460Z"}
+{"timestamp":"2026-03-04T06:44:58.385936323Z","message":"*          PID: 10","level":"info"}
+{"level":"info","message":"* Listening on http://0.0.0.0:3000","timestamp":"2026-03-04T06:44:58.385941560Z"}
+{"message":"Use Ctrl-C to stop","level":"info","timestamp":"2026-03-04T06:44:58.385945215Z"}
