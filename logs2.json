@@ -1,0 +1,92 @@
+{"level":"info","message":"Starting Container","timestamp":"2026-03-04T06:01:43.716899264Z"}
+{"message":"(See full trace by running task with --trace)","timestamp":"2026-03-04T06:01:58.021595070Z","level":"error"}
+{"level":"error","message":"\tbefore or while processing the request.","timestamp":"2026-03-04T06:01:58.021607456Z"}
+{"timestamp":"2026-03-04T06:01:58.021611847Z","level":"error","message":""}
+{"message":"Tasks: TOP => db:prepare","timestamp":"2026-03-04T06:01:58.021617580Z","level":"error"}
+{"timestamp":"2026-03-04T06:01:58.021618083Z","message":"Caused by:","level":"error"}
+{"timestamp":"2026-03-04T06:01:58.021625980Z","message":"PG::ConnectionBad: connection to server at \"66.33.22.254\", port 10326 failed: server closed the connection unexpectedly (PG::ConnectionBad)","level":"error"}
+{"message":"\tThis probably means the server terminated abnormally","level":"error","timestamp":"2026-03-04T06:01:58.021631876Z"}
+{"level":"error","message":"\tThis probably means the server terminated abnormally","timestamp":"2026-03-04T06:01:58.021645286Z"}
+{"level":"error","message":"bin/rails aborted!","timestamp":"2026-03-04T06:01:58.021650046Z"}
+{"level":"error","message":"\tbefore or while processing the request.","timestamp":"2026-03-04T06:01:58.021654689Z"}
+{"level":"error","message":"ActiveRecord::ConnectionNotEstablished: connection to server at \"66.33.22.254\", port 10326 failed: server closed the connection unexpectedly (ActiveRecord::ConnectionNotEstablished)","timestamp":"2026-03-04T06:01:58.021659891Z"}
+{"level":"error","message":"","timestamp":"2026-03-04T06:01:58.021660724Z"}
+{"timestamp":"2026-03-04T06:01:58.021665131Z","message":"","level":"error"}
+{"level":"error","message":"bin/rails aborted!","timestamp":"2026-03-04T06:02:17.963635997Z"}
+{"timestamp":"2026-03-04T06:02:17.963648284Z","level":"error","message":"ActiveRecord::ConnectionNotEstablished: connection to server at \"66.33.22.254\", port 10326 failed: server closed the connection unexpectedly (ActiveRecord::ConnectionNotEstablished)"}
+{"level":"error","message":"\tThis probably means the server terminated abnormally","timestamp":"2026-03-04T06:02:17.963652038Z"}
+{"message":"\tbefore or while processing the request.","timestamp":"2026-03-04T06:02:17.963655847Z","level":"error"}
+{"timestamp":"2026-03-04T06:02:17.963660400Z","level":"error","message":""}
+{"message":"","timestamp":"2026-03-04T06:02:17.963664073Z","level":"error"}
+{"timestamp":"2026-03-04T06:02:17.963667162Z","message":"Caused by:","level":"error"}
+{"message":"PG::ConnectionBad: connection to server at \"66.33.22.254\", port 10326 failed: server closed the connection unexpectedly (PG::ConnectionBad)","timestamp":"2026-03-04T06:02:17.963670069Z","level":"error"}
+{"level":"error","message":"\tThis probably means the server terminated abnormally","timestamp":"2026-03-04T06:02:17.963673016Z"}
+{"message":"\tbefore or while processing the request.","timestamp":"2026-03-04T06:02:17.963676706Z","level":"error"}
+{"timestamp":"2026-03-04T06:02:17.963680305Z","message":"","level":"error"}
+{"timestamp":"2026-03-04T06:02:17.963687260Z","level":"error","message":"Tasks: TOP => db:prepare"}
+{"level":"error","timestamp":"2026-03-04T06:02:17.963690534Z","message":"(See full trace by running task with --trace)"}
+{"level":"error","message":"bin/rails aborted!","timestamp":"2026-03-04T06:02:37.960001394Z"}
+{"timestamp":"2026-03-04T06:02:37.960005199Z","level":"error","message":"ActiveRecord::ConnectionNotEstablished: connection to server at \"66.33.22.254\", port 10326 failed: server closed the connection unexpectedly (ActiveRecord::ConnectionNotEstablished)"}
+{"level":"error","timestamp":"2026-03-04T06:02:37.960008630Z","message":"\tThis probably means the server terminated abnormally"}
+{"message":"\tbefore or while processing the request.","timestamp":"2026-03-04T06:02:37.960013542Z","level":"error"}
+{"message":"","timestamp":"2026-03-04T06:02:37.960017519Z","level":"error"}
+{"timestamp":"2026-03-04T06:02:37.960021468Z","level":"error","message":""}
+{"message":"Caused by:","timestamp":"2026-03-04T06:02:37.960025147Z","level":"error"}
+{"timestamp":"2026-03-04T06:02:37.960028651Z","message":"PG::ConnectionBad: connection to server at \"66.33.22.254\", port 10326 failed: server closed the connection unexpectedly (PG::ConnectionBad)","level":"error"}
+{"level":"error","message":"\tThis probably means the server terminated abnormally","timestamp":"2026-03-04T06:02:37.960032331Z"}
+{"level":"error","message":"\tbefore or while processing the request.","timestamp":"2026-03-04T06:02:37.960035819Z"}
+{"timestamp":"2026-03-04T06:02:37.960040486Z","level":"error","message":""}
+{"message":"Tasks: TOP => db:prepare","level":"error","timestamp":"2026-03-04T06:02:37.960044167Z"}
+{"timestamp":"2026-03-04T06:02:37.960047682Z","level":"error","message":"(See full trace by running task with --trace)"}
+{"level":"error","message":"\tThis probably means the server terminated abnormally","timestamp":"2026-03-04T06:02:57.978032136Z"}
+{"level":"error","message":"\tbefore or while processing the request.","timestamp":"2026-03-04T06:02:57.978039382Z"}
+{"message":"","timestamp":"2026-03-04T06:02:57.978044943Z","level":"error"}
+{"level":"error","message":"Tasks: TOP => db:prepare","timestamp":"2026-03-04T06:02:57.978048741Z"}
+{"message":"(See full trace by running task with --trace)","timestamp":"2026-03-04T06:02:57.978052153Z","level":"error"}
+{"level":"error","timestamp":"2026-03-04T06:02:57.978074806Z","message":"bin/rails aborted!"}
+{"timestamp":"2026-03-04T06:02:57.978077812Z","level":"error","message":"ActiveRecord::ConnectionNotEstablished: connection to server at \"66.33.22.254\", port 10326 failed: server closed the connection unexpectedly (ActiveRecord::ConnectionNotEstablished)"}
+{"message":"\tThis probably means the server terminated abnormally","timestamp":"2026-03-04T06:02:57.978080611Z","level":"error"}
+{"message":"\tbefore or while processing the request.","level":"error","timestamp":"2026-03-04T06:02:57.978084413Z"}
+{"message":"","timestamp":"2026-03-04T06:02:57.978088551Z","level":"error"}
+{"message":"","timestamp":"2026-03-04T06:02:57.978091635Z","level":"error"}
+{"timestamp":"2026-03-04T06:02:57.978094618Z","level":"error","message":"Caused by:"}
+{"message":"PG::ConnectionBad: connection to server at \"66.33.22.254\", port 10326 failed: server closed the connection unexpectedly (PG::ConnectionBad)","level":"error","timestamp":"2026-03-04T06:02:57.978097843Z"}
+{"timestamp":"2026-03-04T06:03:18.501113908Z","level":"error","message":"bin/rails aborted!"}
+{"timestamp":"2026-03-04T06:03:18.501116496Z","message":"ActiveRecord::ConnectionNotEstablished: connection to server at \"66.33.22.254\", port 10326 failed: server closed the connection unexpectedly (ActiveRecord::ConnectionNotEstablished)","level":"error"}
+{"timestamp":"2026-03-04T06:03:18.501119375Z","level":"error","message":"\tThis probably means the server terminated abnormally"}
+{"timestamp":"2026-03-04T06:03:18.501122084Z","message":"\tbefore or while processing the request.","level":"error"}
+{"message":"","timestamp":"2026-03-04T06:03:18.501125121Z","level":"error"}
+{"message":"","timestamp":"2026-03-04T06:03:18.501128616Z","level":"error"}
+{"timestamp":"2026-03-04T06:03:18.501131746Z","message":"Caused by:","level":"error"}
+{"message":"PG::ConnectionBad: connection to server at \"66.33.22.254\", port 10326 failed: server closed the connection unexpectedly (PG::ConnectionBad)","level":"error","timestamp":"2026-03-04T06:03:18.501134724Z"}
+{"message":"\tThis probably means the server terminated abnormally","timestamp":"2026-03-04T06:03:18.501137455Z","level":"error"}
+{"message":"\tbefore or while processing the request.","timestamp":"2026-03-04T06:03:18.501140189Z","level":"error"}
+{"level":"error","message":"","timestamp":"2026-03-04T06:03:18.501143890Z"}
+{"message":"Tasks: TOP => db:prepare","level":"error","timestamp":"2026-03-04T06:03:18.501147052Z"}
+{"level":"error","timestamp":"2026-03-04T06:03:18.501149956Z","message":"(See full trace by running task with --trace)"}
+{"message":"Caused by:","timestamp":"2026-03-04T06:03:38.550455560Z","level":"error"}
+{"message":"PG::ConnectionBad: connection to server at \"66.33.22.254\", port 10326 failed: server closed the connection unexpectedly (PG::ConnectionBad)","level":"error","timestamp":"2026-03-04T06:03:38.550459768Z"}
+{"timestamp":"2026-03-04T06:03:38.550462386Z","level":"error","message":"bin/rails aborted!"}
+{"timestamp":"2026-03-04T06:03:38.550464677Z","message":"\tThis probably means the server terminated abnormally","level":"error"}
+{"level":"error","timestamp":"2026-03-04T06:03:38.550470081Z","message":"\tbefore or while processing the request."}
+{"level":"error","message":"ActiveRecord::ConnectionNotEstablished: connection to server at \"66.33.22.254\", port 10326 failed: server closed the connection unexpectedly (ActiveRecord::ConnectionNotEstablished)","timestamp":"2026-03-04T06:03:38.550470089Z"}
+{"level":"error","message":"","timestamp":"2026-03-04T06:03:38.550475795Z"}
+{"message":"\tThis probably means the server terminated abnormally","timestamp":"2026-03-04T06:03:38.550477643Z","level":"error"}
+{"level":"error","message":"Tasks: TOP => db:prepare","timestamp":"2026-03-04T06:03:38.550481213Z"}
+{"timestamp":"2026-03-04T06:03:38.550485040Z","level":"error","message":"\tbefore or while processing the request."}
+{"timestamp":"2026-03-04T06:03:38.550486766Z","message":"(See full trace by running task with --trace)","level":"error"}
+{"level":"error","message":"","timestamp":"2026-03-04T06:03:38.550490393Z"}
+{"level":"error","timestamp":"2026-03-04T06:03:38.550495527Z","message":""}
+{"timestamp":"2026-03-04T06:03:46.468249452Z","level":"error","message":"bin/rails aborted!"}
+{"level":"error","message":"ActiveRecord::ConnectionNotEstablished: connection to server at \"66.33.22.254\", port 10326 failed: server closed the connection unexpectedly (ActiveRecord::ConnectionNotEstablished)","timestamp":"2026-03-04T06:03:46.468252935Z"}
+{"message":"\tThis probably means the server terminated abnormally","timestamp":"2026-03-04T06:03:46.468255982Z","level":"error"}
+{"level":"error","timestamp":"2026-03-04T06:03:46.468259058Z","message":"\tbefore or while processing the request."}
+{"message":"","timestamp":"2026-03-04T06:03:46.468262319Z","level":"error"}
+{"message":"","timestamp":"2026-03-04T06:03:46.468265567Z","level":"error"}
+{"message":"Caused by:","timestamp":"2026-03-04T06:03:46.468268574Z","level":"error"}
+{"timestamp":"2026-03-04T06:03:46.468271821Z","message":"PG::ConnectionBad: connection to server at \"66.33.22.254\", port 10326 failed: server closed the connection unexpectedly (PG::ConnectionBad)","level":"error"}
+{"level":"error","message":"\tThis probably means the server terminated abnormally","timestamp":"2026-03-04T06:03:46.468275121Z"}
+{"message":"\tbefore or while processing the request.","level":"error","timestamp":"2026-03-04T06:03:46.468278355Z"}
+{"message":"","timestamp":"2026-03-04T06:03:46.468281456Z","level":"error"}
+{"level":"error","message":"Tasks: TOP => db:prepare","timestamp":"2026-03-04T06:03:46.468284991Z"}
+{"message":"(See full trace by running task with --trace)","timestamp":"2026-03-04T06:03:46.468288504Z","level":"error"}

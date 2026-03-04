@@ -1,0 +1,19 @@
+{
+  "DATABASE_URL": "postgresql://postgres:pIBnGZUsqYnNtSqkMQVeCvelsbzEYmkl@tramway.proxy.rlwy.net:10326/railway?sslmode=disable&prepared_statements=false",
+  "GEMINI_API_KEY": "AIzaSyCNRuwLWXvrDABK7HMTFF9Lv2_LmpPwj5E",
+  "PORT": "80",
+  "RAILS_MASTER_KEY": "3922006881bc884c8d0267d154699f8c",
+  "RAILWAY_ENVIRONMENT": "production",
+  "RAILWAY_ENVIRONMENT_ID": "4a54d9f9-7eba-41d5-ac80-e70c589956d4",
+  "RAILWAY_ENVIRONMENT_NAME": "production",
+  "RAILWAY_PRIVATE_DOMAIN": "web.railway.internal",
+  "RAILWAY_PROJECT_ID": "caa40b48-3752-4656-b284-c30fe5397951",
+  "RAILWAY_PROJECT_NAME": "1min-saju-prod",
+  "RAILWAY_PUBLIC_DOMAIN": "web-production-70be.up.railway.app",
+  "RAILWAY_SERVICE_ID": "067fd6f7-47cd-4106-8e2e-d8e42fd1dd88",
+  "RAILWAY_SERVICE_NAME": "web",
+  "RAILWAY_SERVICE_POSTGRES_URL": "postgres-production-bc86.up.railway.app",
+  "RAILWAY_SERVICE_WEB_URL": "web-production-70be.up.railway.app",
+  "RAILWAY_STATIC_URL": "web-production-70be.up.railway.app",
+  "SECRET_KEY_BASE": "44990aa93aec77a545b3dc254d11988014b3600141ea9f551b6e0cc4df21529514e1b4351b912919ca57c2844037b1b01caf93447fadf128a4806872eecd37cb"
+}

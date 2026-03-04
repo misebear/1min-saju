@@ -1,0 +1,67 @@
+{"message":"Mounting volume on: /var/lib/containers/railwayapp/bind-mounts/358664a6-84f6-4bf5-85d9-d6a5489a0e32/vol_78fvd7o1z12ld0cr","level":"info","timestamp":"2026-03-04T03:18:57.827131914Z"}
+{"message":"Starting Container","timestamp":"2026-03-04T03:18:58.857523658Z","level":"info"}
+{"timestamp":"2026-03-04T03:19:00.863999633Z","level":"error","message":"bin/rails aborted!"}
+{"timestamp":"2026-03-04T03:19:00.864004294Z","message":"ActiveSupport::MessageEncryptor::InvalidMessage: ActiveSupport::MessageEncryptor::InvalidMessage","level":"error"}
+{"timestamp":"2026-03-04T03:19:00.864009609Z","level":"error","message":""}
+{"timestamp":"2026-03-04T03:19:00.864015219Z","message":"Tasks: TOP => db:prepare => db:load_config","level":"error"}
+{"message":"(See full trace by running task with --trace)","level":"error","timestamp":"2026-03-04T03:19:00.864033088Z"}
+{"message":"Mounting volume on: /var/lib/containers/railwayapp/bind-mounts/358664a6-84f6-4bf5-85d9-d6a5489a0e32/vol_78fvd7o1z12ld0cr","level":"info","timestamp":"2026-03-04T03:19:01.091009902Z"}
+{"timestamp":"2026-03-04T03:19:01.985751246Z","message":"bin/rails aborted!","level":"error"}
+{"level":"error","timestamp":"2026-03-04T03:19:01.985759138Z","message":"ActiveSupport::MessageEncryptor::InvalidMessage: ActiveSupport::MessageEncryptor::InvalidMessage"}
+{"timestamp":"2026-03-04T03:19:01.985773844Z","message":"","level":"error"}
+{"message":"Tasks: TOP => db:prepare => db:load_config","timestamp":"2026-03-04T03:19:01.985780233Z","level":"error"}
+{"message":"(See full trace by running task with --trace)","level":"error","timestamp":"2026-03-04T03:19:01.985786677Z"}
+{"timestamp":"2026-03-04T03:19:03.054146858Z","level":"info","message":"Mounting volume on: /var/lib/containers/railwayapp/bind-mounts/358664a6-84f6-4bf5-85d9-d6a5489a0e32/vol_78fvd7o1z12ld0cr"}
+{"message":"Tasks: TOP => db:prepare => db:load_config","timestamp":"2026-03-04T03:19:04.763648720Z","level":"error"}
+{"message":"(See full trace by running task with --trace)","timestamp":"2026-03-04T03:19:04.763658495Z","level":"error"}
+{"message":"bin/rails aborted!","timestamp":"2026-03-04T03:19:04.763748303Z","level":"error"}
+{"timestamp":"2026-03-04T03:19:04.763755470Z","level":"error","message":"ActiveSupport::MessageEncryptor::InvalidMessage: ActiveSupport::MessageEncryptor::InvalidMessage"}
+{"message":"","timestamp":"2026-03-04T03:19:04.763780390Z","level":"error"}
+{"message":"Mounting volume on: /var/lib/containers/railwayapp/bind-mounts/358664a6-84f6-4bf5-85d9-d6a5489a0e32/vol_78fvd7o1z12ld0cr","level":"info","timestamp":"2026-03-04T03:19:06.170139576Z"}
+{"timestamp":"2026-03-04T03:19:06.807219855Z","level":"error","message":"ActiveSupport::MessageEncryptor::InvalidMessage: ActiveSupport::MessageEncryptor::InvalidMessage"}
+{"timestamp":"2026-03-04T03:19:06.807231751Z","level":"error","message":""}
+{"message":"Tasks: TOP => db:prepare => db:load_config","timestamp":"2026-03-04T03:19:06.807239494Z","level":"error"}
+{"message":"(See full trace by running task with --trace)","timestamp":"2026-03-04T03:19:06.807248353Z","level":"error"}
+{"level":"error","message":"bin/rails aborted!","timestamp":"2026-03-04T03:19:06.807261034Z"}
+{"message":"Mounting volume on: /var/lib/containers/railwayapp/bind-mounts/358664a6-84f6-4bf5-85d9-d6a5489a0e32/vol_78fvd7o1z12ld0cr","timestamp":"2026-03-04T03:19:08.150249431Z","level":"info"}
+{"timestamp":"2026-03-04T03:19:09.068093834Z","message":"bin/rails aborted!","level":"error"}
+{"level":"error","timestamp":"2026-03-04T03:19:09.068100266Z","message":"ActiveSupport::MessageEncryptor::InvalidMessage: ActiveSupport::MessageEncryptor::InvalidMessage"}
+{"message":"","timestamp":"2026-03-04T03:19:09.068106117Z","level":"error"}
+{"timestamp":"2026-03-04T03:19:09.068112897Z","level":"error","message":"Tasks: TOP => db:prepare => db:load_config"}
+{"message":"(See full trace by running task with --trace)","timestamp":"2026-03-04T03:19:09.068119334Z","level":"error"}
+{"timestamp":"2026-03-04T03:19:10.203372888Z","level":"info","message":"Mounting volume on: /var/lib/containers/railwayapp/bind-mounts/358664a6-84f6-4bf5-85d9-d6a5489a0e32/vol_78fvd7o1z12ld0cr"}
+{"timestamp":"2026-03-04T03:19:11.836410906Z","level":"error","message":"bin/rails aborted!"}
+{"timestamp":"2026-03-04T03:19:11.836417548Z","level":"error","message":"ActiveSupport::MessageEncryptor::InvalidMessage: ActiveSupport::MessageEncryptor::InvalidMessage"}
+{"level":"error","message":"","timestamp":"2026-03-04T03:19:11.836423823Z"}
+{"level":"error","message":"Tasks: TOP => db:prepare => db:load_config","timestamp":"2026-03-04T03:19:11.836429353Z"}
+{"timestamp":"2026-03-04T03:19:11.836435562Z","message":"(See full trace by running task with --trace)","level":"error"}
+{"level":"info","message":"Mounting volume on: /var/lib/containers/railwayapp/bind-mounts/358664a6-84f6-4bf5-85d9-d6a5489a0e32/vol_78fvd7o1z12ld0cr","timestamp":"2026-03-04T03:19:12.966756036Z"}
+{"message":"","timestamp":"2026-03-04T03:19:14.871955503Z","level":"error"}
+{"message":"Tasks: TOP => db:prepare => db:load_config","timestamp":"2026-03-04T03:19:14.871966455Z","level":"error"}
+{"message":"(See full trace by running task with --trace)","timestamp":"2026-03-04T03:19:14.871972985Z","level":"error"}
+{"message":"bin/rails aborted!","level":"error","timestamp":"2026-03-04T03:19:14.872046159Z"}
+{"message":"ActiveSupport::MessageEncryptor::InvalidMessage: ActiveSupport::MessageEncryptor::InvalidMessage","level":"error","timestamp":"2026-03-04T03:19:14.872052113Z"}
+{"timestamp":"2026-03-04T03:19:15.983382433Z","message":"Mounting volume on: /var/lib/containers/railwayapp/bind-mounts/358664a6-84f6-4bf5-85d9-d6a5489a0e32/vol_78fvd7o1z12ld0cr","level":"info"}
+{"timestamp":"2026-03-04T03:19:16.843139782Z","level":"error","message":"(See full trace by running task with --trace)"}
+{"level":"error","message":"ActiveSupport::MessageEncryptor::InvalidMessage: ActiveSupport::MessageEncryptor::InvalidMessage","timestamp":"2026-03-04T03:19:16.843239602Z"}
+{"level":"error","message":"bin/rails aborted!","timestamp":"2026-03-04T03:19:16.843247844Z"}
+{"level":"error","timestamp":"2026-03-04T03:19:16.843252890Z","message":""}
+{"timestamp":"2026-03-04T03:19:16.843262967Z","message":"Tasks: TOP => db:prepare => db:load_config","level":"error"}
+{"timestamp":"2026-03-04T03:19:17.928733239Z","level":"info","message":"Mounting volume on: /var/lib/containers/railwayapp/bind-mounts/358664a6-84f6-4bf5-85d9-d6a5489a0e32/vol_78fvd7o1z12ld0cr"}
+{"message":"bin/rails aborted!","timestamp":"2026-03-04T03:19:18.995508404Z","level":"error"}
+{"level":"error","message":"ActiveSupport::MessageEncryptor::InvalidMessage: ActiveSupport::MessageEncryptor::InvalidMessage","timestamp":"2026-03-04T03:19:18.995515453Z"}
+{"message":"","timestamp":"2026-03-04T03:19:18.995523155Z","level":"error"}
+{"message":"Tasks: TOP => db:prepare => db:load_config","timestamp":"2026-03-04T03:19:18.995530343Z","level":"error"}
+{"timestamp":"2026-03-04T03:19:18.995538075Z","level":"error","message":"(See full trace by running task with --trace)"}
+{"message":"Mounting volume on: /var/lib/containers/railwayapp/bind-mounts/358664a6-84f6-4bf5-85d9-d6a5489a0e32/vol_78fvd7o1z12ld0cr","level":"info","timestamp":"2026-03-04T03:19:21.010810874Z"}
+{"timestamp":"2026-03-04T03:19:21.916561101Z","level":"error","message":"bin/rails aborted!"}
+{"timestamp":"2026-03-04T03:19:21.916568111Z","level":"error","message":"ActiveSupport::MessageEncryptor::InvalidMessage: ActiveSupport::MessageEncryptor::InvalidMessage"}
+{"level":"error","message":"","timestamp":"2026-03-04T03:19:21.916575140Z"}
+{"level":"error","timestamp":"2026-03-04T03:19:21.916583646Z","message":"Tasks: TOP => db:prepare => db:load_config"}
+{"message":"(See full trace by running task with --trace)","level":"error","timestamp":"2026-03-04T03:19:21.916591943Z"}
+{"level":"info","message":"Mounting volume on: /var/lib/containers/railwayapp/bind-mounts/358664a6-84f6-4bf5-85d9-d6a5489a0e32/vol_78fvd7o1z12ld0cr","timestamp":"2026-03-04T03:19:23.010770837Z"}
+{"timestamp":"2026-03-04T03:19:23.855560797Z","level":"error","message":"bin/rails aborted!"}
+{"message":"ActiveSupport::MessageEncryptor::InvalidMessage: ActiveSupport::MessageEncryptor::InvalidMessage","level":"error","timestamp":"2026-03-04T03:19:23.855567036Z"}
+{"level":"error","timestamp":"2026-03-04T03:19:23.855572332Z","message":""}
+{"message":"Tasks: TOP => db:prepare => db:load_config","timestamp":"2026-03-04T03:19:23.855578739Z","level":"error"}
+{"message":"(See full trace by running task with --trace)","timestamp":"2026-03-04T03:19:23.855585696Z","level":"error"}
