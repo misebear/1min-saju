@@ -101,5 +101,13 @@ rails server
 https://1min-saju-production.up.railway.app
 
 ============================================
-마지막 업데이트: 2026-03-01 20:50 KST
+마지막 업데이트: 2026-03-04 14:42 KST (자동 퀵-세이브 완료)
 ============================================
+
+============================================
+🐛 현재 디버깅 중인 이슈
+============================================
+- 에러명: ActiveRecord::ConnectionNotEstablished / PG::ConnectionBad
+- 원인 추정: Railway Postgres 내부 네트워크 (postgres.railway.internal) 연결 시간 초과. (Railway IPv6 또는 Internal 라우팅 문제)
+- 시도한 해결책: Postgres의 Public URL (tramway.proxy.rlwy.net)을 DATABASE_URL 환경 변수로 수동 주입하여 외부 망을 통해 접속하도록 우회 적용 중.
+- 현재 상태: ❌ (재배포 대기 중)
