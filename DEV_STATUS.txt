@@ -107,7 +107,7 @@ https://1min-saju-production.up.railway.app
 ============================================
 🐛 현재 디버깅 중인 이슈
 ============================================
-- 에러명: Connection timed out (Internal DB)
-- 원인 추정: Railway에서 컨테이너 부팅 직후 `postgres.railway.internal` 내부 DNS 라우팅이 지연되어 db:prepare 시 타임아웃이 발생하는 고질적 문제.
-- 시도한 해결책: `docker-entrypoint` 스크립트에 `sleep 5`를 추가하여 DNS 안정화 후 DB에 접속하도록 수정하고, 변수를 다시 Internal Reference(`$${{ Postgres... }}`)로 롤백.
-- 현재 상태: ❌ (재배포 대기 중)
+- 에러명: Connection timed out (Postgres Internal DB)
+- 원인 추정: Railway에서 제공하는 Postgres 내부 네트워크에 앱 컨테이너가 정상적으로 라우팅되지 않는 고질적 네트워크 문제.
+- 시도한 해결책: Postgres 연결을 과감히 포기하고, 빠르고 즉각적인 작동을 위해 Production DB를 SQLite3로 전환 완료 (Gemfile, database.yml 수정). 빌드 대기 중.
+- 현재 상태: 🟢 (문제 우회 완료, 빌드 중)

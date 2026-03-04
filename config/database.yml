@@ -14,12 +14,6 @@ test:
   database: storage/test.sqlite3
 
 production:
-  primary:
-    <<: *default
-    adapter: postgresql
-    encoding: unicode
-    host: <%= ENV.fetch("PGHOST", "postgres.railway.internal") %>
-    port: <%= ENV.fetch("PGPORT", "5432") %>
-    username: <%= ENV.fetch("PGUSER", "postgres") %>
-    password: <%= ENV["PGPASSWORD"] %>
-    database: <%= ENV.fetch("PGDATABASE", "railway") %>
+  <<: *default
+  adapter: sqlite3
+  database: storage/production.sqlite3
