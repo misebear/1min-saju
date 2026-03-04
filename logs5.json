@@ -1,0 +1,2 @@
+{"timestamp":"2026-03-04T06:10:14.384972396Z","message":"Starting Container","level":"info"}
+{"timestamp":"2026-03-04T06:10:15.078417640Z","level":"info","message":"Waiting 5 seconds for Railway internal DNS and network to stabilize..."}

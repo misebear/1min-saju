@@ -18,4 +18,8 @@ production:
     <<: *default
     adapter: postgresql
     encoding: unicode
-    url: <%= ENV["DATABASE_URL"] %>
+    host: <%= ENV.fetch("PGHOST", "postgres.railway.internal") %>
+    port: <%= ENV.fetch("PGPORT", "5432") %>
+    username: <%= ENV.fetch("PGUSER", "postgres") %>
+    password: <%= ENV["PGPASSWORD"] %>
+    database: <%= ENV.fetch("PGDATABASE", "railway") %>
