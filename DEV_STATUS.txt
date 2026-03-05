@@ -24,7 +24,7 @@
 - 기본 URL: https://web-production-70be.up.railway.app (200 OK 확인)
 - 커스텀 도메인: www.1minsaju.com (DNS 전파 완료, SSL 자동 발급)
 - 가비아 도메인 구매 (1minsaju.com, 19,800원/년)
-- DNS 설정: CNAME www → web-production-70be.up.railway.app. / TXT _railway-verify.www
+- DNS 설정: CNAME www → o415iyo8.up.railway.app. / TXT _railway-verify.www (2026-03-05 갱신)
 - 502 Bad Gateway 해결: Thruster 제거 + PORT=3000 직접 명시 + BUNDLE_DEPLOYMENT 제거
 
 [Google Play Store]
@@ -105,16 +105,17 @@ https://web-production-70be.up.railway.app
 https://www.1minsaju.com
 
 ============================================
-마지막 업데이트: 2026-03-04 18:16 KST
+마지막 업데이트: 2026-03-05 09:30 KST
 ============================================
 
 ============================================
 🐛 현재 디버깅 중인 이슈
 ============================================
-- 에러명: 502 Bad Gateway (완벽히 해결됨)
-- 원인 및 해결: 
-  1. Railway의 `BUNDLE_DEPLOYMENT="1"` 문제로 sqlite3 변경이 반영되지 않던 빌드 캐시 문제 -> Gemfile.lock 삭제/Dockerfile 수정으로 우회 배포 성공.
-  2. Thruster 프록시와 Railway Ingress 간의 포트 맵핑 충돌 -> Dockerfile CMD에서 Thruster 제거 + `PORT=3000` 명시 후 Puma 다이렉트 바인딩.
-  3. `docker-entrypoint` 스크립트 파라미터 매치 오류 -> bash `$1`, `$2` 검사로 수정해 `db:prepare` 정상 가동 완료.
-  4. 커스텀 도메인 매핑 오류 -> 기존 실패 프로젝트(`ideal-dedication`의 `1min-saju`)에서 `www.1minsaju.com` 도메인 점유 해제 후, 신규 프로덕션(`1min-saju-prod`) 포트 3000으로 정상 연결 완료.
-- 현재 상태: 🟢 (모든 이슈 완벽 해결. 200 OK 접속 가능. 가비아 DNS CNAME 변경 완료. SSL 자동 발급됨)
+- 에러명: SSL 인증서 오류 (2026-03-05 해결됨)
+- 원인: Railway에서 커스텀 도메인이 해제되어 SSL이 *.up.railway.app 와일드카드로만 적용됨
+- 해결:
+  1. 이전 프로젝트(ideal-dedication)에서 www.1minsaju.com 도메인 점유 해제
+  2. 현재 프로젝트(1min-saju-prod)에 커스텀 도메인 재등록 (포트 3000)
+  3. 가비아 DNS에서 기존 레코드 삭제 + 신규 CNAME(o415iyo8.up.railway.app) 설정
+  4. Railway SSL 자동 발급 → 정상 접속 확인
+- 현재 상태: 🟢 (모든 이슈 완벽 해결. https://www.1minsaju.com 200 OK 확인)
