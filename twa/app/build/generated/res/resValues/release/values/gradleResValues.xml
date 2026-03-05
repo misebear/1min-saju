@@ -30,9 +30,9 @@
     <!-- Value from default config. -->
     <string name="generatorApp" translatable="false">bubblewrap-cli</string>
     <!-- Value from default config. -->
-    <string name="hostName" translatable="false">1min-saju-production.up.railway.app</string>
+    <string name="hostName" translatable="false">www.1minsaju.com</string>
     <!-- Value from default config. -->
-    <string name="launchUrl" translatable="false">https://1min-saju-production.up.railway.app/</string>
+    <string name="launchUrl" translatable="false">https://www.1minsaju.com/</string>
     <!-- Value from default config. -->
     <string name="launcherName" translatable="false">1분사주</string>
     <!-- Value from default config. -->
@@ -40,6 +40,6 @@
     <!-- Value from default config. -->
     <string name="providerAuthority" translatable="false">com.minsaju.app.fileprovider</string>
     <!-- Value from default config. -->
-    <string name="webManifestUrl" translatable="false">https://1min-saju-production.up.railway.app/manifest.json</string>
+    <string name="webManifestUrl" translatable="false">https://www.1minsaju.com/manifest.json</string>
 
 </resources>

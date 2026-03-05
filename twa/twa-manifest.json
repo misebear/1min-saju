@@ -1,6 +1,6 @@
 {
   "packageId": "com.minsaju.app",
-  "host": "1min-saju-production.up.railway.app",
+  "host": "www.1minsaju.com",
   "name": "1분 사주 - 나만의 운명 풀이",
   "launcherName": "1분사주",
   "display": "standalone",
@@ -13,19 +13,19 @@
   "backgroundColor": "#F8F0FF",
   "enableNotifications": false,
   "startUrl": "/",
-  "iconUrl": "https://1min-saju-production.up.railway.app/icon-512.png",
-  "maskableIconUrl": "https://1min-saju-production.up.railway.app/icon-512.png",
-  "monochromeIconUrl": "https://1min-saju-production.up.railway.app/icon-512.png",
+  "iconUrl": "https://www.1minsaju.com/icon-512.png",
+  "maskableIconUrl": "https://www.1minsaju.com/icon-512.png",
+  "monochromeIconUrl": "https://www.1minsaju.com/icon-512.png",
   "splashScreenFadeOutDuration": 300,
   "signingKey": {
     "path": "./minsaju-keystore.jks",
     "alias": "minsaju"
   },
-  "appVersionName": "1.0.0",
-  "appVersionCode": 2,
+  "appVersionName": "2.0.0",
+  "appVersionCode": 3,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
-  "webManifestUrl": "https://1min-saju-production.up.railway.app/manifest.json",
+  "webManifestUrl": "https://www.1minsaju.com/manifest.json",
   "fallbackType": "customtabs",
   "features": {},
   "alphaDependencies": {
