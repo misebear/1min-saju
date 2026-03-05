@@ -2,7 +2,7 @@
   1분 사주 (1min-saju) - 개발 현황
 ============================================
 
-📌 현재 진행 상태: 🟢 배포 완료 + DNS 연결 완료 + Play Store 등록 진행 중
+📌 현재 진행 상태: 🟢 배포 완료 + Play Store v2.0.0 검토 제출 완료
 
 ============================================
 ✅ 완료된 작업
@@ -10,60 +10,58 @@
 
 [Rails 웹앱 개발]
 - 사주팔자 분석 엔진 (SajuEngine) 구현
-- 오늘의 운세, 연간 운세 기능
-- 궁합 분석 기능
-- 꿈해몽 AI 분석
-- AI 채팅 (사주 전문가)
-- 별자리 운세
-- 유명인 사주 분석
-- 사용자 인증 (Devise + Google OAuth)
+- 오늘의 운세, 연간 운세, 내일 운세, 지정일 운세
+- 궁합 분석 + 카톡 블라인드 궁합 바이럴 기능
+- 꿈해몽 AI 분석, AI 채팅 (사주 전문가)
+- 별자리 운세, 택일 (이사택일)
+- 유명인 사주 분석, 사용자 인증 (Devise + Google OAuth)
+
+[2026-03-05 신규 8개 기능 추가]
+- 🏛️ 토정비결 (TojeongEngine) - 500년 전통 연간 운세
+- 🐲 띠운세 (TtiFortuneController) - 12지 띠별 오늘 운세
+- 🃏 타로 (TarotEngine) - 3종 스프레드 (과거·현재·미래/연애/커리어)
+- 🧠 심리풀이 (PsychologyEngine) - 4문항 16유형 성격 분석
+- 🔮 전생운 (PastLifeEngine) - 전생 시대/직업/카르마
+- 💎 탄생석 (BirthstoneEngine) - 월별 보석/행운/궁합
+- 💼 취업운 (CareerEngine) - 사주 기반 직업 적성/TOP3 추천
+- 📅 내일/지정일 운세 (FortunesController 확장)
+- 메인 퀵메뉴 16개 항목으로 확장
+
+[카톡 블라인드 궁합 - 바이럴 기능]
+- 토큰 기반 링크 공유 → 상대방 입력 → 궁합 결과
+- 5카드 숏폼 UI (Instagram Stories 스타일)
+- blind_compat_links DB 테이블
 
 [배포]
 - Railway 배포 완료 (SQLite3, Puma 다이렉트)
 - 프로젝트: 1min-saju-prod (Railway)
-- 기본 URL: https://web-production-70be.up.railway.app (200 OK 확인)
-- 커스텀 도메인: www.1minsaju.com (DNS 전파 완료, SSL 자동 발급)
-- 가비아 도메인 구매 (1minsaju.com, 19,800원/년)
-- DNS 설정: CNAME www → o415iyo8.up.railway.app. / TXT _railway-verify.www (2026-03-05 갱신)
-- 502 Bad Gateway 해결: Thruster 제거 + PORT=3000 직접 명시 + BUNDLE_DEPLOYMENT 제거
+- 기본 URL: https://web-production-70be.up.railway.app
+- 커스텀 도메인: www.1minsaju.com (SSL 자동 발급)
+- 가비아 도메인 (1minsaju.com, 19,800원/년)
 
-[Google Play Store]
-- PWA 파일: manifest.json, service-worker.js, icon-192/512.png
-- PWABuilder로 TWA APK/AAB 빌드 완료
-  - 1분사주.aab (3.6MB) - Play Store 업로드용
-  - 1분사주.apk (3.5MB) - 직접 설치용
-  - signing.keystore + assetlinks.json
-- Play Console 앱 생성 (JejuBucketList 계정)
-- AAB 업로드 완료 (프로덕션 트랙, v1.0.0)
-- 스토어 설명 입력 완료
-- 데이터 보안 선언 완료 (데이터 미수집)
-- 콘텐츠 등급 완료 (전체이용가)
-- 카테고리: Lifestyle, 연락처: db0192a@gmail.com
-- 광고/건강/금융/정부앱 선언 모두 완료
-- 국가/지역: 전세계
+[Google Play Store - v2.0.0]
+- TWA 빌드 완료 (versionCode 3, v2.0.0)
+- 호스트: www.1minsaju.com (커스텀 도메인)
+- 패키지명: app.railway.up.app_1min_saju_production.twa
+- 서명키: android-pkg/signing.keystore (alias: my-key-alias, pw: hwvVPNLU16U1)
+- AAB 업로드 + 프로덕션 검토 제출 완료
+- 릴리스 노트: 8개 신규 기능 안내
 
 ============================================
 📋 다음에 할 작업
 ============================================
-
-[Play Store 등록 완료 - 이미지 업로드 필요]
-1. ⭐ Play Console > 기본 스토어 등록정보에서 이미지 업로드:
-   - 앱 아이콘: C:\development\saju\playstore\icon-512.png (512x512)
-   - 그래픽 이미지: C:\development\saju\playstore\feature_graphic.png (1024x500)
-   - 스크린샷: 최소 2장 (핸드폰 캡처 또는 개발자도구 모바일 모드)
-2. 저장 후 프로덕션 > 검토 > Google에 제출 → 심사 시작
-
-[도메인]
-- ✅ www.1minsaju.com DNS 전파 완료 (nslookup 확인됨)
-- ✅ 가비아 CNAME 설정 완료 (2026-03-04 17:19)
-- assetlinks.json을 /.well-known/ 경로에 배포 (TWA 인증용)
+1. ⭐ 만세력 오픈소스 연동 검토 (sajupy, korean-lunar-calendar 등)
+   - 현재 SajuEngine은 자체 간이 계산 방식
+   - 정확도 향상을 위해 공인 만세력 데이터 연동 필요
+2. Play Store 심사 통과 대기
+3. 추가 기능: 살풀이, 정통궁합, 별자리궁합, 신년타로, 이달의 타로
 
 ============================================
 ⚠️ 주의사항
 ============================================
 - Railway 무료 플랜: 30일 또는 $4.99 한도
-- 키스토어 비밀번호: minsaju123 (alias: minsaju)
-- PWABuilder 서명 키: C:\development\saju\twa\android-pkg\signing.keystore
+- TWA 서명키: android-pkg/signing.keystore (alias: my-key-alias, pw: hwvVPNLU16U1)
+  ※ minsaju-keystore.jks는 사용하지 말것! (Play Store 등록 키 불일치)
 - GEMINI_API_KEY 환경변수 필요 (AI 기능)
 - RAILS_MASTER_KEY 환경변수 필요 (프로덕션)
 
@@ -71,25 +69,18 @@
 📂 프로젝트 구조
 ============================================
 c:\development\saju\
-├── app/                     # Rails MVC 코드
-│   ├── controllers/         # 컨트롤러 (home, saju, fortunes, chat 등)
-│   ├── models/concerns/     # SajuEngine 모듈
-│   ├── views/               # ERB 뷰 템플릿
+├── app/
+│   ├── controllers/         # home, saju, fortunes, tojeong, tarot, psychology, past_life, birthstone, career, tti_fortune, blind_compat 등
+│   ├── models/concerns/     # SajuEngine 모듈 (tojeong_engine, tarot_engine, psychology_engine, past_life_engine, birthstone_engine, career_engine)
+│   ├── views/               # ERB 뷰 템플릿 (각 기능별 new/show)
 │   └── assets/              # CSS, JS
 ├── config/                  # Rails 설정
-├── public/                  # 정적 파일 (manifest.json, SW, 아이콘)
-├── twa/                     # TWA 빌드 프로젝트
-│   ├── android-pkg/         # PWABuilder 생성 APK/AAB
-│   │   ├── 1분사주.aab
-│   │   ├── 1분사주.apk
-│   │   ├── assetlinks.json
-│   │   └── signing.keystore
-│   ├── twa-manifest.json
-│   └── minsaju-keystore.jks
+├── public/                  # manifest.json, SW, 아이콘
+├── twa/                     # TWA 빌드 프로젝트 (Gradle)
+│   ├── android-pkg/         # 서명된 AAB/APK + signing.keystore
+│   ├── app/build.gradle     # versionCode 3, v2.0.0
+│   └── twa-manifest.json
 ├── playstore/               # Play Store 그래픽 자산
-│   ├── icon-512.png
-│   ├── app_icon_512.png
-│   └── feature_graphic.png
 └── Dockerfile               # Railway 배포용
 
 ============================================
@@ -101,21 +92,18 @@ $env:GEMINI_API_KEY = "YOUR_KEY"
 rails server
 
 # 프로덕션 접속
-https://web-production-70be.up.railway.app
 https://www.1minsaju.com
 
+# TWA 빌드
+$env:JAVA_HOME = "C:\Program Files\Microsoft\jdk-21.0.10.7-hotspot"
+$env:ANDROID_HOME = "$env:LOCALAPPDATA\Android\Sdk"
+cd twa && .\gradlew.bat clean bundleRelease
+
 ============================================
-마지막 업데이트: 2026-03-05 09:30 KST
+마지막 업데이트: 2026-03-05 13:01 KST
 ============================================
 
 ============================================
 🐛 현재 디버깅 중인 이슈
 ============================================
-- 에러명: SSL 인증서 오류 (2026-03-05 해결됨)
-- 원인: Railway에서 커스텀 도메인이 해제되어 SSL이 *.up.railway.app 와일드카드로만 적용됨
-- 해결:
-  1. 이전 프로젝트(ideal-dedication)에서 www.1minsaju.com 도메인 점유 해제
-  2. 현재 프로젝트(1min-saju-prod)에 커스텀 도메인 재등록 (포트 3000)
-  3. 가비아 DNS에서 기존 레코드 삭제 + 신규 CNAME(o415iyo8.up.railway.app) 설정
-  4. Railway SSL 자동 발급 → 정상 접속 확인
-- 현재 상태: 🟢 (모든 이슈 완벽 해결. https://www.1minsaju.com 200 OK 확인)
+- 없음. 모든 기능 정상 동작 중.
