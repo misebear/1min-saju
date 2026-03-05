@@ -8,11 +8,18 @@ class SajuController < ApplicationController
   end
 
   def create
-    birth_date = Date.new(
-      params[:year].to_i,
-      params[:month].to_i,
-      params[:day].to_i
-    )
+    year = params[:year].to_i
+    month = params[:month].to_i
+    day = params[:day].to_i
+    calendar_type = params[:calendar_type] || "solar"
+
+    # 음력 입력 시 양력으로 변환
+    if calendar_type == "lunar"
+      birth_date = SajuEngine::LunarCalendar.lunar_to_solar(year, month, day)
+    else
+      birth_date = Date.new(year, month, day)
+    end
+
     birth_hour = params[:hour].to_i
     gender = params[:gender] || "남"
     city = params[:city] || "서울"
@@ -22,6 +29,7 @@ class SajuController < ApplicationController
     session[:birth_hour] = birth_hour
     session[:gender] = gender
     session[:city] = city
+    session[:calendar_type] = calendar_type
 
     redirect_to saju_result_path
   end

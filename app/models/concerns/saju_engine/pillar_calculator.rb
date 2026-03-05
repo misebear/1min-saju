@@ -71,11 +71,12 @@ module SajuEngine
       }
     end
 
-    # 년주 계산
+    # 년주 계산 (정확한 입춘 날짜 기반)
     def self.calculate_year_pillar(date)
-      # 입춘(2/4) 이전이면 전년도 간지 사용
+      # 정확한 입춘 날짜로 년도 경계 판정
+      ipchun = SolarTermsData.term_date(date.year, "입춘")
       year = date.year
-      year -= 1 if date.month < 2 || (date.month == 2 && date.day < 4)
+      year -= 1 if date < ipchun
 
       stem_index = (year - 4) % 10
       branch_index = (year - 4) % 12
@@ -90,10 +91,10 @@ module SajuEngine
       }
     end
 
-    # 월주 계산 (절기 기준)
+    # 월주 계산 (정확한 절기 기준)
     def self.calculate_month_pillar(date, year_stem)
-      # 절기 기반 월 결정
-      saju_month = determine_saju_month(date)
+      # SolarTermsData 기반 정확한 절기 월 결정 (폴백: 자체 계산)
+      saju_month = SolarTermsData.determine_saju_month(date)
 
       # 년간에 따른 월간 결정
       year_stem_idx = HeavenlyStems.index(year_stem)
@@ -156,27 +157,9 @@ module SajuEngine
       }
     end
 
-    # 절기 기반 사주 월 결정 (1~12, 1=인월)
+    # 절기 기반 사주 월 결정 (레거시 폴백, SolarTermsData 사용 추천)
     def self.determine_saju_month(date)
-      SOLAR_TERMS.each do |month_num, term|
-        term_date = Date.new(
-          term[:month] <= 2 ? date.year : date.year,
-          term[:month],
-          term[:day]
-        )
-        next_month_num = (month_num % 12) + 1
-        next_term = SOLAR_TERMS[next_month_num]
-
-        next_year = date.year
-        next_year += 1 if next_term[:month] < term[:month]
-
-        next_term_date = Date.new(next_year, next_term[:month], next_term[:day])
-
-        return month_num if date >= term_date && date < next_term_date
-      end
-
-      # 기본값: 양력 월 기반 근사
-      ((date.month + 10) % 12) + 1
+      SolarTermsData.determine_saju_month(date)
     end
   end
 end

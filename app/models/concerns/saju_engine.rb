@@ -3,10 +3,13 @@
 require_relative "saju_engine/heavenly_stems"
 require_relative "saju_engine/earthly_branches"
 require_relative "saju_engine/five_elements"
+require_relative "saju_engine/solar_terms_data"
+require_relative "saju_engine/lunar_calendar"
 require_relative "saju_engine/pillar_calculator"
 require_relative "saju_engine/ten_gods"
 require_relative "saju_engine/fortune_periods"
 require_relative "saju_engine/special_stars"
+require_relative "saju_engine/major_fortune"
 require_relative "saju_engine/trends_2026"
 require_relative "saju_engine/timezone_correction"
 require_relative "saju_engine/chat_engine"
@@ -25,6 +28,15 @@ module SajuEngine
     yearly_fortune = FortunePeriods.calculate_yearly_fortune(Date.today.year, saju[:day][:stem])
     daily_fortune = FortunePeriods.calculate_daily_fortune(Date.today, saju[:day][:stem])
 
+    # 대운 계산 (MajorFortune 모듈)
+    daeun = MajorFortune.calculate(saju, birth_date)
+
+    # 음력 날짜 정보
+    lunar_info = LunarCalendar.solar_to_lunar(birth_date.year, birth_date.month, birth_date.day)
+
+    # 절기 정보
+    term_info = SolarTermsData.current_term_info(birth_date)
+
     day_element = HeavenlyStems.element(saju[:day][:stem])
 
     {
@@ -32,8 +44,11 @@ module SajuEngine
       ten_gods: ten_gods,
       special_stars: special_stars,
       major_fortune: major_fortune,
+      daeun: daeun,
       yearly_fortune: yearly_fortune,
       daily_fortune: daily_fortune,
+      lunar_info: lunar_info,
+      term_info: term_info,
       personality: analyze_personality(saju, ten_gods),
       career: analyze_career(saju, ten_gods),
       love: analyze_love(saju, ten_gods),
