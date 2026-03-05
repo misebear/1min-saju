@@ -11,6 +11,13 @@ Rails.application.routes.draw do
   get "fortunes/daily", to: "fortunes#daily", as: :daily_fortune
   get "fortunes/yearly", to: "fortunes#yearly", as: :yearly_fortune
 
+  # 블라인드 궁합 (카톡 바이럴)
+  get "blind/new", to: "blind_compat#new", as: :new_blind_compat
+  post "blind", to: "blind_compat#create", as: :blind_compat
+  get "blind/:token", to: "blind_compat#invite", as: :blind_invite
+  post "blind/:token/match", to: "blind_compat#match", as: :blind_match
+  get "blind/:token/result", to: "blind_compat#result", as: :blind_result
+
   # 궁합
   get "compatibility/new", to: "compatibility#new", as: :new_compatibility
   post "compatibility", to: "compatibility#create", as: :compatibility

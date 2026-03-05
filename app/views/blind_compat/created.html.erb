@@ -1,0 +1,105 @@
+<% content_for(:title) { "궁합 링크 생성 완료! - 1분 사주" } %>
+
+<div class="page-header animate-fadeIn">
+  <div style="font-size: 64px; margin-bottom: 8px;">🎉</div>
+  <h1>링크 완성!</h1>
+  <p class="subtitle">카톡으로 보내면 궁합을 알 수 있어!</p>
+</div>
+
+<div class="card animate-fadeInUp" style="text-align: center;">
+  <!-- 공유 링크 -->
+  <div style="background: var(--bg-2); border-radius: 12px; padding: 14px; margin-bottom: 16px; position: relative;">
+    <input type="text" id="shareUrl" value="<%= @share_url %>" readonly
+      style="width: 100%; border: none; background: transparent; color: var(--text-1); font-size: 13px; text-align: center; outline: none;">
+  </div>
+
+  <!-- 카카오톡 공유 -->
+  <button onclick="shareKakao()" class="btn-primary" style="background: #FEE500; color: #3C1E1E; width: 100%; margin-bottom: 10px; font-weight: 700;">
+    💬 카카오톡으로 보내기
+  </button>
+
+  <!-- 링크 복사 -->
+  <button onclick="copyLink()" class="btn-primary" style="background: var(--bg-3); color: var(--text-1); width: 100%; margin-bottom: 10px;">
+    📋 링크 복사하기
+  </button>
+
+  <!-- 기본 공유 -->
+  <button onclick="nativeShare()" class="btn-primary" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6); width: 100%; margin-bottom: 16px;">
+    📤 다른 앱으로 공유
+  </button>
+
+  <p style="font-size: 13px; color: var(--text-3); line-height: 1.6;">
+    상대방이 링크를 눌러 생일을 입력하면<br>
+    💥 <strong>팩폭 궁합 결과</strong>가 양쪽 모두에게 보여져!<br>
+    <span style="opacity: 0.7;">링크 유효기간: 7일</span>
+  </p>
+</div>
+
+<div class="card animate-fadeInUp" style="text-align: center;">
+  <div style="font-size: 13px; color: var(--text-3); margin-bottom: 12px;">결과는 이 링크에서 확인할 수 있어!</div>
+  <a href="<%= blind_result_path(token: @token) %>" class="btn-primary" style="display: inline-block; text-decoration: none; background: var(--bg-3); color: var(--text-1);">
+    📊 결과 확인하기
+  </a>
+</div>
+
+<a href="<%= new_blind_compat_path %>" style="display: block; text-align: center; color: var(--text-3); margin-top: 16px; font-size: 14px; text-decoration: none;">
+  ➕ 다른 사람과도 궁합 보기
+</a>
+
+<script>
+// 링크 복사
+function copyLink() {
+  const url = document.getElementById('shareUrl').value;
+  navigator.clipboard.writeText(url).then(() => {
+    alert('링크가 복사됐어! 카톡에 붙여넣기 해봐 💕');
+  }).catch(() => {
+    document.getElementById('shareUrl').select();
+    document.execCommand('copy');
+    alert('링크 복사 완료!');
+  });
+}
+
+// 카카오톡 공유
+function shareKakao() {
+  if (typeof Kakao !== 'undefined' && Kakao.isInitialized()) {
+    Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '💕 누군가 너의 궁합이 궁금하대!',
+        description: '1분 사주에서 블라인드 궁합 확인하기! 생일만 입력하면 팩폭 궁합 결과가 나와!',
+        imageUrl: 'https://www.1minsaju.com/icon.png',
+        link: {
+          mobileWebUrl: '<%= @share_url %>',
+          webUrl: '<%= @share_url %>'
+        }
+      },
+      buttons: [
+        {
+          title: '궁합 확인하기 💕',
+          link: {
+            mobileWebUrl: '<%= @share_url %>',
+            webUrl: '<%= @share_url %>'
+          }
+        }
+      ]
+    });
+  } else {
+    // 카카오 SDK 미초기화 시 기본 공유
+    nativeShare();
+  }
+}
+
+// 네이티브 공유
+function nativeShare() {
+  const url = document.getElementById('shareUrl').value;
+  if (navigator.share) {
+    navigator.share({
+      title: '💕 블라인드 궁합 - 1분 사주',
+      text: '너의 궁합이 궁금해! 생일만 입력해봐~',
+      url: url
+    });
+  } else {
+    copyLink();
+  }
+}
+</script>

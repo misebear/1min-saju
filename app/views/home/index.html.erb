@@ -287,6 +287,19 @@
   </script>
   <% end %>
 
+  <!-- 블라인드 궁합 바이럴 배너 -->
+  <a href="<%= new_blind_compat_path %>" class="card animate-fadeInUp" style="display: block; text-decoration: none; text-align: center; padding: 20px; background: linear-gradient(135deg, #ec489920, #8b5cf620); border: 1px solid #ec489940;">
+    <div style="font-size: 36px; margin-bottom: 8px;">💘</div>
+    <div style="font-size: 17px; font-weight: 800; color: var(--text-1); margin-bottom: 6px;">카톡 블라인드 궁합</div>
+    <div style="font-size: 13px; color: var(--text-2); line-height: 1.6;">
+      내 생일만 입력 → 링크 생성 → 카톡 전송<br>
+      상대가 입력하면 <strong style="color: #ec4899;">팩폭 궁합 결과</strong> 💥
+    </div>
+    <div style="display: inline-block; margin-top: 12px; padding: 8px 24px; border-radius: 20px; background: linear-gradient(135deg, #ec4899, #8b5cf6); color: #fff; font-size: 14px; font-weight: 700;">
+      💕 궁합 링크 만들기
+    </div>
+  </a>
+
   <!-- Quick Menu -->
   <div class="quick-menu animate-fadeInUp">
     <a href="<%= saju_result_path %>" class="quick-item">
@@ -349,6 +362,10 @@
       <a href="<%= new_saju_path %>" class="quick-item">
         <div class="icon-circle">🔮</div>
         <span class="label">사주풀이</span>
+      </a>
+      <a href="<%= new_blind_compat_path %>" class="quick-item">
+        <div class="icon-circle">💘</div>
+        <span class="label">블라인드 궁합</span>
       </a>
       <a href="<%= new_compatibility_path %>" class="quick-item">
         <div class="icon-circle">💕</div>

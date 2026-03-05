@@ -1,0 +1,94 @@
+<% content_for(:title) { "블라인드 궁합 - 1분 사주" } %>
+
+<div class="page-header animate-fadeIn">
+  <%= image_tag "logo_1min_saju.png", class: "snowcat-mascot", alt: "1분 사주" %>
+  <h1>💕 블라인드 궁합</h1>
+  <p class="subtitle">내 생일만 입력하고 카톡으로 보내면 끝! 🔥</p>
+</div>
+
+<div class="card animate-fadeInUp" style="text-align: center; padding: 20px;">
+  <div style="background: linear-gradient(135deg, #ec4899, #8b5cf6); border-radius: 16px; padding: 20px; color: #fff; margin-bottom: 20px;">
+    <div style="font-size: 40px; margin-bottom: 8px;">💘</div>
+    <h3 style="margin: 0 0 8px; font-size: 18px;">이렇게 작동해!</h3>
+    <div style="font-size: 14px; line-height: 1.8; opacity: 0.9;">
+      1️⃣ 내 생일 입력<br>
+      2️⃣ 링크 생성 → 카톡 전송<br>
+      3️⃣ 상대가 생일 입력하면<br>
+      4️⃣ 💥 팩폭 궁합 결과!
+    </div>
+  </div>
+</div>
+
+<%= form_tag blind_compat_path, method: :post do %>
+  <div class="person-section animate-fadeInUp">
+    <div class="person-title">
+      😊 나의 정보
+    </div>
+
+    <div class="form-section">
+      <label class="form-label">💌 닉네임 (상대에게 표시됨)</label>
+      <input type="text" name="nickname" class="form-control" placeholder="예: 썸남, 귀요미, 익명" maxlength="10" style="margin-bottom: 12px;">
+    </div>
+
+    <div class="form-section">
+      <label class="form-label">📅 생년월일</label>
+      <div class="form-row">
+        <div class="form-group">
+          <select name="year" class="form-control" required>
+            <option value="">년도</option>
+            <% (1940..2025).reverse_each do |y| %>
+              <option value="<%= y %>" <%= 'selected' if y == 2000 %>><%= y %>년</option>
+            <% end %>
+          </select>
+        </div>
+        <div class="form-group">
+          <select name="month" class="form-control" required>
+            <option value="">월</option>
+            <% (1..12).each do |m| %>
+              <option value="<%= m %>"><%= m %>월</option>
+            <% end %>
+          </select>
+        </div>
+        <div class="form-group">
+          <select name="day" class="form-control" required>
+            <option value="">일</option>
+            <% (1..31).each do |d| %>
+              <option value="<%= d %>"><%= d %>일</option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">🕐 태어난 시간</label>
+        <select name="hour" class="form-control" required>
+          <option value="0">자시 🐭</option>
+          <option value="1">축시 🐮</option>
+          <option value="3">인시 🐯</option>
+          <option value="5">묘시 🐰</option>
+          <option value="7">진시 🐲</option>
+          <option value="9">사시 🐍</option>
+          <option value="11" selected>오시 🐴</option>
+          <option value="13">미시 🐑</option>
+          <option value="15">신시 🐵</option>
+          <option value="17">유시 🐔</option>
+          <option value="19">술시 🐶</option>
+          <option value="21">해시 🐷</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">👤 성별</label>
+        <select name="gender" class="form-control">
+          <option value="남">🙋‍♂️ 남자</option>
+          <option value="여">🙋‍♀️ 여자</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn-primary mt-md" style="background: linear-gradient(135deg, #ec4899, #8b5cf6);">
+    💕 1분 궁합 링크 만들기
+  </button>
+<% end %>
