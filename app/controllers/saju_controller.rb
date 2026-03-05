@@ -56,20 +56,28 @@ class SajuController < ApplicationController
     @famous_people = find_famous_people(saju[:day][:stem], saju[:day][:branch])
 
     # DB에 기록 저장 (중복 방지: 같은 날 같은 생일이면 저장 안 함)
-    unless SajuRecord.where(birth_date: birth_date, birth_hour: birth_hour, gender: gender)
-                     .where("created_at >= ?", Date.today.beginning_of_day).exists?
-      SajuRecord.create(
-        birth_date: birth_date,
-        birth_hour: birth_hour,
-        gender: gender,
-        city: city,
-        result_json: @analysis.to_json
-      )
+    # DB 장애 시에도 사주 결과는 정상 표시되도록 rescue 처리
+    begin
+      unless SajuRecord.where(birth_date: birth_date, birth_hour: birth_hour, gender: gender)
+                       .where("created_at >= ?", Date.today.beginning_of_day).exists?
+        SajuRecord.create(
+          birth_date: birth_date,
+          birth_hour: birth_hour,
+          gender: gender,
+          city: city,
+          result_json: @analysis.to_json
+        )
+      end
+    rescue => e
+      Rails.logger.warn("DB 저장 실패 (무시): #{e.message}")
     end
   end
 
   # 사주 기록 목록
   def history
     @records = SajuRecord.order(created_at: :desc).limit(50)
+  rescue => e
+    Rails.logger.warn("DB 조회 실패: #{e.message}")
+    @records = []
   end
 end
