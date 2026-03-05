@@ -21,7 +21,7 @@ plugins {
 }
 
 def twaManifest = [
-    applicationId: 'com.minsaju.app',
+    applicationId: 'app.railway.up.app_1min_saju_production.twa',
     hostName: 'www.1minsaju.com', // The domain being opened in the TWA.
     launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
     name: '1분 사주 - 나만의 운명 풀이', // The application name.
@@ -52,9 +52,9 @@ def twaManifest = [
 
 android {
     compileSdkVersion 36
-    namespace "com.minsaju.app"
+    namespace "app.railway.up.app_1min_saju_production.twa"
     defaultConfig {
-        applicationId "com.minsaju.app"
+        applicationId "app.railway.up.app_1min_saju_production.twa"
         minSdkVersion 21
         targetSdkVersion 35
         versionCode 3

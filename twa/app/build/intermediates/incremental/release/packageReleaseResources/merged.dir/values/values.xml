@@ -28,6 +28,6 @@
     <string name="launchUrl" translatable="false">https://www.1minsaju.com/</string>
     <string name="launcherName" translatable="false">1분사주</string>
     <string name="orientation" translatable="false">portrait</string>
-    <string name="providerAuthority" translatable="false">com.minsaju.app.fileprovider</string>
+    <string name="providerAuthority" translatable="false">app.railway.up.app_1min_saju_production.twa.fileprovider</string>
     <string name="webManifestUrl" translatable="false">https://www.1minsaju.com/manifest.json</string>
 </resources>

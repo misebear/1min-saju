@@ -22,7 +22,7 @@
 22     the abbreviated format.
 23-->
 24<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-25    package="com.minsaju.app"
+25    package="app.railway.up.app_1min_saju_production.twa"
 26    android:versionCode="3"
 27    android:versionName="2.0.0" >
 28
@@ -35,268 +35,268 @@
 34        <intent>
 34-->[com.google.androidbrowserhelper:androidbrowserhelper:2.6.2] C:\Users\db019\.gradle\caches\8.11.1\transforms\5053e02be90783e54992393be394bb70\transformed\androidbrowserhelper-2.6.2\AndroidManifest.xml:23:9-29:18
 35            <action android:name="android.intent.action.VIEW" />
-35-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:146:17-68
-35-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:146:25-66
+35-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:145:17-68
+35-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:145:25-66
 36
 37            <category android:name="android.intent.category.BROWSABLE" />
-37-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:148:17-77
-37-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:148:27-75
+37-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:147:17-77
+37-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:147:27-75
 38
 39            <data android:scheme="https" />
-39-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:149:17-152:19
-39-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:149:23-45
+39-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:148:17-151:19
+39-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:148:23-45
 40        </intent>
 41    </queries>
 42
 43    <permission
 43-->[androidx.core:core:1.13.0] C:\Users\db019\.gradle\caches\8.11.1\transforms\a5429f7b20c607b890f08b5283ad4ec0\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
-44        android:name="com.minsaju.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+44        android:name="app.railway.up.app_1min_saju_production.twa.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
 44-->[androidx.core:core:1.13.0] C:\Users\db019\.gradle\caches\8.11.1\transforms\a5429f7b20c607b890f08b5283ad4ec0\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
 45        android:protectionLevel="signature" />
 45-->[androidx.core:core:1.13.0] C:\Users\db019\.gradle\caches\8.11.1\transforms\a5429f7b20c607b890f08b5283ad4ec0\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
 46
-47    <uses-permission android:name="com.minsaju.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+47    <uses-permission android:name="app.railway.up.app_1min_saju_production.twa.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 47-->[androidx.core:core:1.13.0] C:\Users\db019\.gradle\caches\8.11.1\transforms\a5429f7b20c607b890f08b5283ad4ec0\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
 47-->[androidx.core:core:1.13.0] C:\Users\db019\.gradle\caches\8.11.1\transforms\a5429f7b20c607b890f08b5283ad4ec0\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
 48
 49    <application
-49-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:33:5-191:19
-50        android:name="com.minsaju.app.Application"
-50-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:34:9-35
+49-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:32:5-190:19
+50        android:name="app.railway.up.app_1min_saju_production.twa.Application"
+50-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:33:9-35
 51        android:allowBackup="true"
-51-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:35:9-35
+51-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:34:9-35
 52        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 52-->[androidx.core:core:1.13.0] C:\Users\db019\.gradle\caches\8.11.1\transforms\a5429f7b20c607b890f08b5283ad4ec0\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
 53        android:extractNativeLibs="true"
 54        android:icon="@mipmap/ic_launcher"
-54-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:36:9-43
+54-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:35:9-43
 55        android:label="@string/appName"
-55-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:37:9-40
+55-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:36:9-40
 56        android:manageSpaceActivity="com.google.androidbrowserhelper.trusted.ManageDataLauncherActivity"
-56-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:39:9-105
+56-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:38:9-105
 57        android:supportsRtl="true"
-57-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:41:9-35
+57-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:40:9-35
 58        android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-58-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:42:9-68
+58-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:41:9-68
 59        <meta-data
-59-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:44:9-46:58
+59-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:43:9-45:58
 60            android:name="asset_statements"
-60-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:45:13-44
+60-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:44:13-44
 61            android:resource="@string/assetStatements" />
-61-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:46:13-55
+61-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:45:13-55
 62        <meta-data
-62-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:49:13-51:58
+62-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:48:13-50:58
 63            android:name="web_manifest_url"
-63-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:50:17-48
+63-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:49:17-48
 64            android:value="@string/webManifestUrl" />
-64-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:51:17-55
+64-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:50:17-55
 65        <meta-data
-65-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:54:9-56:52
+65-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:53:9-55:52
 66            android:name="twa_generator"
-66-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:55:13-41
+66-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:54:13-41
 67            android:value="@string/generatorApp" />
-67-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:56:13-49
+67-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:55:13-49
 68
 69        <activity
-69-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:63:13-74:24
+69-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:62:13-73:24
 70            android:name="com.google.androidbrowserhelper.trusted.ManageDataLauncherActivity"
-70-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:63:23-104
+70-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:62:23-104
 71            android:enabled="true"
-71-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:65:17-39
+71-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:64:17-39
 72            android:excludeFromRecents="true"
-72-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:66:17-50
+72-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:65:17-50
 73            android:exported="false" >
-73-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:64:17-41
+73-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:63:17-41
 74            <meta-data
-74-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:67:17-69:57
+74-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:66:17-68:57
 75                android:name="android.support.customtabs.trusted.MANAGE_SPACE_URL"
-75-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:68:21-87
+75-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:67:21-87
 76                android:value="@string/launchUrl" />
-76-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:69:21-54
+76-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:68:21-54
 77
 78            <intent-filter>
-78-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:70:17-73:33
+78-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:69:17-72:33
 79                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
-79-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:71:21-92
-79-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:71:29-89
+79-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:70:21-92
+79-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:70:29-89
 80
 81                <category android:name="android.intent.category.DEFAULT" />
-81-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:72:21-80
-81-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:72:31-77
+81-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:71:21-80
+81-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:71:31-77
 82            </intent-filter>
 83        </activity>
 84        <activity
-84-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:77:9-158:20
-85            android:name="com.minsaju.app.LauncherActivity"
-85-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:77:19-50
+84-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:76:9-157:20
+85            android:name="app.railway.up.app_1min_saju_production.twa.LauncherActivity"
+85-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:76:19-50
 86            android:alwaysRetainTaskState="true"
-86-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:78:13-49
+86-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:77:13-49
 87            android:exported="true"
-87-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:80:13-36
+87-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:79:13-36
 88            android:label="@string/launcherName" >
-88-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:79:13-49
+88-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:78:13-49
 89            <meta-data
-89-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:81:13-82:53
+89-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:80:13-81:53
 90                android:name="android.support.customtabs.trusted.DEFAULT_URL"
-90-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:81:24-85
+90-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:80:24-85
 91                android:value="@string/launchUrl" />
-91-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:82:17-50
+91-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:81:17-50
 92            <meta-data
-92-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:84:13-86:58
+92-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:83:13-85:58
 93                android:name="android.support.customtabs.trusted.STATUS_BAR_COLOR"
-93-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:85:17-83
+93-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:84:17-83
 94                android:resource="@color/colorPrimary" />
-94-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:86:17-55
+94-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:85:17-55
 95            <meta-data
-95-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:90:13-92:62
+95-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:89:13-91:62
 96                android:name="android.support.customtabs.trusted.STATUS_BAR_COLOR_DARK"
-96-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:91:17-88
+96-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:90:17-88
 97                android:resource="@color/colorPrimaryDark" />
-97-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:92:17-59
+97-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:91:17-59
 98            <meta-data
-98-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:94:13-96:61
+98-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:93:13-95:61
 99                android:name="android.support.customtabs.trusted.NAVIGATION_BAR_COLOR"
-99-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:95:17-87
+99-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:94:17-87
 100                android:resource="@color/navigationColor" />
-100-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:96:17-58
+100-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:95:17-58
 101            <meta-data
-101-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:98:13-100:65
+101-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:97:13-99:65
 102                android:name="android.support.customtabs.trusted.NAVIGATION_BAR_COLOR_DARK"
-102-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:99:17-92
+102-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:98:17-92
 103                android:resource="@color/navigationColorDark" />
-103-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:100:17-62
+103-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:99:17-62
 104            <meta-data
-104-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:102:13-104:68
+104-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:101:13-103:68
 105                android:name="androix.browser.trusted.NAVIGATION_BAR_DIVIDER_COLOR"
-105-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:103:17-84
+105-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:102:17-84
 106                android:resource="@color/navigationDividerColor" />
-106-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:104:17-65
+106-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:103:17-65
 107            <meta-data
-107-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:106:13-108:72
+107-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:105:13-107:72
 108                android:name="androix.browser.trusted.NAVIGATION_BAR_DIVIDER_COLOR_DARK"
-108-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:107:17-89
+108-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:106:17-89
 109                android:resource="@color/navigationDividerColorDark" />
-109-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:108:17-69
+109-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:107:17-69
 110            <meta-data
-110-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:110:13-111:54
+110-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:109:13-110:54
 111                android:name="android.support.customtabs.trusted.SPLASH_IMAGE_DRAWABLE"
-111-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:110:24-95
+111-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:109:24-95
 112                android:resource="@drawable/splash" />
-112-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:111:17-52
+112-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:110:17-52
 113            <meta-data
-113-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:113:13-114:60
+113-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:112:13-113:60
 114                android:name="android.support.customtabs.trusted.SPLASH_SCREEN_BACKGROUND_COLOR"
-114-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:113:24-104
+114-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:112:24-104
 115                android:resource="@color/backgroundColor" />
-115-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:114:17-58
+115-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:113:17-58
 116            <meta-data
-116-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:116:13-117:71
+116-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:115:13-116:71
 117                android:name="android.support.customtabs.trusted.SPLASH_SCREEN_FADE_OUT_DURATION"
-117-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:116:24-105
+117-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:115:24-105
 118                android:value="@integer/splashScreenFadeOutDuration" />
-118-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:117:17-69
+118-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:116:17-69
 119            <meta-data
-119-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:119:13-120:60
+119-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:118:13-119:60
 120                android:name="android.support.customtabs.trusted.FILE_PROVIDER_AUTHORITY"
-120-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:119:24-97
+120-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:118:24-97
 121                android:value="@string/providerAuthority" />
-121-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:120:17-58
+121-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:119:17-58
 122            <meta-data
-122-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:122:13-97
+122-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:121:13-97
 123                android:name="android.app.shortcuts"
-123-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:122:24-60
+123-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:121:24-60
 124                android:resource="@xml/shortcuts" />
-124-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:122:61-94
+124-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:121:61-94
 125            <meta-data
-125-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:124:13-125:56
+125-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:123:13-124:56
 126                android:name="android.support.customtabs.trusted.FALLBACK_STRATEGY"
-126-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:124:24-91
+126-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:123:24-91
 127                android:value="@string/fallbackType" />
-127-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:125:17-53
+127-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:124:17-53
 128            <meta-data
-128-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:131:13-132:54
+128-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:130:13-131:54
 129                android:name="android.support.customtabs.trusted.SCREEN_ORIENTATION"
-129-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:131:24-92
+129-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:130:24-92
 130                android:value="@string/orientation" />
-130-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:132:17-52
+130-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:131:17-52
 131
 132            <intent-filter>
-132-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:140:13-143:29
+132-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:139:13-142:29
 133                <action android:name="android.intent.action.MAIN" />
-133-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:141:17-69
-133-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:141:25-66
+133-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:140:17-69
+133-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:140:25-66
 134
 135                <category android:name="android.intent.category.LAUNCHER" />
-135-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:142:17-77
-135-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:142:27-74
+135-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:141:17-77
+135-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:141:27-74
 136            </intent-filter>
 137            <intent-filter android:autoVerify="true" >
-137-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:145:13-153:29
-137-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:145:28-53
+137-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:144:13-152:29
+137-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:144:28-53
 138                <action android:name="android.intent.action.VIEW" />
-138-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:146:17-68
-138-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:146:25-66
+138-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:145:17-68
+138-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:145:25-66
 139
 140                <category android:name="android.intent.category.DEFAULT" />
-140-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:72:21-80
-140-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:72:31-77
+140-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:71:21-80
+140-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:71:31-77
 141                <category android:name="android.intent.category.BROWSABLE" />
-141-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:148:17-77
-141-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:148:27-75
+141-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:147:17-77
+141-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:147:27-75
 142
 143                <data
-143-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:149:17-152:19
+143-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:148:17-151:19
 144                    android:host="@string/hostName"
-144-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:150:21-52
+144-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:149:21-52
 145                    android:scheme="https" />
-145-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:149:23-45
+145-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:148:23-45
 146            </intent-filter>
 147        </activity>
 148        <activity android:name="com.google.androidbrowserhelper.trusted.FocusActivity" />
-148-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:160:9-90
-148-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:160:19-87
+148-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:159:9-90
+148-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:159:19-87
 149        <activity
-149-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:162:9-163:62
+149-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:161:9-162:62
 150            android:name="com.google.androidbrowserhelper.trusted.WebViewFallbackActivity"
-150-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:162:19-97
+150-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:161:19-97
 151            android:configChanges="orientation|screenSize" />
-151-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:163:13-59
+151-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:162:13-59
 152
 153        <provider
-153-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:165:9-173:20
+153-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:164:9-172:20
 154            android:name="androidx.core.content.FileProvider"
-154-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:166:13-62
+154-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:165:13-62
 155            android:authorities="@string/providerAuthority"
-155-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:167:13-60
+155-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:166:13-60
 156            android:exported="false"
-156-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:169:13-37
+156-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:168:13-37
 157            android:grantUriPermissions="true" >
-157-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:168:13-47
+157-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:167:13-47
 158            <meta-data
-158-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:170:13-172:53
+158-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:169:13-171:53
 159                android:name="android.support.FILE_PROVIDER_PATHS"
-159-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:171:17-67
+159-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:170:17-67
 160                android:resource="@xml/filepaths" />
-160-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:172:17-50
+160-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:171:17-50
 161        </provider>
 162
 163        <service
-163-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:175:9-186:19
-164            android:name="com.minsaju.app.DelegationService"
-164-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:176:13-46
+163-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:174:9-185:19
+164            android:name="app.railway.up.app_1min_saju_production.twa.DelegationService"
+164-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:175:13-46
 165            android:enabled="@bool/enableNotification"
-165-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:177:13-55
+165-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:176:13-55
 166            android:exported="@bool/enableNotification" >
-166-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:178:13-56
+166-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:177:13-56
 167            <intent-filter>
-167-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:182:13-185:29
+167-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:181:13-184:29
 168                <action android:name="android.support.customtabs.trusted.TRUSTED_WEB_ACTIVITY_SERVICE" />
-168-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:183:17-105
-168-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:183:25-103
+168-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:182:17-105
+168-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:182:25-103
 169
 170                <category android:name="android.intent.category.DEFAULT" />
-170-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:72:21-80
-170-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:72:31-77
+170-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:71:21-80
+170-->C:\development\saju\twa\app\src\main\AndroidManifest.xml:71:31-77
 171            </intent-filter>
 172        </service>
 173
@@ -304,7 +304,7 @@
 174-->[androidx.emoji2:emoji2:1.3.0] C:\Users\db019\.gradle\caches\8.11.1\transforms\5cb7738f5242d8c4e38c8ffa2b265b31\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
 175            android:name="androidx.startup.InitializationProvider"
 175-->[androidx.emoji2:emoji2:1.3.0] C:\Users\db019\.gradle\caches\8.11.1\transforms\5cb7738f5242d8c4e38c8ffa2b265b31\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-176            android:authorities="com.minsaju.app.androidx-startup"
+176            android:authorities="app.railway.up.app_1min_saju_production.twa.androidx-startup"
 176-->[androidx.emoji2:emoji2:1.3.0] C:\Users\db019\.gradle\caches\8.11.1\transforms\5cb7738f5242d8c4e38c8ffa2b265b31\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
 177            android:exported="false" >
 177-->[androidx.emoji2:emoji2:1.3.0] C:\Users\db019\.gradle\caches\8.11.1\transforms\5cb7738f5242d8c4e38c8ffa2b265b31\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
