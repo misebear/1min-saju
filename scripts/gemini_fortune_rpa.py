@@ -44,7 +44,7 @@ CHROME_USER_DATA = r"C:\Users\db019\AppData\Local\Google\Chrome\User Data"
 CHROME_PROFILE = "Default"  # 또는 "Profile 1" 등 사용 중인 프로필
 
 # 오늘의 일진 (매일 변경) — 한자+한글 형식
-TODAY_ILJIN = "丙寅(병인)"
+TODAY_ILJIN = "甲辰(갑진)"
 
 # 저장 파일 경로
 OUTPUT_CSV = "fortune_2026_db.csv"
@@ -115,14 +115,74 @@ logger = logging.getLogger(__name__)
 # ============================================================
 # 브라우저 초기화
 # ============================================================
+def kill_chrome():
+    """크롬 프로세스 완전 종료"""
+    import subprocess
+    try:
+        subprocess.run(["taskkill", "/F", "/IM", "chrome.exe"], 
+                      capture_output=True, timeout=10)
+        subprocess.run(["taskkill", "/F", "/IM", "chromedriver.exe"], 
+                      capture_output=True, timeout=10)
+        time.sleep(2)
+    except Exception:
+        pass
+
+
 def create_browser():
-    """기존 크롬 세션을 활용한 브라우저 생성"""
+    """크롬 브라우저 생성 (쿠키 복사 방식으로 세션 유지)"""
+    import shutil
+    
     logger.info("🚀 크롬 브라우저 초기화 중...")
     
+    # 기존 크롬 완전 종료
+    kill_chrome()
+    
+    # 임시 프로필 디렉토리 (원본 복사)
+    temp_profile = os.path.join(os.environ["TEMP"], "chrome_gemini_rpa")
+    
+    # 이전 임시 프로필이 있으면 재사용 (쿠키 유지)
+    if not os.path.exists(temp_profile):
+        logger.info("  📂 크롬 프로필 복사 중 (최초 1회, 쿠키 포함)...")
+        src_profile = os.path.join(CHROME_USER_DATA, CHROME_PROFILE)
+        
+        # 필수 파일만 복사 (전체 복사는 너무 오래 걸림)
+        os.makedirs(temp_profile, exist_ok=True)
+        temp_default = os.path.join(temp_profile, "Default")
+        os.makedirs(temp_default, exist_ok=True)
+        
+        # 로그인 세션 유지에 필요한 핵심 파일 복사
+        essential_files = [
+            "Cookies", "Cookies-journal",
+            "Login Data", "Login Data-journal",
+            "Web Data", "Web Data-journal",
+            "Preferences", "Secure Preferences",
+            "Local State",
+        ]
+        
+        for fname in essential_files:
+            src = os.path.join(src_profile, fname)
+            if os.path.exists(src):
+                try:
+                    shutil.copy2(src, os.path.join(temp_default, fname))
+                except Exception as e:
+                    logger.warning(f"  ⚠️ {fname} 복사 실패: {e}")
+        
+        # Local State 파일 (상위 디렉토리)
+        local_state = os.path.join(CHROME_USER_DATA, "Local State")
+        if os.path.exists(local_state):
+            try:
+                shutil.copy2(local_state, os.path.join(temp_profile, "Local State"))
+            except Exception:
+                pass
+        
+        logger.info("  ✅ 프로필 복사 완료")
+    else:
+        logger.info("  ♻️ 기존 임시 프로필 재사용")
+    
     options = Options()
-    # 기존 크롬 프로필 연동 (로그인 세션 유지)
-    options.add_argument(f"--user-data-dir={CHROME_USER_DATA}")
-    options.add_argument(f"--profile-directory={CHROME_PROFILE}")
+    # 임시 프로필 사용
+    options.add_argument(f"--user-data-dir={temp_profile}")
+    options.add_argument("--profile-directory=Default")
     
     # 봇 탐지 회피 옵션
     options.add_argument("--disable-blink-features=AutomationControlled")
@@ -130,8 +190,10 @@ def create_browser():
     options.add_experimental_option("useAutomationExtension", False)
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--remote-debugging-port=9222")
     
-    # 윈도우 크기 설정 (너무 작으면 UI가 깨질 수 있음)
+    # 윈도우 크기 설정
     options.add_argument("--window-size=1400,900")
     
     # ChromeDriver 자동 관리
