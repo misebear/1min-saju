@@ -15,7 +15,6 @@
   day_element = SajuEngine::HeavenlyStems.element(saju[:day][:stem])
   day_yinyang = SajuEngine::HeavenlyStems.yinyang(saju[:day][:stem])
 
-  # 일간 쉬운 설명
   day_master_easy = {
     '목' => { '양' => '큰 나무 🌳', '음' => '부드러운 풀 🌿' },
     '화' => { '양' => '뜨거운 태양 ☀️', '음' => '따뜻한 촛불 🕯️' },
@@ -24,298 +23,761 @@
     '수' => { '양' => '깊은 바다 🌊', '음' => '맑은 시냇물 💧' }
   }
   my_nature = day_master_easy.dig(day_element, day_yinyang) || '특별한 존재 ✨'
+
+  total = distribution.values.sum.to_f
 %>
 
-<!-- Hero Header -->
-<div class="saju-result-hero animate-fadeIn">
-  <div class="result-hero-top">
-    <div class="result-hero-badges">
-      <span class="result-hero-badge zodiac"><%= saju[:zodiac_emoji] %> <%= saju[:zodiac] %>띠</span>
-      <span class="result-hero-badge element" style="background: <%= element_colors[day_element] %>18; color: <%= element_colors[day_element] %>; border: 1px solid <%= element_colors[day_element] %>30;"><%= element_icons[day_element] %> <%= day_element %>(<%= day_yinyang %>)</span>
+<% content_for(:head) do %>
+<style>
+/* ─── 숏폼 스토리 UI ─── */
+.story-viewport {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 9999;
+  background: #000;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+/* 프로그레스 바 */
+.story-progress {
+  position: absolute;
+  top: 12px; left: 12px; right: 12px;
+  display: flex;
+  gap: 4px;
+  z-index: 10002;
+}
+.story-progress-seg {
+  flex: 1;
+  height: 3px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.story-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #fff;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+.story-progress-seg.done .story-progress-fill { width: 100%; }
+.story-progress-seg.active .story-progress-fill { width: 100%; }
+
+/* 카드 컨테이너 */
+.story-cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.story-card {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 24px 80px;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+.story-card.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+.story-card.exit-left {
+  opacity: 0;
+  transform: translateX(-30px) scale(0.96);
+}
+.story-card.exit-right {
+  opacity: 0;
+  transform: translateX(30px) scale(0.96);
+}
+
+/* 카드별 배경 */
+.story-card[data-card="0"] { background: linear-gradient(160deg, #2d1b69, #11998e); }
+.story-card[data-card="1"] { background: linear-gradient(160deg, #0f0c29, #302b63, #24243e); }
+.story-card[data-card="2"] { background: linear-gradient(160deg, #834d9b, #d04ed6); }
+.story-card[data-card="3"] { background: linear-gradient(160deg, #eb3349, #f45c43); }
+.story-card[data-card="4"] { background: linear-gradient(160deg, #0d7377, #14ffec10); }
+.story-card[data-card="5"] { background: linear-gradient(160deg, #f7971e, #ffd200); }
+.story-card[data-card="6"] { background: linear-gradient(160deg, #141e30, #243b55); }
+.story-card[data-card="7"] { background: linear-gradient(160deg, #1a0530, #2d1b69, #000); }
+
+/* 탭 영역 */
+.story-tap-left, .story-tap-right {
+  position: absolute;
+  top: 40px; bottom: 0;
+  z-index: 10001;
+  cursor: pointer;
+}
+.story-tap-left { left: 0; width: 35%; }
+.story-tap-right { right: 0; width: 65%; }
+
+/* 닫기 버튼 */
+.story-close {
+  position: absolute;
+  top: 28px; right: 16px;
+  z-index: 10003;
+  background: rgba(0,0,0,0.35);
+  border: none;
+  color: #fff;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+/* 카드 번호 */
+.story-counter {
+  position: absolute;
+  top: 30px; left: 16px;
+  z-index: 10003;
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ─── 카드 내부 스타일 ─── */
+.sc-content {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  color: #fff;
+}
+.sc-emoji-hero {
+  font-size: 64px;
+  margin-bottom: 16px;
+  animation: scBounce 0.6s ease;
+}
+.sc-title {
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 8px;
+  line-height: 1.3;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+.sc-subtitle {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+.sc-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  margin: 4px;
+}
+.sc-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.9);
+  text-align: left;
+  background: rgba(0,0,0,0.2);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-top: 16px;
+  backdrop-filter: blur(4px);
+}
+.sc-divider {
+  width: 40px;
+  height: 3px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 2px;
+  margin: 20px auto;
+}
+
+/* 네 기둥 카드 */
+.sc-pillars {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 16px;
+}
+.sc-pillar {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 14px 10px;
+  min-width: 72px;
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+.sc-pillar-name {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 8px;
+}
+.sc-pillar-stem {
+  font-size: 28px;
+  font-weight: 900;
+  display: block;
+  margin-bottom: 4px;
+}
+.sc-pillar-branch {
+  font-size: 28px;
+  font-weight: 900;
+  display: block;
+  margin-bottom: 8px;
+}
+.sc-pillar-el {
+  font-size: 11px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 2px 8px;
+}
+
+/* 오행 바 */
+.sc-bars {
+  width: 100%;
+  margin-top: 16px;
+}
+.sc-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.sc-bar-label {
+  width: 60px;
+  text-align: right;
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+}
+.sc-bar-track {
+  flex: 1;
+  height: 8px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.sc-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s ease;
+}
+.sc-bar-fill.el-wood { background: #66BB6A; }
+.sc-bar-fill.el-fire { background: #EF5350; }
+.sc-bar-fill.el-earth { background: #FFA726; }
+.sc-bar-fill.el-metal { background: #B0BEC5; }
+.sc-bar-fill.el-water { background: #42A5F5; }
+.sc-bar-val {
+  width: 36px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+}
+
+/* 용신 카드 */
+.sc-yongshin-box {
+  background: rgba(0,0,0,0.25);
+  border-radius: 20px;
+  padding: 24px;
+  margin-top: 16px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.sc-yongshin-icon {
+  font-size: 56px;
+  margin-bottom: 12px;
+}
+.sc-yongshin-name {
+  font-size: 22px;
+  font-weight: 800;
+}
+.sc-yongshin-reason {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  margin-top: 8px;
+}
+.sc-tip {
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* 십성 그리드 */
+.sc-tengod-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+  width: 100%;
+}
+.sc-tengod-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 14px 16px;
+  backdrop-filter: blur(4px);
+}
+.sc-tengod-emoji { font-size: 28px; }
+.sc-tengod-info { text-align: left; flex: 1; }
+.sc-tengod-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+.sc-tengod-pos {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+}
+.sc-tengod-meaning {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+/* 대운 타임라인 */
+.sc-daeun-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+}
+.sc-daeun-chip {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 10px 14px;
+  text-align: center;
+  min-width: 80px;
+  backdrop-filter: blur(4px);
+}
+.sc-daeun-chip.now {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.4);
+  box-shadow: 0 0 20px rgba(255,255,255,0.15);
+}
+.sc-daeun-age {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  display: block;
+}
+.sc-daeun-ganzi {
+  font-size: 18px;
+  font-weight: 800;
+  display: block;
+  margin: 4px 0;
+}
+.sc-now-tag {
+  font-size: 10px;
+  background: #fff;
+  color: #000;
+  border-radius: 6px;
+  padding: 1px 6px;
+  font-weight: 700;
+}
+
+/* CTA 버튼 */
+.sc-cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+.sc-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  transition: all 0.2s;
+}
+.sc-cta-btn:hover { background: rgba(255,255,255,0.2); transform: scale(1.02); }
+.sc-cta-btn.primary { background: rgba(255,255,255,0.2); grid-column: 1 / -1; }
+
+/* 신살 */
+.sc-stars-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+}
+.sc-star-chip {
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-size: 13px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* 탭 힌트 */
+.sc-tap-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+  animation: scPulse 2s ease infinite;
+  z-index: 10002;
+}
+
+@keyframes scBounce {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes scPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+@keyframes scSlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.sc-animate { animation: scSlideUp 0.5s ease both; }
+.sc-animate-d1 { animation-delay: 0.1s; }
+.sc-animate-d2 { animation-delay: 0.2s; }
+.sc-animate-d3 { animation-delay: 0.3s; }
+.sc-animate-d4 { animation-delay: 0.4s; }
+
+/* 데스크톱 보정 */
+@media (min-width: 769px) {
+  .story-viewport {
+    display: flex;
+    justify-content: center;
+  }
+  .story-cards {
+    max-width: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px auto;
+    height: calc(100% - 40px);
+    box-shadow: 0 0 60px rgba(0,0,0,0.5);
+  }
+  .story-progress { left: calc(50% - 198px); right: calc(50% - 198px); }
+  .story-tap-left, .story-tap-right { max-width: 420px; }
+  .story-close { right: calc(50% - 198px); }
+  .story-counter { left: calc(50% - 198px); }
+  .sc-tap-hint { bottom: 40px; }
+}
+</style>
+<% end %>
+
+<!-- 숏폼 스토리 UI -->
+<div class="story-viewport" id="storyViewport">
+  <!-- 프로그레스 바 -->
+  <div class="story-progress" id="storyProgress">
+    <% 8.times do |i| %>
+      <div class="story-progress-seg" data-seg="<%= i %>">
+        <div class="story-progress-fill"></div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- 카드 번호 -->
+  <div class="story-counter" id="storyCounter">1 / 8</div>
+
+  <!-- 닫기 -->
+  <button class="story-close" onclick="closeStory()">✕</button>
+
+  <!-- 탭 영역 -->
+  <div class="story-tap-left" id="tapLeft"></div>
+  <div class="story-tap-right" id="tapRight"></div>
+
+  <div class="story-cards" id="storyCards">
+
+    <!-- 카드 1: 나의 타입 -->
+    <div class="story-card active" data-card="0">
+      <div class="sc-content">
+        <div class="sc-emoji-hero"><%= saju[:zodiac_emoji] %></div>
+        <div class="sc-badge sc-animate"><%= saju[:zodiac] %>띠</div>
+        <div class="sc-badge sc-animate sc-animate-d1" style="background: <%= element_colors[day_element] %>25; border-color: <%= element_colors[day_element] %>50;"><%= element_icons[day_element] %> <%= day_element %>(<%= day_yinyang %>)</div>
+        <h1 class="sc-title sc-animate sc-animate-d2">나는<br><span style="color: <%= element_colors[day_element] %>"><%= my_nature %></span><br>타입!</h1>
+        <p class="sc-subtitle sc-animate sc-animate-d3">일간 <strong><%= saju[:day_master] %></strong> · <%= element_names[day_element] %>의 기운을 타고났어요</p>
+        <% if @correction && @correction[:applied] %>
+          <div class="sc-badge sc-animate sc-animate-d4" style="font-size: 11px;">🔧 시간보정 적용 (총 <%= @correction[:total_minutes] > 0 ? '+' : '' %><%= @correction[:total_minutes] %>분)</div>
+        <% end %>
+      </div>
+      <div class="sc-tap-hint">탭해서 넘기기 →</div>
     </div>
-    <h1 class="result-hero-title">나는 <span style="color: <%= element_colors[day_element] %>"><%= my_nature %></span> 타입!</h1>
-    <p class="result-hero-subtitle">일간 <strong><%= saju[:day_master] %></strong> · <%= element_names[day_element] %>의 기운을 타고났어요</p>
+
+    <!-- 카드 2: 사주 네 기둥 -->
+    <div class="story-card" data-card="1">
+      <div class="sc-content">
+        <div class="sc-emoji-hero">📋</div>
+        <h2 class="sc-title sc-animate">나의 사주 네 기둥</h2>
+        <p class="sc-subtitle sc-animate sc-animate-d1">하늘과 땅의 기운으로 본 당신</p>
+        <div class="sc-pillars sc-animate sc-animate-d2">
+          <% pillars.each_with_index do |pillar, i| %>
+            <div class="sc-pillar">
+              <span class="sc-pillar-name"><%= pillar_names[i] %></span>
+              <span class="sc-pillar-stem" style="color: <%= element_colors[pillar[:element]] %>"><%= pillar[:stem] %></span>
+              <span class="sc-pillar-branch"><%= pillar[:branch] %></span>
+              <span class="sc-pillar-el"><%= element_icons[pillar[:element]] %> <%= element_names[pillar[:element]] %></span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- 카드 3: 성격 & 직업 -->
+    <div class="story-card" data-card="2">
+      <div class="sc-content">
+        <div class="sc-emoji-hero">😊</div>
+        <h2 class="sc-title sc-animate">나의 성격</h2>
+        <p class="sc-subtitle sc-animate sc-animate-d1"><%= my_nature %> 타입의 특징</p>
+        <div class="sc-text sc-animate sc-animate-d2"><%= @analysis[:personality] %></div>
+        <div class="sc-divider"></div>
+        <h3 class="sc-title sc-animate sc-animate-d3" style="font-size: 20px;">💼 딱 맞는 직업</h3>
+        <div class="sc-text sc-animate sc-animate-d4"><%= @analysis[:career] %></div>
+      </div>
+    </div>
+
+    <!-- 카드 4: 연애 스타일 -->
+    <div class="story-card" data-card="3">
+      <div class="sc-content">
+        <div class="sc-emoji-hero">💕</div>
+        <h2 class="sc-title sc-animate">연애 스타일</h2>
+        <p class="sc-subtitle sc-animate sc-animate-d1">나의 사랑법은?</p>
+        <div class="sc-text sc-animate sc-animate-d2"><%= @analysis[:love] %></div>
+      </div>
+    </div>
+
+    <!-- 카드 5: 오행 밸런스 -->
+    <div class="story-card" data-card="4">
+      <div class="sc-content">
+        <div class="sc-emoji-hero">⚖️</div>
+        <h2 class="sc-title sc-animate">오행 에너지 밸런스</h2>
+        <p class="sc-subtitle sc-animate sc-animate-d1">내 안의 다섯 에너지</p>
+        <div class="sc-bars sc-animate sc-animate-d2">
+          <% distribution.each do |element, count| %>
+            <% ratio = total > 0 ? (count / total * 100).round : 0 %>
+            <div class="sc-bar-row">
+              <span class="sc-bar-label"><%= element_icons[element] %> <%= element_names[element] %></span>
+              <div class="sc-bar-track">
+                <div class="sc-bar-fill el-<%= element_class[element] %>" style="width: <%= [ratio, 5].max %>%"></div>
+              </div>
+              <span class="sc-bar-val"><%= count %>개</span>
+            </div>
+          <% end %>
+        </div>
+        <% if balance %>
+          <div class="sc-badge sc-animate sc-animate-d3" style="margin-top: 16px;"><%= balance[:type] %></div>
+          <p class="sc-subtitle sc-animate sc-animate-d4" style="margin-top: 8px; font-size: 13px;"><%= balance[:description] %></p>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- 카드 6: 용신 -->
+    <div class="story-card" data-card="5">
+      <div class="sc-content">
+        <div class="sc-emoji-hero">🎯</div>
+        <h2 class="sc-title sc-animate">나의 핵심 용신</h2>
+        <p class="sc-subtitle sc-animate sc-animate-d1">부족한 에너지를 채워주는 행운의 열쇠!</p>
+        <div class="sc-yongshin-box sc-animate sc-animate-d2">
+          <div class="sc-yongshin-icon"><%= element_icons[saju[:yongshin][:element]] %></div>
+          <div class="sc-yongshin-name" style="color: <%= element_colors[saju[:yongshin][:element]] %>">
+            <%= saju[:yongshin][:name] %>
+          </div>
+          <div class="sc-yongshin-reason"><%= saju[:yongshin][:reason] %></div>
+        </div>
+        <div class="sc-tip sc-animate sc-animate-d3">
+          💡 <strong>실생활 팁:</strong>
+          <% case saju[:yongshin][:element] %>
+          <% when '목' %> 초록색 옷 입기, 공원 산책, 식물 키우기, 동쪽 방향이 유리해요
+          <% when '화' %> 빨간색/핑크 소품 활용, 양초 명상, 남쪽 방향이 유리해요
+          <% when '토' %> 노란색/베이지 톤, 등산/자연 활동, 중앙이 유리해요
+          <% when '금' %> 흰색/은색 액세서리, 규칙적인 생활, 서쪽 방향이 유리해요
+          <% when '수' %> 검정/파랑 컬러, 수영/목욕, 북쪽 방향이 유리해요
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- 카드 7: 십성 + 신살 -->
+    <div class="story-card" data-card="6">
+      <div class="sc-content">
+        <div class="sc-emoji-hero">🌟</div>
+        <h2 class="sc-title sc-animate">십성 분석</h2>
+        <p class="sc-subtitle sc-animate sc-animate-d1">나를 둘러싼 관계의 에너지</p>
+        <div class="sc-tengod-grid sc-animate sc-animate-d2">
+          <%
+            ten_god_items = [
+              { pos: '년주 · 조상/사회', god: @ten_gods[:year_stem] },
+              { pos: '월주 · 부모/직장', god: @ten_gods[:month_stem] },
+              { pos: '시주 · 자녀/미래', god: @ten_gods[:hour_stem] }
+            ]
+          %>
+          <% ten_god_items.each do |item| %>
+            <% if item[:god] && SajuEngine::TenGods::GOD_DESCRIPTIONS[item[:god]] %>
+              <% desc = SajuEngine::TenGods::GOD_DESCRIPTIONS[item[:god]] %>
+              <div class="sc-tengod-item">
+                <span class="sc-tengod-emoji"><%= desc[:emoji] %></span>
+                <div class="sc-tengod-info">
+                  <div class="sc-tengod-name"><%= item[:god] %> <span class="sc-tengod-pos"><%= item[:pos] %></span></div>
+                  <div class="sc-tengod-meaning"><%= desc[:meaning] %></div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <% if @special_stars.any? %>
+          <div class="sc-divider"></div>
+          <h3 class="sc-title sc-animate sc-animate-d3" style="font-size: 18px;">⭐ 특별한 별 — 신살</h3>
+          <div class="sc-stars-grid sc-animate sc-animate-d4">
+            <% @special_stars.first(6).each do |star| %>
+              <span class="sc-star-chip"><%= star[:emoji] %> <%= star[:name] %></span>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- 카드 8: 대운 + 2026 운세 + CTA -->
+    <div class="story-card" data-card="7">
+      <div class="sc-content">
+        <div class="sc-emoji-hero">🔄</div>
+        <h2 class="sc-title sc-animate">10년 대운</h2>
+        <p class="sc-subtitle sc-animate sc-animate-d1">인생의 큰 흐름</p>
+        <div class="sc-daeun-list sc-animate sc-animate-d2">
+          <% current_age = Date.today.year - Date.parse(session[:birth_date]).year %>
+          <% @major_fortune.first(6).each do |fortune| %>
+            <% is_current = current_age >= fortune[:start_age] && current_age <= fortune[:end_age] %>
+            <div class="sc-daeun-chip <%= 'now' if is_current %>">
+              <span class="sc-daeun-age"><%= fortune[:start_age] %>~<%= fortune[:end_age] %>세</span>
+              <span class="sc-daeun-ganzi"><%= fortune[:label] %></span>
+              <% if is_current %><span class="sc-now-tag">NOW</span><% end %>
+            </div>
+          <% end %>
+        </div>
+        <% if @analysis[:trend_2026] %>
+          <div class="sc-divider"></div>
+          <h3 class="sc-title sc-animate sc-animate-d3" style="font-size: 18px;">🐴 2026 운세</h3>
+          <p class="sc-subtitle sc-animate sc-animate-d4" style="font-size: 13px;"><%= @analysis[:trend_2026][:general] %></p>
+        <% end %>
+        <div class="sc-cta-grid sc-animate sc-animate-d4">
+          <a href="<%= daily_fortune_path %>" class="sc-cta-btn primary">📅 오늘의 운세</a>
+          <a href="<%= new_compatibility_path %>" class="sc-cta-btn">💕 궁합</a>
+          <a href="<%= chat_path %>" class="sc-cta-btn">💬 AI 챗봇</a>
+          <a href="<%= new_saju_path %>" class="sc-cta-btn primary">🔄 다시 풀어보기</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<!-- 시간 보정 정보 -->
-<% if @correction && @correction[:applied] %>
-  <div class="correction-banner animate-fadeInUp">
-    <div class="correction-title">🔧 시간 보정 적용됨</div>
-    <div class="correction-details">
-      <% @correction[:corrections].each do |c| %>
-        <span class="correction-chip"><%= c[:label] %></span>
-      <% end %>
-      <% if @yajasi && @yajasi[:applied] %>
-        <span class="correction-chip"><%= @yajasi[:label] %></span>
-      <% end %>
-    </div>
-    <div class="correction-note">
-      원래 시간: <%= @correction[:original_hour] %>시 → 보정 후: <%= @correction[:corrected_hour] %>시
-      (총 <%= @correction[:total_minutes] > 0 ? '+' : '' %><%= @correction[:total_minutes] %>분)
-    </div>
-  </div>
-<% end %>
-
-<!-- 사주 분석 결과 - 단일 칼럼 레이아웃 -->
-
-    <!-- 사주 네 기둥 -->
-    <section class="section-card animate-fadeInUp">
-      <h2 class="section-title-modern">
-        📋 나의 사주 네 기둥
-        <span class="section-subtitle">태어난 년·월·일·시의 하늘과 땅의 기운</span>
-      </h2>
-      <div class="pillars-row">
-        <% pillars.each_with_index do |pillar, i| %>
-          <div class="pillar-card">
-            <span class="pillar-label"><%= pillar_names[i] %></span>
-            <span class="pillar-sublabel"><%= pillar_labels[i] %></span>
-            <div class="pillar-char stem el-<%= element_class[pillar[:element]] %>"><%= pillar[:stem] %></div>
-            <div class="pillar-char branch el-<%= element_class[SajuEngine::EarthlyBranches.element(pillar[:branch])] %>"><%= pillar[:branch] %></div>
-            <span class="pillar-element-tag" style="background:<%= element_colors[pillar[:element]] %>15; color:<%= element_colors[pillar[:element]] %>;"><%= element_icons[pillar[:element]] %> <%= element_names[pillar[:element]] %></span>
-          </div>
-        <% end %>
-      </div>
-    </section>
-
-    <!-- 성격 & 적성 (2칼럼 나란히) -->
-    <div class="saju-two-col animate-fadeInUp">
-      <section class="section-card">
-        <h2 class="section-title-modern">
-          😊 나의 성격 분석
-          <span class="section-subtitle"><%= my_nature %> 타입의 특징</span>
-        </h2>
-        <p class="reading-text-premium"><%= @analysis[:personality] %></p>
-      </section>
-
-      <section class="section-card">
-        <h2 class="section-title-modern">
-          💼 딱 맞는 직업
-          <span class="section-subtitle"><%= element_names[day_element] %>의 기운에 어울리는 분야</span>
-        </h2>
-        <p class="reading-text-premium"><%= @analysis[:career] %></p>
-      </section>
-    </div>
-
-    <!-- 연애 스타일 -->
-    <section class="section-card animate-fadeInUp">
-      <h2 class="section-title-modern">
-        💕 연애 스타일
-        <span class="section-subtitle">나의 사랑법은?</span>
-      </h2>
-      <p class="reading-text-premium"><%= @analysis[:love] %></p>
-    </section>
-
-    <!-- 오행 분포 -->
-    <section class="section-card animate-fadeInUp">
-      <h2 class="section-title-modern">
-        ⚖️ 오행 에너지 밸런스
-        <span class="section-subtitle">나무·불·흙·쇠·물 — 내 안의 다섯 에너지</span>
-      </h2>
-      <% total = distribution.values.sum.to_f %>
-      <% distribution.each do |element, count| %>
-        <% ratio = total > 0 ? (count / total * 100).round : 0 %>
-        <% is_dominant = ratio >= 30 %>
-        <% is_weak = ratio <= 10 && count > 0 || count == 0 %>
-        <div class="bar-row">
-          <span class="bar-label"><%= element_icons[element] %> <%= element_names[element] %></span>
-          <div class="bar-track">
-            <div class="bar-fill el-bg-<%= element_class[element] %>" style="width: <%= [ratio, 4].max %>%"></div>
-          </div>
-          <span class="bar-value">
-            <%= count %>개
-            <% if is_dominant %>
-              <span class="bar-tag dominant">강함</span>
-            <% elsif is_weak %>
-              <span class="bar-tag weak">부족</span>
-            <% end %>
-          </span>
-        </div>
-      <% end %>
-      <div class="balance-summary">
-        <% if balance %>
-          <span class="balance-chip"><%= balance[:type] %></span>
-          <span class="balance-desc"><%= balance[:description] %></span>
-        <% end %>
-      </div>
-    </section>
-
-    <!-- 용신 -->
-    <section class="section-card highlight-card animate-fadeInUp">
-      <h2 class="section-title-modern">
-        🎯 나의 핵심 용신
-        <span class="section-subtitle">부족한 에너지를 채워주는 행운의 열쇠!</span>
-      </h2>
-      <div class="yongshin-box-premium">
-        <div class="yongshin-icon-big" style="background: <%= element_colors[saju[:yongshin][:element]] %>15; color: <%= element_colors[saju[:yongshin][:element]] %>;">
-          <%= element_icons[saju[:yongshin][:element]] %>
-        </div>
-        <div class="yongshin-content">
-          <strong class="yongshin-name-premium" style="color: <%= element_colors[saju[:yongshin][:element]] %>;">
-            <%= saju[:yongshin][:name] %> (<%= element_names[saju[:yongshin][:element]] %>의 기운)
-          </strong>
-          <p class="yongshin-reason"><%= saju[:yongshin][:reason] %></p>
-          <div class="yongshin-tip">
-            💡 <strong>실생활 팁:</strong>
-            <% case saju[:yongshin][:element] %>
-            <% when '목' %>
-              초록색 옷 입기, 공원 산책, 식물 키우기, 동쪽 방향이 유리해요
-            <% when '화' %>
-              빨간색/핑크 소품 활용, 양초 명상, 남쪽 방향이 유리해요
-            <% when '토' %>
-              노란색/베이지 톤, 등산/자연 활동, 중앙이 유리해요
-            <% when '금' %>
-              흰색/은색 액세서리, 규칙적인 생활, 서쪽 방향이 유리해요
-            <% when '수' %>
-              검정/파랑 컬러, 수영/목욕, 북쪽 방향이 유리해요
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 십성 분석 -->
-    <section class="section-card animate-fadeInUp">
-      <h2 class="section-title-modern">
-        🌟 십성 분석
-        <span class="section-subtitle">나를 둘러싼 관계의 에너지</span>
-      </h2>
-      <div class="tengod-grid-modern">
-        <%
-          ten_god_items = [
-            { pos: '년주', label: '조상/사회', god: @ten_gods[:year_stem] },
-            { pos: '월주', label: '부모/직장', god: @ten_gods[:month_stem] },
-            { pos: '시주', label: '자녀/미래', god: @ten_gods[:hour_stem] }
-          ]
-        %>
-        <% ten_god_items.each do |item| %>
-          <% if item[:god] && SajuEngine::TenGods::GOD_DESCRIPTIONS[item[:god]] %>
-            <% desc = SajuEngine::TenGods::GOD_DESCRIPTIONS[item[:god]] %>
-            <div class="tengod-card-modern">
-              <div class="tengod-header">
-                <span class="tengod-emoji-big"><%= desc[:emoji] %></span>
-                <div class="tengod-names">
-                  <strong><%= item[:god] %></strong>
-                  <span class="tengod-pos-label"><%= item[:label] %></span>
-                </div>
-              </div>
-              <p class="tengod-meaning"><%= desc[:meaning] %></p>
-              <div class="tengod-keywords">
-                <% desc[:keyword].split(', ').each do |kw| %>
-                  <span class="tengod-kw-tag"><%= kw %></span>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </section>
-
-    <!-- 대운 -->
-    <section class="section-card animate-fadeInUp">
-      <h2 class="section-title-modern">
-        🔄 10년 대운 타임라인
-        <span class="section-subtitle">10년 단위로 찾아오는 인생의 큰 흐름</span>
-      </h2>
-      <div class="daeun-timeline">
-        <% current_age = Date.today.year - Date.parse(session[:birth_date]).year %>
-        <% @major_fortune.first(6).each do |fortune| %>
-          <% is_current = current_age >= fortune[:start_age] && current_age <= fortune[:end_age] %>
-          <div class="daeun-item-premium <%= 'daeun-current' if is_current %>">
-            <% if is_current %>
-              <span class="daeun-now-badge">NOW</span>
-            <% end %>
-            <span class="daeun-age"><%= fortune[:start_age] %>~<%= fortune[:end_age] %>세</span>
-            <span class="daeun-ganzi el-<%= element_class[fortune[:element]] || 'water' %>"><%= fortune[:label] %></span>
-            <span class="daeun-year"><%= fortune[:start_year] %>~<%= fortune[:end_year] %></span>
-          </div>
-        <% end %>
-      </div>
-    </section>
-
-    <!-- 신살 -->
-    <% if @special_stars.any? %>
-      <section class="section-card animate-fadeInUp">
-        <h2 class="section-title-modern">
-          ⭐ 특별한 별 — 신살
-          <span class="section-subtitle">사주에 깃든 특별한 에너지</span>
-        </h2>
-        <div class="stars-grid-modern">
-          <% @special_stars.each do |star| %>
-            <div class="star-card-modern">
-              <span class="star-emoji-big"><%= star[:emoji] %></span>
-              <div>
-                <strong><%= star[:name] %></strong>
-                <p class="star-desc"><%= star[:meaning] %></p>
-                <p class="star-effect"><%= star[:effect] %></p>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </section>
-    <% end %>
-
-    <!-- 2026 트렌드 -->
-    <% if @analysis[:trend_2026] %>
-      <section class="section-card trend-card animate-fadeInUp">
-        <h2 class="section-title-modern">
-          🐴 2026 병오년 운세
-          <span class="section-subtitle"><%= @analysis[:trend_2026][:year_info][:nickname] %> — 올해는 불(火)의 기운이 강해요</span>
-        </h2>
-        <p class="reading-text-premium"><%= @analysis[:trend_2026][:general] %></p>
-        <div class="trend-grid">
-          <div class="trend-item">
-            <span class="trend-icon">💼</span>
-            <div>
-              <strong>커리어 포인트</strong>
-              <p><%= @analysis[:trend_2026][:career] %></p>
-            </div>
-          </div>
-          <div class="trend-item">
-            <span class="trend-icon">💕</span>
-            <div>
-              <strong>연애 포인트</strong>
-              <p><%= @analysis[:trend_2026][:love] %></p>
-            </div>
-          </div>
-        </div>
-        <% if @analysis[:trend_2026][:ten_god_advice] %>
-          <div class="trend-advice">
-            📌 <strong>올해의 핵심 조언:</strong> <%= @analysis[:trend_2026][:ten_god_advice] %>
-          </div>
-        <% end %>
-      </section>
-    <% end %>
-
-    <!-- 나와 같은 유명인 -->
-    <% if @famous_people&.any? %>
-      <section class="section-card animate-fadeInUp">
-        <h2 class="section-title-modern">
-          🌟 나와 비슷한 유명인
-          <span class="section-subtitle"><%= saju[:day][:stem] %><%= saju[:day][:branch] %>일주 기반</span>
-        </h2>
-        <div class="famous-people-list">
-          <% @famous_people.each do |person| %>
-            <% cached_url = CelebrityImage.cached_url(person[:name]) %>
-            <div class="famous-person-card" data-celebrity-name="<%= person[:name] %>">
-              <% if cached_url %>
-                <img src="<%= cached_url %>" alt="<%= person[:name] %>" class="famous-avatar-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="famous-avatar" style="display: none;"><%= person[:emoji] %></div>
-              <% else %>
-                <div class="famous-avatar famous-avatar-placeholder" data-name="<%= person[:name] %>"><%= person[:emoji] %></div>
-              <% end %>
-              <div class="famous-info">
-                <span class="famous-name"><%= person[:name] %></span>
-                <span class="famous-desc"><%= person[:desc] %></span>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </section>
-    <% end %>
-
 <script>
-// 유명인 사진 Lazy Fetch
+(function() {
+  const totalCards = 8;
+  let current = 0;
+  let touchStartX = 0;
+  let isAnimating = false;
+
+  const viewport = document.getElementById('storyViewport');
+  const cards = document.querySelectorAll('.story-card');
+  const segs = document.querySelectorAll('.story-progress-seg');
+  const counter = document.getElementById('storyCounter');
+
+  // 카드 전환
+  function goTo(index) {
+    if (isAnimating || index < 0 || index >= totalCards) return;
+    isAnimating = true;
+
+    const dir = index > current ? 'left' : 'right';
+    cards[current].classList.remove('active');
+    cards[current].classList.add(dir === 'left' ? 'exit-left' : 'exit-right');
+
+    setTimeout(() => {
+      cards[current].classList.remove('exit-left', 'exit-right');
+      current = index;
+      updateUI();
+      isAnimating = false;
+    }, 350);
+  }
+
+  function updateUI() {
+    cards.forEach((c, i) => {
+      c.classList.toggle('active', i === current);
+    });
+    segs.forEach((s, i) => {
+      s.classList.remove('done', 'active');
+      if (i < current) s.classList.add('done');
+      if (i === current) s.classList.add('active');
+    });
+    counter.textContent = (current + 1) + ' / ' + totalCards;
+    // 카드 스크롤 초기화
+    cards[current].scrollTop = 0;
+  }
+
+  // 탭 이벤트
+  document.getElementById('tapRight').addEventListener('click', () => goTo(current + 1));
+  document.getElementById('tapLeft').addEventListener('click', () => goTo(current - 1));
+
+  // 스와이프 지원
+  viewport.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].clientX;
+  }, { passive: true });
+
+  viewport.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) {
+      if (dx < 0) goTo(current + 1);
+      else goTo(current - 1);
+    }
+  }, { passive: true });
+
+  // 키보드 지원
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') goTo(current + 1);
+    if (e.key === 'ArrowLeft') goTo(current - 1);
+    if (e.key === 'Escape') closeStory();
+  });
+
+  // 초기화
+  updateUI();
+})();
+
+function closeStory() {
+  window.location.href = '<%= root_path %>';
+}
+</script>
+
+<!-- 유명인 사진 Lazy Fetch -->
+<script>
 document.addEventListener('DOMContentLoaded', function() {
   const placeholders = document.querySelectorAll('.famous-avatar-placeholder');
   if (placeholders.length === 0) return;
@@ -343,11 +805,3 @@ document.addEventListener('DOMContentLoaded', function() {
   .catch(e => console.log('Celebrity image fetch error:', e));
 });
 </script>
-
-<!-- Bottom Actions -->
-<div class="action-row animate-fadeInUp">
-  <a href="<%= daily_fortune_path %>" class="action-btn primary">📅 오늘의 운세 보기</a>
-  <a href="<%= new_compatibility_path %>" class="action-btn secondary">💕 궁합 보러가기</a>
-  <a href="<%= chat_path %>" class="action-btn secondary">💬 AI 챗봇</a>
-  <a href="<%= new_saju_path %>" class="action-btn secondary">🔄 다시 풀어보기</a>
-</div>
