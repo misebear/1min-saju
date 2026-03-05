@@ -1,0 +1,22 @@
+<% content_for(:title) { "전생운 - 1분 사주" } %>
+<div class="page-header animate-fadeIn">
+  <%= image_tag "logo_1min_saju.png", class: "snowcat-mascot", alt: "1분 사주" %>
+  <h1>🔮 전생운</h1>
+  <p class="subtitle">전생에서 나는 누구였을까?</p>
+</div>
+<%= form_tag past_life_path, method: :post do %>
+  <div class="person-section animate-fadeInUp">
+    <div class="form-section"><label class="form-label">📅 생년월일</label>
+      <div class="form-row">
+        <div class="form-group"><select name="year" class="form-control" required><option value="">년도</option><% (1940..2025).reverse_each do |y| %><option value="<%= y %>" <%= 'selected' if y == 2000 %>><%= y %>년</option><% end %></select></div>
+        <div class="form-group"><select name="month" class="form-control" required><option value="">월</option><% (1..12).each do |m| %><option value="<%= m %>"><%= m %>월</option><% end %></select></div>
+        <div class="form-group"><select name="day" class="form-control" required><option value="">일</option><% (1..31).each do |d| %><option value="<%= d %>"><%= d %>일</option><% end %></select></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">🕐 시간</label><select name="hour" class="form-control"><option value="11" selected>오시</option><option value="0">자시</option><option value="3">인시</option><option value="7">진시</option><option value="9">사시</option><option value="13">미시</option><option value="15">신시</option><option value="17">유시</option><option value="19">술시</option><option value="21">해시</option></select></div>
+      <div class="form-group"><label class="form-label">👤 성별</label><select name="gender" class="form-control"><option value="남">🙋‍♂️ 남자</option><option value="여">🙋‍♀️ 여자</option></select></div>
+    </div>
+  </div>
+  <button type="submit" class="btn-primary mt-md">🔮 전생 알아보기</button>
+<% end %>

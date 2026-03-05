@@ -1,0 +1,15 @@
+<% content_for(:title) { "#{@target_date.strftime('%Y.%m.%d')} 운세 - 1분 사주" } %>
+<div class="page-header animate-fadeIn">
+  <h1>📅 지정일 운세</h1>
+  <p class="subtitle"><%= @target_date.strftime("%Y년 %m월 %d일") %></p>
+</div>
+<div class="card animate-fadeInUp" style="text-align:center;">
+  <div style="font-size:14px; color:var(--text-3);">운세 점수</div>
+  <div style="font-size:48px; font-weight:900; color:var(--primary); margin:8px 0;"><%= @daily[:score] %><span style="font-size:18px;">점</span></div>
+  <p style="line-height:1.8; color:var(--text-2);"><%= @daily[:message] %></p>
+</div>
+<div class="card animate-fadeInUp">
+  <h3>💡 조언</h3>
+  <p style="line-height:1.8; color:var(--text-2);"><%= @daily[:advice] %></p>
+</div>
+<a href="<%= specific_fortune_form_path %>" class="btn-primary mt-md" style="display:block; text-align:center; text-decoration:none;">📅 다른 날짜 확인</a>

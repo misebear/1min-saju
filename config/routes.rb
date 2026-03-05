@@ -45,6 +45,42 @@ Rails.application.routes.draw do
   post "auspicious_dates", to: "auspicious_dates#create", as: :auspicious_dates
   get "auspicious_dates/result", to: "auspicious_dates#show", as: :auspicious_date_result
 
+  # 토정비결
+  get "tojeong/new", to: "tojeong#new", as: :new_tojeong
+  post "tojeong", to: "tojeong#create", as: :tojeong
+  get "tojeong/result", to: "tojeong#show", as: :tojeong_result
+
+  # 내일/지정일 운세
+  get "fortunes/tomorrow", to: "fortunes#tomorrow", as: :tomorrow_fortune
+  get "fortunes/specific", to: "fortunes#specific_form", as: :specific_fortune_form
+  post "fortunes/specific", to: "fortunes#specific", as: :specific_fortune
+
+  # 띠운세
+  get "tti", to: "tti_fortune#show", as: :tti_fortune
+
+  # 타로
+  get "tarot/new", to: "tarot#new", as: :new_tarot
+  post "tarot", to: "tarot#create", as: :tarot
+  get "tarot/result", to: "tarot#show", as: :tarot_result
+
+  # 심리풀이
+  get "psychology/new", to: "psychology#new", as: :new_psychology
+  post "psychology", to: "psychology#create", as: :psychology
+  get "psychology/result", to: "psychology#show", as: :psychology_result
+
+  # 전생운
+  get "past_life/new", to: "past_life#new", as: :new_past_life
+  post "past_life", to: "past_life#create", as: :past_life
+  get "past_life/result", to: "past_life#show", as: :past_life_result
+
+  # 탄생석
+  get "birthstone", to: "birthstone#show", as: :birthstone
+
+  # 취업운
+  get "career/new", to: "career#new", as: :new_career
+  post "career", to: "career#create", as: :career
+  get "career/result", to: "career#show", as: :career_result
+
   # PWA
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker

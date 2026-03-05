@@ -1,0 +1,33 @@
+<% content_for(:title) { "타로 카드 - 1분 사주" } %>
+<div class="page-header animate-fadeIn">
+  <h1>🃏 타로 카드</h1>
+  <p class="subtitle">오늘 당신에게 필요한 메시지!</p>
+</div>
+<%= form_tag tarot_path, method: :post do %>
+  <div class="card animate-fadeInUp" style="text-align:center;">
+    <h3>📌 스프레드 선택</h3>
+    <div style="display:flex; flex-direction:column; gap:10px; margin-top:12px;">
+      <label style="display:flex; align-items:center; gap:10px; padding:12px; border-radius:12px; background:var(--bg-2); cursor:pointer;">
+        <input type="radio" name="spread" value="three_card" checked> <span>🔮 과거·현재·미래</span>
+      </label>
+      <label style="display:flex; align-items:center; gap:10px; padding:12px; border-radius:12px; background:var(--bg-2); cursor:pointer;">
+        <input type="radio" name="spread" value="love"> <span>💕 연애 타로</span>
+      </label>
+      <label style="display:flex; align-items:center; gap:10px; padding:12px; border-radius:12px; background:var(--bg-2); cursor:pointer;">
+        <input type="radio" name="spread" value="career"> <span>💼 커리어 타로</span>
+      </label>
+    </div>
+  </div>
+  <% unless @has_birth_data %>
+    <div class="person-section animate-fadeInUp">
+      <div class="form-section"><label class="form-label">📅 생년월일</label>
+        <div class="form-row">
+          <div class="form-group"><select name="year" class="form-control" required><option value="">년도</option><% (1940..2025).reverse_each do |y| %><option value="<%= y %>" <%= 'selected' if y == 2000 %>><%= y %>년</option><% end %></select></div>
+          <div class="form-group"><select name="month" class="form-control" required><option value="">월</option><% (1..12).each do |m| %><option value="<%= m %>"><%= m %>월</option><% end %></select></div>
+          <div class="form-group"><select name="day" class="form-control" required><option value="">일</option><% (1..31).each do |d| %><option value="<%= d %>"><%= d %>일</option><% end %></select></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <button type="submit" class="btn-primary mt-md">🃏 카드 뽑기</button>
+<% end %>

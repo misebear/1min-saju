@@ -1,0 +1,17 @@
+<% content_for(:title) { "지정일 운세 - 1분 사주" } %>
+<div class="page-header animate-fadeIn">
+  <h1>📅 지정일 운세</h1>
+  <p class="subtitle">특정 날짜의 운세를 확인해봐!</p>
+</div>
+<%= form_tag specific_fortune_path, method: :post do %>
+  <div class="person-section animate-fadeInUp">
+    <div class="form-section"><label class="form-label">📅 확인하고 싶은 날짜</label>
+      <div class="form-row">
+        <div class="form-group"><select name="year" class="form-control" required><% (2024..2027).each do |y| %><option value="<%= y %>" <%= 'selected' if y == 2026 %>><%= y %>년</option><% end %></select></div>
+        <div class="form-group"><select name="month" class="form-control" required><option value="">월</option><% (1..12).each do |m| %><option value="<%= m %>"><%= m %>월</option><% end %></select></div>
+        <div class="form-group"><select name="day" class="form-control" required><option value="">일</option><% (1..31).each do |d| %><option value="<%= d %>"><%= d %>일</option><% end %></select></div>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn-primary mt-md">📅 운세 확인하기</button>
+<% end %>

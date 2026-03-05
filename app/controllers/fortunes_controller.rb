@@ -15,6 +15,23 @@ class FortunesController < ApplicationController
     @major_fortune = @analysis[:major_fortune]
   end
 
+  def tomorrow
+    @analysis = load_analysis
+    @daily = @analysis[:daily_fortune]
+    @target_date = Date.tomorrow
+  end
+
+  def specific_form; end
+
+  def specific
+    @target_date = Date.new(params[:year].to_i, params[:month].to_i, params[:day].to_i)
+    @analysis = load_analysis
+    @daily = @analysis[:daily_fortune]
+    render :specific_result
+  rescue
+    redirect_to specific_fortune_form_path
+  end
+
   private
 
   def check_session

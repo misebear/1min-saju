@@ -1,0 +1,20 @@
+<% content_for(:title) { "심리풀이 - 1분 사주" } %>
+<div class="page-header animate-fadeIn">
+  <h1>🧠 심리풀이</h1>
+  <p class="subtitle">4개 질문으로 알아보는 나의 심리 유형!</p>
+</div>
+<%= form_tag psychology_path, method: :post do %>
+  <% @questions.each do |q| %>
+    <div class="card animate-fadeInUp">
+      <div style="font-size:28px; text-align:center; margin-bottom:8px;"><%= q[:emoji] %></div>
+      <h3 style="text-align:center; font-size:15px; line-height:1.6; margin-bottom:14px;"><%= q[:text] %></h3>
+      <% q[:options].each do |opt| %>
+        <label style="display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:12px; background:var(--bg-2); cursor:pointer; margin-bottom:8px; transition:all 0.2s;">
+          <input type="radio" name="q<%= q[:id] %>" value="<%= opt[:key] %>" required>
+          <span style="font-size:14px;"><%= opt[:text] %></span>
+        </label>
+      <% end %>
+    </div>
+  <% end %>
+  <button type="submit" class="btn-primary mt-md">🧠 내 유형 확인하기</button>
+<% end %>

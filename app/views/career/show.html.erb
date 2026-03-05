@@ -1,0 +1,35 @@
+<% content_for(:title) { "취업운 결과 - 1분 사주" } %>
+<% ci = @result[:career_info]; si = @result[:style_info] %>
+<div class="page-header animate-fadeIn">
+  <h1 style="font-size:24px;">💼 나의 직업 적성</h1>
+</div>
+<div class="card animate-fadeInUp" style="text-align:center; padding:20px; border:2px solid <%= ci[:color] %>40;">
+  <div style="font-size:12px; color:var(--text-3);">오행 기반 적성 분야</div>
+  <h2 style="color:<%= ci[:color] %>; margin:8px 0;"><%= ci[:field] %></h2>
+  <div style="font-size:13px; color:var(--text-2);">강점: <%= ci[:strengths] %></div>
+</div>
+<div class="card animate-fadeInUp">
+  <h3>🎯 추천 직업 TOP 3</h3>
+  <% @result[:top3_jobs].each_with_index do |job, i| %>
+    <div style="display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px solid var(--border);">
+      <span style="font-size:18px; font-weight:900; color:var(--primary);"><%= i + 1 %></span>
+      <span style="font-size:15px; font-weight:600;"><%= job %></span>
+    </div>
+  <% end %>
+</div>
+<div class="card animate-fadeInUp">
+  <h3><%= si[:icon] %> 업무 스타일</h3>
+  <h4 style="color:var(--primary);"><%= si[:style] %></h4>
+  <p style="color:var(--text-2); line-height:1.7; margin-top:6px;"><%= si[:desc] %></p>
+</div>
+<div class="card animate-fadeInUp">
+  <h3>📅 취업/이직 타이밍</h3>
+  <p style="line-height:1.7; color:var(--text-2);"><%= @result[:timing][:summary] %></p>
+</div>
+<div class="card animate-fadeInUp">
+  <h3><%= @result[:salary_luck][:emoji] %> 연봉운: <%= @result[:salary_luck][:text] %></h3>
+  <p style="color:var(--text-2); line-height:1.7;"><%= @result[:salary_luck][:desc] %></p>
+</div>
+<div class="card animate-fadeInUp" style="background:linear-gradient(135deg, #3b82f620, #8b5cf620); padding:16px;">
+  <p style="text-align:center; line-height:1.8; color:var(--text-2);"><%= @result[:advice] %></p>
+</div>

@@ -1,0 +1,28 @@
+<% content_for(:title) { "전생 결과 - 1분 사주" } %>
+<div class="page-header animate-fadeIn">
+  <div style="font-size:64px;"><%= @result[:era][:emoji] %></div>
+  <h1>당신의 전생</h1>
+</div>
+<div class="card animate-fadeInUp" style="text-align:center; padding:20px; background:linear-gradient(135deg, #8b5cf620, #06b6d420);">
+  <div style="font-size:13px; color:var(--text-3);"><%= @result[:era][:period] %></div>
+  <h2 style="font-size:22px; margin:4px 0;"><%= @result[:era][:name] %></h2>
+  <div style="font-size:40px; margin:12px 0;"><%= @result[:job][:emoji] %></div>
+  <h3 style="font-size:20px; color:var(--primary);"><%= @result[:job][:name] %></h3>
+  <p style="margin-top:12px; line-height:1.8; color:var(--text-2);"><%= @result[:story] %></p>
+</div>
+<div class="card animate-fadeInUp">
+  <h3>✨ 전생의 성격</h3>
+  <p style="line-height:1.7; color:var(--text-2);">당신은 전생에서 <strong><%= @result[:past_personality] %></strong> 사람이었어요.</p>
+</div>
+<div class="card animate-fadeInUp">
+  <h3>🎁 전생이 준 선물</h3>
+  <p style="line-height:1.7; color:var(--text-2);"><%= @result[:current_gift] %></p>
+</div>
+<div class="card animate-fadeInUp">
+  <h3>🔄 카르마 교훈</h3>
+  <p style="line-height:1.7; color:var(--text-2);"><%= @result[:karma] %></p>
+</div>
+<div class="card animate-fadeInUp">
+  <h3>💫 전생 인연</h3>
+  <p style="line-height:1.7; color:var(--text-2);"><%= @result[:connection] %></p>
+</div>
