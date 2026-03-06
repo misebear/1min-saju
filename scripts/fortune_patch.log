@@ -1,0 +1,15 @@
+2026-03-07 08:09:40,123 누락: 78개
+2026-03-07 08:09:40,127 ====== WebDriver manager ======
+2026-03-07 08:09:40,810 Get LATEST chromedriver version for google-chrome
+2026-03-07 08:09:41,060 Get LATEST chromedriver version for google-chrome
+2026-03-07 08:09:41,278 Get LATEST chromedriver version for google-chrome
+2026-03-07 08:09:41,798 WebDriver version 145.0.7632.117 selected
+2026-03-07 08:09:41,803 Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/145.0.7632.117/win32/chromedriver-win32.zip
+2026-03-07 08:09:41,803 About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/145.0.7632.117/win32/chromedriver-win32.zip
+2026-03-07 08:09:42,109 Driver downloading response is 200
+2026-03-07 08:09:42,327 Get LATEST chromedriver version for google-chrome
+2026-03-07 08:09:42,571 Driver has been saved in cache [C:\Users\db019\.wdm\drivers\chromedriver\win64\145.0.7632.117]
+2026-03-07 08:09:52,373 [1/78] 乙未(을미) × 辛亥(신해)
+2026-03-07 08:10:09,135   ✅ (1/78)
+2026-03-07 08:10:22,565 [2/78] 乙未(을미) × 乙卯(을묘)
+2026-03-07 08:10:39,259   ✅ (2/78)

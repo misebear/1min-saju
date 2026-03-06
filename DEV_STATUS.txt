@@ -2,7 +2,7 @@
   1분 사주 (1min-saju) - 개발 현황
 ============================================
 
-📌 현재 진행 상태: 🟢 배포 완료 + 운세 DB 3600개 수집 중 + Gemini 운세 DB 연동 완료
+📌 현재 진행 상태: 🟡 운세 DB 수집 마무리 중 + 궁합/추가 DB 수집 준비 완료
 
 ============================================
 ✅ 완료된 작업
@@ -17,70 +17,67 @@
 - 유명인 사주 분석, 사용자 인증 (Devise + Google OAuth)
 
 [2026-03-05 신규 8개 기능 추가]
-- 🏛️ 토정비결 (TojeongEngine) - 500년 전통 연간 운세
-- 🐲 띠운세 (TtiFortuneController) - 12지 띠별 오늘 운세
-- 🃏 타로 (TarotEngine) - 3종 스프레드 (과거·현재·미래/연애/커리어)
-- 🧠 심리풀이 (PsychologyEngine) - 4문항 16유형 성격 분석
-- 🔮 전생운 (PastLifeEngine) - 전생 시대/직업/카르마
-- 💎 탄생석 (BirthstoneEngine) - 월별 보석/행운/궁합
-- 💼 취업운 (CareerEngine) - 사주 기반 직업 적성/TOP3 추천
-- 📅 내일/지정일 운세 (FortunesController 확장)
-- 메인 퀵메뉴 16개 항목으로 확장
+- 🏛️ 토정비결, 🐲 띠운세, 🃏 타로 78장, 🧠 심리풀이
+- 🔮 전생운, 💎 탄생석, 💼 취업운, 📅 내일/지정일 운세
 
-[2026-03-06 Gemini 운세 DB 연동]
-- ✨ gemini_fortunes 테이블 생성 (마이그레이션)
-- ✨ GeminiFortune 모델 (일진×일주 복합 인덱스, lookup 메서드)
-- ✨ CSV 임포트 Rake 태스크 (rails fortunes:import / stats)
-- ✨ FortunesController#daily에 Gemini 운세 DB 조회 연동
-- ✨ daily.html.erb에 프리미엄 다크 UI 카드 추가 (바이브/머니/관계/럭키/추구미)
-- ✨ 현재 1,594개 임포트 완료 (27일진 × 60일주, 44.3%)
-- ✨ DB에 없는 일진은 기존 십성 기반 운세로 폴백
+[2026-03-06~07 Gemini DB 대규모 수집]
+- ✨ 운세 3600 DB: 3,572/3,600 수집 (99.2%) — 패치 매크로 실행 중이었음
+- ✨ 궁합 3600 DB: 3,382/3,600 수집 (93.9%) — 5워커 병렬 실행 중이었음
+- ✨ 띠별/별자리/타로 추가 DB: 매크로+마이그레이션+모델+Rake 준비 완료 (수집 미시작)
 
-[카톡 블라인드 궁합 - 바이럴 기능]
-- 토큰 기반 링크 공유 → 상대방 입력 → 궁합 결과
-- 5카드 숏폼 UI (Instagram Stories 스타일)
-- blind_compat_links DB 테이블
+[DB 모델 및 연동]
+- GeminiFortune: 운세 DB (일진×일주, CSV 임포트 Rake)
+- GeminiCompatibility: 궁합 DB (일주A×일주B, 양방향 조회)
+- GeminiTtiFortune: 띠별 운세 DB (12띠×60일진)
+- GeminiZodiacFortune: 별자리 운세 DB (12별자리×60일진)
+- GeminiTarotReading: 타로 해설 DB (78장×정/역)
 
 [배포]
 - Railway 배포 완료 (SQLite3, Puma 다이렉트)
-- 프로젝트: 1min-saju-prod (Railway)
-- 기본 URL: https://web-production-70be.up.railway.app
-- 커스텀 도메인: www.1minsaju.com (SSL 자동 발급)
-- 가비아 도메인 (1minsaju.com, 19,800원/년)
+- docker-entrypoint에 전체 CSV 자동 임포트 설정 완료
+- 프로덕션: https://www.1minsaju.com
 
 [Google Play Store - v2.0.0]
-- TWA 빌드 완료 (versionCode 3, v2.0.0)
-- 호스트: www.1minsaju.com (커스텀 도메인)
-- 패키지명: app.railway.up.app_1min_saju_production.twa
-- 서명키: android-pkg/signing.keystore (alias: my-key-alias, pw: hwvVPNLU16U1)
-- AAB 업로드 + 프로덕션 검토 제출 완료
-
-[운세 3600개 DB 구축 - 진행 중]
-- gemini_3600_rpa.py 실행 중 (Selenium 브라우저 자동화)
-- 60갑자 일진 × 60갑자 일주 = 3,600개 조합
-- 현재 수집: ~1,600개 / 3,600개 (44.4%)
-- 성공률: 100% (실패 0건)
-- CSV: scripts/fortune_3600_db.csv
+- TWA 빌드 완료, AAB 업로드 + 프로덕션 검토 제출 완료
 
 ============================================
-📋 다음에 할 작업
+📋 다음에 할 작업 (재부팅 후)
 ============================================
-1. ⭐ 운세 3600개 수집 완료 대기 → 완료 시 rails fortunes:import 재실행
-2. Railway 배포 (Gemini 운세 DB 포함)
-3. Play Store 심사 통과 대기
-4. 만세력 오픈소스 연동 검토 (sajupy, korean-lunar-calendar 등)
-5. 추가 기능: 살풀이, 정통궁합, 별자리궁합, 신년타로, 이달의 타로
+1. ⭐ 운세 패치 매크로 재실행 (fortune_patch.py) — 28개 남음
+2. ⭐ 궁합 수집 완료 확인 → 완료 시 워커 CSV 병합
+3. 추가 DB 수집 시작 (extra_db_parallel.py) — 띠별720+별자리720+타로156
+4. 운세 완료 후 rails fortunes:import → Railway 재배포
+5. 궁합 완료 후 rails compatibility:import → Railway 재배포
+6. 추가 DB 완료 후 rails extra:import_all → 컨트롤러/뷰 연동
+
+============================================
+🚀 매크로 재시작 명령어
+============================================
+# 크롬 종료 먼저!
+taskkill /F /IM chrome.exe; taskkill /F /IM chromedriver.exe
+
+# 운세 누락분 패치 (단일 브라우저, 약 28개 남음)
+cd c:\development\saju\scripts
+C:\Python314\python.exe fortune_patch.py
+
+# 궁합 수집 (5워커 병렬, ~200개 남음)
+C:\Python314\python.exe compat_parallel.py
+
+# 추가 DB 수집 (궁합 완료 후)
+C:\Python314\python.exe extra_db_parallel.py
+
+# 또는 자동 체인 (궁합 완료 감지 → 추가 DB 자동 시작)
+C:\Python314\python.exe auto_chain_extra.py
 
 ============================================
 ⚠️ 주의사항
 ============================================
 - Railway 무료 플랜: 30일 또는 $4.99 한도
 - TWA 서명키: android-pkg/signing.keystore (alias: my-key-alias, pw: hwvVPNLU16U1)
-  ※ minsaju-keystore.jks는 사용하지 말것! (Play Store 등록 키 불일치)
 - GEMINI_API_KEY 환경변수 필요 (AI 기능)
 - RAILS_MASTER_KEY 환경변수 필요 (프로덕션)
 - 매크로 실행 중 크롬 브라우저 건드리지 말 것!
-- 운세 DB 재임포트: rails fortunes:import (BOM/줄바꿈 자동 처리)
+- 운세/궁합 매크로는 체크포인트 기반이라 중단 후 재시작해도 이어서 수집
 
 ============================================
 📂 프로젝트 구조
@@ -89,20 +86,29 @@ c:\development\saju\
 ├── app/
 │   ├── controllers/         # home, saju, fortunes, tojeong, tarot 등
 │   ├── models/
-│   │   ├── gemini_fortune.rb ← NEW: Gemini 운세 DB 모델
-│   │   └── concerns/saju_engine/ # 사주 엔진 모듈들
+│   │   ├── gemini_fortune.rb         ← 운세 DB 모델
+│   │   ├── gemini_compatibility.rb   ← 궁합 DB 모델
+│   │   ├── gemini_tti_fortune.rb     ← 띠별 운세 모델
+│   │   ├── gemini_zodiac_fortune.rb  ← 별자리 운세 모델
+│   │   ├── gemini_tarot_reading.rb   ← 타로 해설 모델
+│   │   └── concerns/saju_engine/     # 사주 엔진 모듈들
 │   ├── views/               # ERB 뷰 템플릿
 │   └── assets/              # CSS, JS
 ├── config/                  # Rails 설정
-├── db/
-│   ├── migrate/             # 마이그레이션 (gemini_fortunes 포함)
-│   └── schema.rb
+├── db/migrate/              # 마이그레이션 (gemini 테이블 5개)
 ├── lib/tasks/
-│   └── fortunes.rake        ← NEW: CSV 임포트 Rake 태스크
-├── public/                  # manifest.json, SW, 아이콘
-├── scripts/                 # gemini_3600_rpa.py, fortune_3600_db.csv
-├── twa/                     # TWA 빌드 프로젝트 (Gradle)
-├── playstore/               # Play Store 그래픽 자산
+│   ├── fortunes.rake        # 운세 CSV 임포트
+│   ├── compatibility.rake   # 궁합 CSV 임포트
+│   └── extra.rake           # 띠별/별자리/타로 CSV 임포트
+├── scripts/
+│   ├── fortune_3600_db.csv  # 운세 메인 CSV (3,572개)
+│   ├── fortune_patch.py     # 운세 누락분 패치 매크로
+│   ├── compat_parallel.py   # 궁합 5워커 병렬 매크로
+│   ├── compat_worker_*.csv  # 궁합 워커 CSV (3,382개)
+│   ├── extra_db_parallel.py # 띠별+별자리+타로 통합 매크로
+│   ├── auto_chain_extra.py  # 궁합→추가DB 자동 체인
+│   └── gemini_3600_rpa.py   # 원본 운세 매크로 (사용 완료)
+├── twa/                     # TWA 빌드 프로젝트
 └── Dockerfile               # Railway 배포용
 
 ============================================
@@ -113,31 +119,24 @@ $env:PATH = "C:\Ruby33-x64\bin;$env:PATH"
 $env:GEMINI_API_KEY = "YOUR_KEY"
 rails server
 
-# 운세 DB 임포트
-rails fortunes:import
-rails fortunes:stats
-
-# 프로덕션 접속
-https://www.1minsaju.com
-
-# TWA 빌드
-$env:JAVA_HOME = "C:\Program Files\Microsoft\jdk-21.0.10.7-hotspot"
-$env:ANDROID_HOME = "$env:LOCALAPPDATA\Android\Sdk"
-cd twa && .\gradlew.bat clean bundleRelease
-
-# 운세 매크로 (실행 중)
-cd scripts && python gemini_3600_rpa.py
+# DB 임포트
+rails fortunes:import          # 운세
+rails compatibility:import     # 궁합
+rails extra:import_all         # 띠별+별자리+타로
 
 ============================================
-🕐 마지막 업데이트: 2026-03-06 10:40 KST
+🕐 마지막 업데이트: 2026-03-07 08:29 KST
 ============================================
 
 ============================================
 🐛 현재 디버깅 중인 이슈
 ============================================
-- 없음. 매크로 안정 실행 중.
+- 없음
 
 ============================================
-🏃 실행 중인 터미널
+🏃 실행 중이던 터미널 (재부팅 전)
 ============================================
-- python gemini_3600_rpa.py (c:\development\saju\scripts, 연속 실행 중)
+- fortune_patch.py (운세 누락 78→~28개 패치 중)
+- compat_parallel.py (궁합 5워커 병렬, 3382/3600)
+- auto_chain_extra.py (궁합 완료 감지 대기 중)
+- rails server (로컬 개발서버, port 3000)
