@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_06_230000) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_07_002800) do
   create_table "blind_compat_links", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "expires_at", null: false
@@ -74,6 +74,43 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_06_230000) do
     t.string "user_ilju", null: false
     t.text "vibe", null: false
     t.index ["today_iljin", "user_ilju"], name: "idx_gemini_fortunes_iljin_ilju", unique: true
+  end
+
+  create_table "gemini_tarot_readings", force: :cascade do |t|
+    t.text "advice"
+    t.string "card_en"
+    t.string "card_name", null: false
+    t.datetime "created_at", null: false
+    t.string "keyword"
+    t.string "lucky_energy"
+    t.string "position", null: false
+    t.text "reading_text"
+    t.datetime "updated_at", null: false
+    t.index ["card_name", "position"], name: "idx_tarot_card_pos", unique: true
+  end
+
+  create_table "gemini_tti_fortunes", force: :cascade do |t|
+    t.string "animal", null: false
+    t.datetime "created_at", null: false
+    t.text "fortune_text"
+    t.string "headline"
+    t.string "iljin", null: false
+    t.string "lucky_point"
+    t.integer "tension_level"
+    t.datetime "updated_at", null: false
+    t.index ["animal", "iljin"], name: "idx_tti_animal_iljin", unique: true
+  end
+
+  create_table "gemini_zodiac_fortunes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.text "fortune_text"
+    t.string "headline"
+    t.string "iljin", null: false
+    t.string "lucky_point"
+    t.string "sign", null: false
+    t.integer "tension_level"
+    t.datetime "updated_at", null: false
+    t.index ["sign", "iljin"], name: "idx_zodiac_sign_iljin", unique: true
   end
 
   create_table "saju_records", force: :cascade do |t|

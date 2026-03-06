@@ -16,6 +16,10 @@ if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
     echo "Importing Gemini compatibility data..."
     ./bin/rails compatibility:import
   fi
+
+  # 추가 DB (띠별/별자리/타로) 자동 임포트
+  echo "Importing extra DB (tti/zodiac/tarot)..."
+  ./bin/rails extra:import_all 2>/dev/null || true
 fi
 
 exec "${@}"
