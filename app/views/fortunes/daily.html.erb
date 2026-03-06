@@ -53,6 +53,55 @@
   </section>
 <% end %>
 
+<% if @gemini_fortune %>
+<!-- ✨ AI가 분석한 오늘의 운세 (Gemini 3600 DB) -->
+<section class="section-card animate-fadeInUp" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); border: 1px solid rgba(255,255,255,0.1); overflow: hidden; position: relative;">
+  <div style="position: absolute; top: -30px; right: -30px; font-size: 80px; opacity: 0.08;">✨</div>
+  <h2 class="section-title" style="color: #e2b0ff; text-shadow: 0 0 20px rgba(226,176,255,0.3);">
+    ✨ AI가 읽어주는 오늘의 에너지
+  </h2>
+  <p style="color: rgba(255,255,255,0.5); font-size: 0.75rem; margin-bottom: 1rem;">
+    🔮 <%= @daily[:label] %> × 나의 일주 기반 맞춤 분석
+  </p>
+
+  <!-- 바이브 -->
+  <div style="background: rgba(255,255,255,0.06); border-radius: 16px; padding: 1.2rem; margin-bottom: 0.8rem; border-left: 3px solid #e2b0ff;">
+    <div style="font-size: 0.8rem; color: #e2b0ff; font-weight: 700; margin-bottom: 0.5rem;">🎵 오늘의 바이브</div>
+    <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem; line-height: 1.7; margin: 0;"><%= @gemini_fortune.vibe %></p>
+  </div>
+
+  <% if @gemini_fortune.money.present? %>
+  <!-- 머니 -->
+  <div style="background: rgba(255,255,255,0.06); border-radius: 16px; padding: 1.2rem; margin-bottom: 0.8rem; border-left: 3px solid #ffd700;">
+    <div style="font-size: 0.8rem; color: #ffd700; font-weight: 700; margin-bottom: 0.5rem;">💰 머니 주파수</div>
+    <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem; line-height: 1.7; margin: 0;"><%= @gemini_fortune.money %></p>
+  </div>
+  <% end %>
+
+  <% if @gemini_fortune.relationship.present? %>
+  <!-- 관계 -->
+  <div style="background: rgba(255,255,255,0.06); border-radius: 16px; padding: 1.2rem; margin-bottom: 0.8rem; border-left: 3px solid #ff6b9d;">
+    <div style="font-size: 0.8rem; color: #ff6b9d; font-weight: 700; margin-bottom: 0.5rem;">💕 관계 & 플러팅</div>
+    <p style="color: rgba(255,255,255,0.9); font-size: 0.9rem; line-height: 1.7; margin: 0;"><%= @gemini_fortune.relationship %></p>
+  </div>
+  <% end %>
+
+  <!-- 하단 태그 -->
+  <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+    <% if @gemini_fortune.lucky_item.present? %>
+    <span style="background: rgba(255,215,0,0.15); color: #ffd700; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">
+      🍀 <%= @gemini_fortune.lucky_item %>
+    </span>
+    <% end %>
+    <% if @gemini_fortune.style.present? %>
+    <span style="background: rgba(226,176,255,0.15); color: #e2b0ff; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">
+      👗 <%= @gemini_fortune.style %>
+    </span>
+    <% end %>
+  </div>
+</section>
+<% end %>
+
 <!-- 분야별 운세 -->
 <div class="section-card animate-fadeInUp">
   <h2 class="section-title">분야별 운세</h2>

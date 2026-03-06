@@ -2,7 +2,7 @@
   1분 사주 (1min-saju) - 개발 현황
 ============================================
 
-📌 현재 진행 상태: 🟢 배포 완료 + 운세 DB 3600개 수집 중 (1,577/3,600)
+📌 현재 진행 상태: 🟢 배포 완료 + 운세 DB 3600개 수집 중 + Gemini 운세 DB 연동 완료
 
 ============================================
 ✅ 완료된 작업
@@ -27,6 +27,15 @@
 - 📅 내일/지정일 운세 (FortunesController 확장)
 - 메인 퀵메뉴 16개 항목으로 확장
 
+[2026-03-06 Gemini 운세 DB 연동]
+- ✨ gemini_fortunes 테이블 생성 (마이그레이션)
+- ✨ GeminiFortune 모델 (일진×일주 복합 인덱스, lookup 메서드)
+- ✨ CSV 임포트 Rake 태스크 (rails fortunes:import / stats)
+- ✨ FortunesController#daily에 Gemini 운세 DB 조회 연동
+- ✨ daily.html.erb에 프리미엄 다크 UI 카드 추가 (바이브/머니/관계/럭키/추구미)
+- ✨ 현재 1,594개 임포트 완료 (27일진 × 60일주, 44.3%)
+- ✨ DB에 없는 일진은 기존 십성 기반 운세로 폴백
+
 [카톡 블라인드 궁합 - 바이럴 기능]
 - 토큰 기반 링크 공유 → 상대방 입력 → 궁합 결과
 - 5카드 숏폼 UI (Instagram Stories 스타일)
@@ -49,18 +58,17 @@
 [운세 3600개 DB 구축 - 진행 중]
 - gemini_3600_rpa.py 실행 중 (Selenium 브라우저 자동화)
 - 60갑자 일진 × 60갑자 일주 = 3,600개 조합
-- 현재 수집: 1,577개 / 3,600개 (43.8%)
+- 현재 수집: ~1,600개 / 3,600개 (44.4%)
 - 성공률: 100% (실패 0건)
-- 현재 일진: 己丑(기축) 진행 중
 - CSV: scripts/fortune_3600_db.csv
 
 ============================================
 📋 다음에 할 작업
 ============================================
-1. ⭐ 운세 3600개 수집 완료 대기 (~23시간 남음)
-2. 수집 완료 후 Rails 앱에 운세 DB 연동
-3. 만세력 오픈소스 연동 검토 (sajupy, korean-lunar-calendar 등)
-4. Play Store 심사 통과 대기
+1. ⭐ 운세 3600개 수집 완료 대기 → 완료 시 rails fortunes:import 재실행
+2. Railway 배포 (Gemini 운세 DB 포함)
+3. Play Store 심사 통과 대기
+4. 만세력 오픈소스 연동 검토 (sajupy, korean-lunar-calendar 등)
 5. 추가 기능: 살풀이, 정통궁합, 별자리궁합, 신년타로, 이달의 타로
 
 ============================================
@@ -72,23 +80,28 @@
 - GEMINI_API_KEY 환경변수 필요 (AI 기능)
 - RAILS_MASTER_KEY 환경변수 필요 (프로덕션)
 - 매크로 실행 중 크롬 브라우저 건드리지 말 것!
+- 운세 DB 재임포트: rails fortunes:import (BOM/줄바꿈 자동 처리)
 
 ============================================
 📂 프로젝트 구조
 ============================================
 c:\development\saju\
 ├── app/
-│   ├── controllers/         # home, saju, fortunes, tojeong, tarot, psychology, past_life, birthstone, career, tti_fortune, blind_compat 등
-│   ├── models/concerns/     # SajuEngine 모듈 (tojeong_engine, tarot_engine, psychology_engine, past_life_engine, birthstone_engine, career_engine)
-│   ├── views/               # ERB 뷰 템플릿 (각 기능별 new/show)
+│   ├── controllers/         # home, saju, fortunes, tojeong, tarot 등
+│   ├── models/
+│   │   ├── gemini_fortune.rb ← NEW: Gemini 운세 DB 모델
+│   │   └── concerns/saju_engine/ # 사주 엔진 모듈들
+│   ├── views/               # ERB 뷰 템플릿
 │   └── assets/              # CSS, JS
 ├── config/                  # Rails 설정
+├── db/
+│   ├── migrate/             # 마이그레이션 (gemini_fortunes 포함)
+│   └── schema.rb
+├── lib/tasks/
+│   └── fortunes.rake        ← NEW: CSV 임포트 Rake 태스크
 ├── public/                  # manifest.json, SW, 아이콘
 ├── scripts/                 # gemini_3600_rpa.py, fortune_3600_db.csv
 ├── twa/                     # TWA 빌드 프로젝트 (Gradle)
-│   ├── android-pkg/         # 서명된 AAB/APK + signing.keystore
-│   ├── app/build.gradle     # versionCode 3, v2.0.0
-│   └── twa-manifest.json
 ├── playstore/               # Play Store 그래픽 자산
 └── Dockerfile               # Railway 배포용
 
@@ -99,6 +112,10 @@ c:\development\saju\
 $env:PATH = "C:\Ruby33-x64\bin;$env:PATH"
 $env:GEMINI_API_KEY = "YOUR_KEY"
 rails server
+
+# 운세 DB 임포트
+rails fortunes:import
+rails fortunes:stats
 
 # 프로덕션 접속
 https://www.1minsaju.com
@@ -112,15 +129,15 @@ cd twa && .\gradlew.bat clean bundleRelease
 cd scripts && python gemini_3600_rpa.py
 
 ============================================
-🕐 마지막 업데이트: 2026-03-06 10:05 KST
+🕐 마지막 업데이트: 2026-03-06 10:40 KST
 ============================================
 
 ============================================
 🐛 현재 디버깅 중인 이슈
 ============================================
-- 없음. 매크로 안정 실행 중 (17시간 연속, 에러 0건).
+- 없음. 매크로 안정 실행 중.
 
 ============================================
 🏃 실행 중인 터미널
 ============================================
-- python gemini_3600_rpa.py (c:\development\saju\scripts, 17시간+ 연속 실행 중)
+- python gemini_3600_rpa.py (c:\development\saju\scripts, 연속 실행 중)

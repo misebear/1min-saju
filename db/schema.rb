@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_01_000003) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_06_000001) do
+  create_table "blind_compat_links", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "expires_at", null: false
+    t.datetime "matched_at"
+    t.date "person1_birth_date", null: false
+    t.string "person1_gender", default: "남"
+    t.integer "person1_hour", default: 11
+    t.string "person1_name", default: ""
+    t.date "person2_birth_date"
+    t.string "person2_gender"
+    t.integer "person2_hour"
+    t.string "person2_name"
+    t.string "token", null: false
+    t.datetime "updated_at", null: false
+    t.index ["token"], name: "index_blind_compat_links_on_token", unique: true
+  end
+
   create_table "celebrity_images", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "fetched_at"
@@ -28,6 +45,19 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_01_000003) do
     t.datetime "updated_at", null: false
     t.integer "use_count", default: 1
     t.index ["keywords_key"], name: "index_dream_interpretations_on_keywords_key"
+  end
+
+  create_table "gemini_fortunes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "lucky_item"
+    t.text "money"
+    t.text "relationship"
+    t.string "style"
+    t.string "today_iljin", null: false
+    t.datetime "updated_at", null: false
+    t.string "user_ilju", null: false
+    t.text "vibe", null: false
+    t.index ["today_iljin", "user_ilju"], name: "idx_gemini_fortunes_iljin_ilju", unique: true
   end
 
   create_table "saju_records", force: :cascade do |t|
