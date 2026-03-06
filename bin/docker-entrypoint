@@ -4,6 +4,12 @@
 if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
   echo "Running db:prepare with trace..."
   ./bin/rails db:prepare --trace
+
+  # Gemini 운세 CSV 자동 임포트
+  if [ -f "scripts/fortune_3600_db.csv" ]; then
+    echo "Importing Gemini fortune data..."
+    ./bin/rails fortunes:import
+  fi
 fi
 
 exec "${@}"
