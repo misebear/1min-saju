@@ -457,7 +457,6 @@ def main():
         logger.info(f"📁 CSV: {os.path.abspath(OUTPUT_CSV)}")
         logger.info(f"{'=' * 60}")
         if driver:
-            input("\n🔧 Enter로 브라우저 종료...")
             driver.quit()
 
 
