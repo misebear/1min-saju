@@ -2,7 +2,7 @@
   1분 사주 (1min-saju) - 개발 현황
 ============================================
 
-📌 현재 진행 상태: 🟢 배포 완료 + Play Store v2.0.0 검토 제출 완료
+📌 현재 진행 상태: 🟢 배포 완료 + 운세 DB 3600개 수집 중 (1,577/3,600)
 
 ============================================
 ✅ 완료된 작업
@@ -45,16 +45,23 @@
 - 패키지명: app.railway.up.app_1min_saju_production.twa
 - 서명키: android-pkg/signing.keystore (alias: my-key-alias, pw: hwvVPNLU16U1)
 - AAB 업로드 + 프로덕션 검토 제출 완료
-- 릴리스 노트: 8개 신규 기능 안내
+
+[운세 3600개 DB 구축 - 진행 중]
+- gemini_3600_rpa.py 실행 중 (Selenium 브라우저 자동화)
+- 60갑자 일진 × 60갑자 일주 = 3,600개 조합
+- 현재 수집: 1,577개 / 3,600개 (43.8%)
+- 성공률: 100% (실패 0건)
+- 현재 일진: 己丑(기축) 진행 중
+- CSV: scripts/fortune_3600_db.csv
 
 ============================================
 📋 다음에 할 작업
 ============================================
-1. ⭐ 만세력 오픈소스 연동 검토 (sajupy, korean-lunar-calendar 등)
-   - 현재 SajuEngine은 자체 간이 계산 방식
-   - 정확도 향상을 위해 공인 만세력 데이터 연동 필요
-2. Play Store 심사 통과 대기
-3. 추가 기능: 살풀이, 정통궁합, 별자리궁합, 신년타로, 이달의 타로
+1. ⭐ 운세 3600개 수집 완료 대기 (~23시간 남음)
+2. 수집 완료 후 Rails 앱에 운세 DB 연동
+3. 만세력 오픈소스 연동 검토 (sajupy, korean-lunar-calendar 등)
+4. Play Store 심사 통과 대기
+5. 추가 기능: 살풀이, 정통궁합, 별자리궁합, 신년타로, 이달의 타로
 
 ============================================
 ⚠️ 주의사항
@@ -64,6 +71,7 @@
   ※ minsaju-keystore.jks는 사용하지 말것! (Play Store 등록 키 불일치)
 - GEMINI_API_KEY 환경변수 필요 (AI 기능)
 - RAILS_MASTER_KEY 환경변수 필요 (프로덕션)
+- 매크로 실행 중 크롬 브라우저 건드리지 말 것!
 
 ============================================
 📂 프로젝트 구조
@@ -76,6 +84,7 @@ c:\development\saju\
 │   └── assets/              # CSS, JS
 ├── config/                  # Rails 설정
 ├── public/                  # manifest.json, SW, 아이콘
+├── scripts/                 # gemini_3600_rpa.py, fortune_3600_db.csv
 ├── twa/                     # TWA 빌드 프로젝트 (Gradle)
 │   ├── android-pkg/         # 서명된 AAB/APK + signing.keystore
 │   ├── app/build.gradle     # versionCode 3, v2.0.0
@@ -99,11 +108,19 @@ $env:JAVA_HOME = "C:\Program Files\Microsoft\jdk-21.0.10.7-hotspot"
 $env:ANDROID_HOME = "$env:LOCALAPPDATA\Android\Sdk"
 cd twa && .\gradlew.bat clean bundleRelease
 
+# 운세 매크로 (실행 중)
+cd scripts && python gemini_3600_rpa.py
+
 ============================================
-마지막 업데이트: 2026-03-05 13:01 KST
+🕐 마지막 업데이트: 2026-03-06 10:05 KST
 ============================================
 
 ============================================
 🐛 현재 디버깅 중인 이슈
 ============================================
-- 없음. 모든 기능 정상 동작 중.
+- 없음. 매크로 안정 실행 중 (17시간 연속, 에러 0건).
+
+============================================
+🏃 실행 중인 터미널
+============================================
+- python gemini_3600_rpa.py (c:\development\saju\scripts, 17시간+ 연속 실행 중)
