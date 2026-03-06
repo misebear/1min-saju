@@ -10,6 +10,12 @@ if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
     echo "Importing Gemini fortune data..."
     ./bin/rails fortunes:import
   fi
+
+  # Gemini 궁합 CSV 자동 임포트
+  if [ -f "scripts/compat_3600_db.csv" ] || ls scripts/compat_worker_*.csv 1> /dev/null 2>&1; then
+    echo "Importing Gemini compatibility data..."
+    ./bin/rails compatibility:import
+  fi
 fi
 
 exec "${@}"

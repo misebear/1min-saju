@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_06_000001) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_06_230000) do
   create_table "blind_compat_links", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "expires_at", null: false
@@ -45,6 +45,22 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_06_000001) do
     t.datetime "updated_at", null: false
     t.integer "use_count", default: 1
     t.index ["keywords_key"], name: "index_dream_interpretations_on_keywords_key"
+  end
+
+  create_table "gemini_compatibilities", force: :cascade do |t|
+    t.text "analysis"
+    t.text "caution_point"
+    t.integer "chemistry_score"
+    t.string "chemistry_type"
+    t.datetime "created_at", null: false
+    t.text "dating_style"
+    t.string "ilju_a", null: false
+    t.string "ilju_b", null: false
+    t.string "lucky_date"
+    t.datetime "updated_at", null: false
+    t.index ["ilju_a", "ilju_b"], name: "idx_compat_ilju_pair", unique: true
+    t.index ["ilju_a"], name: "index_gemini_compatibilities_on_ilju_a"
+    t.index ["ilju_b"], name: "index_gemini_compatibilities_on_ilju_b"
   end
 
   create_table "gemini_fortunes", force: :cascade do |t|
