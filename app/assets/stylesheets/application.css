@@ -2552,3 +2552,63 @@ select.form-control {
   font-size: 12px;
   font-weight: 500;
 }
+
+/* ─── 방문자 카운터 카드 ─── */
+.visitor-card {
+  background: linear-gradient(135deg, rgba(180, 122, 232, 0.08) 0%, rgba(245, 166, 200, 0.08) 100%);
+  border: 1px solid rgba(180, 122, 232, 0.15);
+}
+
+.visitor-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.visitor-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.visitor-number {
+  font-size: 28px;
+  font-weight: 800;
+  background: var(--gradient-btn);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+.visitor-label {
+  font-size: 11px;
+  color: var(--text-3);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.visitor-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--separator);
+}
+
+/* 사이드바 하단 방문자 배지 */
+.sidebar-visitor-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(180, 122, 232, 0.06);
+  border-radius: var(--r-sm);
+  font-size: 12px;
+  color: var(--text-2);
+  margin-bottom: 8px;
+  justify-content: center;
+}

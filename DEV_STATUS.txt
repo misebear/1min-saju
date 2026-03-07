@@ -2,7 +2,7 @@
   1분 사주 (1min-saju) - 개발 현황
 ============================================
 
-📌 현재 진행 상태: 🟡 운세 DB 수집 마무리 중 + 궁합/추가 DB 수집 준비 완료
+📌 현재 진행 상태: 🟡 추가 DB 수집 진행 중 (띠별/별자리/타로)
 
 ============================================
 ✅ 완료된 작업
@@ -20,10 +20,16 @@
 - 🏛️ 토정비결, 🐲 띠운세, 🃏 타로 78장, 🧠 심리풀이
 - 🔮 전생운, 💎 탄생석, 💼 취업운, 📅 내일/지정일 운세
 
-[2026-03-06~07 Gemini DB 대규모 수집]
-- ✨ 운세 3600 DB: 3,572/3,600 수집 (99.2%) — 패치 매크로 실행 중이었음
-- ✨ 궁합 3600 DB: 3,382/3,600 수집 (93.9%) — 5워커 병렬 실행 중이었음
-- ✨ 띠별/별자리/타로 추가 DB: 매크로+마이그레이션+모델+Rake 준비 완료 (수집 미시작)
+[2026-03-07 Gemini DB 수집 완료]
+- ✅ 운세 3,614/3,600 DB 수집 완료 (패치 포함)
+- ✅ 궁합 3,601+/3,600 DB 수집 완료 (3워커 고속 수집)
+- 🟡 추가 DB: 띠별(29/720) + 별자리(12/720) + 타로(4/156) 수집 중
+
+[2026-03-07 방문자 카운터 기능 추가]
+- DailyVisit 모델 + 마이그레이션 생성
+- ApplicationController에서 HTML 페이지뷰 + 유니크 방문자 추적
+- 데스크탑 사이드바에 "오늘의 방문" 카드 + 누적 조회수 표시
+- 사이드바 하단에 방문자 배지 표시
 
 [DB 모델 및 연동]
 - GeminiFortune: 운세 DB (일진×일주, CSV 임포트 Rake)
@@ -31,6 +37,7 @@
 - GeminiTtiFortune: 띠별 운세 DB (12띠×60일진)
 - GeminiZodiacFortune: 별자리 운세 DB (12별자리×60일진)
 - GeminiTarotReading: 타로 해설 DB (78장×정/역)
+- DailyVisit: 일별 방문자 수 추적
 
 [배포]
 - Railway 배포 완료 (SQLite3, Puma 다이렉트)
@@ -41,14 +48,16 @@
 - TWA 빌드 완료, AAB 업로드 + 프로덕션 검토 제출 완료
 
 ============================================
-📋 다음에 할 작업 (재부팅 후)
+📋 다음에 할 작업
 ============================================
-1. ⭐ 운세 패치 매크로 재실행 (fortune_patch.py) — 28개 남음
-2. ⭐ 궁합 수집 완료 확인 → 완료 시 워커 CSV 병합
-3. 추가 DB 수집 시작 (extra_db_parallel.py) — 띠별720+별자리720+타로156
-4. 운세 완료 후 rails fortunes:import → Railway 재배포
-5. 궁합 완료 후 rails compatibility:import → Railway 재배포
-6. 추가 DB 완료 후 rails extra:import_all → 컨트롤러/뷰 연동
+1. ⭐ 추가 DB 수집 완료 대기 (extra_db_parallel.py 실행 중)
+   - 띠별 720개, 별자리 720개, 타로 156개 수집 중
+2. 전체 DB 임포트:
+   - rails fortunes:import (운세)
+   - rails compatibility:import (궁합)
+   - rails extra:import_all (띠별+별자리+타로)
+3. Railway 재배포
+4. 프로덕션 동작 확인
 
 ============================================
 🚀 매크로 재시작 명령어
@@ -56,18 +65,9 @@
 # 크롬 종료 먼저!
 taskkill /F /IM chrome.exe; taskkill /F /IM chromedriver.exe
 
-# 운세 누락분 패치 (단일 브라우저, 약 28개 남음)
+# 추가 DB 수집 (3워커 고속, 8~15초 딜레이)
 cd c:\development\saju\scripts
-C:\Python314\python.exe fortune_patch.py
-
-# 궁합 수집 (5워커 병렬, ~200개 남음)
-C:\Python314\python.exe compat_parallel.py
-
-# 추가 DB 수집 (궁합 완료 후)
 C:\Python314\python.exe extra_db_parallel.py
-
-# 또는 자동 체인 (궁합 완료 감지 → 추가 DB 자동 시작)
-C:\Python314\python.exe auto_chain_extra.py
 
 ============================================
 ⚠️ 주의사항
@@ -77,7 +77,7 @@ C:\Python314\python.exe auto_chain_extra.py
 - GEMINI_API_KEY 환경변수 필요 (AI 기능)
 - RAILS_MASTER_KEY 환경변수 필요 (프로덕션)
 - 매크로 실행 중 크롬 브라우저 건드리지 말 것!
-- 운세/궁합 매크로는 체크포인트 기반이라 중단 후 재시작해도 이어서 수집
+- 모든 매크로는 체크포인트 기반이라 중단 후 재시작해도 이어서 수집
 
 ============================================
 📂 프로젝트 구조
@@ -91,23 +91,21 @@ c:\development\saju\
 │   │   ├── gemini_tti_fortune.rb     ← 띠별 운세 모델
 │   │   ├── gemini_zodiac_fortune.rb  ← 별자리 운세 모델
 │   │   ├── gemini_tarot_reading.rb   ← 타로 해설 모델
+│   │   ├── daily_visit.rb            ← 방문자 수 추적 모델
 │   │   └── concerns/saju_engine/     # 사주 엔진 모듈들
 │   ├── views/               # ERB 뷰 템플릿
 │   └── assets/              # CSS, JS
 ├── config/                  # Rails 설정
-├── db/migrate/              # 마이그레이션 (gemini 테이블 5개)
+├── db/migrate/              # 마이그레이션 (gemini 5개 + daily_visits)
 ├── lib/tasks/
 │   ├── fortunes.rake        # 운세 CSV 임포트
 │   ├── compatibility.rake   # 궁합 CSV 임포트
 │   └── extra.rake           # 띠별/별자리/타로 CSV 임포트
 ├── scripts/
-│   ├── fortune_3600_db.csv  # 운세 메인 CSV (3,572개)
-│   ├── fortune_patch.py     # 운세 누락분 패치 매크로
-│   ├── compat_parallel.py   # 궁합 5워커 병렬 매크로
-│   ├── compat_worker_*.csv  # 궁합 워커 CSV (3,382개)
-│   ├── extra_db_parallel.py # 띠별+별자리+타로 통합 매크로
-│   ├── auto_chain_extra.py  # 궁합→추가DB 자동 체인
-│   └── gemini_3600_rpa.py   # 원본 운세 매크로 (사용 완료)
+│   ├── fortune_3600_db.csv  # 운세 메인 CSV (3,614개)
+│   ├── compat_worker_*.csv  # 궁합 워커 CSV (3,601+개)
+│   ├── extra_db_parallel.py # 띠별+별자리+타로 통합 매크로 (실행 중)
+│   └── ...                  # 기타 매크로/로그
 ├── twa/                     # TWA 빌드 프로젝트
 └── Dockerfile               # Railway 배포용
 
@@ -125,7 +123,7 @@ rails compatibility:import     # 궁합
 rails extra:import_all         # 띠별+별자리+타로
 
 ============================================
-🕐 마지막 업데이트: 2026-03-07 08:29 KST
+🕐 마지막 업데이트: 2026-03-07 11:05 KST
 ============================================
 
 ============================================
@@ -134,9 +132,6 @@ rails extra:import_all         # 띠별+별자리+타로
 - 없음
 
 ============================================
-🏃 실행 중이던 터미널 (재부팅 전)
+🏃 실행 중인 터미널
 ============================================
-- fortune_patch.py (운세 누락 78→~28개 패치 중)
-- compat_parallel.py (궁합 5워커 병렬, 3382/3600)
-- auto_chain_extra.py (궁합 완료 감지 대기 중)
-- rails server (로컬 개발서버, port 3000)
+- extra_db_parallel.py (추가 DB 3워커, 29/1596)

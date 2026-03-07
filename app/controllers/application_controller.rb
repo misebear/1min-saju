@@ -7,8 +7,25 @@ class ApplicationController < ActionController::Base
 
   # 모든 페이지에서 세션에 저장된 사용자 생년월일 정보를 로드
   before_action :load_user_birth_info
+  before_action :track_visit
 
   private
+
+  # 방문자 수 추적
+  def track_visit
+    return unless request.format.html?
+    begin
+      DailyVisit.track!(session)
+      @today_visitors = DailyVisit.today_unique
+      @today_pageviews = DailyVisit.today_count
+      @total_visitors = DailyVisit.total_count
+    rescue => e
+      Rails.logger.warn "방문자 추적 실패: #{e.message}"
+      @today_visitors = 0
+      @today_pageviews = 0
+      @total_visitors = 0
+    end
+  end
 
   def load_user_birth_info
     if session[:birth_date].present?

@@ -34,9 +34,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 # ╔══════════════════════════════════════════════════════════════╗
 # ║  설정                                                        ║
 # ╚══════════════════════════════════════════════════════════════╝
-NUM_WORKERS = 5
-DELAY_MIN = 18
-DELAY_MAX = 35
+NUM_WORKERS = 3
+DELAY_MIN = 8
+DELAY_MAX = 15
 NEW_CHAT_EVERY = 8
 MAX_WAIT = 120
 

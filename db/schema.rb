@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_07_002800) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_07_084800) do
   create_table "blind_compat_links", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "expires_at", null: false
@@ -35,6 +35,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_07_002800) do
     t.string "name", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_celebrity_images_on_name", unique: true
+  end
+
+  create_table "daily_visits", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "unique_visitors", default: 0, null: false
+    t.datetime "updated_at", null: false
+    t.integer "visit_count", default: 0, null: false
+    t.date "visit_date", null: false
+    t.index ["visit_date"], name: "index_daily_visits_on_visit_date", unique: true
   end
 
   create_table "dream_interpretations", force: :cascade do |t|

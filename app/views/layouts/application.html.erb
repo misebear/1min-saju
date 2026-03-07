@@ -138,6 +138,9 @@
         </nav>
 
         <div class="sidebar-footer">
+          <div class="sidebar-visitor-badge">
+            <span>👀</span> 오늘 <strong><%= @today_visitors || 0 %></strong>명 방문
+          </div>
           <p class="text-muted text-small">
             © 2025 1분 사주 ✨
           </p>
@@ -153,6 +156,28 @@
 
       <!-- Desktop Right Panel (hidden on mobile) -->
       <aside class="desktop-right-panel">
+        <!-- 방문자 수 카드 -->
+        <div class="sidebar-card visitor-card">
+          <div class="section-header">
+            <span class="emoji">👀</span>
+            <h3>오늘의 방문</h3>
+          </div>
+          <div class="visitor-stats">
+            <div class="visitor-stat">
+              <span class="visitor-number"><%= @today_visitors || 0 %></span>
+              <span class="visitor-label">방문자</span>
+            </div>
+            <div class="visitor-divider"></div>
+            <div class="visitor-stat">
+              <span class="visitor-number"><%= @today_pageviews || 0 %></span>
+              <span class="visitor-label">페이지뷰</span>
+            </div>
+          </div>
+          <p class="text-small text-muted" style="margin-top: 8px; text-align: center;">
+            누적 <strong><%= number_with_delimiter(@total_visitors || 0) %></strong>회 조회 🎉
+          </p>
+        </div>
+
         <div class="sidebar-card">
           <div class="section-header">
             <span class="emoji">🗓️</span>
