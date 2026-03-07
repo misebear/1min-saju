@@ -2,136 +2,34 @@
   1분 사주 (1min-saju) - 개발 현황
 ============================================
 
-📌 현재 진행 상태: 🟡 추가 DB 수집 진행 중 (띠별/별자리/타로)
+📌 현재 진행 상태: 🟡 1단계 배포 push 완료, Railway 빌드 확인 필요
 
 ============================================
 ✅ 완료된 작업
 ============================================
 
-[Rails 웹앱 개발]
-- 사주팔자 분석 엔진 (SajuEngine) 구현
-- 오늘의 운세, 연간 운세, 내일 운세, 지정일 운세
-- 궁합 분석 + 카톡 블라인드 궁합 바이럴 기능
-- 꿈해몽 AI 분석, AI 채팅 (사주 전문가)
-- 별자리 운세, 택일 (이사택일)
-- 유명인 사주 분석, 사용자 인증 (Devise + Google OAuth)
+[Rails 웹앱 + Gemini DB]
+- ✅ 운세 3,614/3,600 DB 수집 완료 → Rails 임포트 완료 (3,582개)
+- ✅ 궁합 3,601+/3,600 DB 수집 완료 → Rails 임포트 완료 (3,456개 중복제거)
+- ✅ 방문자 카운터 기능 구현 (DailyVisit 모델, 사이드바 카드)
+- ✅ GitHub push 완료 (Railway 자동 빌드 트리거됨)
 
-[2026-03-05 신규 8개 기능 추가]
-- 🏛️ 토정비결, 🐲 띠운세, 🃏 타로 78장, 🧠 심리풀이
-- 🔮 전생운, 💎 탄생석, 💼 취업운, 📅 내일/지정일 운세
-
-[2026-03-07 Gemini DB 수집 완료]
-- ✅ 운세 3,614/3,600 DB 수집 완료 (패치 포함)
-- ✅ 궁합 3,601+/3,600 DB 수집 완료 (3워커 고속 수집)
-- 🟡 추가 DB: 띠별(29/720) + 별자리(12/720) + 타로(4/156) 수집 중
-
-[2026-03-07 방문자 카운터 기능 추가]
-- DailyVisit 모델 + 마이그레이션 생성
-- ApplicationController에서 HTML 페이지뷰 + 유니크 방문자 추적
-- 데스크탑 사이드바에 "오늘의 방문" 카드 + 누적 조회수 표시
-- 사이드바 하단에 방문자 배지 표시
-
-[DB 모델 및 연동]
-- GeminiFortune: 운세 DB (일진×일주, CSV 임포트 Rake)
-- GeminiCompatibility: 궁합 DB (일주A×일주B, 양방향 조회)
-- GeminiTtiFortune: 띠별 운세 DB (12띠×60일진)
-- GeminiZodiacFortune: 별자리 운세 DB (12별자리×60일진)
-- GeminiTarotReading: 타로 해설 DB (78장×정/역)
-- DailyVisit: 일별 방문자 수 추적
-
-[배포]
-- Railway 배포 완료 (SQLite3, Puma 다이렉트)
-- docker-entrypoint에 전체 CSV 자동 임포트 설정 완료
-- 프로덕션: https://www.1minsaju.com
-
-[Google Play Store - v2.0.0]
-- TWA 빌드 완료, AAB 업로드 + 프로덕션 검토 제출 완료
+[추가 DB 수집 — 나중에 재시작 필요]
+- 🟡 띠별: 85/720, 별자리: 87/720, 타로: 17/156 (총 189/1596)
+- Gemini rate limit으로 멈춤 → 매크로 중단, 나중에 재시작
+- 체크포인트 기반이라 재시작 시 이어서 수집
 
 ============================================
 📋 다음에 할 작업
 ============================================
-1. ⭐ 추가 DB 수집 완료 대기 (extra_db_parallel.py 실행 중)
-   - 띠별 720개, 별자리 720개, 타로 156개 수집 중
-2. 전체 DB 임포트:
-   - rails fortunes:import (운세)
-   - rails compatibility:import (궁합)
-   - rails extra:import_all (띠별+별자리+타로)
-3. Railway 재배포
-4. 프로덕션 동작 확인
+1. ⭐ Railway 대시보드에서 빌드 상태 확인
+   - 빌드 실패 시 로그 확인 후 수정
+   - 성공했으면 프로덕션에서 방문자 카운터 + Gemini DB 동작 확인
+2. 추가 DB 수집 재시작 (Gemini rate limit 풀린 후)
+   - cd c:\development\saju\scripts
+   - C:\Python314\python.exe extra_db_parallel.py
+3. 추가 DB 완료 후 rails extra:import_all → Railway 재배포
 
 ============================================
-🚀 매크로 재시작 명령어
+🕐 마지막 업데이트: 2026-03-07 13:01 KST
 ============================================
-# 크롬 종료 먼저!
-taskkill /F /IM chrome.exe; taskkill /F /IM chromedriver.exe
-
-# 추가 DB 수집 (3워커 고속, 8~15초 딜레이)
-cd c:\development\saju\scripts
-C:\Python314\python.exe extra_db_parallel.py
-
-============================================
-⚠️ 주의사항
-============================================
-- Railway 무료 플랜: 30일 또는 $4.99 한도
-- TWA 서명키: android-pkg/signing.keystore (alias: my-key-alias, pw: hwvVPNLU16U1)
-- GEMINI_API_KEY 환경변수 필요 (AI 기능)
-- RAILS_MASTER_KEY 환경변수 필요 (프로덕션)
-- 매크로 실행 중 크롬 브라우저 건드리지 말 것!
-- 모든 매크로는 체크포인트 기반이라 중단 후 재시작해도 이어서 수집
-
-============================================
-📂 프로젝트 구조
-============================================
-c:\development\saju\
-├── app/
-│   ├── controllers/         # home, saju, fortunes, tojeong, tarot 등
-│   ├── models/
-│   │   ├── gemini_fortune.rb         ← 운세 DB 모델
-│   │   ├── gemini_compatibility.rb   ← 궁합 DB 모델
-│   │   ├── gemini_tti_fortune.rb     ← 띠별 운세 모델
-│   │   ├── gemini_zodiac_fortune.rb  ← 별자리 운세 모델
-│   │   ├── gemini_tarot_reading.rb   ← 타로 해설 모델
-│   │   ├── daily_visit.rb            ← 방문자 수 추적 모델
-│   │   └── concerns/saju_engine/     # 사주 엔진 모듈들
-│   ├── views/               # ERB 뷰 템플릿
-│   └── assets/              # CSS, JS
-├── config/                  # Rails 설정
-├── db/migrate/              # 마이그레이션 (gemini 5개 + daily_visits)
-├── lib/tasks/
-│   ├── fortunes.rake        # 운세 CSV 임포트
-│   ├── compatibility.rake   # 궁합 CSV 임포트
-│   └── extra.rake           # 띠별/별자리/타로 CSV 임포트
-├── scripts/
-│   ├── fortune_3600_db.csv  # 운세 메인 CSV (3,614개)
-│   ├── compat_worker_*.csv  # 궁합 워커 CSV (3,601+개)
-│   ├── extra_db_parallel.py # 띠별+별자리+타로 통합 매크로 (실행 중)
-│   └── ...                  # 기타 매크로/로그
-├── twa/                     # TWA 빌드 프로젝트
-└── Dockerfile               # Railway 배포용
-
-============================================
-🚀 실행 방법
-============================================
-# 로컬 개발 서버
-$env:PATH = "C:\Ruby33-x64\bin;$env:PATH"
-$env:GEMINI_API_KEY = "YOUR_KEY"
-rails server
-
-# DB 임포트
-rails fortunes:import          # 운세
-rails compatibility:import     # 궁합
-rails extra:import_all         # 띠별+별자리+타로
-
-============================================
-🕐 마지막 업데이트: 2026-03-07 11:05 KST
-============================================
-
-============================================
-🐛 현재 디버깅 중인 이슈
-============================================
-- 없음
-
-============================================
-🏃 실행 중인 터미널
-============================================
-- extra_db_parallel.py (추가 DB 3워커, 29/1596)
