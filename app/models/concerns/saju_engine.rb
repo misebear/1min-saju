@@ -17,6 +17,7 @@ require_relative "saju_engine/solo_destiny"
 require_relative "saju_engine/dream_engine"
 require_relative "saju_engine/zodiac_engine"
 require_relative "saju_engine/auspicious_date_engine"
+require_relative "saju_engine/mbti_mapper"
 
 module SajuEngine
   # 전체 사주 분석 실행
@@ -52,6 +53,7 @@ module SajuEngine
       personality: analyze_personality(saju, ten_gods),
       career: analyze_career(saju, ten_gods),
       love: analyze_love(saju, ten_gods),
+      mbti: MbtiMapper.analyze(saju, ten_gods),
       trend_2026: {
         year_info: Trends2026::YEAR_INFO,
         general: Trends2026.element_trend_advice(day_element, :general),

@@ -105,11 +105,45 @@
 .story-card[data-card="0"] { background: linear-gradient(160deg, #2d1b69, #11998e); }
 .story-card[data-card="1"] { background: linear-gradient(160deg, #0f0c29, #302b63, #24243e); }
 .story-card[data-card="2"] { background: linear-gradient(160deg, #834d9b, #d04ed6); }
-.story-card[data-card="3"] { background: linear-gradient(160deg, #eb3349, #f45c43); }
-.story-card[data-card="4"] { background: linear-gradient(160deg, #0d7377, #14ffec10); }
-.story-card[data-card="5"] { background: linear-gradient(160deg, #f7971e, #ffd200); }
-.story-card[data-card="6"] { background: linear-gradient(160deg, #141e30, #243b55); }
-.story-card[data-card="7"] { background: linear-gradient(160deg, #1a0530, #2d1b69, #000); }
+.story-card[data-card="3"] { background: linear-gradient(160deg, #1a1a2e, #16213e, #0f3460); }
+.story-card[data-card="4"] { background: linear-gradient(160deg, #eb3349, #f45c43); }
+.story-card[data-card="5"] { background: linear-gradient(160deg, #0d7377, #14ffec10); }
+.story-card[data-card="6"] { background: linear-gradient(160deg, #f7971e, #ffd200); }
+.story-card[data-card="7"] { background: linear-gradient(160deg, #141e30, #243b55); }
+.story-card[data-card="8"] { background: linear-gradient(160deg, #1a0530, #2d1b69, #000); }
+
+/* MBTI 축 바 */
+.sc-mbti-axes { width: 100%; margin-top: 16px; }
+.sc-mbti-axis {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
+}
+.sc-mbti-axis-label {
+  width: 28px; font-size: 18px; font-weight: 900; text-align: center;
+}
+.sc-mbti-axis-bar {
+  flex: 1; height: 10px; background: rgba(255,255,255,0.12);
+  border-radius: 5px; overflow: hidden; position: relative;
+}
+.sc-mbti-axis-fill {
+  height: 100%; border-radius: 5px;
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  transition: width 1s ease;
+}
+.sc-mbti-axis-label-r {
+  width: 28px; font-size: 18px; font-weight: 900; text-align: center;
+  color: rgba(255,255,255,0.4);
+}
+.sc-mbti-axis-pct {
+  font-size: 11px; color: rgba(255,255,255,0.6); min-width: 36px; text-align: center;
+}
+.sc-mbti-match-grid {
+  display: flex; gap: 10px; justify-content: center; margin-top: 12px;
+}
+.sc-mbti-match-chip {
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 16px; padding: 8px 16px; font-size: 16px; font-weight: 800;
+  backdrop-filter: blur(4px);
+}
 
 /* 탭 영역 */
 .story-tap-left, .story-tap-right {
@@ -500,7 +534,7 @@
 <div class="story-viewport" id="storyViewport">
   <!-- 프로그레스 바 -->
   <div class="story-progress" id="storyProgress">
-    <% 8.times do |i| %>
+    <% 9.times do |i| %>
       <div class="story-progress-seg" data-seg="<%= i %>">
         <div class="story-progress-fill"></div>
       </div>
@@ -508,7 +542,7 @@
   </div>
 
   <!-- 카드 번호 -->
-  <div class="story-counter" id="storyCounter">1 / 8</div>
+  <div class="story-counter" id="storyCounter">1 / 9</div>
 
   <!-- 닫기 -->
   <button class="story-close" onclick="closeStory()">✕</button>
@@ -566,8 +600,42 @@
       </div>
     </div>
 
-    <!-- 카드 4: 연애 스타일 -->
+    <!-- 카드 4: 사주 MBTI -->
+    <% mbti = @analysis[:mbti] %>
     <div class="story-card" data-card="3">
+      <div class="sc-content">
+        <div class="sc-emoji-hero"><%= mbti[:emoji] %></div>
+        <div class="sc-badge sc-animate">사주 × MBTI</div>
+        <h2 class="sc-title sc-animate sc-animate-d1" style="font-size: 48px; letter-spacing: 4px;"><%= mbti[:type] %></h2>
+        <p class="sc-subtitle sc-animate sc-animate-d2" style="font-size: 14px;"><%= mbti[:description] %></p>
+        <div class="sc-mbti-axes sc-animate sc-animate-d3">
+          <% [:ei, :sn, :tf, :jp].each do |axis| %>
+            <% ax = mbti[:axes][axis] %>
+            <div class="sc-mbti-axis">
+              <span class="sc-mbti-axis-label"><%= ax[:label] %></span>
+              <span class="sc-mbti-axis-pct"><%= ax[:score] %>%</span>
+              <div class="sc-mbti-axis-bar">
+                <div class="sc-mbti-axis-fill" style="width: <%= ax[:score] %>%"></div>
+              </div>
+              <span class="sc-mbti-axis-pct"><%= ax[:other_score] %>%</span>
+              <span class="sc-mbti-axis-label-r"><%= ax[:other_label] %></span>
+            </div>
+          <% end %>
+        </div>
+        <% if mbti[:best_match].any? %>
+          <div class="sc-divider"></div>
+          <h3 class="sc-title sc-animate sc-animate-d4" style="font-size: 16px;">💕 사주 궁합 BEST MBTI</h3>
+          <div class="sc-mbti-match-grid sc-animate sc-animate-d4">
+            <% mbti[:best_match].each do |m| %>
+              <span class="sc-mbti-match-chip"><%= m %></span>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- 카드 5: 연애 스타일 -->
+    <div class="story-card" data-card="4">
       <div class="sc-content">
         <div class="sc-emoji-hero">💕</div>
         <h2 class="sc-title sc-animate">연애 스타일</h2>
@@ -577,7 +645,7 @@
     </div>
 
     <!-- 카드 5: 오행 밸런스 -->
-    <div class="story-card" data-card="4">
+    <div class="story-card" data-card="5">
       <div class="sc-content">
         <div class="sc-emoji-hero">⚖️</div>
         <h2 class="sc-title sc-animate">오행 에너지 밸런스</h2>
@@ -602,7 +670,7 @@
     </div>
 
     <!-- 카드 6: 용신 -->
-    <div class="story-card" data-card="5">
+    <div class="story-card" data-card="6">
       <div class="sc-content">
         <div class="sc-emoji-hero">🎯</div>
         <h2 class="sc-title sc-animate">나의 핵심 용신</h2>
@@ -629,7 +697,7 @@
     </div>
 
     <!-- 카드 7: 십성 + 신살 -->
-    <div class="story-card" data-card="6">
+    <div class="story-card" data-card="7">
       <div class="sc-content">
         <div class="sc-emoji-hero">🌟</div>
         <h2 class="sc-title sc-animate">십성 분석</h2>
@@ -668,7 +736,7 @@
     </div>
 
     <!-- 카드 8: 대운 + 2026 운세 + CTA -->
-    <div class="story-card" data-card="7">
+    <div class="story-card" data-card="8">
       <div class="sc-content">
         <div class="sc-emoji-hero">🔄</div>
         <h2 class="sc-title sc-animate">10년 대운</h2>
@@ -703,7 +771,7 @@
 
 <script>
 (function() {
-  const totalCards = 8;
+  const totalCards = 9;
   let current = 0;
   let touchStartX = 0;
   let isAnimating = false;
