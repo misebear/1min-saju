@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "home#index"
+  get "/sitemap.xml", to: "sitemaps#show", format: "xml", as: :sitemap
 
   # 사주 분석
   get "saju/new", to: "saju#new", as: :new_saju
