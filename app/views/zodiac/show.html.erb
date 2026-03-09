@@ -159,30 +159,8 @@
   </a>
 </div>
 
-<!-- 카카오 공유 -->
-<div class="card text-center animate-fadeInUp" style="margin-top: 16px;">
-  <button onclick="shareKakaoZodiac()" class="btn-kakao-share">
-    💬 카카오톡으로 공유하기
-  </button>
-</div>
-
-<script>
-function shareKakaoZodiac() {
-  if (typeof Kakao === 'undefined') { alert('카카오 SDK 로딩 중...'); return; }
-  if (!Kakao.isInitialized()) Kakao.init('7d614af7b2a6e40d9c74c26cca5cf866');
-
-  Kakao.Share.sendDefault({
-    objectType: 'feed',
-    content: {
-      title: '<%= @sign_info[:emoji] %> <%= @sign_name %> 오늘의 운세: <%= score %>점!',
-      description: '<%= @fortune[:advice].gsub("'", "\\\\'") %>',
-      imageUrl: window.location.origin + '/icon.png',
-      link: { mobileWebUrl: window.location.origin, webUrl: window.location.origin }
-    },
-    buttons: [{
-      title: '내 별자리 운세 보기',
-      link: { mobileWebUrl: window.location.origin + '/zodiac', webUrl: window.location.origin + '/zodiac' }
-    }]
-  });
-}
-</script>
+<%= render partial: "shared/kakao_share", locals: {
+  title: "#{@sign_info[:emoji]} #{@sign_name} 오늘의 운세: #{score}점!",
+  description: @fortune[:advice].gsub("'", "\\\\'"),
+  path: request.path
+} %>

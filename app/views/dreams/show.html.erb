@@ -141,30 +141,8 @@
   </a>
 </div>
 
-<!-- 카카오톡 공유 -->
-<div class="card text-center animate-fadeInUp" style="margin-top: 16px;">
-  <button onclick="shareKakao('dream')" class="btn-kakao-share" id="kakao-share-dream">
-    💬 카카오톡으로 공유하기
-  </button>
-</div>
-
-<script>
-function shareKakao(type) {
-  if (typeof Kakao === 'undefined') { alert('카카오 SDK 로딩 중...'); return; }
-  if (!Kakao.isInitialized()) Kakao.init('7d614af7b2a6e40d9c74c26cca5cf866');
-
-  Kakao.Share.sendDefault({
-    objectType: 'feed',
-    content: {
-      title: '🌙 꿈해몽 결과: <%= score %>점!',
-      description: '<%= @result[:overall_message].gsub("'", "\\\\'") %>',
-      imageUrl: window.location.origin + '/icon.png',
-      link: { mobileWebUrl: window.location.origin, webUrl: window.location.origin }
-    },
-    buttons: [{
-      title: '나도 꿈해몽 해보기',
-      link: { mobileWebUrl: window.location.origin + '/dreams/new', webUrl: window.location.origin + '/dreams/new' }
-    }]
-  });
-}
-</script>
+<%= render partial: "shared/kakao_share", locals: {
+  title: "🌙 꿈해몽 결과: #{score}점!",
+  description: @result[:overall_message].gsub("'", "\\\\'"),
+  path: request.path
+} %>

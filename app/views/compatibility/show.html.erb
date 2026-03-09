@@ -119,6 +119,12 @@
   </div>
 </div>
 
+<%= render partial: "shared/kakao_share", locals: {
+  title: "💕 궁합 결과: #{@compatibility[:score]}점!",
+  description: "우리 다 함께하는 사주의 짜릿한 오행 궁합 풀이를 지금 확인하세요!",
+  path: request.path
+} %>
+
 <div class="mt-md mb-lg">
   <a href="<%= new_compatibility_path %>" class="btn-primary" style="text-decoration: none; display: block;">
     💕 다시 궁합 보기

@@ -93,6 +93,12 @@
   <p style="line-height: 1.8;"><%= @config[:advice] %></p>
 </div>
 
+<%= render partial: "shared/kakao_share", locals: {
+  title: "#{@config[:emoji]} #{@config[:label]} 택일 결과",
+  description: "나에게 꼭 맞는 최고의 길일 TOP 5를 확인해보세요!",
+  path: request.path
+} %>
+
 <!-- 하단 액션 -->
 <div class="quick-menu animate-fadeInUp">
   <a href="<%= new_auspicious_date_path %>" class="quick-item">

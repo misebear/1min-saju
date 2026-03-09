@@ -104,6 +104,12 @@
   </section>
 <% end %>
 
+<%= render partial: "shared/kakao_share", locals: {
+  title: "나는솔로 인연 분석: #{@archetype[:title]}",
+  description: "나는솔로에 나가면 나는 어떤 기믹일까? 무료로 나와 찰떡인 상대 유형을 확인해보세요!",
+  path: request.path
+} %>
+
 <!-- 하단 버튼 -->
 <div class="mt-lg animate-fadeInUp" style="display: flex; gap: 10px; flex-wrap: wrap;">
   <a href="<%= new_solo_destiny_path %>" class="btn-primary" style="flex: 1; text-align: center; text-decoration: none;">

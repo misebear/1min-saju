@@ -74,3 +74,9 @@
     결국 너의 노력이 인생을 만들어가는 거야! 🐶✨
   </p>
 </div>
+
+<%= render partial: "shared/kakao_share", locals: {
+  title: "#{@yearly[:year]}년 올해의 운세",
+  description: "올해는 나에게 어떤 한 해가 될까? 사주의 큰 흐름을 분석해보세요!",
+  path: request.path
+} %>

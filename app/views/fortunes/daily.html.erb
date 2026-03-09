@@ -205,7 +205,13 @@
       <%= trend[:general] %>
     </div>
   <% end %>
-  <a href="<%= yearly_fortune_path %>" class="action-btn primary mt-md" style="text-decoration: none; display: block; text-align: center;">
+  <%= render partial: "shared/kakao_share", locals: {
+  title: "오늘의 운세: #{daily[:score]}점!",
+  description: "오늘은 #{daily[:lucky][:color]}색 아이템이 행운을 가져다줄지도 몰라요!",
+  path: request.path
+} %>
+
+<a href="<%= yearly_fortune_path %>" class="action-btn primary mt-md" style="text-decoration: none; display: block; text-align: center;">
     📊 올해 운세 자세히 보기
   </a>
 </section>
