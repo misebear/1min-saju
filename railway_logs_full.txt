@@ -1,0 +1,2000 @@
+[05a25c01-8d1b-4f9c-b487-aea1fe8e1355] ActionController::RoutingError (No route matches [GET] "/_profiler/empty/search/results"):
+[05a25c01-8d1b-4f9c-b487-aea1fe8e1355]   
+[dddf581b-a773-450c-882d-b91f6ba62b10] Started GET "/api/v1" for 185.177.72.56 at 2026-03-08 14:11:27 +0000
+[dddf581b-a773-450c-882d-b91f6ba62b10]   
+[dddf581b-a773-450c-882d-b91f6ba62b10] ActionController::RoutingError (No route matches [GET] "/api/v1"):
+[dddf581b-a773-450c-882d-b91f6ba62b10]   
+[a6b542e8-e6c9-42e2-9900-57831dd5a066] Started GET "/api/service" for 185.177.72.56 at 2026-03-08 14:11:28 +0000
+[a6b542e8-e6c9-42e2-9900-57831dd5a066]   
+[a6b542e8-e6c9-42e2-9900-57831dd5a066] ActionController::RoutingError (No route matches [GET] "/api/service"):
+[a6b542e8-e6c9-42e2-9900-57831dd5a066]   
+[ee83bd01-a14c-4ace-9a98-1fb40e42ebe7] Started GET "/api/system/info" for 185.177.72.56 at 2026-03-08 14:11:28 +0000
+[ee83bd01-a14c-4ace-9a98-1fb40e42ebe7]   
+[ee83bd01-a14c-4ace-9a98-1fb40e42ebe7] ActionController::RoutingError (No route matches [GET] "/api/system/info"):
+[ee83bd01-a14c-4ace-9a98-1fb40e42ebe7]   
+[b205c2c1-ddca-4d70-81dd-add481d23da3] Started GET "/api/gateway" for 185.177.72.56 at 2026-03-08 14:11:28 +0000
+[b205c2c1-ddca-4d70-81dd-add481d23da3]   
+[b205c2c1-ddca-4d70-81dd-add481d23da3] ActionController::RoutingError (No route matches [GET] "/api/gateway"):
+[b205c2c1-ddca-4d70-81dd-add481d23da3]   
+[4d5d19a5-9266-4321-a4f0-97d8f6bdd38b] Started GET "/api/command" for 185.177.72.56 at 2026-03-08 14:11:28 +0000
+[4d5d19a5-9266-4321-a4f0-97d8f6bdd38b]   
+[4d5d19a5-9266-4321-a4f0-97d8f6bdd38b] ActionController::RoutingError (No route matches [GET] "/api/command"):
+[4d5d19a5-9266-4321-a4f0-97d8f6bdd38b]   
+[36e33f01-9f0f-4902-9891-433176c01143] Started GET "/api/admin/user" for 185.177.72.56 at 2026-03-08 14:11:28 +0000
+[36e33f01-9f0f-4902-9891-433176c01143]   
+[36e33f01-9f0f-4902-9891-433176c01143] ActionController::RoutingError (No route matches [GET] "/api/admin/user"):
+[36e33f01-9f0f-4902-9891-433176c01143]   
+[b3fd8e9f-6d6d-48c9-92c5-2620cc67ccea] Started GET "/api/admin/user/password" for 185.177.72.56 at 2026-03-08 14:11:28 +0000
+[b3fd8e9f-6d6d-48c9-92c5-2620cc67ccea]   
+[b3fd8e9f-6d6d-48c9-92c5-2620cc67ccea] ActionController::RoutingError (No route matches [GET] "/api/admin/user/password"):
+[b3fd8e9f-6d6d-48c9-92c5-2620cc67ccea]   
+[3429a39b-2d90-4c6f-a2ae-0535eab533f8] Started GET "/api/admin/user/status" for 185.177.72.56 at 2026-03-08 14:11:29 +0000
+[3429a39b-2d90-4c6f-a2ae-0535eab533f8]   
+[3429a39b-2d90-4c6f-a2ae-0535eab533f8] ActionController::RoutingError (No route matches [GET] "/api/admin/user/status"):
+[3429a39b-2d90-4c6f-a2ae-0535eab533f8]   
+[098d6a11-46e3-405b-8a9a-002e501b1cf9] Started GET "/api/admin/auth" for 185.177.72.56 at 2026-03-08 14:11:29 +0000
+[098d6a11-46e3-405b-8a9a-002e501b1cf9]   
+[098d6a11-46e3-405b-8a9a-002e501b1cf9] ActionController::RoutingError (No route matches [GET] "/api/admin/auth"):
+[098d6a11-46e3-405b-8a9a-002e501b1cf9]   
+[7ffe249b-77df-41a2-841f-4ba59f0fdcac] Started GET "/api/admin/role" for 185.177.72.56 at 2026-03-08 14:11:29 +0000
+[7ffe249b-77df-41a2-841f-4ba59f0fdcac]   
+[7ffe249b-77df-41a2-841f-4ba59f0fdcac] ActionController::RoutingError (No route matches [GET] "/api/admin/role"):
+[7ffe249b-77df-41a2-841f-4ba59f0fdcac]   
+[ea02255c-f645-4f17-8f4a-0cf6f76e706a] Started GET "/api/admin/role/id" for 185.177.72.56 at 2026-03-08 14:11:29 +0000
+[ea02255c-f645-4f17-8f4a-0cf6f76e706a]   
+[ea02255c-f645-4f17-8f4a-0cf6f76e706a] ActionController::RoutingError (No route matches [GET] "/api/admin/role/id"):
+[ea02255c-f645-4f17-8f4a-0cf6f76e706a]   
+[13eeac81-b25a-453e-8a75-21d992de06e4] Started GET "/api/admin" for 185.177.72.56 at 2026-03-08 14:11:29 +0000
+[13eeac81-b25a-453e-8a75-21d992de06e4]   
+[13eeac81-b25a-453e-8a75-21d992de06e4] ActionController::RoutingError (No route matches [GET] "/api/admin"):
+[13eeac81-b25a-453e-8a75-21d992de06e4]   
+[50bcb1b6-105f-44ca-9d67-ed8b816ff36c] Started GET "/api/v1/sms-sender" for 185.177.72.56 at 2026-03-08 14:11:30 +0000
+[50bcb1b6-105f-44ca-9d67-ed8b816ff36c]   
+[50bcb1b6-105f-44ca-9d67-ed8b816ff36c] ActionController::RoutingError (No route matches [GET] "/api/v1/sms-sender"):
+[50bcb1b6-105f-44ca-9d67-ed8b816ff36c]   
+[02b4e0ac-d7ba-4e33-a93e-7b1b4dd40a9b] Started GET "/api/v1/finchat/contact/manager" for 185.177.72.56 at 2026-03-08 14:11:30 +0000
+[02b4e0ac-d7ba-4e33-a93e-7b1b4dd40a9b]   
+[02b4e0ac-d7ba-4e33-a93e-7b1b4dd40a9b] ActionController::RoutingError (No route matches [GET] "/api/v1/finchat/contact/manager"):
+[02b4e0ac-d7ba-4e33-a93e-7b1b4dd40a9b]   
+[b6401a71-dcc0-419f-91fb-f2e2ec18b8e7] Started GET "/api/v1/finchat/privilege-api/forwarder" for 185.177.72.56 at 2026-03-08 14:11:30 +0000
+[b6401a71-dcc0-419f-91fb-f2e2ec18b8e7]   
+[b6401a71-dcc0-419f-91fb-f2e2ec18b8e7] ActionController::RoutingError (No route matches [GET] "/api/v1/finchat/privilege-api/forwarder"):
+[b6401a71-dcc0-419f-91fb-f2e2ec18b8e7]   
+[5e90ce82-503d-424f-a463-76922f9d57cf] Started GET "/api/v1/finchat/privilege-api/forwarder/event" for 185.177.72.56 at 2026-03-08 14:11:30 +0000
+[5e90ce82-503d-424f-a463-76922f9d57cf]   
+[5e90ce82-503d-424f-a463-76922f9d57cf] ActionController::RoutingError (No route matches [GET] "/api/v1/finchat/privilege-api/forwarder/event"):
+[5e90ce82-503d-424f-a463-76922f9d57cf]   
+[6c5ecbfb-e905-436e-b95e-6957a737a6de] Started GET "/api/v1/finchat/open-api" for 185.177.72.56 at 2026-03-08 14:11:30 +0000
+[6c5ecbfb-e905-436e-b95e-6957a737a6de]   
+[6c5ecbfb-e905-436e-b95e-6957a737a6de] ActionController::RoutingError (No route matches [GET] "/api/v1/finchat/open-api"):
+[6c5ecbfb-e905-436e-b95e-6957a737a6de]   
+[3ea58b27-6444-46d4-8fff-4f496a45d296] Started GET "/api/upload" for 185.177.72.56 at 2026-03-08 14:11:30 +0000
+[e81adba1-0e15-4073-be6c-66a2181dbd9b]   
+[3ea58b27-6444-46d4-8fff-4f496a45d296]   
+[7a7ec0d0-dace-45db-848b-6bc9a19a2add] Started GET "/api/v1/files" for 185.177.72.56 at 2026-03-08 14:11:31 +0000
+[3ea58b27-6444-46d4-8fff-4f496a45d296] ActionController::RoutingError (No route matches [GET] "/api/upload"):
+[3ea58b27-6444-46d4-8fff-4f496a45d296]   
+[7a7ec0d0-dace-45db-848b-6bc9a19a2add]   
+[e81adba1-0e15-4073-be6c-66a2181dbd9b] Started GET "/api/savefile" for 185.177.72.56 at 2026-03-08 14:11:31 +0000
+[7a7ec0d0-dace-45db-848b-6bc9a19a2add] ActionController::RoutingError (No route matches [GET] "/api/v1/files"):
+[e81adba1-0e15-4073-be6c-66a2181dbd9b]   
+[7a7ec0d0-dace-45db-848b-6bc9a19a2add]   
+[e81adba1-0e15-4073-be6c-66a2181dbd9b] ActionController::RoutingError (No route matches [GET] "/api/savefile"):
+[63fe20bf-387e-4a62-ab6c-787e396c7d0c] Started GET "/api/files.remote.share" for 185.177.72.56 at 2026-03-08 14:11:31 +0000
+[63fe20bf-387e-4a62-ab6c-787e396c7d0c]   
+[63fe20bf-387e-4a62-ab6c-787e396c7d0c] ActionController::RoutingError (No route matches [GET] "/api/files.remote.share"):
+[63fe20bf-387e-4a62-ab6c-787e396c7d0c]   
+[3c925945-5af8-4d3d-856e-8f615225c2f4] Started GET "/api/v1/netdisk/download" for 185.177.72.56 at 2026-03-08 14:11:31 +0000
+[3c925945-5af8-4d3d-856e-8f615225c2f4]   
+[3c925945-5af8-4d3d-856e-8f615225c2f4] ActionController::RoutingError (No route matches [GET] "/api/v1/netdisk/download"):
+[3c925945-5af8-4d3d-856e-8f615225c2f4]   
+[aeb1ed49-83ea-4e14-ab14-6fd3aabc250d] Started GET "/api/.git/config" for 185.177.72.56 at 2026-03-08 14:11:32 +0000
+[7b4de3d0-d7b5-4d79-9cdc-622cdb343bab]   
+[7b4de3d0-d7b5-4d79-9cdc-622cdb343bab] Started GET "/sources/api/.env" for 185.177.72.56 at 2026-03-08 14:11:31 +0000
+[7b4de3d0-d7b5-4d79-9cdc-622cdb343bab]   
+[571fea61-69d8-4570-aefb-a6e05b0f894b] Started GET "/app/api/bzycs.php" for 185.177.72.56 at 2026-03-08 14:11:32 +0000
+[7b4de3d0-d7b5-4d79-9cdc-622cdb343bab] ActionController::RoutingError (No route matches [GET] "/sources/api/.env"):
+[571fea61-69d8-4570-aefb-a6e05b0f894b]   
+[571fea61-69d8-4570-aefb-a6e05b0f894b] ActionController::RoutingError (No route matches [GET] "/app/api/bzycs.php"):
+[571fea61-69d8-4570-aefb-a6e05b0f894b]   
+[2c5c1ef5-997e-4056-aec6-c84bb598b0e0] Started GET "/src/api/config.js" for 185.177.72.56 at 2026-03-08 14:11:32 +0000
+[2c5c1ef5-997e-4056-aec6-c84bb598b0e0]   
+[2c5c1ef5-997e-4056-aec6-c84bb598b0e0] ActionController::RoutingError (No route matches [GET] "/src/api/config.js"):
+[2c5c1ef5-997e-4056-aec6-c84bb598b0e0]   
+[57c3b007-1426-4354-b850-905b352bac0e] Started GET "/web/api/config.js" for 185.177.72.56 at 2026-03-08 14:11:32 +0000
+[57c3b007-1426-4354-b850-905b352bac0e]   
+[57c3b007-1426-4354-b850-905b352bac0e] ActionController::RoutingError (No route matches [GET] "/web/api/config.js"):
+[57c3b007-1426-4354-b850-905b352bac0e]   
+[6150a246-81fb-4578-8634-38b783412d7e] Started GET "/api/v1/account/oauth/ticket" for 185.177.72.56 at 2026-03-08 14:11:33 +0000
+[6150a246-81fb-4578-8634-38b783412d7e]   
+[6150a246-81fb-4578-8634-38b783412d7e] ActionController::RoutingError (No route matches [GET] "/api/v1/account/oauth/ticket"):
+[6150a246-81fb-4578-8634-38b783412d7e]   
+[b619eb32-b2b4-4f34-88ee-b630ec608bb3] Started GET "/api/v1/tokens" for 185.177.72.56 at 2026-03-08 14:11:33 +0000
+[f91468d1-a0b1-4daf-ac79-9a023b210545] Started GET "/api/v1/finchat/open-api/auth/token" for 185.177.72.56 at 2026-03-08 14:11:32 +0000
+[f91468d1-a0b1-4daf-ac79-9a023b210545]   
+[f91468d1-a0b1-4daf-ac79-9a023b210545] ActionController::RoutingError (No route matches [GET] "/api/v1/finchat/open-api/auth/token"):
+[f91468d1-a0b1-4daf-ac79-9a023b210545]   
+[1444e37e-9169-48c5-8e25-4c04f84335c2] Started GET "/api/v1/account/oauth/token" for 185.177.72.56 at 2026-03-08 14:11:33 +0000
+[1444e37e-9169-48c5-8e25-4c04f84335c2]   
+[1444e37e-9169-48c5-8e25-4c04f84335c2] ActionController::RoutingError (No route matches [GET] "/api/v1/account/oauth/token"):
+[1444e37e-9169-48c5-8e25-4c04f84335c2]   
+[aeb1ed49-83ea-4e14-ab14-6fd3aabc250d]   
+[aeb1ed49-83ea-4e14-ab14-6fd3aabc250d] ActionController::RoutingError (No route matches [GET] "/api/.git/config"):
+[aeb1ed49-83ea-4e14-ab14-6fd3aabc250d]   
+[b619eb32-b2b4-4f34-88ee-b630ec608bb3]   
+[b619eb32-b2b4-4f34-88ee-b630ec608bb3] ActionController::RoutingError (No route matches [GET] "/api/v1/tokens"):
+[b619eb32-b2b4-4f34-88ee-b630ec608bb3]   
+[dec2fc98-8787-4775-a78c-1acfc131ddf7] Started GET "/api/login" for 185.177.72.56 at 2026-03-08 14:11:33 +0000
+[dec2fc98-8787-4775-a78c-1acfc131ddf7]   
+[dec2fc98-8787-4775-a78c-1acfc131ddf7] ActionController::RoutingError (No route matches [GET] "/api/login"):
+[dec2fc98-8787-4775-a78c-1acfc131ddf7]   
+[43af3433-48e8-470e-86be-4cd81437ec79] Started GET "/api/auth" for 185.177.72.56 at 2026-03-08 14:11:33 +0000
+[43af3433-48e8-470e-86be-4cd81437ec79]   
+[43af3433-48e8-470e-86be-4cd81437ec79] ActionController::RoutingError (No route matches [GET] "/api/auth"):
+[43af3433-48e8-470e-86be-4cd81437ec79]   
+[492a1c88-ab52-4f07-8517-e1024dc61fc1] Started GET "/api/authentication" for 185.177.72.56 at 2026-03-08 14:11:33 +0000
+[492a1c88-ab52-4f07-8517-e1024dc61fc1]   
+[492a1c88-ab52-4f07-8517-e1024dc61fc1] ActionController::RoutingError (No route matches [GET] "/api/authentication"):
+[492a1c88-ab52-4f07-8517-e1024dc61fc1]   
+[93f95a3a-e193-4cc5-9e82-13e7f9457a60] ActionController::RoutingError (No route matches [GET] "/vendor/drupal/coder/.git/info/refs"):
+[93f95a3a-e193-4cc5-9e82-13e7f9457a60]   
+[54bcb2da-3671-4f08-b4e4-ae7da3555bbb] Started GET "/vendor/drupal/coder/.git/info/exclude" for 185.177.72.56 at 2026-03-08 14:11:34 +0000
+[98bfbfdc-0343-402c-9e90-9f1864ee7a8e] Started GET "/api/auth/v1/pin/verify" for 185.177.72.56 at 2026-03-08 14:11:34 +0000
+[98bfbfdc-0343-402c-9e90-9f1864ee7a8e]   
+[98bfbfdc-0343-402c-9e90-9f1864ee7a8e] ActionController::RoutingError (No route matches [GET] "/api/auth/v1/pin/verify"):
+[98bfbfdc-0343-402c-9e90-9f1864ee7a8e]   
+[2ada71c8-f06f-42ea-b591-9b1f2639a0de] Started GET "/api/register" for 185.177.72.56 at 2026-03-08 14:11:34 +0000
+[2ada71c8-f06f-42ea-b591-9b1f2639a0de]   
+[2ada71c8-f06f-42ea-b591-9b1f2639a0de] ActionController::RoutingError (No route matches [GET] "/api/register"):
+[2ada71c8-f06f-42ea-b591-9b1f2639a0de]   
+[ca9af7c5-54c7-4c02-a8f7-370bcfb85cb3] Started GET "/api/resetpassword" for 185.177.72.56 at 2026-03-08 14:11:34 +0000
+[ca9af7c5-54c7-4c02-a8f7-370bcfb85cb3]   
+[ca9af7c5-54c7-4c02-a8f7-370bcfb85cb3] ActionController::RoutingError (No route matches [GET] "/api/resetpassword"):
+[ca9af7c5-54c7-4c02-a8f7-370bcfb85cb3]   
+[93f95a3a-e193-4cc5-9e82-13e7f9457a60] Started GET "/vendor/drupal/coder/.git/info/refs" for 185.177.72.56 at 2026-03-08 14:11:34 +0000
+[93f95a3a-e193-4cc5-9e82-13e7f9457a60]   
+[54bcb2da-3671-4f08-b4e4-ae7da3555bbb]   
+[54bcb2da-3671-4f08-b4e4-ae7da3555bbb] ActionController::RoutingError (No route matches [GET] "/vendor/drupal/coder/.git/info/exclude"):
+[54bcb2da-3671-4f08-b4e4-ae7da3555bbb]   
+[f31a2241-4bea-475b-b91b-4f19d9aae06c] Started GET "/vendor/drupal/coder/.git/objects/info" for 185.177.72.56 at 2026-03-08 14:11:34 +0000
+[f31a2241-4bea-475b-b91b-4f19d9aae06c]   
+[f31a2241-4bea-475b-b91b-4f19d9aae06c] ActionController::RoutingError (No route matches [GET] "/vendor/drupal/coder/.git/objects/info"):
+[f31a2241-4bea-475b-b91b-4f19d9aae06c]   
+[730d332c-0da1-40db-9ede-2d05060dbb59] Started GET "/vendor/drupal/coder/.git/objects/info/packs" for 185.177.72.56 at 2026-03-08 14:11:35 +0000
+[730d332c-0da1-40db-9ede-2d05060dbb59]   
+[730d332c-0da1-40db-9ede-2d05060dbb59] ActionController::RoutingError (No route matches [GET] "/vendor/drupal/coder/.git/objects/info/packs"):
+[730d332c-0da1-40db-9ede-2d05060dbb59]   
+[cb0ec28e-78d8-4fa5-9bf9-d76024b5901c] Started GET "/info.log" for 185.177.72.56 at 2026-03-08 14:11:35 +0000
+[cb0ec28e-78d8-4fa5-9bf9-d76024b5901c]   
+[cb0ec28e-78d8-4fa5-9bf9-d76024b5901c] ActionController::RoutingError (No route matches [GET] "/info.log"):
+[cb0ec28e-78d8-4fa5-9bf9-d76024b5901c]   
+[4674dd55-e479-4482-a20c-14e5c0e6754b] Started GET "/info.txt" for 185.177.72.56 at 2026-03-08 14:11:35 +0000
+[4674dd55-e479-4482-a20c-14e5c0e6754b]   
+[4674dd55-e479-4482-a20c-14e5c0e6754b] ActionController::RoutingError (No route matches [GET] "/info.txt"):
+[4674dd55-e479-4482-a20c-14e5c0e6754b]   
+[c2895fd8-b9fb-482b-b318-e9f1520325d7] Started GET "/member/space/company/info.txt" for 185.177.72.56 at 2026-03-08 14:11:35 +0000
+[c2895fd8-b9fb-482b-b318-e9f1520325d7]   
+[c2895fd8-b9fb-482b-b318-e9f1520325d7] ActionController::RoutingError (No route matches [GET] "/member/space/company/info.txt"):
+[c2895fd8-b9fb-482b-b318-e9f1520325d7]   
+[30d386ea-c200-493c-a365-296d8c9142cc] Started GET "/cmsmessages/information.aspx" for 185.177.72.56 at 2026-03-08 14:11:35 +0000
+[30d386ea-c200-493c-a365-296d8c9142cc]   
+[30d386ea-c200-493c-a365-296d8c9142cc] ActionController::RoutingError (No route matches [GET] "/cmsmessages/information.aspx"):
+[30d386ea-c200-493c-a365-296d8c9142cc]   
+[ae17cdf0-1381-4c1c-b3e2-d63550086c01] Started GET "/cmsmessages/information.aspx.cs" for 185.177.72.56 at 2026-03-08 14:11:36 +0000
+[f12d0a31-b278-49cf-894a-92ef26d2fa33] Started GET "/phpinfo.test" for 185.177.72.56 at 2026-03-08 14:11:36 +0000
+[ae17cdf0-1381-4c1c-b3e2-d63550086c01]   
+[ae17cdf0-1381-4c1c-b3e2-d63550086c01] ActionController::RoutingError (No route matches [GET] "/cmsmessages/information.aspx.cs"):
+[dce315f0-d5ba-430a-b22a-1f804e53f2ea] Started GET "/module/info/include/mysql/phpcms_info.sql" for 185.177.72.56 at 2026-03-08 14:11:36 +0000
+[ae17cdf0-1381-4c1c-b3e2-d63550086c01]   
+[dce315f0-d5ba-430a-b22a-1f804e53f2ea]   
+[dce315f0-d5ba-430a-b22a-1f804e53f2ea]   
+[dce315f0-d5ba-430a-b22a-1f804e53f2ea] ActionController::RoutingError (No route matches [GET] "/module/info/include/mysql/phpcms_info.sql"):
+[7ff7abc6-01c2-4d3b-9b0d-c8a719939222] Started GET "/phpinfo.bak" for 185.177.72.56 at 2026-03-08 14:11:36 +0000
+[7ff7abc6-01c2-4d3b-9b0d-c8a719939222]   
+[7ff7abc6-01c2-4d3b-9b0d-c8a719939222] ActionController::RoutingError (No route matches [GET] "/phpinfo.bak"):
+[ae71f5f1-67a1-4a1d-8b1f-7c14c848d5e6] Started GET "/phpinfo.dev" for 185.177.72.56 at 2026-03-08 14:11:36 +0000
+[7ff7abc6-01c2-4d3b-9b0d-c8a719939222]   
+[ae71f5f1-67a1-4a1d-8b1f-7c14c848d5e6]   
+[ae71f5f1-67a1-4a1d-8b1f-7c14c848d5e6] ActionController::RoutingError (No route matches [GET] "/phpinfo.dev"):
+[ae71f5f1-67a1-4a1d-8b1f-7c14c848d5e6]   
+[f12d0a31-b278-49cf-894a-92ef26d2fa33]   
+[f12d0a31-b278-49cf-894a-92ef26d2fa33] ActionController::RoutingError (No route matches [GET] "/phpinfo.test"):
+[f12d0a31-b278-49cf-894a-92ef26d2fa33]   
+[59c8cf02-cfe2-429a-aab2-4e11f89b0200] Started GET "/phpinfo-prod" for 185.177.72.56 at 2026-03-08 14:11:36 +0000
+[59c8cf02-cfe2-429a-aab2-4e11f89b0200]   
+[59c8cf02-cfe2-429a-aab2-4e11f89b0200] ActionController::RoutingError (No route matches [GET] "/phpinfo-prod"):
+[59c8cf02-cfe2-429a-aab2-4e11f89b0200]   
+[67ba239e-4095-49f6-aa57-84e569759b85] Started GET "/phpinfo-preprod" for 185.177.72.56 at 2026-03-08 14:11:37 +0000
+[67ba239e-4095-49f6-aa57-84e569759b85]   
+[67ba239e-4095-49f6-aa57-84e569759b85] ActionController::RoutingError (No route matches [GET] "/phpinfo-preprod"):
+[67ba239e-4095-49f6-aa57-84e569759b85]   
+[37ec7580-9a77-4f67-9a86-5c0c21ff0774] Started GET "/phpinfo.staging" for 185.177.72.56 at 2026-03-08 14:11:37 +0000
+[37ec7580-9a77-4f67-9a86-5c0c21ff0774]   
+[37ec7580-9a77-4f67-9a86-5c0c21ff0774] ActionController::RoutingError (No route matches [GET] "/phpinfo.staging"):
+[37ec7580-9a77-4f67-9a86-5c0c21ff0774]   
+[0f0a13f7-e5eb-48c5-8b6c-bc0f9855aea4] Started GET "/phpinfo.stg" for 185.177.72.56 at 2026-03-08 14:11:37 +0000
+[0f0a13f7-e5eb-48c5-8b6c-bc0f9855aea4]   
+[0f0a13f7-e5eb-48c5-8b6c-bc0f9855aea4] ActionController::RoutingError (No route matches [GET] "/phpinfo.stg"):
+[0f0a13f7-e5eb-48c5-8b6c-bc0f9855aea4]   
+[8287d6dd-810a-497a-b1f8-73e94178b90e] Started GET "/phpinfo-server" for 185.177.72.56 at 2026-03-08 14:11:37 +0000
+[8287d6dd-810a-497a-b1f8-73e94178b90e]   
+[8287d6dd-810a-497a-b1f8-73e94178b90e] ActionController::RoutingError (No route matches [GET] "/phpinfo-server"):
+[8287d6dd-810a-497a-b1f8-73e94178b90e]   
+[61e87b30-501c-4922-b8ba-628f359ece0e] Started GET "/phpinfo-server.php" for 185.177.72.56 at 2026-03-08 14:11:37 +0000
+[61e87b30-501c-4922-b8ba-628f359ece0e]   
+[61e87b30-501c-4922-b8ba-628f359ece0e] ActionController::RoutingError (No route matches [GET] "/phpinfo-server.php"):
+[61e87b30-501c-4922-b8ba-628f359ece0e]   
+[d8ebfe5a-22c0-4c19-8884-2edec4901a65] Started GET "/phpinfo.srv" for 185.177.72.56 at 2026-03-08 14:11:38 +0000
+[d8ebfe5a-22c0-4c19-8884-2edec4901a65]   
+[d8ebfe5a-22c0-4c19-8884-2edec4901a65] ActionController::RoutingError (No route matches [GET] "/phpinfo.srv"):
+[d8ebfe5a-22c0-4c19-8884-2edec4901a65]   
+[0dc1ffde-8f64-4d2b-aa41-f90639dd918b] Started GET "/phpinfo-api" for 185.177.72.56 at 2026-03-08 14:11:38 +0000
+[0dc1ffde-8f64-4d2b-aa41-f90639dd918b]   
+[0dc1ffde-8f64-4d2b-aa41-f90639dd918b] ActionController::RoutingError (No route matches [GET] "/phpinfo-api"):
+[0dc1ffde-8f64-4d2b-aa41-f90639dd918b]   
+[677d4ce9-8659-4d2d-9644-d6907aa06cb1] Started GET "/phpinfoapi" for 185.177.72.56 at 2026-03-08 14:11:38 +0000
+[677d4ce9-8659-4d2d-9644-d6907aa06cb1]   
+[677d4ce9-8659-4d2d-9644-d6907aa06cb1] ActionController::RoutingError (No route matches [GET] "/phpinfoapi"):
+[677d4ce9-8659-4d2d-9644-d6907aa06cb1]   
+[125f5a2c-761c-4ed2-bd41-672f1444d531] Started GET "/phpinfo_details.php" for 185.177.72.56 at 2026-03-08 14:11:38 +0000
+[125f5a2c-761c-4ed2-bd41-672f1444d531]   
+[125f5a2c-761c-4ed2-bd41-672f1444d531] ActionController::RoutingError (No route matches [GET] "/phpinfo_details.php"):
+[125f5a2c-761c-4ed2-bd41-672f1444d531]   
+[e0a4e7b6-9ef4-4c63-b201-3a9dba34f734] Started GET "/phpinfo_details" for 185.177.72.56 at 2026-03-08 14:11:38 +0000
+[e0a4e7b6-9ef4-4c63-b201-3a9dba34f734]   
+[e0a4e7b6-9ef4-4c63-b201-3a9dba34f734] ActionController::RoutingError (No route matches [GET] "/phpinfo_details"):
+[e0a4e7b6-9ef4-4c63-b201-3a9dba34f734]   
+[10ee4531-d2ec-48e5-98eb-5fcdc7e0c8ab] Started GET "/phpinfomolten.php" for 185.177.72.56 at 2026-03-08 14:11:38 +0000
+[10ee4531-d2ec-48e5-98eb-5fcdc7e0c8ab]   
+[10ee4531-d2ec-48e5-98eb-5fcdc7e0c8ab] ActionController::RoutingError (No route matches [GET] "/phpinfomolten.php"):
+[10ee4531-d2ec-48e5-98eb-5fcdc7e0c8ab]   
+[a087c062-0db1-401f-8ade-b0dbfa6a8da8] Started GET "/phpinfodev" for 185.177.72.56 at 2026-03-08 14:11:39 +0000
+[a087c062-0db1-401f-8ade-b0dbfa6a8da8]   
+[a087c062-0db1-401f-8ade-b0dbfa6a8da8] ActionController::RoutingError (No route matches [GET] "/phpinfodev"):
+[a087c062-0db1-401f-8ade-b0dbfa6a8da8]   
+[6f95147b-1b99-4ead-b9ad-ca3cb5906766] Started GET "/shop/phpinfo.php" for 185.177.72.56 at 2026-03-08 14:11:39 +0000
+[6f95147b-1b99-4ead-b9ad-ca3cb5906766]   
+[6f95147b-1b99-4ead-b9ad-ca3cb5906766] ActionController::RoutingError (No route matches [GET] "/shop/phpinfo.php"):
+[6f95147b-1b99-4ead-b9ad-ca3cb5906766]   
+[72afbae5-40fe-492d-89e9-74a08bda90b6] Started GET "/bitrix/admin/phpinfo.php" for 185.177.72.56 at 2026-03-08 14:11:39 +0000
+[72afbae5-40fe-492d-89e9-74a08bda90b6]   
+[72afbae5-40fe-492d-89e9-74a08bda90b6] ActionController::RoutingError (No route matches [GET] "/bitrix/admin/phpinfo.php"):
+[72afbae5-40fe-492d-89e9-74a08bda90b6]   
+[062e34b2-5c9a-4c94-a873-bb7816e2ae10] Started GET "/mambo/administrator/phpinfo.php" for 185.177.72.56 at 2026-03-08 14:11:39 +0000
+[062e34b2-5c9a-4c94-a873-bb7816e2ae10]   
+[062e34b2-5c9a-4c94-a873-bb7816e2ae10] ActionController::RoutingError (No route matches [GET] "/mambo/administrator/phpinfo.php"):
+[062e34b2-5c9a-4c94-a873-bb7816e2ae10]   
+[81a0f195-e493-44ac-abe0-2106de6a4313] Started GET "/lib/zend/tool/framework/system/provider/phpinfo.php" for 185.177.72.56 at 2026-03-08 14:11:39 +0000
+[81a0f195-e493-44ac-abe0-2106de6a4313]   
+[81a0f195-e493-44ac-abe0-2106de6a4313] ActionController::RoutingError (No route matches [GET] "/lib/zend/tool/framework/system/provider/phpinfo.php"):
+[81a0f195-e493-44ac-abe0-2106de6a4313]   
+[d3a7b5d8-81c6-4ad5-be8b-4b2d75eb2d6d] Started GET "/wp-content/plugins/phpinfo" for 185.177.72.56 at 2026-03-08 14:11:40 +0000
+[d3a7b5d8-81c6-4ad5-be8b-4b2d75eb2d6d]   
+[d3a7b5d8-81c6-4ad5-be8b-4b2d75eb2d6d] ActionController::RoutingError (No route matches [GET] "/wp-content/plugins/phpinfo"):
+[d3a7b5d8-81c6-4ad5-be8b-4b2d75eb2d6d]   
+[1ac42a3d-c758-4894-8037-3fa1a92ec2da] Started GET "/wp-content/.git/config" for 185.177.72.56 at 2026-03-08 14:11:40 +0000
+[1ac42a3d-c758-4894-8037-3fa1a92ec2da]   
+[1ac42a3d-c758-4894-8037-3fa1a92ec2da] ActionController::RoutingError (No route matches [GET] "/wp-content/.git/config"):
+[1ac42a3d-c758-4894-8037-3fa1a92ec2da]   
+[aa6e93a3-8e94-4aab-94bc-6ec98a3cc6db] Started GET "/blog/wp-content/themes/.git/config" for 185.177.72.56 at 2026-03-08 14:11:40 +0000
+[aa6e93a3-8e94-4aab-94bc-6ec98a3cc6db]   
+[aa6e93a3-8e94-4aab-94bc-6ec98a3cc6db] ActionController::RoutingError (No route matches [GET] "/blog/wp-content/themes/.git/config"):
+[aa6e93a3-8e94-4aab-94bc-6ec98a3cc6db]   
+[17662d96-63e2-411f-a3cf-aa9ff8150c28] Started GET "/wp-content/themes/.git/config" for 185.177.72.56 at 2026-03-08 14:11:40 +0000
+[17662d96-63e2-411f-a3cf-aa9ff8150c28]   
+[17662d96-63e2-411f-a3cf-aa9ff8150c28] ActionController::RoutingError (No route matches [GET] "/wp-content/themes/.git/config"):
+[17662d96-63e2-411f-a3cf-aa9ff8150c28]   
+[4fa2cce8-c7c0-4051-b745-f96c497da388] Started GET "/wp-content/plugins/.git/config" for 185.177.72.56 at 2026-03-08 14:11:40 +0000
+[4fa2cce8-c7c0-4051-b745-f96c497da388]   
+[4fa2cce8-c7c0-4051-b745-f96c497da388] ActionController::RoutingError (No route matches [GET] "/wp-content/plugins/.git/config"):
+[4fa2cce8-c7c0-4051-b745-f96c497da388]   
+[86adc3fe-136a-4e6c-a9e4-813fe49f17b9]   
+[86adc3fe-136a-4e6c-a9e4-813fe49f17b9] ActionController::RoutingError (No route matches [GET] "/wp-content/dump.sql"):
+[86adc3fe-136a-4e6c-a9e4-813fe49f17b9]   
+[8cae8695-9803-46cf-84c8-9669f66c1df8] Started GET "/wp-content/uploads/db.sql" for 185.177.72.56 at 2026-03-08 14:11:41 +0000
+[8cae8695-9803-46cf-84c8-9669f66c1df8]   
+[8cae8695-9803-46cf-84c8-9669f66c1df8] ActionController::RoutingError (No route matches [GET] "/wp-content/uploads/db.sql"):
+[8cae8695-9803-46cf-84c8-9669f66c1df8]   
+[53ebb1d5-0d40-410d-8460-c8483d7f5c52] Started GET "/wp-content/uploads/mysql.sql" for 185.177.72.56 at 2026-03-08 14:11:41 +0000
+[1358245a-5202-430f-a739-7785e91dddbf] Started GET "/wp-content/db.sql" for 185.177.72.56 at 2026-03-08 14:11:41 +0000
+[1358245a-5202-430f-a739-7785e91dddbf]   
+[1358245a-5202-430f-a739-7785e91dddbf] ActionController::RoutingError (No route matches [GET] "/wp-content/db.sql"):
+[1358245a-5202-430f-a739-7785e91dddbf]   
+[fe6c191e-3588-4ae0-ade0-9d55dc7b462e] Started GET "/wp-content/mysql.sql" for 185.177.72.56 at 2026-03-08 14:11:41 +0000
+[fe6c191e-3588-4ae0-ade0-9d55dc7b462e]   
+[fe6c191e-3588-4ae0-ade0-9d55dc7b462e] ActionController::RoutingError (No route matches [GET] "/wp-content/mysql.sql"):
+[fe6c191e-3588-4ae0-ade0-9d55dc7b462e]   
+[86adc3fe-136a-4e6c-a9e4-813fe49f17b9] Started GET "/wp-content/dump.sql" for 185.177.72.56 at 2026-03-08 14:11:41 +0000
+[53ebb1d5-0d40-410d-8460-c8483d7f5c52]   
+[53ebb1d5-0d40-410d-8460-c8483d7f5c52] ActionController::RoutingError (No route matches [GET] "/wp-content/uploads/mysql.sql"):
+[53ebb1d5-0d40-410d-8460-c8483d7f5c52]   
+[ec1bc436-6713-4598-8abb-b7a103fea2f8] Started GET "/wp-content/backup/db.sql" for 185.177.72.56 at 2026-03-08 14:11:41 +0000
+[ec1bc436-6713-4598-8abb-b7a103fea2f8]   
+[ec1bc436-6713-4598-8abb-b7a103fea2f8] ActionController::RoutingError (No route matches [GET] "/wp-content/backup/db.sql"):
+[ec1bc436-6713-4598-8abb-b7a103fea2f8]   
+[5152b894-be25-4b47-bb3f-51f8faf2046c] Started GET "/wp-content/backups/db.sql" for 185.177.72.56 at 2026-03-08 14:11:42 +0000
+[5152b894-be25-4b47-bb3f-51f8faf2046c]   
+[5152b894-be25-4b47-bb3f-51f8faf2046c] ActionController::RoutingError (No route matches [GET] "/wp-content/backups/db.sql"):
+[5152b894-be25-4b47-bb3f-51f8faf2046c]   
+[12f3e479-88dd-4117-b6ef-da8052f9ab92] Started GET "/wp-content/db_backup.sql" for 185.177.72.56 at 2026-03-08 14:11:42 +0000
+[12f3e479-88dd-4117-b6ef-da8052f9ab92]   
+[12f3e479-88dd-4117-b6ef-da8052f9ab92] ActionController::RoutingError (No route matches [GET] "/wp-content/db_backup.sql"):
+[12f3e479-88dd-4117-b6ef-da8052f9ab92]   
+[9fcddd10-f95c-4510-87cb-7d6e20fe7261] Started GET "/wp-content/uploads/db_backup.sql" for 185.177.72.56 at 2026-03-08 14:11:42 +0000
+[9fcddd10-f95c-4510-87cb-7d6e20fe7261]   
+[9fcddd10-f95c-4510-87cb-7d6e20fe7261] ActionController::RoutingError (No route matches [GET] "/wp-content/uploads/db_backup.sql"):
+[9fcddd10-f95c-4510-87cb-7d6e20fe7261]   
+[2604f190-1103-4720-b8b3-dc7bc003231f] Started GET "/wp-content/backup/db_backup.sql" for 185.177.72.56 at 2026-03-08 14:11:42 +0000
+[2604f190-1103-4720-b8b3-dc7bc003231f]   
+[2604f190-1103-4720-b8b3-dc7bc003231f] ActionController::RoutingError (No route matches [GET] "/wp-content/backup/db_backup.sql"):
+[2604f190-1103-4720-b8b3-dc7bc003231f]   
+[2e345a40-8c06-42a5-86e9-6e66fa48ea6a] Started GET "/wp-content/fullbackup.sql" for 185.177.72.56 at 2026-03-08 14:11:42 +0000
+[2e345a40-8c06-42a5-86e9-6e66fa48ea6a]   
+[2e345a40-8c06-42a5-86e9-6e66fa48ea6a] ActionController::RoutingError (No route matches [GET] "/wp-content/fullbackup.sql"):
+[2e345a40-8c06-42a5-86e9-6e66fa48ea6a]   
+[4e675a7d-b338-4647-98bf-59019d8214db] Started GET "/wp-content/fullwebsite.sql" for 185.177.72.56 at 2026-03-08 14:11:43 +0000
+[4e675a7d-b338-4647-98bf-59019d8214db]   
+[4e675a7d-b338-4647-98bf-59019d8214db] ActionController::RoutingError (No route matches [GET] "/wp-content/fullwebsite.sql"):
+[4e675a7d-b338-4647-98bf-59019d8214db]   
+[7c7b21b4-c189-4458-bcea-ff36b37b0c2d] Started GET "/wp-content/data.sql" for 185.177.72.56 at 2026-03-08 14:11:43 +0000
+[7c7b21b4-c189-4458-bcea-ff36b37b0c2d]   
+[7c7b21b4-c189-4458-bcea-ff36b37b0c2d] ActionController::RoutingError (No route matches [GET] "/wp-content/data.sql"):
+[7c7b21b4-c189-4458-bcea-ff36b37b0c2d]   
+[6a961d93-1680-49d1-b021-5039db345fca] Started GET "/wp-content/backup/data.sql" for 185.177.72.56 at 2026-03-08 14:11:43 +0000
+[6a961d93-1680-49d1-b021-5039db345fca]   
+[6a961d93-1680-49d1-b021-5039db345fca] ActionController::RoutingError (No route matches [GET] "/wp-content/backup/data.sql"):
+[6a961d93-1680-49d1-b021-5039db345fca]   
+[4b9ca9e9-0821-41ec-994e-70ebdcbc3d55] Started GET "/wp-content/uploads/data.sql" for 185.177.72.56 at 2026-03-08 14:11:43 +0000
+[4b9ca9e9-0821-41ec-994e-70ebdcbc3d55]   
+[4b9ca9e9-0821-41ec-994e-70ebdcbc3d55] ActionController::RoutingError (No route matches [GET] "/wp-content/uploads/data.sql"):
+[4b9ca9e9-0821-41ec-994e-70ebdcbc3d55]   
+[69533d94-5be1-4bd1-814f-7d22749b3646] Started GET "/wp-content/backups/data.sql" for 185.177.72.56 at 2026-03-08 14:11:43 +0000
+[69533d94-5be1-4bd1-814f-7d22749b3646]   
+[69533d94-5be1-4bd1-814f-7d22749b3646] ActionController::RoutingError (No route matches [GET] "/wp-content/backups/data.sql"):
+[69533d94-5be1-4bd1-814f-7d22749b3646]   
+[d31572e5-2429-4166-afb1-fe8335154fb0] Started GET "/wp-content/backup/database.sql" for 185.177.72.56 at 2026-03-08 14:11:43 +0000
+[d31572e5-2429-4166-afb1-fe8335154fb0]   
+[d31572e5-2429-4166-afb1-fe8335154fb0] ActionController::RoutingError (No route matches [GET] "/wp-content/backup/database.sql"):
+[d31572e5-2429-4166-afb1-fe8335154fb0]   
+[94901340-eaa3-428d-b128-f5f2aecf940b] Started GET "/wp-content/backups/database.sql" for 185.177.72.56 at 2026-03-08 14:11:44 +0000
+[94901340-eaa3-428d-b128-f5f2aecf940b]   
+[94901340-eaa3-428d-b128-f5f2aecf940b] ActionController::RoutingError (No route matches [GET] "/wp-content/backups/database.sql"):
+[94901340-eaa3-428d-b128-f5f2aecf940b]   
+[a97f356f-0352-4fdf-a22d-4f76fd058a9f] Started GET "/wp-content/wordpress.sql" for 185.177.72.56 at 2026-03-08 14:11:44 +0000
+[a97f356f-0352-4fdf-a22d-4f76fd058a9f]   
+[a97f356f-0352-4fdf-a22d-4f76fd058a9f] ActionController::RoutingError (No route matches [GET] "/wp-content/wordpress.sql"):
+[a97f356f-0352-4fdf-a22d-4f76fd058a9f]   
+[2fbc568c-4129-417a-8a22-0d36bf9b8785] Started GET "/wp-content/backups/wordpress.sql" for 185.177.72.56 at 2026-03-08 14:11:44 +0000
+[2fbc568c-4129-417a-8a22-0d36bf9b8785]   
+[2fbc568c-4129-417a-8a22-0d36bf9b8785] ActionController::RoutingError (No route matches [GET] "/wp-content/backups/wordpress.sql"):
+[2fbc568c-4129-417a-8a22-0d36bf9b8785]   
+[58f50f97-93c4-4aaf-a954-841160d702bd] Started GET "/wp-content/dbdump.sql" for 185.177.72.56 at 2026-03-08 14:11:44 +0000
+[58f50f97-93c4-4aaf-a954-841160d702bd]   
+[58f50f97-93c4-4aaf-a954-841160d702bd] ActionController::RoutingError (No route matches [GET] "/wp-content/dbdump.sql"):
+[58f50f97-93c4-4aaf-a954-841160d702bd]   
+[2437623b-1fc9-467f-bed2-e4ed2ddf1d15] Started GET "/wp-content/uploads/dbdump.sql" for 185.177.72.56 at 2026-03-08 14:11:44 +0000
+[2437623b-1fc9-467f-bed2-e4ed2ddf1d15]   
+[2437623b-1fc9-467f-bed2-e4ed2ddf1d15] ActionController::RoutingError (No route matches [GET] "/wp-content/uploads/dbdump.sql"):
+[2437623b-1fc9-467f-bed2-e4ed2ddf1d15]   
+[d5457927-cedd-4dbd-a09c-cadce3463e07] Started GET "/wp-content/backups/dbdump.sql" for 185.177.72.56 at 2026-03-08 14:11:45 +0000
+[d5457927-cedd-4dbd-a09c-cadce3463e07]   
+[d5457927-cedd-4dbd-a09c-cadce3463e07] ActionController::RoutingError (No route matches [GET] "/wp-content/backups/dbdump.sql"):
+[d5457927-cedd-4dbd-a09c-cadce3463e07]   
+[45e75113-5179-4e74-a385-8a0f3357c315] Started GET "/wp-content/backup/dbdump.sql" for 185.177.72.56 at 2026-03-08 14:11:45 +0000
+[45e75113-5179-4e74-a385-8a0f3357c315]   
+[45e75113-5179-4e74-a385-8a0f3357c315] ActionController::RoutingError (No route matches [GET] "/wp-content/backup/dbdump.sql"):
+[45e75113-5179-4e74-a385-8a0f3357c315]   
+[222e155d-f64e-44b9-9344-dfed2f2774b7] Started GET "/wp-config.bak" for 185.177.72.56 at 2026-03-08 14:11:45 +0000
+[222e155d-f64e-44b9-9344-dfed2f2774b7]   
+[222e155d-f64e-44b9-9344-dfed2f2774b7] ActionController::RoutingError (No route matches [GET] "/wp-config.bak"):
+[222e155d-f64e-44b9-9344-dfed2f2774b7]   
+[82bbe181-f474-4097-8584-a66aa6904e1e] Started GET "/wp-config-sample.php.bak" for 185.177.72.56 at 2026-03-08 14:11:45 +0000
+[82bbe181-f474-4097-8584-a66aa6904e1e]   
+[82bbe181-f474-4097-8584-a66aa6904e1e] ActionController::RoutingError (No route matches [GET] "/wp-config-sample.php.bak"):
+[82bbe181-f474-4097-8584-a66aa6904e1e]   
+[a24e8e51-577a-4ade-9dd7-e2b7f1dfda17] Started GET "/wp-config.php.bak1" for 185.177.72.56 at 2026-03-08 14:11:45 +0000
+[a24e8e51-577a-4ade-9dd7-e2b7f1dfda17]   
+[a24e8e51-577a-4ade-9dd7-e2b7f1dfda17] ActionController::RoutingError (No route matches [GET] "/wp-config.php.bak1"):
+[a24e8e51-577a-4ade-9dd7-e2b7f1dfda17]   
+[2667672f-dbf5-4565-a23c-65f940cf7cc5] Started GET "/wp-config.bak1" for 185.177.72.56 at 2026-03-08 14:11:45 +0000
+[2667672f-dbf5-4565-a23c-65f940cf7cc5]   
+[2667672f-dbf5-4565-a23c-65f940cf7cc5] ActionController::RoutingError (No route matches [GET] "/wp-config.bak1"):
+[2667672f-dbf5-4565-a23c-65f940cf7cc5]   
+[fd443067-8eec-4221-85f0-b16ed59576ce] Started GET "/config.inc.php.bak" for 185.177.72.56 at 2026-03-08 14:11:46 +0000
+[fd443067-8eec-4221-85f0-b16ed59576ce]   
+[fd443067-8eec-4221-85f0-b16ed59576ce] ActionController::RoutingError (No route matches [GET] "/config.inc.php.bak"):
+[fd443067-8eec-4221-85f0-b16ed59576ce]   
+[907b6653-301b-446e-9e69-a856403dac0f] Started GET "/connect.php.bak" for 185.177.72.56 at 2026-03-08 14:11:46 +0000
+[907b6653-301b-446e-9e69-a856403dac0f]   
+[907b6653-301b-446e-9e69-a856403dac0f] ActionController::RoutingError (No route matches [GET] "/connect.php.bak"):
+[907b6653-301b-446e-9e69-a856403dac0f]   
+[a6bcc2b6-102a-4587-ae9f-21980312a8be] Started GET "/connection.php.bak" for 185.177.72.56 at 2026-03-08 14:11:46 +0000
+[a6bcc2b6-102a-4587-ae9f-21980312a8be]   
+[a6bcc2b6-102a-4587-ae9f-21980312a8be] ActionController::RoutingError (No route matches [GET] "/connection.php.bak"):
+[a6bcc2b6-102a-4587-ae9f-21980312a8be]   
+[a3f5ab48-281c-444b-9343-3370be44989b] Started GET "/conn.php.bak" for 185.177.72.56 at 2026-03-08 14:11:46 +0000
+[a3f5ab48-281c-444b-9343-3370be44989b]   
+[a3f5ab48-281c-444b-9343-3370be44989b] ActionController::RoutingError (No route matches [GET] "/conn.php.bak"):
+[a3f5ab48-281c-444b-9343-3370be44989b]   
+[69d8ffa8-9e88-4024-8b57-334eb0068bce] Started GET "/conn.asp.bak" for 185.177.72.56 at 2026-03-08 14:11:46 +0000
+[69d8ffa8-9e88-4024-8b57-334eb0068bce]   
+[69d8ffa8-9e88-4024-8b57-334eb0068bce] ActionController::RoutingError (No route matches [GET] "/conn.asp.bak"):
+[69d8ffa8-9e88-4024-8b57-334eb0068bce]   
+[f48fa079-b7b7-48f1-91a7-88481282b213] Started GET "/connection.asp.bak" for 185.177.72.56 at 2026-03-08 14:11:47 +0000
+[f48fa079-b7b7-48f1-91a7-88481282b213]   
+[f48fa079-b7b7-48f1-91a7-88481282b213] ActionController::RoutingError (No route matches [GET] "/connection.asp.bak"):
+[f48fa079-b7b7-48f1-91a7-88481282b213]   
+[bac030a0-c59a-4c3c-8738-39d69913202b] Started GET "/config.jsp.bak" for 185.177.72.56 at 2026-03-08 14:11:47 +0000
+[bac030a0-c59a-4c3c-8738-39d69913202b]   
+[bac030a0-c59a-4c3c-8738-39d69913202b] ActionController::RoutingError (No route matches [GET] "/config.jsp.bak"):
+[bac030a0-c59a-4c3c-8738-39d69913202b]   
+[edcd7031-5ae4-4160-9ac0-4fdb954ef8c3] Started GET "/config.ini.bak" for 185.177.72.56 at 2026-03-08 14:11:47 +0000
+[edcd7031-5ae4-4160-9ac0-4fdb954ef8c3]   
+[edcd7031-5ae4-4160-9ac0-4fdb954ef8c3] ActionController::RoutingError (No route matches [GET] "/config.ini.bak"):
+[edcd7031-5ae4-4160-9ac0-4fdb954ef8c3]   
+[aa1cbf70-203e-4ca6-bad1-e171c753f30c] Started GET "/config/config.inc.php.bak" for 185.177.72.56 at 2026-03-08 14:11:47 +0000
+[aa1cbf70-203e-4ca6-bad1-e171c753f30c]   
+[aa1cbf70-203e-4ca6-bad1-e171c753f30c] ActionController::RoutingError (No route matches [GET] "/config/config.inc.php.bak"):
+[aa1cbf70-203e-4ca6-bad1-e171c753f30c]   
+[c060275c-070f-4a2f-a74d-04e11921d9ac] Started GET "/config/config_ucenter.php.bak" for 185.177.72.56 at 2026-03-08 14:11:47 +0000
+[c060275c-070f-4a2f-a74d-04e11921d9ac]   
+[c060275c-070f-4a2f-a74d-04e11921d9ac] ActionController::RoutingError (No route matches [GET] "/config/config_ucenter.php.bak"):
+[c060275c-070f-4a2f-a74d-04e11921d9ac]   
+[616e4968-b93e-47b9-947e-2c75cc22e307] Started GET "/config/config_global.php.bak" for 185.177.72.56 at 2026-03-08 14:11:47 +0000
+[616e4968-b93e-47b9-947e-2c75cc22e307]   
+[616e4968-b93e-47b9-947e-2c75cc22e307] ActionController::RoutingError (No route matches [GET] "/config/config_global.php.bak"):
+[616e4968-b93e-47b9-947e-2c75cc22e307]   
+[e5abfd0a-1fbd-4f25-8d20-dc2ff2cb906f] Started GET "/bitrix/php_interface/dbconn.php.bak" for 185.177.72.56 at 2026-03-08 14:11:48 +0000
+[e5abfd0a-1fbd-4f25-8d20-dc2ff2cb906f]   
+[e5abfd0a-1fbd-4f25-8d20-dc2ff2cb906f] ActionController::RoutingError (No route matches [GET] "/bitrix/php_interface/dbconn.php.bak"):
+[e5abfd0a-1fbd-4f25-8d20-dc2ff2cb906f]   
+[a7208c0f-f595-4a88-9352-87976f6812f4] Started GET "/uc_server/data/config.inc.php.bak" for 185.177.72.56 at 2026-03-08 14:11:48 +0000
+[a7208c0f-f595-4a88-9352-87976f6812f4]   
+[a7208c0f-f595-4a88-9352-87976f6812f4] ActionController::RoutingError (No route matches [GET] "/uc_server/data/config.inc.php.bak"):
+[a7208c0f-f595-4a88-9352-87976f6812f4]   
+[b48915c6-55ac-440e-9afa-3462420dd758] Started GET "/data/config.inc.php.bak" for 185.177.72.56 at 2026-03-08 14:11:48 +0000
+[b48915c6-55ac-440e-9afa-3462420dd758]   
+[b48915c6-55ac-440e-9afa-3462420dd758] ActionController::RoutingError (No route matches [GET] "/data/config.inc.php.bak"):
+[b48915c6-55ac-440e-9afa-3462420dd758]   
+[203f58b5-e1e4-4f29-8c48-cd228a02221e] Started GET "/var/debug.log" for 185.177.72.56 at 2026-03-08 14:11:48 +0000
+[203f58b5-e1e4-4f29-8c48-cd228a02221e]   
+[203f58b5-e1e4-4f29-8c48-cd228a02221e] ActionController::RoutingError (No route matches [GET] "/var/debug.log"):
+[203f58b5-e1e4-4f29-8c48-cd228a02221e]   
+[9f373f70-23f0-4dd4-be97-8d6b2790f8b0] Started GET "/content/debug.log" for 185.177.72.56 at 2026-03-08 14:11:48 +0000
+[9f373f70-23f0-4dd4-be97-8d6b2790f8b0]   
+[9f373f70-23f0-4dd4-be97-8d6b2790f8b0] ActionController::RoutingError (No route matches [GET] "/content/debug.log"):
+[9f373f70-23f0-4dd4-be97-8d6b2790f8b0]   
+[4868a768-d463-47c8-953f-6993c0e1f88a] Started GET "/npm-debug.log" for 185.177.72.56 at 2026-03-08 14:11:49 +0000
+[4868a768-d463-47c8-953f-6993c0e1f88a]   
+[4868a768-d463-47c8-953f-6993c0e1f88a] ActionController::RoutingError (No route matches [GET] "/npm-debug.log"):
+[4868a768-d463-47c8-953f-6993c0e1f88a]   
+[565ce0e3-a818-44d7-8ccf-3039fa9d4578] Started GET "/yarn-debug.log" for 185.177.72.56 at 2026-03-08 14:11:49 +0000
+[565ce0e3-a818-44d7-8ccf-3039fa9d4578]   
+[565ce0e3-a818-44d7-8ccf-3039fa9d4578] ActionController::RoutingError (No route matches [GET] "/yarn-debug.log"):
+[565ce0e3-a818-44d7-8ccf-3039fa9d4578]   
+[3726d681-2053-4201-af83-96606fdd0ab6] Started GET "/firebase-debug.log" for 185.177.72.56 at 2026-03-08 14:11:49 +0000
+[52920535-2801-4416-8dcf-c9b727ab5380] ActionController::RoutingError (No route matches [GET] "/debug.txt"):
+[52920535-2801-4416-8dcf-c9b727ab5380]   
+[7ea87fc3-9aef-47ef-ab78-5ac26180b359] Started GET "/debug.txt.gz" for 185.177.72.56 at 2026-03-08 14:11:49 +0000
+[7ea87fc3-9aef-47ef-ab78-5ac26180b359]   
+[7ea87fc3-9aef-47ef-ab78-5ac26180b359] ActionController::RoutingError (No route matches [GET] "/debug.txt.gz"):
+[7ea87fc3-9aef-47ef-ab78-5ac26180b359]   
+[8392e20b-ec0a-4b2d-b950-279c8024a609] Started GET "/debug.tar.gz" for 185.177.72.56 at 2026-03-08 14:11:49 +0000
+[8392e20b-ec0a-4b2d-b950-279c8024a609]   
+[8392e20b-ec0a-4b2d-b950-279c8024a609] ActionController::RoutingError (No route matches [GET] "/debug.tar.gz"):
+[8392e20b-ec0a-4b2d-b950-279c8024a609]   
+[d6cb9bd6-445e-4f0e-9440-400bc649fee9] Started GET "/debug.zip" for 185.177.72.56 at 2026-03-08 14:11:50 +0000
+[d6cb9bd6-445e-4f0e-9440-400bc649fee9]   
+[d6cb9bd6-445e-4f0e-9440-400bc649fee9] ActionController::RoutingError (No route matches [GET] "/debug.zip"):
+[3726d681-2053-4201-af83-96606fdd0ab6]   
+[3726d681-2053-4201-af83-96606fdd0ab6] ActionController::RoutingError (No route matches [GET] "/firebase-debug.log"):
+[3726d681-2053-4201-af83-96606fdd0ab6]   
+[52920535-2801-4416-8dcf-c9b727ab5380] Started GET "/debug.txt" for 185.177.72.56 at 2026-03-08 14:11:49 +0000
+[52920535-2801-4416-8dcf-c9b727ab5380]   
+[d6cb9bd6-445e-4f0e-9440-400bc649fee9]   
+[26d0d7b5-3bd8-4ab0-b74f-587d6fddcedc] Started GET "/debug.sql" for 185.177.72.56 at 2026-03-08 14:11:50 +0000
+[26d0d7b5-3bd8-4ab0-b74f-587d6fddcedc]   
+[26d0d7b5-3bd8-4ab0-b74f-587d6fddcedc] ActionController::RoutingError (No route matches [GET] "/debug.sql"):
+[26d0d7b5-3bd8-4ab0-b74f-587d6fddcedc]   
+[72590ef5-3c3e-4281-9fe3-bd05b090f39c] Started GET "/debug.sql.tar.gz" for 185.177.72.56 at 2026-03-08 14:11:50 +0000
+[72590ef5-3c3e-4281-9fe3-bd05b090f39c]   
+[72590ef5-3c3e-4281-9fe3-bd05b090f39c] ActionController::RoutingError (No route matches [GET] "/debug.sql.tar.gz"):
+[72590ef5-3c3e-4281-9fe3-bd05b090f39c]   
+[80fe2e22-a7e3-4fa8-84ca-e9a03b00bb5a] Started GET "/debug.sql.zip" for 185.177.72.56 at 2026-03-08 14:11:50 +0000
+[80fe2e22-a7e3-4fa8-84ca-e9a03b00bb5a]   
+[80fe2e22-a7e3-4fa8-84ca-e9a03b00bb5a] ActionController::RoutingError (No route matches [GET] "/debug.sql.zip"):
+[80fe2e22-a7e3-4fa8-84ca-e9a03b00bb5a]   
+[a1127d64-b523-4c20-805c-a05cbf854e00] Started GET "/mysql_debug.sql" for 185.177.72.56 at 2026-03-08 14:11:50 +0000
+[a1127d64-b523-4c20-805c-a05cbf854e00]   
+[a1127d64-b523-4c20-805c-a05cbf854e00] ActionController::RoutingError (No route matches [GET] "/mysql_debug.sql"):
+[a1127d64-b523-4c20-805c-a05cbf854e00]   
+[2372bed1-4d0b-448f-9a3a-7f6cab47dedf] Started GET "/root/.aws/credentials" for 185.177.72.56 at 2026-03-08 14:11:50 +0000
+[2372bed1-4d0b-448f-9a3a-7f6cab47dedf]   
+[2372bed1-4d0b-448f-9a3a-7f6cab47dedf] ActionController::RoutingError (No route matches [GET] "/root/.aws/credentials"):
+[2372bed1-4d0b-448f-9a3a-7f6cab47dedf]   
+[78a5dbf3-4673-49fe-ad53-07ec2518f17f] Started GET "/.aws/secret_access_key.txt" for 185.177.72.56 at 2026-03-08 14:11:51 +0000
+[78a5dbf3-4673-49fe-ad53-07ec2518f17f]   
+[78a5dbf3-4673-49fe-ad53-07ec2518f17f] ActionController::RoutingError (No route matches [GET] "/.aws/secret_access_key.txt"):
+[78a5dbf3-4673-49fe-ad53-07ec2518f17f]   
+[8d019dcf-733e-4915-9050-53df5d8faa3b] Started GET "/.aws/s3/config.json" for 185.177.72.56 at 2026-03-08 14:11:51 +0000
+[8d019dcf-733e-4915-9050-53df5d8faa3b]   
+[8d019dcf-733e-4915-9050-53df5d8faa3b] ActionController::RoutingError (No route matches [GET] "/.aws/s3/config.json"):
+[8d019dcf-733e-4915-9050-53df5d8faa3b]   
+[3685cce7-d538-4dfc-ae33-72d079eb3c08] Started GET "/.aws/config.yaml" for 185.177.72.56 at 2026-03-08 14:11:51 +0000
+[3685cce7-d538-4dfc-ae33-72d079eb3c08]   
+[3685cce7-d538-4dfc-ae33-72d079eb3c08] ActionController::RoutingError (No route matches [GET] "/.aws/config.yaml"):
+[3685cce7-d538-4dfc-ae33-72d079eb3c08]   
+[e75f4bda-1180-468c-a11a-405a94d0a7be] Started GET "/.aws/secrets/" for 185.177.72.56 at 2026-03-08 14:11:51 +0000
+[e75f4bda-1180-468c-a11a-405a94d0a7be]   
+[78f3464c-40b7-432b-9972-cf74bfef50a7] Started GET "/config.json.bak" for 185.177.72.56 at 2026-03-08 14:11:52 +0000
+[78f3464c-40b7-432b-9972-cf74bfef50a7]   
+[78f3464c-40b7-432b-9972-cf74bfef50a7] ActionController::RoutingError (No route matches [GET] "/config.json.bak"):
+[e75f4bda-1180-468c-a11a-405a94d0a7be] ActionController::RoutingError (No route matches [GET] "/.aws/secrets"):
+[e75f4bda-1180-468c-a11a-405a94d0a7be]   
+[d76f5d53-e69d-4190-b158-ee311121f5b8] Started GET "/.aws/secretsmanager/" for 185.177.72.56 at 2026-03-08 14:11:51 +0000
+[d76f5d53-e69d-4190-b158-ee311121f5b8]   
+[d76f5d53-e69d-4190-b158-ee311121f5b8] ActionController::RoutingError (No route matches [GET] "/.aws/secretsmanager"):
+[d76f5d53-e69d-4190-b158-ee311121f5b8]   
+[59736e2c-e9d4-44ab-89e1-fc86d95c16b2] Started GET "/config.php.old" for 185.177.72.56 at 2026-03-08 14:11:52 +0000
+[59736e2c-e9d4-44ab-89e1-fc86d95c16b2]   
+[59736e2c-e9d4-44ab-89e1-fc86d95c16b2] ActionController::RoutingError (No route matches [GET] "/config.php.old"):
+[59736e2c-e9d4-44ab-89e1-fc86d95c16b2]   
+[5b359596-f9ec-4957-af5f-31daef41e851] Started GET "/config.inc.php" for 185.177.72.56 at 2026-03-08 14:11:52 +0000
+[5b359596-f9ec-4957-af5f-31daef41e851]   
+[5b359596-f9ec-4957-af5f-31daef41e851] ActionController::RoutingError (No route matches [GET] "/config.inc.php"):
+[5b359596-f9ec-4957-af5f-31daef41e851]   
+[78f3464c-40b7-432b-9972-cf74bfef50a7]   
+[5442623e-3b08-4891-ab1c-8c7494549a4c] Started GET "/config.yml" for 185.177.72.56 at 2026-03-08 14:11:52 +0000
+[5442623e-3b08-4891-ab1c-8c7494549a4c]   
+[5442623e-3b08-4891-ab1c-8c7494549a4c] ActionController::RoutingError (No route matches [GET] "/config.yml"):
+[5442623e-3b08-4891-ab1c-8c7494549a4c]   
+[5bc2830c-2fa9-4128-9493-f6e3af2092b7] Started GET "/config.js.bak" for 185.177.72.56 at 2026-03-08 14:11:52 +0000
+[5bc2830c-2fa9-4128-9493-f6e3af2092b7]   
+[5bc2830c-2fa9-4128-9493-f6e3af2092b7] ActionController::RoutingError (No route matches [GET] "/config.js.bak"):
+[5bc2830c-2fa9-4128-9493-f6e3af2092b7]   
+[d71ed169-19f6-45a7-8b8c-e4a768c2ad5e] Started GET "/config/settings.local.yml" for 185.177.72.56 at 2026-03-08 14:11:52 +0000
+[d71ed169-19f6-45a7-8b8c-e4a768c2ad5e]   
+[d71ed169-19f6-45a7-8b8c-e4a768c2ad5e] ActionController::RoutingError (No route matches [GET] "/config/settings.local.yml"):
+[d71ed169-19f6-45a7-8b8c-e4a768c2ad5e]   
+[fc5459ca-f05d-43e6-9670-ad17dd10052c] Started GET "/config.local" for 185.177.72.56 at 2026-03-08 14:11:53 +0000
+[fc5459ca-f05d-43e6-9670-ad17dd10052c]   
+[fc5459ca-f05d-43e6-9670-ad17dd10052c] ActionController::RoutingError (No route matches [GET] "/config.local"):
+[fc5459ca-f05d-43e6-9670-ad17dd10052c]   
+[751128fd-04f7-4d93-92fb-4fca386615ba] Started GET "/config.local.php_old" for 185.177.72.56 at 2026-03-08 14:11:53 +0000
+[751128fd-04f7-4d93-92fb-4fca386615ba]   
+[751128fd-04f7-4d93-92fb-4fca386615ba] ActionController::RoutingError (No route matches [GET] "/config.local.php_old"):
+[751128fd-04f7-4d93-92fb-4fca386615ba]   
+[63cd6c2a-a861-4e58-abf5-c4ce602b0939] Started GET "/config.inc" for 185.177.72.56 at 2026-03-08 14:11:53 +0000
+[63cd6c2a-a861-4e58-abf5-c4ce602b0939]   
+[63cd6c2a-a861-4e58-abf5-c4ce602b0939] ActionController::RoutingError (No route matches [GET] "/config.inc"):
+[63cd6c2a-a861-4e58-abf5-c4ce602b0939]   
+[4faa2d99-b295-47cd-b404-8cd3d3bcc4ac] Started GET "/config.properties" for 185.177.72.56 at 2026-03-08 14:11:53 +0000
+[4faa2d99-b295-47cd-b404-8cd3d3bcc4ac]   
+[4faa2d99-b295-47cd-b404-8cd3d3bcc4ac] ActionController::RoutingError (No route matches [GET] "/config.properties"):
+[4faa2d99-b295-47cd-b404-8cd3d3bcc4ac]   
+[329dcf08-152c-4be3-b89d-23dfc025f57a] Started GET "/appsettings.json" for 185.177.72.56 at 2026-03-08 14:11:53 +0000
+[329dcf08-152c-4be3-b89d-23dfc025f57a]   
+[329dcf08-152c-4be3-b89d-23dfc025f57a] ActionController::RoutingError (No route matches [GET] "/appsettings.json"):
+[329dcf08-152c-4be3-b89d-23dfc025f57a]   
+[fe5ccc26-6766-4ccd-af95-32a5b30e5816] Started GET "/connectionstrings.json" for 185.177.72.56 at 2026-03-08 14:11:54 +0000
+[fe5ccc26-6766-4ccd-af95-32a5b30e5816]   
+[fe5ccc26-6766-4ccd-af95-32a5b30e5816] ActionController::RoutingError (No route matches [GET] "/connectionstrings.json"):
+[fe5ccc26-6766-4ccd-af95-32a5b30e5816]   
+[988eb4ed-122a-482b-b58d-c3dcd915e41c] Started GET "/settings.php.bak" for 185.177.72.56 at 2026-03-08 14:11:54 +0000
+[988eb4ed-122a-482b-b58d-c3dcd915e41c]   
+[988eb4ed-122a-482b-b58d-c3dcd915e41c] ActionController::RoutingError (No route matches [GET] "/settings.php.bak"):
+[988eb4ed-122a-482b-b58d-c3dcd915e41c]   
+[00db90c8-6849-4699-81d1-44ea1aa16439] Started GET "/settings.php.old" for 185.177.72.56 at 2026-03-08 14:11:54 +0000
+[00db90c8-6849-4699-81d1-44ea1aa16439]   
+[00db90c8-6849-4699-81d1-44ea1aa16439] ActionController::RoutingError (No route matches [GET] "/settings.php.old"):
+[00db90c8-6849-4699-81d1-44ea1aa16439]   
+[cd2d86d4-284a-4694-b300-45573251fdf6] Started GET "/settings.php.save" for 185.177.72.56 at 2026-03-08 14:11:54 +0000
+[cd2d86d4-284a-4694-b300-45573251fdf6]   
+[cd2d86d4-284a-4694-b300-45573251fdf6] ActionController::RoutingError (No route matches [GET] "/settings.php.save"):
+[cd2d86d4-284a-4694-b300-45573251fdf6]   
+[e240f075-4744-42bc-a261-2fe499ec1034] Started GET "/app/config/parameters.yml" for 185.177.72.56 at 2026-03-08 14:11:54 +0000
+[e240f075-4744-42bc-a261-2fe499ec1034]   
+[e240f075-4744-42bc-a261-2fe499ec1034] ActionController::RoutingError (No route matches [GET] "/app/config/parameters.yml"):
+[e240f075-4744-42bc-a261-2fe499ec1034]   
+[ddc315a9-7471-447a-9c65-2620ccc43cbc] Started GET "/composer.json" for 185.177.72.56 at 2026-03-08 14:11:55 +0000
+[ddc315a9-7471-447a-9c65-2620ccc43cbc]   
+[ddc315a9-7471-447a-9c65-2620ccc43cbc] ActionController::RoutingError (No route matches [GET] "/composer.json"):
+[ddc315a9-7471-447a-9c65-2620ccc43cbc]   
+[109b1524-f445-4100-9381-21cc938bd163] Started GET "/package.json" for 185.177.72.56 at 2026-03-08 14:11:55 +0000
+[109b1524-f445-4100-9381-21cc938bd163]   
+[109b1524-f445-4100-9381-21cc938bd163] ActionController::RoutingError (No route matches [GET] "/package.json"):
+[109b1524-f445-4100-9381-21cc938bd163]   
+[9a002897-3e32-4aae-953e-d20f67cea379] Started GET "/debug.xml" for 185.177.72.56 at 2026-03-08 14:11:55 +0000
+[9a002897-3e32-4aae-953e-d20f67cea379]   
+[9a002897-3e32-4aae-953e-d20f67cea379] ActionController::RoutingError (No route matches [GET] "/debug.xml"):
+[9a002897-3e32-4aae-953e-d20f67cea379]   
+[76b7309b-9417-4821-95c5-835030e243be] ActionController::RoutingError (No route matches [GET] "/debug-output.txt"):
+[76b7309b-9417-4821-95c5-835030e243be]   
+[432b8d8b-de62-438d-8412-d6b366eb46e3] Started GET "/php.log" for 185.177.72.56 at 2026-03-08 14:11:55 +0000
+[432b8d8b-de62-438d-8412-d6b366eb46e3]   
+[432b8d8b-de62-438d-8412-d6b366eb46e3] ActionController::RoutingError (No route matches [GET] "/php.log"):
+[432b8d8b-de62-438d-8412-d6b366eb46e3]   
+[76b7309b-9417-4821-95c5-835030e243be] Started GET "/debug-output.txt" for 185.177.72.56 at 2026-03-08 14:11:55 +0000
+[76b7309b-9417-4821-95c5-835030e243be]   
+[2f18f811-038d-4f27-bbae-79f944b7f168] Started GET "/build.log" for 185.177.72.56 at 2026-03-08 14:11:55 +0000
+[2f18f811-038d-4f27-bbae-79f944b7f168]   
+[2f18f811-038d-4f27-bbae-79f944b7f168] ActionController::RoutingError (No route matches [GET] "/build.log"):
+[2f18f811-038d-4f27-bbae-79f944b7f168]   
+[6c853007-d513-4d8f-b824-881ec3b673f2] Started GET "/scripts/phpinfo.php" for 185.177.72.56 at 2026-03-08 14:11:56 +0000
+[6c853007-d513-4d8f-b824-881ec3b673f2]   
+[6c853007-d513-4d8f-b824-881ec3b673f2] ActionController::RoutingError (No route matches [GET] "/scripts/phpinfo.php"):
+[6c853007-d513-4d8f-b824-881ec3b673f2]   
+[1cc8df6a-7d0d-47f7-9116-ba8656f84544] Started GET "/tmp/phpinfo.php" for 185.177.72.56 at 2026-03-08 14:11:56 +0000
+[1cc8df6a-7d0d-47f7-9116-ba8656f84544]   
+[1cc8df6a-7d0d-47f7-9116-ba8656f84544] ActionController::RoutingError (No route matches [GET] "/tmp/phpinfo.php"):
+[1cc8df6a-7d0d-47f7-9116-ba8656f84544]   
+[80af7c59-e2bb-41de-be46-5362dc089ed9] Started GET "/symfony/_profiler/phpinfo" for 185.177.72.56 at 2026-03-08 14:11:56 +0000
+[80af7c59-e2bb-41de-be46-5362dc089ed9]   
+[80af7c59-e2bb-41de-be46-5362dc089ed9] ActionController::RoutingError (No route matches [GET] "/symfony/_profiler/phpinfo"):
+[80af7c59-e2bb-41de-be46-5362dc089ed9]   
+[b370ea82-c88d-4d06-90cd-9a387e423c3c] Started GET "/webdav/phpinfo.php" for 185.177.72.56 at 2026-03-08 14:11:56 +0000
+[b370ea82-c88d-4d06-90cd-9a387e423c3c]   
+[b370ea82-c88d-4d06-90cd-9a387e423c3c] ActionController::RoutingError (No route matches [GET] "/webdav/phpinfo.php"):
+[b370ea82-c88d-4d06-90cd-9a387e423c3c]   
+[ac2f3cb7-bb02-4954-be42-2b1f018a515d] Started GET "/php-information" for 185.177.72.56 at 2026-03-08 14:11:56 +0000
+[ac2f3cb7-bb02-4954-be42-2b1f018a515d]   
+[ac2f3cb7-bb02-4954-be42-2b1f018a515d] ActionController::RoutingError (No route matches [GET] "/php-information"):
+[ac2f3cb7-bb02-4954-be42-2b1f018a515d]   
+[4aa85b96-f65a-4017-a7e1-786c60f550fe] Started GET "/tools/phpinfo.php" for 185.177.72.56 at 2026-03-08 14:11:57 +0000
+[4aa85b96-f65a-4017-a7e1-786c60f550fe]   
+[4aa85b96-f65a-4017-a7e1-786c60f550fe] ActionController::RoutingError (No route matches [GET] "/tools/phpinfo.php"):
+[4aa85b96-f65a-4017-a7e1-786c60f550fe]   
+[411105d0-fd0b-4c41-9865-d9939035c6b5] Started GET "/start.sh" for 185.177.72.56 at 2026-03-08 14:11:57 +0000
+[411105d0-fd0b-4c41-9865-d9939035c6b5]   
+[411105d0-fd0b-4c41-9865-d9939035c6b5] ActionController::RoutingError (No route matches [GET] "/start.sh"):
+[411105d0-fd0b-4c41-9865-d9939035c6b5]   
+[0378b83f-95af-414d-a6d0-3adcf17641f2] Started GET "/run.sh" for 185.177.72.56 at 2026-03-08 14:11:57 +0000
+[0378b83f-95af-414d-a6d0-3adcf17641f2]   
+[0378b83f-95af-414d-a6d0-3adcf17641f2] ActionController::RoutingError (No route matches [GET] "/run.sh"):
+[0378b83f-95af-414d-a6d0-3adcf17641f2]   
+[3634d794-57e5-45be-874f-d516ae9ad04e] Started GET "/build.sh" for 185.177.72.56 at 2026-03-08 14:11:57 +0000
+[3634d794-57e5-45be-874f-d516ae9ad04e]   
+[3634d794-57e5-45be-874f-d516ae9ad04e] ActionController::RoutingError (No route matches [GET] "/build.sh"):
+[3634d794-57e5-45be-874f-d516ae9ad04e]   
+[a418b37d-eda5-459a-95ed-fa756ed9f992] Started GET "/startup.sh" for 185.177.72.56 at 2026-03-08 14:11:57 +0000
+[a418b37d-eda5-459a-95ed-fa756ed9f992]   
+[a418b37d-eda5-459a-95ed-fa756ed9f992]   
+[a418b37d-eda5-459a-95ed-fa756ed9f992] ActionController::RoutingError (No route matches [GET] "/startup.sh"):
+[439f32f6-2d36-49d0-87d4-e08390e654ff] Started GET "/cron.sh" for 185.177.72.56 at 2026-03-08 14:11:57 +0000
+[439f32f6-2d36-49d0-87d4-e08390e654ff]   
+[439f32f6-2d36-49d0-87d4-e08390e654ff] ActionController::RoutingError (No route matches [GET] "/cron.sh"):
+[439f32f6-2d36-49d0-87d4-e08390e654ff]   
+[fb6d19e1-5c4d-484e-96e6-c9195dee3745] Started GET "/aws-credentials.sh" for 185.177.72.56 at 2026-03-08 14:11:58 +0000
+[fb6d19e1-5c4d-484e-96e6-c9195dee3745]   
+[fb6d19e1-5c4d-484e-96e6-c9195dee3745] ActionController::RoutingError (No route matches [GET] "/aws-credentials.sh"):
+[fb6d19e1-5c4d-484e-96e6-c9195dee3745]   
+[264677ba-5a47-4925-afa4-7b430e644a8d] Started GET "/configure.sh" for 185.177.72.56 at 2026-03-08 14:11:58 +0000
+[264677ba-5a47-4925-afa4-7b430e644a8d]   
+[264677ba-5a47-4925-afa4-7b430e644a8d] ActionController::RoutingError (No route matches [GET] "/configure.sh"):
+[264677ba-5a47-4925-afa4-7b430e644a8d]   
+[452b9e7d-882d-49cf-9c5d-0b46f495bab0] Started GET "/service.pwd" for 185.177.72.56 at 2026-03-08 14:11:58 +0000
+[452b9e7d-882d-49cf-9c5d-0b46f495bab0]   
+[452b9e7d-882d-49cf-9c5d-0b46f495bab0] ActionController::RoutingError (No route matches [GET] "/service.pwd"):
+[452b9e7d-882d-49cf-9c5d-0b46f495bab0]   
+[6fa53626-3f2f-42a1-880b-2a99e8361ad9] Started GET "/service.grp" for 185.177.72.56 at 2026-03-08 14:11:58 +0000
+[6fa53626-3f2f-42a1-880b-2a99e8361ad9]   
+[6fa53626-3f2f-42a1-880b-2a99e8361ad9] ActionController::RoutingError (No route matches [GET] "/service.grp"):
+[6fa53626-3f2f-42a1-880b-2a99e8361ad9]   
+[ed19183b-68ec-44a2-9b72-d354625cdb45] Started GET "/server.sh" for 185.177.72.56 at 2026-03-08 14:11:58 +0000
+[ed19183b-68ec-44a2-9b72-d354625cdb45]   
+[ed19183b-68ec-44a2-9b72-d354625cdb45] ActionController::RoutingError (No route matches [GET] "/server.sh"):
+[ed19183b-68ec-44a2-9b72-d354625cdb45]   
+[d8a84d62-1be6-41d4-9fe2-caa5a1e7f139] Started GET "/configuration.php.bak" for 185.177.72.56 at 2026-03-08 14:11:59 +0000
+[d8a84d62-1be6-41d4-9fe2-caa5a1e7f139]   
+[d8a84d62-1be6-41d4-9fe2-caa5a1e7f139] ActionController::RoutingError (No route matches [GET] "/configuration.php.bak"):
+[d8a84d62-1be6-41d4-9fe2-caa5a1e7f139]   
+[c3ed92fb-1278-42fd-91d9-4552c78e1715] Started GET "/app/etc/local.xml.bak" for 185.177.72.56 at 2026-03-08 14:11:59 +0000
+[c3ed92fb-1278-42fd-91d9-4552c78e1715]   
+[c3ed92fb-1278-42fd-91d9-4552c78e1715] ActionController::RoutingError (No route matches [GET] "/app/etc/local.xml.bak"):
+[c3ed92fb-1278-42fd-91d9-4552c78e1715]   
+[fa0ffeea-d071-4fb5-a6ed-c8431d30c75f] Started GET "/database.sql" for 185.177.72.56 at 2026-03-08 14:11:59 +0000
+[fa0ffeea-d071-4fb5-a6ed-c8431d30c75f]   
+[fa0ffeea-d071-4fb5-a6ed-c8431d30c75f] ActionController::RoutingError (No route matches [GET] "/database.sql"):
+[fa0ffeea-d071-4fb5-a6ed-c8431d30c75f]   
+[ac311dde-6978-402e-b38d-9b50ea141a54] Started GET "/mysql.sql" for 185.177.72.56 at 2026-03-08 14:11:59 +0000
+[ac311dde-6978-402e-b38d-9b50ea141a54]   
+[ac311dde-6978-402e-b38d-9b50ea141a54] ActionController::RoutingError (No route matches [GET] "/mysql.sql"):
+[ac311dde-6978-402e-b38d-9b50ea141a54]   
+[5a1f6727-d577-479c-a520-b6365389fda5] Started GET "/backup.sql" for 185.177.72.56 at 2026-03-08 14:11:59 +0000
+[5a1f6727-d577-479c-a520-b6365389fda5]   
+[5a1f6727-d577-479c-a520-b6365389fda5] ActionController::RoutingError (No route matches [GET] "/backup.sql"):
+[5a1f6727-d577-479c-a520-b6365389fda5]   
+[fcfdd03d-b69a-4ac9-96fa-6e3aa48a1d1f] Started GET "/site.sql" for 185.177.72.56 at 2026-03-08 14:12:00 +0000
+[fcfdd03d-b69a-4ac9-96fa-6e3aa48a1d1f]   
+[fcfdd03d-b69a-4ac9-96fa-6e3aa48a1d1f] ActionController::RoutingError (No route matches [GET] "/site.sql"):
+[fcfdd03d-b69a-4ac9-96fa-6e3aa48a1d1f]   
+[7424ee37-bf33-46d1-bafc-6564e23ac123] Started GET "/wordpress.sql" for 185.177.72.56 at 2026-03-08 14:12:00 +0000
+[7424ee37-bf33-46d1-bafc-6564e23ac123]   
+[7424ee37-bf33-46d1-bafc-6564e23ac123] ActionController::RoutingError (No route matches [GET] "/wordpress.sql"):
+[7424ee37-bf33-46d1-bafc-6564e23ac123]   
+[76385e4f-831a-4533-ba81-804fa08909ee] Started GET "/server-status/" for 185.177.72.56 at 2026-03-08 14:12:00 +0000
+[76385e4f-831a-4533-ba81-804fa08909ee]   
+[76385e4f-831a-4533-ba81-804fa08909ee] ActionController::RoutingError (No route matches [GET] "/server-status"):
+[76385e4f-831a-4533-ba81-804fa08909ee]   
+[0854947e-676c-4570-a9f7-f3060f3e0bdc] Started GET "/server-info.php" for 185.177.72.56 at 2026-03-08 14:12:00 +0000
+[0854947e-676c-4570-a9f7-f3060f3e0bdc]   
+[0854947e-676c-4570-a9f7-f3060f3e0bdc] ActionController::RoutingError (No route matches [GET] "/server-info.php"):
+[0854947e-676c-4570-a9f7-f3060f3e0bdc]   
+[20e9ab9d-feb8-40a8-ac46-5d0159920c0b] Started GET "/app_dev.php/_profiler/open?file=app/config/parameters.yml" for 185.177.72.56 at 2026-03-08 14:12:00 +0000
+[20e9ab9d-feb8-40a8-ac46-5d0159920c0b]   
+[20e9ab9d-feb8-40a8-ac46-5d0159920c0b] ActionController::RoutingError (No route matches [GET] "/app_dev.php/_profiler/open"):
+[20e9ab9d-feb8-40a8-ac46-5d0159920c0b]   
+[e73997eb-fc01-4c56-8aca-b2fd4a1d3b02] Started GET "/storage/oauth-private.key" for 185.177.72.56 at 2026-03-08 14:12:00 +0000
+[e73997eb-fc01-4c56-8aca-b2fd4a1d3b02]   
+[e73997eb-fc01-4c56-8aca-b2fd4a1d3b02] ActionController::RoutingError (No route matches [GET] "/storage/oauth-private.key"):
+[e73997eb-fc01-4c56-8aca-b2fd4a1d3b02]   
+[4681af6b-2bbf-480f-a3e1-918030338711] Started GET "/storage/oauth-public.key" for 185.177.72.56 at 2026-03-08 14:12:01 +0000
+[4681af6b-2bbf-480f-a3e1-918030338711]   
+[4681af6b-2bbf-480f-a3e1-918030338711] ActionController::RoutingError (No route matches [GET] "/storage/oauth-public.key"):
+[4681af6b-2bbf-480f-a3e1-918030338711]   
+[ba3d65e5-ab28-4c44-bbeb-0427a478fe50] Started GET "/storage/logs/stack.log" for 185.177.72.56 at 2026-03-08 14:12:01 +0000
+[ba3d65e5-ab28-4c44-bbeb-0427a478fe50]   
+[ba3d65e5-ab28-4c44-bbeb-0427a478fe50] ActionController::RoutingError (No route matches [GET] "/storage/logs/stack.log"):
+[ba3d65e5-ab28-4c44-bbeb-0427a478fe50]   
+[aa9e8a02-db1e-408d-bc70-fb0897762725] Started GET "/storage/debug.log" for 185.177.72.56 at 2026-03-08 14:12:01 +0000
+[aa9e8a02-db1e-408d-bc70-fb0897762725]   
+[aa9e8a02-db1e-408d-bc70-fb0897762725] ActionController::RoutingError (No route matches [GET] "/storage/debug.log"):
+[aa9e8a02-db1e-408d-bc70-fb0897762725]   
+[dede8e3f-2507-49f0-a612-3c336ea749ff] Started GET "/bootstrap/app.php" for 185.177.72.56 at 2026-03-08 14:12:01 +0000
+[dede8e3f-2507-49f0-a612-3c336ea749ff]   
+[dede8e3f-2507-49f0-a612-3c336ea749ff] ActionController::RoutingError (No route matches [GET] "/bootstrap/app.php"):
+[dede8e3f-2507-49f0-a612-3c336ea749ff]   
+[9ae90030-b2bf-40c8-a667-23ccdc1dc1e9] Started GET "/config/auth.php" for 185.177.72.56 at 2026-03-08 14:12:01 +0000
+[9ae90030-b2bf-40c8-a667-23ccdc1dc1e9]   
+[9ae90030-b2bf-40c8-a667-23ccdc1dc1e9] ActionController::RoutingError (No route matches [GET] "/config/auth.php"):
+[9ae90030-b2bf-40c8-a667-23ccdc1dc1e9]   
+[76a76c5d-49ad-4c32-b0f3-71c9c34ef28a] Started GET "/config/filesystems.php" for 185.177.72.56 at 2026-03-08 14:12:01 +0000
+[76a76c5d-49ad-4c32-b0f3-71c9c34ef28a]   
+[76a76c5d-49ad-4c32-b0f3-71c9c34ef28a] ActionController::RoutingError (No route matches [GET] "/config/filesystems.php"):
+[76a76c5d-49ad-4c32-b0f3-71c9c34ef28a]   
+[ee911f81-e886-44de-9b35-a2f0bbc15a33] Started GET "/config/queue.php" for 185.177.72.56 at 2026-03-08 14:12:02 +0000
+[ee911f81-e886-44de-9b35-a2f0bbc15a33]   
+[ee911f81-e886-44de-9b35-a2f0bbc15a33] ActionController::RoutingError (No route matches [GET] "/config/queue.php"):
+[ee911f81-e886-44de-9b35-a2f0bbc15a33]   
+[cccdd406-fc27-4e16-a50a-fe78eb39dc1a] Started GET "/config/session.php" for 185.177.72.56 at 2026-03-08 14:12:02 +0000
+[cccdd406-fc27-4e16-a50a-fe78eb39dc1a]   
+[cccdd406-fc27-4e16-a50a-fe78eb39dc1a] ActionController::RoutingError (No route matches [GET] "/config/session.php"):
+[cccdd406-fc27-4e16-a50a-fe78eb39dc1a]   
+[ab49d626-37d2-4313-86d3-8bb65f56fb01] Started GET "/config/view.php" for 185.177.72.56 at 2026-03-08 14:12:02 +0000
+[ab49d626-37d2-4313-86d3-8bb65f56fb01]   
+[ab49d626-37d2-4313-86d3-8bb65f56fb01] ActionController::RoutingError (No route matches [GET] "/config/view.php"):
+[ab49d626-37d2-4313-86d3-8bb65f56fb01]   
+[19e4ac62-737a-4fb8-ab69-3f53ea7a6d5c]   
+[2889f77f-d707-4c24-95c1-7d9202ad292a]   
+[f5a55d69-bb8d-4994-8f3b-770dcc0fdb83] Started GET "/config/logging.php" for 185.177.72.56 at 2026-03-08 14:12:02 +0000
+[f5a55d69-bb8d-4994-8f3b-770dcc0fdb83]   
+[f5a55d69-bb8d-4994-8f3b-770dcc0fdb83] ActionController::RoutingError (No route matches [GET] "/config/logging.php"):
+[2889f77f-d707-4c24-95c1-7d9202ad292a] ActionController::RoutingError (No route matches [GET] "/config/broadcasting.php"):
+[f5a55d69-bb8d-4994-8f3b-770dcc0fdb83]   
+[2889f77f-d707-4c24-95c1-7d9202ad292a]   
+[2889f77f-d707-4c24-95c1-7d9202ad292a] Started GET "/config/broadcasting.php" for 185.177.72.56 at 2026-03-08 14:12:02 +0000
+[a70e7b74-3a07-44fe-a901-78d9b4e0b52a] Started GET "/resources/views/errors/500.blade.php" for 185.177.72.56 at 2026-03-08 14:12:03 +0000
+[a70e7b74-3a07-44fe-a901-78d9b4e0b52a]   
+[a70e7b74-3a07-44fe-a901-78d9b4e0b52a] ActionController::RoutingError (No route matches [GET] "/resources/views/errors/500.blade.php"):
+[a70e7b74-3a07-44fe-a901-78d9b4e0b52a]   
+[19e4ac62-737a-4fb8-ab69-3f53ea7a6d5c] Started GET "/resources/views/errors/404.blade.php" for 185.177.72.56 at 2026-03-08 14:12:03 +0000
+[19e4ac62-737a-4fb8-ab69-3f53ea7a6d5c]   
+[19e4ac62-737a-4fb8-ab69-3f53ea7a6d5c] ActionController::RoutingError (No route matches [GET] "/resources/views/errors/404.blade.php"):
+[36cdcf84-659b-4445-baa5-b7866f168c03] Started GET "/resources/views/welcome.blade.php" for 185.177.72.56 at 2026-03-08 14:12:03 +0000
+[36cdcf84-659b-4445-baa5-b7866f168c03]   
+[36cdcf84-659b-4445-baa5-b7866f168c03] ActionController::RoutingError (No route matches [GET] "/resources/views/welcome.blade.php"):
+[36cdcf84-659b-4445-baa5-b7866f168c03]   
+[cfa1bfcf-7720-4196-8824-8b918cddefd4] Started GET "/_debugbar/open" for 185.177.72.56 at 2026-03-08 14:12:03 +0000
+[cfa1bfcf-7720-4196-8824-8b918cddefd4]   
+[cfa1bfcf-7720-4196-8824-8b918cddefd4] ActionController::RoutingError (No route matches [GET] "/_debugbar/open"):
+[cfa1bfcf-7720-4196-8824-8b918cddefd4]   
+[f06f3c4f-19b2-42a3-8622-8470c978a0a8] Started GET "/debugbar" for 185.177.72.56 at 2026-03-08 14:12:03 +0000
+[f06f3c4f-19b2-42a3-8622-8470c978a0a8]   
+[f06f3c4f-19b2-42a3-8622-8470c978a0a8] ActionController::RoutingError (No route matches [GET] "/debugbar"):
+[f06f3c4f-19b2-42a3-8622-8470c978a0a8]   
+[bbe8b151-9b17-45ee-aa50-d4fc75ba1440] Started GET "/xdebug.php" for 185.177.72.56 at 2026-03-08 14:12:04 +0000
+[bbe8b151-9b17-45ee-aa50-d4fc75ba1440]   
+[bbe8b151-9b17-45ee-aa50-d4fc75ba1440] ActionController::RoutingError (No route matches [GET] "/xdebug.php"):
+[bbe8b151-9b17-45ee-aa50-d4fc75ba1440]   
+[7856d710-60e2-4449-a7f6-13540948ee1c] Started GET "/xdebug_info.php" for 185.177.72.56 at 2026-03-08 14:12:04 +0000
+[7856d710-60e2-4449-a7f6-13540948ee1c]   
+[7856d710-60e2-4449-a7f6-13540948ee1c] ActionController::RoutingError (No route matches [GET] "/xdebug_info.php"):
+[7856d710-60e2-4449-a7f6-13540948ee1c]   
+[9a2552e0-aa3a-481b-b747-3f45c3fe15ec] Started GET "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php" for 185.177.72.56 at 2026-03-08 14:12:04 +0000
+[9a2552e0-aa3a-481b-b747-3f45c3fe15ec]   
+[9a2552e0-aa3a-481b-b747-3f45c3fe15ec] ActionController::RoutingError (No route matches [GET] "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php"):
+[9a2552e0-aa3a-481b-b747-3f45c3fe15ec]   
+[30c46a90-fee8-4a02-b4b3-40b051d1df93] Started GET "/vendor/symfony/debug/debug.php" for 185.177.72.56 at 2026-03-08 14:12:04 +0000
+[30c46a90-fee8-4a02-b4b3-40b051d1df93]   
+[30c46a90-fee8-4a02-b4b3-40b051d1df93] ActionController::RoutingError (No route matches [GET] "/vendor/symfony/debug/debug.php"):
+[30c46a90-fee8-4a02-b4b3-40b051d1df93]   
+[1558492f-3877-4d61-a08c-631555959c04] Started GET "/vendor/composer/installed.json" for 185.177.72.56 at 2026-03-08 14:12:04 +0000
+[1558492f-3877-4d61-a08c-631555959c04]   
+[1558492f-3877-4d61-a08c-631555959c04] ActionController::RoutingError (No route matches [GET] "/vendor/composer/installed.json"):
+[1558492f-3877-4d61-a08c-631555959c04]   
+[c0720b1c-6adc-4f9f-b104-9140f8bf72a7] Started GET "/vendor/autoload.php" for 185.177.72.56 at 2026-03-08 14:12:04 +0000
+[c0720b1c-6adc-4f9f-b104-9140f8bf72a7]   
+[c0720b1c-6adc-4f9f-b104-9140f8bf72a7] ActionController::RoutingError (No route matches [GET] "/vendor/autoload.php"):
+[c0720b1c-6adc-4f9f-b104-9140f8bf72a7]   
+[e3927dbd-8bac-4448-989d-a8b2c0194185] ActionController::RoutingError (No route matches [GET] "/vendor/.env.example"):
+[e3927dbd-8bac-4448-989d-a8b2c0194185]   
+[e3927dbd-8bac-4448-989d-a8b2c0194185] Started GET "/vendor/.env.example" for 185.177.72.56 at 2026-03-08 14:12:05 +0000
+[e3927dbd-8bac-4448-989d-a8b2c0194185]   
+[58fff9f5-daa1-450a-8b3d-fa6f94c6854c] Started GET "/artisan" for 185.177.72.56 at 2026-03-08 14:12:05 +0000
+[58fff9f5-daa1-450a-8b3d-fa6f94c6854c]   
+[58fff9f5-daa1-450a-8b3d-fa6f94c6854c] ActionController::RoutingError (No route matches [GET] "/artisan"):
+[58fff9f5-daa1-450a-8b3d-fa6f94c6854c]   
+[dfe3d4df-dd52-419e-84be-11db242fb0f5] Started GET "/test_socket.php" for 185.177.72.56 at 2026-03-08 14:12:05 +0000
+[dfe3d4df-dd52-419e-84be-11db242fb0f5]   
+[dfe3d4df-dd52-419e-84be-11db242fb0f5] ActionController::RoutingError (No route matches [GET] "/test_socket.php"):
+[dfe3d4df-dd52-419e-84be-11db242fb0f5]   
+[8afd68f3-9937-4591-8c1a-151c32085ccc] Started GET "/testdb.php" for 185.177.72.56 at 2026-03-08 14:12:05 +0000
+[8afd68f3-9937-4591-8c1a-151c32085ccc]   
+[8afd68f3-9937-4591-8c1a-151c32085ccc] ActionController::RoutingError (No route matches [GET] "/testdb.php"):
+[8afd68f3-9937-4591-8c1a-151c32085ccc]   
+[67430267-51a3-4c50-bb97-d45abeac2ede] Started GET "/errors.log" for 185.177.72.56 at 2026-03-08 14:12:05 +0000
+[67430267-51a3-4c50-bb97-d45abeac2ede]   
+[67430267-51a3-4c50-bb97-d45abeac2ede] ActionController::RoutingError (No route matches [GET] "/errors.log"):
+[67430267-51a3-4c50-bb97-d45abeac2ede]   
+[3ac8f6a9-dab7-4bc2-b002-0068449f4f64] Started GET "/config.old" for 185.177.72.56 at 2026-03-08 14:12:06 +0000
+[3ac8f6a9-dab7-4bc2-b002-0068449f4f64]   
+[3ac8f6a9-dab7-4bc2-b002-0068449f4f64] ActionController::RoutingError (No route matches [GET] "/config.old"):
+[3ac8f6a9-dab7-4bc2-b002-0068449f4f64]   
+[bf9dbef6-db9f-4566-b3d4-952c59aec2fd] Started GET "/export.sql" for 185.177.72.56 at 2026-03-08 14:12:06 +0000
+[bf9dbef6-db9f-4566-b3d4-952c59aec2fd]   
+[bf9dbef6-db9f-4566-b3d4-952c59aec2fd] ActionController::RoutingError (No route matches [GET] "/export.sql"):
+[bf9dbef6-db9f-4566-b3d4-952c59aec2fd]   
+[386a9bb7-8987-4ced-96e1-d1025a948f9a] Started GET "/adminer-4.2.5-mysql-en.php" for 185.177.72.56 at 2026-03-08 14:12:06 +0000
+[386a9bb7-8987-4ced-96e1-d1025a948f9a]   
+[386a9bb7-8987-4ced-96e1-d1025a948f9a] ActionController::RoutingError (No route matches [GET] "/adminer-4.2.5-mysql-en.php"):
+[386a9bb7-8987-4ced-96e1-d1025a948f9a]   
+[de2d9fab-78c7-418e-8b3a-8622a56384bd] Started GET "/phpmyadmin.php" for 185.177.72.56 at 2026-03-08 14:12:06 +0000
+[de2d9fab-78c7-418e-8b3a-8622a56384bd]   
+[de2d9fab-78c7-418e-8b3a-8622a56384bd] ActionController::RoutingError (No route matches [GET] "/phpmyadmin.php"):
+[de2d9fab-78c7-418e-8b3a-8622a56384bd]   
+[2fb75adc-dc19-49d4-a977-28a5dabe107f] Started GET "/sql.php" for 185.177.72.56 at 2026-03-08 14:12:07 +0000
+[2fb75adc-dc19-49d4-a977-28a5dabe107f]   
+[2fb75adc-dc19-49d4-a977-28a5dabe107f] ActionController::RoutingError (No route matches [GET] "/sql.php"):
+[cf560c2e-382d-4649-9ba3-af5f4861bcd7] Started GET "/phpmyadmin/index.php" for 185.177.72.56 at 2026-03-08 14:12:06 +0000
+[cf560c2e-382d-4649-9ba3-af5f4861bcd7]   
+[cf560c2e-382d-4649-9ba3-af5f4861bcd7] ActionController::RoutingError (No route matches [GET] "/phpmyadmin/index.php"):
+[cf560c2e-382d-4649-9ba3-af5f4861bcd7]   
+[d2810aa1-53ab-47db-8b8a-5259c393de9a] Started GET "/phpmyadmin/setup/index.php" for 185.177.72.56 at 2026-03-08 14:12:07 +0000
+[d2810aa1-53ab-47db-8b8a-5259c393de9a]   
+[d2810aa1-53ab-47db-8b8a-5259c393de9a] ActionController::RoutingError (No route matches [GET] "/phpmyadmin/setup/index.php"):
+[d2810aa1-53ab-47db-8b8a-5259c393de9a]   
+[2fb75adc-dc19-49d4-a977-28a5dabe107f]   
+[5aee7b68-b6dd-4fb5-98b5-ac339b4d9918] Started GET "/sqladmin.php" for 185.177.72.56 at 2026-03-08 14:12:07 +0000
+[5aee7b68-b6dd-4fb5-98b5-ac339b4d9918]   
+[5aee7b68-b6dd-4fb5-98b5-ac339b4d9918] ActionController::RoutingError (No route matches [GET] "/sqladmin.php"):
+[5aee7b68-b6dd-4fb5-98b5-ac339b4d9918]   
+[7d98a7d9-8287-440a-a39b-afec70a56b15] Started GET "/dbadmin.php" for 185.177.72.56 at 2026-03-08 14:12:07 +0000
+[7d98a7d9-8287-440a-a39b-afec70a56b15]   
+[7d98a7d9-8287-440a-a39b-afec70a56b15] ActionController::RoutingError (No route matches [GET] "/dbadmin.php"):
+[7d98a7d9-8287-440a-a39b-afec70a56b15]   
+[5aae8e8f-41aa-4ba1-8e86-0b24b13ff8ba] Started GET "/phpminiadmin.php" for 185.177.72.56 at 2026-03-08 14:12:07 +0000
+[5aae8e8f-41aa-4ba1-8e86-0b24b13ff8ba]   
+[5aae8e8f-41aa-4ba1-8e86-0b24b13ff8ba] ActionController::RoutingError (No route matches [GET] "/phpminiadmin.php"):
+[5aae8e8f-41aa-4ba1-8e86-0b24b13ff8ba]   
+[48141bcf-36d6-44a4-b0ea-c622bf1b8e97] Started GET "/mysqladmin.php" for 185.177.72.56 at 2026-03-08 14:12:07 +0000
+[48141bcf-36d6-44a4-b0ea-c622bf1b8e97]   
+[48141bcf-36d6-44a4-b0ea-c622bf1b8e97] ActionController::RoutingError (No route matches [GET] "/mysqladmin.php"):
+[48141bcf-36d6-44a4-b0ea-c622bf1b8e97]   
+[09c852f6-af66-4db9-acc5-440194307d7f] Started GET "/backup/database.zip" for 185.177.72.56 at 2026-03-08 14:12:08 +0000
+[09c852f6-af66-4db9-acc5-440194307d7f]   
+[09c852f6-af66-4db9-acc5-440194307d7f] ActionController::RoutingError (No route matches [GET] "/backup/database.zip"):
+[09c852f6-af66-4db9-acc5-440194307d7f]   
+[1a701e36-811a-4bb6-9584-988e3abf99be] Started GET "/database.zip" for 185.177.72.56 at 2026-03-08 14:12:08 +0000
+[1a701e36-811a-4bb6-9584-988e3abf99be]   
+[1a701e36-811a-4bb6-9584-988e3abf99be] ActionController::RoutingError (No route matches [GET] "/database.zip"):
+[1a701e36-811a-4bb6-9584-988e3abf99be]   
+[a8760dea-b843-499d-ab23-70d12be61ef0] Started GET "/dump.tar.gz" for 185.177.72.56 at 2026-03-08 14:12:08 +0000
+[a8760dea-b843-499d-ab23-70d12be61ef0]   
+[a8760dea-b843-499d-ab23-70d12be61ef0] ActionController::RoutingError (No route matches [GET] "/dump.tar.gz"):
+[a8760dea-b843-499d-ab23-70d12be61ef0]   
+[ebeda910-4bcc-4197-ac1c-a70676344e13] Started GET "/data.tar.gz" for 185.177.72.56 at 2026-03-08 14:12:08 +0000
+[ebeda910-4bcc-4197-ac1c-a70676344e13]   
+[ebeda910-4bcc-4197-ac1c-a70676344e13] ActionController::RoutingError (No route matches [GET] "/data.tar.gz"):
+[ebeda910-4bcc-4197-ac1c-a70676344e13]   
+[cac18b08-8929-4017-95f3-c7b73aece736] Started GET "/backup.tar" for 185.177.72.56 at 2026-03-08 14:12:08 +0000
+[cac18b08-8929-4017-95f3-c7b73aece736]   
+[cac18b08-8929-4017-95f3-c7b73aece736] ActionController::RoutingError (No route matches [GET] "/backup.tar"):
+[cac18b08-8929-4017-95f3-c7b73aece736]   
+[f4038d7c-6ef1-406d-bee1-c6a67f91d10b] Started GET "/app.tar.gz" for 185.177.72.56 at 2026-03-08 14:12:09 +0000
+[f4038d7c-6ef1-406d-bee1-c6a67f91d10b]   
+[f4038d7c-6ef1-406d-bee1-c6a67f91d10b] ActionController::RoutingError (No route matches [GET] "/app.tar.gz"):
+[f4038d7c-6ef1-406d-bee1-c6a67f91d10b]   
+[58c9384d-fa37-4a2d-8b7c-451be4878e7f] Started GET "/database.tar.gz" for 185.177.72.56 at 2026-03-08 14:12:09 +0000
+[58c9384d-fa37-4a2d-8b7c-451be4878e7f]   
+[58c9384d-fa37-4a2d-8b7c-451be4878e7f] ActionController::RoutingError (No route matches [GET] "/database.tar.gz"):
+[58c9384d-fa37-4a2d-8b7c-451be4878e7f]   
+[854c6f63-a6bd-4cf4-8ff4-7aebc94ad75c] Started GET "/db_backup.zip" for 185.177.72.56 at 2026-03-08 14:12:09 +0000
+[854c6f63-a6bd-4cf4-8ff4-7aebc94ad75c]   
+[854c6f63-a6bd-4cf4-8ff4-7aebc94ad75c] ActionController::RoutingError (No route matches [GET] "/db_backup.zip"):
+[854c6f63-a6bd-4cf4-8ff4-7aebc94ad75c]   
+[bb48f05a-3ae5-4ebc-96e0-7075e18d5fbf] Started GET "/database_backup.sql" for 185.177.72.56 at 2026-03-08 14:12:09 +0000
+[bb48f05a-3ae5-4ebc-96e0-7075e18d5fbf]   
+[bb48f05a-3ae5-4ebc-96e0-7075e18d5fbf] ActionController::RoutingError (No route matches [GET] "/database_backup.sql"):
+[bb48f05a-3ae5-4ebc-96e0-7075e18d5fbf]   
+[6aeeb316-a43d-4d6c-989f-4a1b609efa72] Started GET "/.config/config.json" for 185.177.72.56 at 2026-03-08 14:12:09 +0000
+[6aeeb316-a43d-4d6c-989f-4a1b609efa72]   
+[6aeeb316-a43d-4d6c-989f-4a1b609efa72] ActionController::RoutingError (No route matches [GET] "/.config/config.json"):
+[6aeeb316-a43d-4d6c-989f-4a1b609efa72]   
+[a34490b7-db7f-474e-bab5-67b9a6a52156] Started GET "/.docker/config.json" for 185.177.72.56 at 2026-03-08 14:12:10 +0000
+[a34490b7-db7f-474e-bab5-67b9a6a52156]   
+[a34490b7-db7f-474e-bab5-67b9a6a52156] ActionController::RoutingError (No route matches [GET] "/.docker/config.json"):
+[a34490b7-db7f-474e-bab5-67b9a6a52156]   
+[bca5e84d-86c7-46f9-b805-134c2c5de182] Started GET "/.settings.json" for 185.177.72.56 at 2026-03-08 14:12:10 +0000
+[bca5e84d-86c7-46f9-b805-134c2c5de182]   
+[bca5e84d-86c7-46f9-b805-134c2c5de182] ActionController::RoutingError (No route matches [GET] "/.settings.json"):
+[bca5e84d-86c7-46f9-b805-134c2c5de182]   
+[929d6a66-38aa-4ddb-9f89-e35457de356d] Started GET "/node_modules/" for 185.177.72.56 at 2026-03-08 14:12:10 +0000
+[929d6a66-38aa-4ddb-9f89-e35457de356d]   
+[929d6a66-38aa-4ddb-9f89-e35457de356d] ActionController::RoutingError (No route matches [GET] "/node_modules"):
+[929d6a66-38aa-4ddb-9f89-e35457de356d]   
+[185cf0f1-90b2-47c4-97f6-a98c50598605] Started GET "/vendor/" for 185.177.72.56 at 2026-03-08 14:12:10 +0000
+[a69e7280-b558-479e-9378-4317349b89e4] Started GET "/tmp/" for 185.177.72.56 at 2026-03-08 14:12:10 +0000
+[185cf0f1-90b2-47c4-97f6-a98c50598605]   
+[185cf0f1-90b2-47c4-97f6-a98c50598605] ActionController::RoutingError (No route matches [GET] "/vendor"):
+[185cf0f1-90b2-47c4-97f6-a98c50598605]   
+[8b45cd90-bc62-4a69-a110-e6f6de7a8c6a]   
+[a69e7280-b558-479e-9378-4317349b89e4]   
+[a69e7280-b558-479e-9378-4317349b89e4] ActionController::RoutingError (No route matches [GET] "/tmp"):
+[a69e7280-b558-479e-9378-4317349b89e4]   
+[41937240-9884-4238-ba13-44cefab5d450] Started GET "/core/config.php" for 185.177.72.56 at 2026-03-08 14:12:10 +0000
+[41937240-9884-4238-ba13-44cefab5d450]   
+[41937240-9884-4238-ba13-44cefab5d450] ActionController::RoutingError (No route matches [GET] "/core/config.php"):
+[41937240-9884-4238-ba13-44cefab5d450]   
+[8b45cd90-bc62-4a69-a110-e6f6de7a8c6a] Started GET "/core/config.bak" for 185.177.72.56 at 2026-03-08 14:12:11 +0000
+[8b45cd90-bc62-4a69-a110-e6f6de7a8c6a]   
+[8b45cd90-bc62-4a69-a110-e6f6de7a8c6a] ActionController::RoutingError (No route matches [GET] "/core/config.bak"):
+[e25f9bae-8e43-4d8d-8b45-161c853c5836] Started GET "/api/config.json" for 185.177.72.56 at 2026-03-08 14:12:11 +0000
+[e25f9bae-8e43-4d8d-8b45-161c853c5836]   
+[e25f9bae-8e43-4d8d-8b45-161c853c5836] ActionController::RoutingError (No route matches [GET] "/api/config.json"):
+[e25f9bae-8e43-4d8d-8b45-161c853c5836]   
+[a0a481d9-428a-48c8-abf4-98df35eba4d8] Started GET "/wp-config-sample.php" for 185.177.72.56 at 2026-03-08 14:12:11 +0000
+[a0a481d9-428a-48c8-abf4-98df35eba4d8]   
+[a0a481d9-428a-48c8-abf4-98df35eba4d8] ActionController::RoutingError (No route matches [GET] "/wp-config-sample.php"):
+[a0a481d9-428a-48c8-abf4-98df35eba4d8]   
+[8293dcc9-d6e0-46fa-84e3-94bb0532414a] Started GET "/wordpress/wp-config.php" for 185.177.72.56 at 2026-03-08 14:12:11 +0000
+[8293dcc9-d6e0-46fa-84e3-94bb0532414a]   
+[8293dcc9-d6e0-46fa-84e3-94bb0532414a] ActionController::RoutingError (No route matches [GET] "/wordpress/wp-config.php"):
+[8293dcc9-d6e0-46fa-84e3-94bb0532414a]   
+[cd6c0c10-5017-4b2b-9f8a-8da04bc23c33] Started GET "/wordpress/wp-config-sample.php" for 185.177.72.56 at 2026-03-08 14:12:11 +0000
+[cd6c0c10-5017-4b2b-9f8a-8da04bc23c33]   
+[cd6c0c10-5017-4b2b-9f8a-8da04bc23c33] ActionController::RoutingError (No route matches [GET] "/wordpress/wp-config-sample.php"):
+[cd6c0c10-5017-4b2b-9f8a-8da04bc23c33]   
+[f4f06082-687b-4236-b0d7-aad9b73f10db] Started GET "/.git/HEAD" for 185.177.72.56 at 2026-03-08 14:12:11 +0000
+[f4f06082-687b-4236-b0d7-aad9b73f10db]   
+[f4f06082-687b-4236-b0d7-aad9b73f10db] ActionController::RoutingError (No route matches [GET] "/.git/HEAD"):
+[f4f06082-687b-4236-b0d7-aad9b73f10db]   
+[be7093ad-706c-4f01-998f-232d7b94ad0f] Started GET "/.svn/entries" for 185.177.72.56 at 2026-03-08 14:12:12 +0000
+[be7093ad-706c-4f01-998f-232d7b94ad0f]   
+[be7093ad-706c-4f01-998f-232d7b94ad0f] ActionController::RoutingError (No route matches [GET] "/.svn/entries"):
+[be7093ad-706c-4f01-998f-232d7b94ad0f]   
+[d4bf8107-427c-44ce-bcab-24f4a8978029] Started GET "/.hg/hgrc" for 185.177.72.56 at 2026-03-08 14:12:12 +0000
+[d4bf8107-427c-44ce-bcab-24f4a8978029]   
+[d4bf8107-427c-44ce-bcab-24f4a8978029] ActionController::RoutingError (No route matches [GET] "/.hg/hgrc"):
+[d4bf8107-427c-44ce-bcab-24f4a8978029]   
+[5e083eae-89ad-4aac-a25e-9811ca4c6b53] Started GET "/.DS_Store" for 185.177.72.56 at 2026-03-08 14:12:12 +0000
+[5e083eae-89ad-4aac-a25e-9811ca4c6b53]   
+[5e083eae-89ad-4aac-a25e-9811ca4c6b53] ActionController::RoutingError (No route matches [GET] "/.DS_Store"):
+[5e083eae-89ad-4aac-a25e-9811ca4c6b53]   
+[e1467ef8-85a8-4091-be08-edee456d8a2d] Started GET "/.htpasswd" for 185.177.72.56 at 2026-03-08 14:12:12 +0000
+[e1467ef8-85a8-4091-be08-edee456d8a2d]   
+[e1467ef8-85a8-4091-be08-edee456d8a2d] ActionController::RoutingError (No route matches [GET] "/.htpasswd"):
+[e1467ef8-85a8-4091-be08-edee456d8a2d]   
+[6da0fa63-cf27-4341-a6cb-fe0a0995ba82] Started GET "/.bash_history" for 185.177.72.56 at 2026-03-08 14:12:12 +0000
+[6da0fa63-cf27-4341-a6cb-fe0a0995ba82]   
+[6da0fa63-cf27-4341-a6cb-fe0a0995ba82] ActionController::RoutingError (No route matches [GET] "/.bash_history"):
+[6da0fa63-cf27-4341-a6cb-fe0a0995ba82]   
+[64aa6f8c-afe9-4a63-abd3-fdba790aa315] Started GET "/.bashrc" for 185.177.72.56 at 2026-03-08 14:12:13 +0000
+[64aa6f8c-afe9-4a63-abd3-fdba790aa315]   
+[64aa6f8c-afe9-4a63-abd3-fdba790aa315] ActionController::RoutingError (No route matches [GET] "/.bashrc"):
+[64aa6f8c-afe9-4a63-abd3-fdba790aa315]   
+[ba18c68d-8500-4fc8-99fd-cce2c260b03f] Started GET "/id_rsa" for 185.177.72.56 at 2026-03-08 14:12:13 +0000
+[ba18c68d-8500-4fc8-99fd-cce2c260b03f]   
+[ba18c68d-8500-4fc8-99fd-cce2c260b03f] ActionController::RoutingError (No route matches [GET] "/id_rsa"):
+[ba18c68d-8500-4fc8-99fd-cce2c260b03f]   
+[f539f2a2-4438-411c-990e-06d519424c00] Started GET "/id_rsa.pub" for 185.177.72.56 at 2026-03-08 14:12:13 +0000
+[f539f2a2-4438-411c-990e-06d519424c00]   
+[f539f2a2-4438-411c-990e-06d519424c00] ActionController::RoutingError (No route matches [GET] "/id_rsa.pub"):
+[f539f2a2-4438-411c-990e-06d519424c00]   
+[c4a3633d-2833-4928-aa47-66b2b75c445a] Started GET "/key.pem" for 185.177.72.56 at 2026-03-08 14:12:13 +0000
+[c4a3633d-2833-4928-aa47-66b2b75c445a]   
+[c4a3633d-2833-4928-aa47-66b2b75c445a] ActionController::RoutingError (No route matches [GET] "/key.pem"):
+[c4a3633d-2833-4928-aa47-66b2b75c445a]   
+[75919faf-7a95-4a40-b213-eeab8f03c411] Started GET "/public.key" for 185.177.72.56 at 2026-03-08 14:12:13 +0000
+[75919faf-7a95-4a40-b213-eeab8f03c411]   
+[75919faf-7a95-4a40-b213-eeab8f03c411] ActionController::RoutingError (No route matches [GET] "/public.key"):
+[75919faf-7a95-4a40-b213-eeab8f03c411]   
+[43059ef2-6be3-4ddb-b875-e8ce8bfabb76] Started GET "/ssl.key" for 185.177.72.56 at 2026-03-08 14:12:13 +0000
+[43059ef2-6be3-4ddb-b875-e8ce8bfabb76]   
+[43059ef2-6be3-4ddb-b875-e8ce8bfabb76] ActionController::RoutingError (No route matches [GET] "/ssl.key"):
+[43059ef2-6be3-4ddb-b875-e8ce8bfabb76]   
+[2f6e0748-05f3-4783-9e2e-e075da92fbd7] Started GET "/cert.pem" for 185.177.72.56 at 2026-03-08 14:12:14 +0000
+[2f6e0748-05f3-4783-9e2e-e075da92fbd7]   
+[2f6e0748-05f3-4783-9e2e-e075da92fbd7] ActionController::RoutingError (No route matches [GET] "/cert.pem"):
+[2f6e0748-05f3-4783-9e2e-e075da92fbd7]   
+[31387898-115e-430e-9df9-79746ab69180] Started GET "/selfsigned.crt" for 185.177.72.56 at 2026-03-08 14:12:14 +0000
+[31387898-115e-430e-9df9-79746ab69180]   
+[31387898-115e-430e-9df9-79746ab69180] ActionController::RoutingError (No route matches [GET] "/selfsigned.crt"):
+[31387898-115e-430e-9df9-79746ab69180]   
+[ba9af0f7-5711-4bdc-930e-656d13387917] Started GET "/selfsigned.key" for 185.177.72.56 at 2026-03-08 14:12:14 +0000
+[ba9af0f7-5711-4bdc-930e-656d13387917]   
+[ba9af0f7-5711-4bdc-930e-656d13387917] ActionController::RoutingError (No route matches [GET] "/selfsigned.key"):
+[ba9af0f7-5711-4bdc-930e-656d13387917]   
+[dba78290-f834-47c0-89fb-df2a125f822c] Started GET "/nginx.conf" for 185.177.72.56 at 2026-03-08 14:12:14 +0000
+[dba78290-f834-47c0-89fb-df2a125f822c]   
+[dba78290-f834-47c0-89fb-df2a125f822c] ActionController::RoutingError (No route matches [GET] "/nginx.conf"):
+[dba78290-f834-47c0-89fb-df2a125f822c]   
+[1134067e-49fd-4653-a796-33cbe38d9b6e] Started GET "/httpd.conf" for 185.177.72.56 at 2026-03-08 14:12:14 +0000
+[1134067e-49fd-4653-a796-33cbe38d9b6e]   
+[1134067e-49fd-4653-a796-33cbe38d9b6e] ActionController::RoutingError (No route matches [GET] "/httpd.conf"):
+[1134067e-49fd-4653-a796-33cbe38d9b6e]   
+[17e2a45e-ee4e-4fd2-861f-6a4021efa894] Started GET "/docker-compose.override.yml" for 185.177.72.56 at 2026-03-08 14:12:15 +0000
+[17e2a45e-ee4e-4fd2-861f-6a4021efa894]   
+[17e2a45e-ee4e-4fd2-861f-6a4021efa894] ActionController::RoutingError (No route matches [GET] "/docker-compose.override.yml"):
+[17e2a45e-ee4e-4fd2-861f-6a4021efa894]   
+[528063a8-1099-4838-b078-249ec6380a80] Started GET "/Dockerfile" for 185.177.72.56 at 2026-03-08 14:12:15 +0000
+[528063a8-1099-4838-b078-249ec6380a80]   
+[528063a8-1099-4838-b078-249ec6380a80] ActionController::RoutingError (No route matches [GET] "/Dockerfile"):
+[528063a8-1099-4838-b078-249ec6380a80]   
+[4f886788-e25f-48f1-a7ac-5e22b73fa87a] Started GET "/.nvmrc" for 185.177.72.56 at 2026-03-08 14:12:15 +0000
+[4f886788-e25f-48f1-a7ac-5e22b73fa87a]   
+[4f886788-e25f-48f1-a7ac-5e22b73fa87a] ActionController::RoutingError (No route matches [GET] "/.nvmrc"):
+[4f886788-e25f-48f1-a7ac-5e22b73fa87a]   
+[19f7fe66-c65b-4f2a-9a49-1be0f1726df2] Started GET "/.yarnrc" for 185.177.72.56 at 2026-03-08 14:12:15 +0000
+[19f7fe66-c65b-4f2a-9a49-1be0f1726df2]   
+[19f7fe66-c65b-4f2a-9a49-1be0f1726df2] ActionController::RoutingError (No route matches [GET] "/.yarnrc"):
+[2a047e24-02b4-4538-9dfd-59d413e301ce]   
+[664d3cbe-dd59-4d2c-9483-c76f5358f4a2] Started GET "/env.ts" for 185.177.72.56 at 2026-03-08 14:12:16 +0000
+[664d3cbe-dd59-4d2c-9483-c76f5358f4a2]   
+[664d3cbe-dd59-4d2c-9483-c76f5358f4a2] ActionController::RoutingError (No route matches [GET] "/env.ts"):
+[664d3cbe-dd59-4d2c-9483-c76f5358f4a2]   
+[089a4385-18be-4085-a0d1-f3500c33c9fa] Started GET "/settings.ini" for 185.177.72.56 at 2026-03-08 14:12:16 +0000
+[089a4385-18be-4085-a0d1-f3500c33c9fa]   
+[089a4385-18be-4085-a0d1-f3500c33c9fa] ActionController::RoutingError (No route matches [GET] "/settings.ini"):
+[089a4385-18be-4085-a0d1-f3500c33c9fa]   
+[7f115cd4-91f7-4a5f-b4e6-ce111e498641] Started GET "/web.xml" for 185.177.72.56 at 2026-03-08 14:12:16 +0000
+[19f7fe66-c65b-4f2a-9a49-1be0f1726df2]   
+[a4f25a29-600c-4393-b018-a6f6e1491d89] Started GET "/.rbenv-vars" for 185.177.72.56 at 2026-03-08 14:12:15 +0000
+[a4f25a29-600c-4393-b018-a6f6e1491d89]   
+[a4f25a29-600c-4393-b018-a6f6e1491d89] ActionController::RoutingError (No route matches [GET] "/.rbenv-vars"):
+[a4f25a29-600c-4393-b018-a6f6e1491d89]   
+[2a047e24-02b4-4538-9dfd-59d413e301ce] Started GET "/config.ts" for 185.177.72.56 at 2026-03-08 14:12:15 +0000
+[2a047e24-02b4-4538-9dfd-59d413e301ce]   
+[2a047e24-02b4-4538-9dfd-59d413e301ce] ActionController::RoutingError (No route matches [GET] "/config.ts"):
+[7f115cd4-91f7-4a5f-b4e6-ce111e498641]   
+[7f115cd4-91f7-4a5f-b4e6-ce111e498641] ActionController::RoutingError (No route matches [GET] "/web.xml"):
+[7f115cd4-91f7-4a5f-b4e6-ce111e498641]   
+[76f4f08e-9e1d-4bbc-8a89-55e732235c54] Started GET "/WEB-INF/web.xml" for 185.177.72.56 at 2026-03-08 14:12:16 +0000
+[76f4f08e-9e1d-4bbc-8a89-55e732235c54]   
+[76f4f08e-9e1d-4bbc-8a89-55e732235c54] ActionController::RoutingError (No route matches [GET] "/WEB-INF/web.xml"):
+[76f4f08e-9e1d-4bbc-8a89-55e732235c54]   
+[9af24f89-1851-401b-82a3-6701c53befe6] Started GET "/META-INF/context.xml" for 185.177.72.56 at 2026-03-08 14:12:16 +0000
+[9af24f89-1851-401b-82a3-6701c53befe6]   
+[9af24f89-1851-401b-82a3-6701c53befe6] ActionController::RoutingError (No route matches [GET] "/META-INF/context.xml"):
+[9af24f89-1851-401b-82a3-6701c53befe6]   
+[f1da5010-ba42-451e-ae98-683a256948c7] Started GET "/admin/settings.php" for 185.177.72.56 at 2026-03-08 14:12:17 +0000
+[f1da5010-ba42-451e-ae98-683a256948c7]   
+[f1da5010-ba42-451e-ae98-683a256948c7] ActionController::RoutingError (No route matches [GET] "/admin/settings.php"):
+[f1da5010-ba42-451e-ae98-683a256948c7]   
+[884d60d6-5833-40e6-a1e0-8bf973b20c96] Started GET "/admin/settings.ini" for 185.177.72.56 at 2026-03-08 14:12:17 +0000
+[884d60d6-5833-40e6-a1e0-8bf973b20c96]   
+[884d60d6-5833-40e6-a1e0-8bf973b20c96] ActionController::RoutingError (No route matches [GET] "/admin/settings.ini"):
+[884d60d6-5833-40e6-a1e0-8bf973b20c96]   
+[626fed12-d4dc-4eba-87e3-d70747f1115a] Started GET "/admin/db.php" for 185.177.72.56 at 2026-03-08 14:12:17 +0000
+[626fed12-d4dc-4eba-87e3-d70747f1115a]   
+[626fed12-d4dc-4eba-87e3-d70747f1115a] ActionController::RoutingError (No route matches [GET] "/admin/db.php"):
+[626fed12-d4dc-4eba-87e3-d70747f1115a]   
+[d07f9706-feab-4114-82e2-9099d2ecc2c6] Started GET "/admin/db.conf" for 185.177.72.56 at 2026-03-08 14:12:17 +0000
+[d07f9706-feab-4114-82e2-9099d2ecc2c6]   
+[d07f9706-feab-4114-82e2-9099d2ecc2c6] ActionController::RoutingError (No route matches [GET] "/admin/db.conf"):
+[d07f9706-feab-4114-82e2-9099d2ecc2c6]   
+[a424c336-e4fc-48bd-aadf-5385dbcf83dd] Started GET "/admin/sql.conf" for 185.177.72.56 at 2026-03-08 14:12:17 +0000
+[a424c336-e4fc-48bd-aadf-5385dbcf83dd]   
+[a424c336-e4fc-48bd-aadf-5385dbcf83dd] ActionController::RoutingError (No route matches [GET] "/admin/sql.conf"):
+[a424c336-e4fc-48bd-aadf-5385dbcf83dd]   
+[ae50781b-0e40-41a0-a7d7-e904fe2bc376] Started GET "/admin/.env.bak" for 185.177.72.56 at 2026-03-08 14:12:18 +0000
+[ae50781b-0e40-41a0-a7d7-e904fe2bc376]   
+[ae50781b-0e40-41a0-a7d7-e904fe2bc376] ActionController::RoutingError (No route matches [GET] "/admin/.env.bak"):
+[ae50781b-0e40-41a0-a7d7-e904fe2bc376]   
+[69080185-e766-4d37-98bb-b834f0333a1c] Started GET "/admin/adminer.php" for 185.177.72.56 at 2026-03-08 14:12:18 +0000
+[69080185-e766-4d37-98bb-b834f0333a1c]   
+[69080185-e766-4d37-98bb-b834f0333a1c] ActionController::RoutingError (No route matches [GET] "/admin/adminer.php"):
+[69080185-e766-4d37-98bb-b834f0333a1c]   
+[55ca56f7-09da-4a38-9b74-95d83143bdb9] Started GET "/admin/sqladmin.php" for 185.177.72.56 at 2026-03-08 14:12:18 +0000
+[55ca56f7-09da-4a38-9b74-95d83143bdb9]   
+[55ca56f7-09da-4a38-9b74-95d83143bdb9] ActionController::RoutingError (No route matches [GET] "/admin/sqladmin.php"):
+[55ca56f7-09da-4a38-9b74-95d83143bdb9]   
+[c63a20c6-b4e7-4a85-be05-3f10a276f60c] Started GET "/admin/phpmyadmin.php" for 185.177.72.56 at 2026-03-08 14:12:18 +0000
+[c63a20c6-b4e7-4a85-be05-3f10a276f60c]   
+[c63a20c6-b4e7-4a85-be05-3f10a276f60c] ActionController::RoutingError (No route matches [GET] "/admin/phpmyadmin.php"):
+[c63a20c6-b4e7-4a85-be05-3f10a276f60c]   
+[a48b8c73-116f-44bb-9e4a-3240355467f1] Started GET "/private/secret.key" for 185.177.72.56 at 2026-03-08 14:12:18 +0000
+[a48b8c73-116f-44bb-9e4a-3240355467f1]   
+[a48b8c73-116f-44bb-9e4a-3240355467f1] ActionController::RoutingError (No route matches [GET] "/private/secret.key"):
+[a48b8c73-116f-44bb-9e4a-3240355467f1]   
+[68685db1-cb9d-4b54-9b91-f107200acd7b] Started GET "/private/secret.txt" for 185.177.72.56 at 2026-03-08 14:12:18 +0000
+[68685db1-cb9d-4b54-9b91-f107200acd7b]   
+[68685db1-cb9d-4b54-9b91-f107200acd7b] ActionController::RoutingError (No route matches [GET] "/private/secret.txt"):
+[68685db1-cb9d-4b54-9b91-f107200acd7b]   
+[33c1f71c-9a01-4916-9d8d-8c41e7c588c1] Started GET "/secrets.txt" for 185.177.72.56 at 2026-03-08 14:12:19 +0000
+[33c1f71c-9a01-4916-9d8d-8c41e7c588c1]   
+[33c1f71c-9a01-4916-9d8d-8c41e7c588c1] ActionController::RoutingError (No route matches [GET] "/secrets.txt"):
+[33c1f71c-9a01-4916-9d8d-8c41e7c588c1]   
+[079b4ea4-4b65-4588-ab33-22acbef863fd] Started GET "/secrets.env" for 185.177.72.56 at 2026-03-08 14:12:19 +0000
+[079b4ea4-4b65-4588-ab33-22acbef863fd]   
+[079b4ea4-4b65-4588-ab33-22acbef863fd] ActionController::RoutingError (No route matches [GET] "/secrets.env"):
+[079b4ea4-4b65-4588-ab33-22acbef863fd]   
+[6a5461c1-0192-4c3e-a7ca-0ae08d1bd078] Started GET "/secret.env" for 185.177.72.56 at 2026-03-08 14:12:19 +0000
+[6a5461c1-0192-4c3e-a7ca-0ae08d1bd078]   
+[6a5461c1-0192-4c3e-a7ca-0ae08d1bd078] ActionController::RoutingError (No route matches [GET] "/secret.env"):
+[6a5461c1-0192-4c3e-a7ca-0ae08d1bd078]   
+[f2dc4a38-9324-4cc2-b041-59878a1f3269] Started GET "/api/secrets.json" for 185.177.72.56 at 2026-03-08 14:12:19 +0000
+[f2dc4a38-9324-4cc2-b041-59878a1f3269]   
+[f2dc4a38-9324-4cc2-b041-59878a1f3269] ActionController::RoutingError (No route matches [GET] "/api/secrets.json"):
+[f2dc4a38-9324-4cc2-b041-59878a1f3269]   
+[88a4e7ed-edbe-4fed-9ced-652c55aed89d] Started GET "/.well-known/.env" for 185.177.72.56 at 2026-03-08 14:12:19 +0000
+[88a4e7ed-edbe-4fed-9ced-652c55aed89d]   
+[88a4e7ed-edbe-4fed-9ced-652c55aed89d] ActionController::RoutingError (No route matches [GET] "/.well-known/.env"):
+[88a4e7ed-edbe-4fed-9ced-652c55aed89d]   
+[eb663c5e-bb51-465f-b8a5-30f4b289a05a] Started GET "/.well-known/config.json" for 185.177.72.56 at 2026-03-08 14:12:20 +0000
+[eb663c5e-bb51-465f-b8a5-30f4b289a05a]   
+[eb663c5e-bb51-465f-b8a5-30f4b289a05a] ActionController::RoutingError (No route matches [GET] "/.well-known/config.json"):
+[eb663c5e-bb51-465f-b8a5-30f4b289a05a]   
+[7870677f-030b-4c88-a2e1-4861b8b05e35] Started GET "/.well-known/credentials.json" for 185.177.72.56 at 2026-03-08 14:12:20 +0000
+[7870677f-030b-4c88-a2e1-4861b8b05e35]   
+[7870677f-030b-4c88-a2e1-4861b8b05e35] ActionController::RoutingError (No route matches [GET] "/.well-known/credentials.json"):
+[7870677f-030b-4c88-a2e1-4861b8b05e35]   
+[a298fe06-9df5-4b4c-86ec-feff1643f0d1] Started GET "/install.php" for 185.177.72.56 at 2026-03-08 14:12:20 +0000
+[a298fe06-9df5-4b4c-86ec-feff1643f0d1]   
+[a298fe06-9df5-4b4c-86ec-feff1643f0d1] ActionController::RoutingError (No route matches [GET] "/install.php"):
+[a298fe06-9df5-4b4c-86ec-feff1643f0d1]   
+[cd79e7f4-7f9f-4f85-8477-faf3c3f175fe] Started GET "/setup.php" for 185.177.72.56 at 2026-03-08 14:12:20 +0000
+[cd79e7f4-7f9f-4f85-8477-faf3c3f175fe]   
+[cd79e7f4-7f9f-4f85-8477-faf3c3f175fe] ActionController::RoutingError (No route matches [GET] "/setup.php"):
+[cd79e7f4-7f9f-4f85-8477-faf3c3f175fe]   
+[589e3300-0c8d-4fe0-8198-6832e1698112] Started GET "/setup-config.php" for 185.177.72.56 at 2026-03-08 14:12:20 +0000
+[589e3300-0c8d-4fe0-8198-6832e1698112]   
+[589e3300-0c8d-4fe0-8198-6832e1698112] ActionController::RoutingError (No route matches [GET] "/setup-config.php"):
+[589e3300-0c8d-4fe0-8198-6832e1698112]   
+[4c8f9415-72d5-421e-8830-fbfacd6c9369] Started GET "/configuration.bak" for 185.177.72.56 at 2026-03-08 14:12:20 +0000
+[4c8f9415-72d5-421e-8830-fbfacd6c9369]   
+[4c8f9415-72d5-421e-8830-fbfacd6c9369] ActionController::RoutingError (No route matches [GET] "/configuration.bak"):
+[4c8f9415-72d5-421e-8830-fbfacd6c9369]   
+[6f76b69b-5bfb-4af6-875e-568cfb18772d] Started GET "/app_dev.php" for 185.177.72.56 at 2026-03-08 14:12:21 +0000
+[6f76b69b-5bfb-4af6-875e-568cfb18772d]   
+[6f76b69b-5bfb-4af6-875e-568cfb18772d] ActionController::RoutingError (No route matches [GET] "/app_dev.php"):
+[6f76b69b-5bfb-4af6-875e-568cfb18772d]   
+[175cc0ab-bae2-4d00-82b2-175c73e4a7f3] Started GET "/config_dev.php" for 185.177.72.56 at 2026-03-08 14:12:21 +0000
+[175cc0ab-bae2-4d00-82b2-175c73e4a7f3]   
+[175cc0ab-bae2-4d00-82b2-175c73e4a7f3] ActionController::RoutingError (No route matches [GET] "/config_dev.php"):
+[175cc0ab-bae2-4d00-82b2-175c73e4a7f3]   
+[12984140-f2c4-455d-a2b7-d56c4c914ba3] Started GET "/index-dev.php" for 185.177.72.56 at 2026-03-08 14:12:21 +0000
+[12984140-f2c4-455d-a2b7-d56c4c914ba3]   
+[3a8ecb38-f6b3-4631-abb0-b38b06067313]   
+[12984140-f2c4-455d-a2b7-d56c4c914ba3] ActionController::RoutingError (No route matches [GET] "/index-dev.php"):
+[3f57c6ab-ed15-43fc-82a1-be15b0003ab5] Started GET "/dev/index.php" for 185.177.72.56 at 2026-03-08 14:12:22 +0000
+[12984140-f2c4-455d-a2b7-d56c4c914ba3]   
+[c78976ab-1adb-4c08-8c32-13121679c9a1] Started GET "/index-test.php" for 185.177.72.56 at 2026-03-08 14:12:21 +0000
+[c78976ab-1adb-4c08-8c32-13121679c9a1]   
+[c78976ab-1adb-4c08-8c32-13121679c9a1] ActionController::RoutingError (No route matches [GET] "/index-test.php"):
+[c78976ab-1adb-4c08-8c32-13121679c9a1]   
+[3a8ecb38-f6b3-4631-abb0-b38b06067313] Started GET "/test/index.php" for 185.177.72.56 at 2026-03-08 14:12:21 +0000
+[3a8ecb38-f6b3-4631-abb0-b38b06067313]   
+[3a8ecb38-f6b3-4631-abb0-b38b06067313] ActionController::RoutingError (No route matches [GET] "/test/index.php"):
+[3f57c6ab-ed15-43fc-82a1-be15b0003ab5]   
+[3f57c6ab-ed15-43fc-82a1-be15b0003ab5] ActionController::RoutingError (No route matches [GET] "/dev/index.php"):
+[3f57c6ab-ed15-43fc-82a1-be15b0003ab5]   
+[33f400d7-1a3d-495a-9e65-157fd3fe125d] Started GET "/dev/config.php" for 185.177.72.56 at 2026-03-08 14:12:22 +0000
+[33f400d7-1a3d-495a-9e65-157fd3fe125d]   
+[33f400d7-1a3d-495a-9e65-157fd3fe125d] ActionController::RoutingError (No route matches [GET] "/dev/config.php"):
+[33f400d7-1a3d-495a-9e65-157fd3fe125d]   
+[cd4ca8fd-b888-4eeb-9a3f-a081de9da3ec] Started GET "/maintenance.php" for 185.177.72.56 at 2026-03-08 14:12:22 +0000
+[cd4ca8fd-b888-4eeb-9a3f-a081de9da3ec]   
+[cd4ca8fd-b888-4eeb-9a3f-a081de9da3ec] ActionController::RoutingError (No route matches [GET] "/maintenance.php"):
+[cd4ca8fd-b888-4eeb-9a3f-a081de9da3ec]   
+[fb958bb8-f6dc-4de9-8c57-5e10b810186d] Started GET "/maintenance.html" for 185.177.72.56 at 2026-03-08 14:12:22 +0000
+[fb958bb8-f6dc-4de9-8c57-5e10b810186d]   
+[fb958bb8-f6dc-4de9-8c57-5e10b810186d] ActionController::RoutingError (No route matches [GET] "/maintenance.html"):
+[fb958bb8-f6dc-4de9-8c57-5e10b810186d]   
+[9b666156-7357-4f12-a544-0bf473a189bd] Started GET "/under-construction.html" for 185.177.72.56 at 2026-03-08 14:12:22 +0000
+[9b666156-7357-4f12-a544-0bf473a189bd]   
+[9b666156-7357-4f12-a544-0bf473a189bd] ActionController::RoutingError (No route matches [GET] "/under-construction.html"):
+[9b666156-7357-4f12-a544-0bf473a189bd]   
+[7471c945-c112-49eb-9e44-99b35458a8fe] Started GET "/down.html" for 185.177.72.56 at 2026-03-08 14:12:22 +0000
+[c9b6d6f5-0ecd-430d-a540-69226eedd1f9] Started GET "/.maintenance" for 185.177.72.56 at 2026-03-08 14:12:23 +0000
+[c9b6d6f5-0ecd-430d-a540-69226eedd1f9]   
+[c9b6d6f5-0ecd-430d-a540-69226eedd1f9] ActionController::RoutingError (No route matches [GET] "/.maintenance"):
+[c9b6d6f5-0ecd-430d-a540-69226eedd1f9]   
+[3ecfaf09-626b-40f0-88d9-e73435e1135d] Started GET "/install/install.php" for 185.177.72.56 at 2026-03-08 14:12:23 +0000
+[7471c945-c112-49eb-9e44-99b35458a8fe]   
+[3ecfaf09-626b-40f0-88d9-e73435e1135d]   
+[7471c945-c112-49eb-9e44-99b35458a8fe] ActionController::RoutingError (No route matches [GET] "/down.html"):
+[3ecfaf09-626b-40f0-88d9-e73435e1135d] ActionController::RoutingError (No route matches [GET] "/install/install.php"):
+[7471c945-c112-49eb-9e44-99b35458a8fe]   
+[3ecfaf09-626b-40f0-88d9-e73435e1135d]   
+[c4f9c90c-5616-45ad-93a8-937c1892bc76] Started GET "/setup/setup.php" for 185.177.72.56 at 2026-03-08 14:12:23 +0000
+[c4f9c90c-5616-45ad-93a8-937c1892bc76]   
+[c4f9c90c-5616-45ad-93a8-937c1892bc76] ActionController::RoutingError (No route matches [GET] "/setup/setup.php"):
+[c4f9c90c-5616-45ad-93a8-937c1892bc76]   
+[4c0c3724-d04c-45d2-9e54-0a45ce73c553] Started GET "/setup/index.php" for 185.177.72.56 at 2026-03-08 14:12:23 +0000
+[4c0c3724-d04c-45d2-9e54-0a45ce73c553]   
+[4c0c3724-d04c-45d2-9e54-0a45ce73c553] ActionController::RoutingError (No route matches [GET] "/setup/index.php"):
+[4c0c3724-d04c-45d2-9e54-0a45ce73c553]   
+[49f7238e-44cb-4b28-b039-5749a7e5c7d9] Started GET "/upgrade.php" for 185.177.72.56 at 2026-03-08 14:12:23 +0000
+[49f7238e-44cb-4b28-b039-5749a7e5c7d9]   
+[49f7238e-44cb-4b28-b039-5749a7e5c7d9] ActionController::RoutingError (No route matches [GET] "/upgrade.php"):
+[49f7238e-44cb-4b28-b039-5749a7e5c7d9]   
+[c87ae63e-a08e-44bd-a8ac-0766347b7a6a] Started GET "/upgrade/index.php" for 185.177.72.56 at 2026-03-08 14:12:24 +0000
+[c87ae63e-a08e-44bd-a8ac-0766347b7a6a]   
+[c87ae63e-a08e-44bd-a8ac-0766347b7a6a] ActionController::RoutingError (No route matches [GET] "/upgrade/index.php"):
+[c87ae63e-a08e-44bd-a8ac-0766347b7a6a]   
+[1ca4302b-0a92-40c7-b4fd-741be3c0b5be] Started GET "/upgrader.php" for 185.177.72.56 at 2026-03-08 14:12:24 +0000
+[1ca4302b-0a92-40c7-b4fd-741be3c0b5be]   
+[1ca4302b-0a92-40c7-b4fd-741be3c0b5be] ActionController::RoutingError (No route matches [GET] "/upgrader.php"):
+[1ca4302b-0a92-40c7-b4fd-741be3c0b5be]   
+[4da23720-a1d8-4186-8da5-a906400286e8] Started GET "/migrate.php" for 185.177.72.56 at 2026-03-08 14:12:24 +0000
+[4da23720-a1d8-4186-8da5-a906400286e8]   
+[4da23720-a1d8-4186-8da5-a906400286e8] ActionController::RoutingError (No route matches [GET] "/migrate.php"):
+[4da23720-a1d8-4186-8da5-a906400286e8]   
+[19e603f6-8c8a-4d94-9afd-1d34358fb062] Started GET "/migration.php" for 185.177.72.56 at 2026-03-08 14:12:24 +0000
+[19e603f6-8c8a-4d94-9afd-1d34358fb062]   
+[19e603f6-8c8a-4d94-9afd-1d34358fb062] ActionController::RoutingError (No route matches [GET] "/migration.php"):
+[19e603f6-8c8a-4d94-9afd-1d34358fb062]   
+[c6d47c37-ccca-40ed-8c84-d79442310cc9] Started GET "/console.php" for 185.177.72.56 at 2026-03-08 14:12:24 +0000
+[c6d47c37-ccca-40ed-8c84-d79442310cc9]   
+[c6d47c37-ccca-40ed-8c84-d79442310cc9] ActionController::RoutingError (No route matches [GET] "/console.php"):
+[c6d47c37-ccca-40ed-8c84-d79442310cc9]   
+[797f35c9-d5d7-454b-8549-48f62fcb2a83] Started GET "/scripts/install.sh" for 185.177.72.56 at 2026-03-08 14:12:25 +0000
+[797f35c9-d5d7-454b-8549-48f62fcb2a83]   
+[797f35c9-d5d7-454b-8549-48f62fcb2a83] ActionController::RoutingError (No route matches [GET] "/scripts/install.sh"):
+[797f35c9-d5d7-454b-8549-48f62fcb2a83]   
+[38e9bf2f-aacb-43ea-b420-9aebf4fbe0b1] Started GET "/scripts/db.sh" for 185.177.72.56 at 2026-03-08 14:12:25 +0000
+[38e9bf2f-aacb-43ea-b420-9aebf4fbe0b1]   
+[38e9bf2f-aacb-43ea-b420-9aebf4fbe0b1] ActionController::RoutingError (No route matches [GET] "/scripts/db.sh"):
+[38e9bf2f-aacb-43ea-b420-9aebf4fbe0b1]   
+[9a45ed5b-48d1-4fc1-a692-e04a0ac6d7fc] Started GET "/scripts/deploy.sh" for 185.177.72.56 at 2026-03-08 14:12:25 +0000
+[9a45ed5b-48d1-4fc1-a692-e04a0ac6d7fc]   
+[9a45ed5b-48d1-4fc1-a692-e04a0ac6d7fc] ActionController::RoutingError (No route matches [GET] "/scripts/deploy.sh"):
+[9a45ed5b-48d1-4fc1-a692-e04a0ac6d7fc]   
+[cb73b370-2cfb-4150-8fca-17a090823bf5] Started GET "/env.sh" for 185.177.72.56 at 2026-03-08 14:12:25 +0000
+[cb73b370-2cfb-4150-8fca-17a090823bf5]   
+[cb73b370-2cfb-4150-8fca-17a090823bf5] ActionController::RoutingError (No route matches [GET] "/env.sh"):
+[cb73b370-2cfb-4150-8fca-17a090823bf5]   
+[1425b9fa-424a-44ac-9a2a-01b512c3ae97] Started GET "/.env.sh" for 185.177.72.56 at 2026-03-08 14:12:25 +0000
+[1425b9fa-424a-44ac-9a2a-01b512c3ae97]   
+[1425b9fa-424a-44ac-9a2a-01b512c3ae97] ActionController::RoutingError (No route matches [GET] "/.env.sh"):
+[1425b9fa-424a-44ac-9a2a-01b512c3ae97]   
+[7864de7f-c00e-4db5-9690-ee0327a83052] Started GET "/backup.sh" for 185.177.72.56 at 2026-03-08 14:12:25 +0000
+[7864de7f-c00e-4db5-9690-ee0327a83052]   
+[7864de7f-c00e-4db5-9690-ee0327a83052] ActionController::RoutingError (No route matches [GET] "/backup.sh"):
+[7864de7f-c00e-4db5-9690-ee0327a83052]   
+[45506b29-f945-4d60-8819-2e220f1d55ad] Started GET "/test.sh" for 185.177.72.56 at 2026-03-08 14:12:26 +0000
+[45506b29-f945-4d60-8819-2e220f1d55ad]   
+[45506b29-f945-4d60-8819-2e220f1d55ad] ActionController::RoutingError (No route matches [GET] "/test.sh"):
+[45506b29-f945-4d60-8819-2e220f1d55ad]   
+[94890166-8817-4fe7-af1f-16cbc20d043f] Started GET "/debug.sh" for 185.177.72.56 at 2026-03-08 14:12:26 +0000
+[94890166-8817-4fe7-af1f-16cbc20d043f]   
+[94890166-8817-4fe7-af1f-16cbc20d043f] ActionController::RoutingError (No route matches [GET] "/debug.sh"):
+[94890166-8817-4fe7-af1f-16cbc20d043f]   
+[49925bdf-dba0-4908-b310-faabbae23648] Started GET "/logs.sh" for 185.177.72.56 at 2026-03-08 14:12:26 +0000
+[49925bdf-dba0-4908-b310-faabbae23648]   
+[49925bdf-dba0-4908-b310-faabbae23648] ActionController::RoutingError (No route matches [GET] "/logs.sh"):
+[49925bdf-dba0-4908-b310-faabbae23648]   
+[764b36a8-e492-4dc6-8c85-c1b86b0980ff] Started GET "/deploy.sh" for 185.177.72.56 at 2026-03-08 14:12:26 +0000
+[764b36a8-e492-4dc6-8c85-c1b86b0980ff]   
+[764b36a8-e492-4dc6-8c85-c1b86b0980ff] ActionController::RoutingError (No route matches [GET] "/deploy.sh"):
+[764b36a8-e492-4dc6-8c85-c1b86b0980ff]   
+[4e176b71-ccbf-4321-bf02-01179b583bd8] Started GET "/init.sh" for 185.177.72.56 at 2026-03-08 14:12:26 +0000
+[4e176b71-ccbf-4321-bf02-01179b583bd8]   
+[4e176b71-ccbf-4321-bf02-01179b583bd8] ActionController::RoutingError (No route matches [GET] "/init.sh"):
+[4e176b71-ccbf-4321-bf02-01179b583bd8]   
+[d33551db-f8b1-42d3-b960-d670b5b989bd] Started GET "/install.sh" for 185.177.72.56 at 2026-03-08 14:12:27 +0000
+[d33551db-f8b1-42d3-b960-d670b5b989bd]   
+[d33551db-f8b1-42d3-b960-d670b5b989bd] ActionController::RoutingError (No route matches [GET] "/install.sh"):
+[d33551db-f8b1-42d3-b960-d670b5b989bd]   
+[6bad992a-6eee-4a47-aa93-9ebb11db004c] Started GET "/uninstall.sh" for 185.177.72.56 at 2026-03-08 14:12:27 +0000
+[6bad992a-6eee-4a47-aa93-9ebb11db004c]   
+[6bad992a-6eee-4a47-aa93-9ebb11db004c] ActionController::RoutingError (No route matches [GET] "/uninstall.sh"):
+[6bad992a-6eee-4a47-aa93-9ebb11db004c]   
+[04d168a2-9d50-44aa-ada1-ade6908b9552] Started GET "/remove.sh" for 185.177.72.56 at 2026-03-08 14:12:27 +0000
+[04d168a2-9d50-44aa-ada1-ade6908b9552]   
+[04d168a2-9d50-44aa-ada1-ade6908b9552] ActionController::RoutingError (No route matches [GET] "/remove.sh"):
+[04d168a2-9d50-44aa-ada1-ade6908b9552]   
+[0b0fedb3-c90d-4506-9bf9-33ab293d2597] Started GET "/install.sql" for 185.177.72.56 at 2026-03-08 14:12:27 +0000
+[0b0fedb3-c90d-4506-9bf9-33ab293d2597]   
+[0b0fedb3-c90d-4506-9bf9-33ab293d2597] ActionController::RoutingError (No route matches [GET] "/install.sql"):
+[0b0fedb3-c90d-4506-9bf9-33ab293d2597]   
+[13aa7656-0614-4ff9-bd6a-e3e108e2c338] Started GET "/update.sql" for 185.177.72.56 at 2026-03-08 14:12:27 +0000
+[13aa7656-0614-4ff9-bd6a-e3e108e2c338]   
+[13aa7656-0614-4ff9-bd6a-e3e108e2c338] ActionController::RoutingError (No route matches [GET] "/update.sql"):
+[13aa7656-0614-4ff9-bd6a-e3e108e2c338]   
+[b541996f-9fef-45a8-8494-f0c97723fdcb] Started GET "/delete.sql" for 185.177.72.56 at 2026-03-08 14:12:28 +0000
+[b541996f-9fef-45a8-8494-f0c97723fdcb]   
+[b541996f-9fef-45a8-8494-f0c97723fdcb] ActionController::RoutingError (No route matches [GET] "/delete.sql"):
+[b541996f-9fef-45a8-8494-f0c97723fdcb]   
+[d4972c0b-15ff-45dc-a0dc-28fe1c2e7948] Started GET "/sample.env" for 185.177.72.56 at 2026-03-08 14:12:28 +0000
+[d4972c0b-15ff-45dc-a0dc-28fe1c2e7948]   
+[d4972c0b-15ff-45dc-a0dc-28fe1c2e7948] ActionController::RoutingError (No route matches [GET] "/sample.env"):
+[d4972c0b-15ff-45dc-a0dc-28fe1c2e7948]   
+[8eb30721-0612-4548-bb4c-8ebc0fe42c77] Started GET "/example.env" for 185.177.72.56 at 2026-03-08 14:12:28 +0000
+[8eb30721-0612-4548-bb4c-8ebc0fe42c77]   
+[8eb30721-0612-4548-bb4c-8ebc0fe42c77] ActionController::RoutingError (No route matches [GET] "/example.env"):
+[8eb30721-0612-4548-bb4c-8ebc0fe42c77]   
+[7f84ba45-adae-4f48-bf12-bdb633e07442] Started GET "/example-config.php" for 185.177.72.56 at 2026-03-08 14:12:28 +0000
+[7f84ba45-adae-4f48-bf12-bdb633e07442]   
+[7f84ba45-adae-4f48-bf12-bdb633e07442] ActionController::RoutingError (No route matches [GET] "/example-config.php"):
+[7f84ba45-adae-4f48-bf12-bdb633e07442]   
+[2e945b23-03b8-4a3f-af83-8f551e7ddea0] Started GET "/sample-config.php" for 185.177.72.56 at 2026-03-08 14:12:28 +0000
+[2e945b23-03b8-4a3f-af83-8f551e7ddea0]   
+[2e945b23-03b8-4a3f-af83-8f551e7ddea0] ActionController::RoutingError (No route matches [GET] "/sample-config.php"):
+[2e945b23-03b8-4a3f-af83-8f551e7ddea0]   
+[ed2226d2-7602-43c5-ab64-276f3cf69ef6] Started POST "/" for 185.177.72.56 at 2026-03-08 14:12:29 +0000
+[ed2226d2-7602-43c5-ab64-276f3cf69ef6]   
+[ed2226d2-7602-43c5-ab64-276f3cf69ef6] ActionController::RoutingError (No route matches [POST] "/"):
+[ed2226d2-7602-43c5-ab64-276f3cf69ef6]   
+[3f57ccd1-a2fe-486b-870b-d6ba43452ef2] Started GET "/" for 43.134.186.61 at 2026-03-08 14:26:17 +0000
+[3f57ccd1-a2fe-486b-870b-d6ba43452ef2] Processing by HomeController#index as HTML
+[3f57ccd1-a2fe-486b-870b-d6ba43452ef2] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[3f57ccd1-a2fe-486b-870b-d6ba43452ef2] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[8062d0bc-78b8-4a7b-adab-24fb1240402d] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[8062d0bc-78b8-4a7b-adab-24fb1240402d] Started GET "/" for 110.166.71.39 at 2026-03-08 14:51:57 +0000
+[8062d0bc-78b8-4a7b-adab-24fb1240402d] Processing by HomeController#index as HTML
+[8062d0bc-78b8-4a7b-adab-24fb1240402d] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[6336cc58-d54f-430b-8c20-00fbe387d637] Started GET "/" for 43.130.106.18 at 2026-03-08 15:03:50 +0000
+[6336cc58-d54f-430b-8c20-00fbe387d637] Processing by HomeController#index as HTML
+[6336cc58-d54f-430b-8c20-00fbe387d637] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[6336cc58-d54f-430b-8c20-00fbe387d637] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[555a1e22-8a80-45cc-ac71-df6c29699346] Started HEAD "/" for 176.65.148.161 at 2026-03-08 15:04:35 +0000
+[555a1e22-8a80-45cc-ac71-df6c29699346] Processing by HomeController#index as */*
+[555a1e22-8a80-45cc-ac71-df6c29699346]   Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+[555a1e22-8a80-45cc-ac71-df6c29699346] Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[fc893aa6-20c2-4299-aa87-6d5ee58cee75] Started HEAD "/" for 176.65.148.161 at 2026-03-08 15:04:38 +0000
+[fc893aa6-20c2-4299-aa87-6d5ee58cee75] Processing by HomeController#index as */*
+[fc893aa6-20c2-4299-aa87-6d5ee58cee75]   Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+[fc893aa6-20c2-4299-aa87-6d5ee58cee75] Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[d25a4e3a-a597-431b-a1d6-30b9e918e44c] Started GET "/" for 44.201.152.228 at 2026-03-08 16:23:27 +0000
+[d25a4e3a-a597-431b-a1d6-30b9e918e44c] Processing by HomeController#index as HTML
+[d25a4e3a-a597-431b-a1d6-30b9e918e44c]   Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 1.6ms)
+[d25a4e3a-a597-431b-a1d6-30b9e918e44c] Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.6ms)
+[5dc3be08-1972-46a1-9142-80de2528c8ce] Started GET "/" for 44.201.152.228 at 2026-03-08 16:23:28 +0000
+[5dc3be08-1972-46a1-9142-80de2528c8ce] Processing by HomeController#index as */*
+[5dc3be08-1972-46a1-9142-80de2528c8ce]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[5dc3be08-1972-46a1-9142-80de2528c8ce] Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[44e91b85-598b-4068-be3e-048ddbfc4b3f] Started GET "/" for 44.222.158.185 at 2026-03-08 16:23:34 +0000
+[44e91b85-598b-4068-be3e-048ddbfc4b3f] Processing by HomeController#index as HTML
+[44e91b85-598b-4068-be3e-048ddbfc4b3f] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[44e91b85-598b-4068-be3e-048ddbfc4b3f] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[429dde4f-698f-4bfe-a1d2-872a7f25f07f] Started GET "/favicon.ico" for 44.222.158.185 at 2026-03-08 16:23:35 +0000
+[429dde4f-698f-4bfe-a1d2-872a7f25f07f]   
+[429dde4f-698f-4bfe-a1d2-872a7f25f07f] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[429dde4f-698f-4bfe-a1d2-872a7f25f07f]   
+[baa75cd7-8215-4afc-bafd-4618b2771926] Started GET "/" for 13.222.195.193 at 2026-03-08 17:48:04 +0000
+[baa75cd7-8215-4afc-bafd-4618b2771926] Processing by HomeController#index as HTML
+[baa75cd7-8215-4afc-bafd-4618b2771926] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[baa75cd7-8215-4afc-bafd-4618b2771926] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+[b4ff650c-d125-4a4f-93b1-1497e2fb3e15] Started GET "/" for 13.222.195.193 at 2026-03-08 17:48:04 +0000
+[b4ff650c-d125-4a4f-93b1-1497e2fb3e15] Processing by HomeController#index as HTML
+[b4ff650c-d125-4a4f-93b1-1497e2fb3e15] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[b4ff650c-d125-4a4f-93b1-1497e2fb3e15] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[d7e52ea1-3b90-4e30-a457-7f1bdf19e726] Started GET "/.well-known/assetlinks.json" for 66.249.77.224 at 2026-03-08 17:53:36 +0000
+[d7e52ea1-3b90-4e30-a457-7f1bdf19e726]   
+[d7e52ea1-3b90-4e30-a457-7f1bdf19e726] ActionController::RoutingError (No route matches [GET] "/.well-known/assetlinks.json"):
+[d7e52ea1-3b90-4e30-a457-7f1bdf19e726]   
+[8cbc0d92-3d82-42ec-9b47-0e07211067d1] Started GET "/.well-known/assetlinks.json" for 74.125.218.225 at 2026-03-08 17:56:35 +0000
+[8cbc0d92-3d82-42ec-9b47-0e07211067d1]   
+[8cbc0d92-3d82-42ec-9b47-0e07211067d1] ActionController::RoutingError (No route matches [GET] "/.well-known/assetlinks.json"):
+[8cbc0d92-3d82-42ec-9b47-0e07211067d1]   
+[deea534c-e586-4037-98e1-4b801a550e76] Started GET "/" for 37.46.115.24 at 2026-03-08 18:09:53 +0000
+[deea534c-e586-4037-98e1-4b801a550e76] Processing by HomeController#index as HTML
+[deea534c-e586-4037-98e1-4b801a550e76]   Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.2ms)
+[deea534c-e586-4037-98e1-4b801a550e76] Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+[b7afcf37-30cd-424a-ade0-78f20c53420e] Started GET "/" for 37.46.115.24 at 2026-03-08 18:09:57 +0000
+[b7afcf37-30cd-424a-ade0-78f20c53420e] Processing by HomeController#index as */*
+[b7afcf37-30cd-424a-ade0-78f20c53420e]   Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.1ms)
+[b7afcf37-30cd-424a-ade0-78f20c53420e] Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+[ef23aeba-08ed-4db2-9a48-ece1e98e2a1c] Started GET "/favicon.ico" for 37.46.115.24 at 2026-03-08 18:10:00 +0000
+[ef23aeba-08ed-4db2-9a48-ece1e98e2a1c]   
+[ef23aeba-08ed-4db2-9a48-ece1e98e2a1c] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[ef23aeba-08ed-4db2-9a48-ece1e98e2a1c]   
+[063a6b4c-b309-493f-ac00-a03ff86c892d] Started GET "/apple-touch-icon.png" for 37.46.115.24 at 2026-03-08 18:10:00 +0000
+[063a6b4c-b309-493f-ac00-a03ff86c892d]   
+[063a6b4c-b309-493f-ac00-a03ff86c892d] ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+[063a6b4c-b309-493f-ac00-a03ff86c892d]   
+[4f1df0b4-b982-41e3-b82a-2664f8f166ff] Started GET "/" for 3.88.65.249 at 2026-03-08 18:30:28 +0000
+[4f1df0b4-b982-41e3-b82a-2664f8f166ff] Processing by HomeController#index as HTML
+[4f1df0b4-b982-41e3-b82a-2664f8f166ff] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[4f1df0b4-b982-41e3-b82a-2664f8f166ff] Completed 406 Not Acceptable in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[8aa42dc2-e626-4ac8-b6ca-7ccc9abde475] Started GET "/favicon.ico" for 3.88.65.249 at 2026-03-08 18:30:29 +0000
+[8aa42dc2-e626-4ac8-b6ca-7ccc9abde475]   
+[8aa42dc2-e626-4ac8-b6ca-7ccc9abde475] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[8aa42dc2-e626-4ac8-b6ca-7ccc9abde475]   
+[39477855-ce9f-4317-894a-f80bcde0cd73] Started GET "/" for 3.84.249.240 at 2026-03-08 18:31:45 +0000
+[39477855-ce9f-4317-894a-f80bcde0cd73] Processing by HomeController#index as HTML
+[39477855-ce9f-4317-894a-f80bcde0cd73] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[39477855-ce9f-4317-894a-f80bcde0cd73] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[802ec507-913d-4528-8f5d-045646a993c7] Started GET "/favicon.ico" for 3.84.249.240 at 2026-03-08 18:31:46 +0000
+[802ec507-913d-4528-8f5d-045646a993c7]   
+[802ec507-913d-4528-8f5d-045646a993c7] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[802ec507-913d-4528-8f5d-045646a993c7]   
+[447bfcac-76e0-45f1-b6e6-e93b06d2363b] Started GET "/" for 54.173.212.43 at 2026-03-08 18:45:41 +0000
+[447bfcac-76e0-45f1-b6e6-e93b06d2363b] Processing by HomeController#index as HTML
+[447bfcac-76e0-45f1-b6e6-e93b06d2363b]   Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+[447bfcac-76e0-45f1-b6e6-e93b06d2363b] Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[f1d405af-901c-494a-b5a4-9f988a0bde63] Started GET "/" for 54.173.212.43 at 2026-03-08 18:45:43 +0000
+[f1d405af-901c-494a-b5a4-9f988a0bde63] Processing by HomeController#index as */*
+[f1d405af-901c-494a-b5a4-9f988a0bde63]   Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+[f1d405af-901c-494a-b5a4-9f988a0bde63] Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[39673275-282a-41f4-9c59-0d20c4afd928] Started GET "/" for 32.192.244.146 at 2026-03-08 18:58:55 +0000
+[39673275-282a-41f4-9c59-0d20c4afd928] Processing by HomeController#index as HTML
+[39673275-282a-41f4-9c59-0d20c4afd928]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[39673275-282a-41f4-9c59-0d20c4afd928] Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[deb1d09c-18a0-4f04-bb33-e182d2eba114] Started GET "/" for 32.192.244.146 at 2026-03-08 18:58:57 +0000
+[deb1d09c-18a0-4f04-bb33-e182d2eba114] Processing by HomeController#index as */*
+[deb1d09c-18a0-4f04-bb33-e182d2eba114]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[deb1d09c-18a0-4f04-bb33-e182d2eba114] Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[995558da-a1f1-4183-a22e-24772c829973] Started GET "/.env" for 34.57.92.177 at 2026-03-08 19:21:13 +0000
+[995558da-a1f1-4183-a22e-24772c829973]   
+[995558da-a1f1-4183-a22e-24772c829973] ActionController::RoutingError (No route matches [GET] "/.env"):
+[995558da-a1f1-4183-a22e-24772c829973]   
+[7016de8d-4560-43a5-a697-8f904db09874] Started GET "/" for 43.154.127.188 at 2026-03-08 19:26:45 +0000
+[7016de8d-4560-43a5-a697-8f904db09874] Processing by HomeController#index as HTML
+[7016de8d-4560-43a5-a697-8f904db09874] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[7016de8d-4560-43a5-a697-8f904db09874] Completed 406 Not Acceptable in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[1f535112-96d3-4174-96b1-a6e996c47017] Started GET "/" for 43.156.168.214 at 2026-03-08 21:03:48 +0000
+[1f535112-96d3-4174-96b1-a6e996c47017] Processing by HomeController#index as HTML
+[1f535112-96d3-4174-96b1-a6e996c47017] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[1f535112-96d3-4174-96b1-a6e996c47017] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+[77a009a6-957a-4f93-b5d1-98432312c0fb] Started GET "/" for 98.90.116.248 at 2026-03-08 23:34:15 +0000
+[77a009a6-957a-4f93-b5d1-98432312c0fb] Processing by HomeController#index as */*
+[77a009a6-957a-4f93-b5d1-98432312c0fb] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[77a009a6-957a-4f93-b5d1-98432312c0fb] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[a6d83a16-109b-4680-9094-7f1e03b40962] Started GET "/" for 138.226.29.221 at 2026-03-09 00:07:58 +0000
+[a6d83a16-109b-4680-9094-7f1e03b40962] Processing by HomeController#index as HTML
+[a6d83a16-109b-4680-9094-7f1e03b40962]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[a6d83a16-109b-4680-9094-7f1e03b40962] Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[cbd98ba4-b033-4dac-89a5-aa0e8949a85c] Started GET "/" for 138.226.29.221 at 2026-03-09 00:07:59 +0000
+[cbd98ba4-b033-4dac-89a5-aa0e8949a85c] Processing by HomeController#index as */*
+[cbd98ba4-b033-4dac-89a5-aa0e8949a85c]   Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+[cbd98ba4-b033-4dac-89a5-aa0e8949a85c] Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[14c88d51-2ecb-4c84-bad0-72d8919889e4] Started GET "/" for 178.22.106.230 at 2026-03-09 00:20:57 +0000
+[14c88d51-2ecb-4c84-bad0-72d8919889e4] Processing by HomeController#index as HTML
+[14c88d51-2ecb-4c84-bad0-72d8919889e4]   Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.6ms)
+[14c88d51-2ecb-4c84-bad0-72d8919889e4] Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+[8d88a649-4fa9-4d3a-a0e0-45d0a88f8fb7] Started GET "/js/twint_ch.js" for 178.22.106.230 at 2026-03-09 00:20:59 +0000
+[8d88a649-4fa9-4d3a-a0e0-45d0a88f8fb7]   
+[8d88a649-4fa9-4d3a-a0e0-45d0a88f8fb7] ActionController::RoutingError (No route matches [GET] "/js/twint_ch.js"):
+[8d88a649-4fa9-4d3a-a0e0-45d0a88f8fb7]   
+[6dbd2656-e662-41c9-a2a9-093a39eb1392] Started GET "/js/lkk_ch.js" for 178.22.106.230 at 2026-03-09 00:21:05 +0000
+[6dbd2656-e662-41c9-a2a9-093a39eb1392]   
+[6dbd2656-e662-41c9-a2a9-093a39eb1392] ActionController::RoutingError (No route matches [GET] "/js/lkk_ch.js"):
+[6dbd2656-e662-41c9-a2a9-093a39eb1392]   
+[3b322e3e-2111-446d-b89e-8fcc99331d74] Started GET "/assets/js/message.js" for 178.22.106.230 at 2026-03-09 00:21:08 +0000
+[3b322e3e-2111-446d-b89e-8fcc99331d74]   
+[3b322e3e-2111-446d-b89e-8fcc99331d74] ActionController::RoutingError (No route matches [GET] "/assets/js/message.js"):
+[3b322e3e-2111-446d-b89e-8fcc99331d74]   
+[65560a77-d5d9-4f74-8660-7d538c594e9e] Started GET "/assets/js/qr_modal.js" for 178.22.106.230 at 2026-03-09 00:21:11 +0000
+[65560a77-d5d9-4f74-8660-7d538c594e9e]   
+[65560a77-d5d9-4f74-8660-7d538c594e9e] ActionController::RoutingError (No route matches [GET] "/assets/js/qr_modal.js"):
+[65560a77-d5d9-4f74-8660-7d538c594e9e]   
+[73d4f677-a1b3-4755-b724-a30178d6f17d] Started GET "/static/style/protect/index.js" for 178.22.106.230 at 2026-03-09 00:21:19 +0000
+[73d4f677-a1b3-4755-b724-a30178d6f17d]   
+[73d4f677-a1b3-4755-b724-a30178d6f17d] ActionController::RoutingError (No route matches [GET] "/static/style/protect/index.js"):
+[73d4f677-a1b3-4755-b724-a30178d6f17d]   
+[80cacc3e-80fc-4a8c-baa1-89b0742715f5] Started GET "/css/support_parent.css" for 178.22.106.230 at 2026-03-09 00:21:23 +0000
+[80cacc3e-80fc-4a8c-baa1-89b0742715f5]   
+[80cacc3e-80fc-4a8c-baa1-89b0742715f5] ActionController::RoutingError (No route matches [GET] "/css/support_parent.css"):
+[80cacc3e-80fc-4a8c-baa1-89b0742715f5]   
+[dab98ed3-0018-447c-ba94-88a380211afc] Started GET "/static/style/sys_files/index.js" for 178.22.106.230 at 2026-03-09 00:21:27 +0000
+[dab98ed3-0018-447c-ba94-88a380211afc]   
+[dab98ed3-0018-447c-ba94-88a380211afc] ActionController::RoutingError (No route matches [GET] "/static/style/sys_files/index.js"):
+[dab98ed3-0018-447c-ba94-88a380211afc]   
+[f38e7d09-510e-4073-bc87-8a8505ff85ed] Started GET "/assets/js/auth.js" for 178.22.106.230 at 2026-03-09 00:21:27 +0000
+[f38e7d09-510e-4073-bc87-8a8505ff85ed]   
+[f38e7d09-510e-4073-bc87-8a8505ff85ed] ActionController::RoutingError (No route matches [GET] "/assets/js/auth.js"):
+[f38e7d09-510e-4073-bc87-8a8505ff85ed]   
+[d2041bdc-fb25-4f23-bb99-e74880d15df3] Started GET "/" for 100.55.15.220 at 2026-03-09 00:22:59 +0000
+[d2041bdc-fb25-4f23-bb99-e74880d15df3] Processing by HomeController#index as HTML
+[d2041bdc-fb25-4f23-bb99-e74880d15df3]   Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+[d2041bdc-fb25-4f23-bb99-e74880d15df3] Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[d8be6f37-3f43-4a1f-90c7-aa4bb9021cef] Started GET "/" for 100.55.15.220 at 2026-03-09 00:23:01 +0000
+[d8be6f37-3f43-4a1f-90c7-aa4bb9021cef] Processing by HomeController#index as */*
+[d8be6f37-3f43-4a1f-90c7-aa4bb9021cef]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[d8be6f37-3f43-4a1f-90c7-aa4bb9021cef] Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[db6b9d83-604a-434b-bc1d-62b121b52985] Started GET "/" for 52.87.193.155 at 2026-03-09 00:23:20 +0000
+[db6b9d83-604a-434b-bc1d-62b121b52985] Processing by HomeController#index as HTML
+[db6b9d83-604a-434b-bc1d-62b121b52985] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[db6b9d83-604a-434b-bc1d-62b121b52985] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[c125926b-7616-45c4-b9c1-850ea2b5cf10] Started GET "/favicon.ico" for 52.87.193.155 at 2026-03-09 00:23:20 +0000
+[c125926b-7616-45c4-b9c1-850ea2b5cf10]   
+[c125926b-7616-45c4-b9c1-850ea2b5cf10] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[c125926b-7616-45c4-b9c1-850ea2b5cf10]   
+[9df87955-fa5f-4be1-abf5-1bb428a96bf6] Started GET "/" for 43.166.128.187 at 2026-03-09 01:13:25 +0000
+[9df87955-fa5f-4be1-abf5-1bb428a96bf6] Processing by HomeController#index as HTML
+[9df87955-fa5f-4be1-abf5-1bb428a96bf6] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[9df87955-fa5f-4be1-abf5-1bb428a96bf6] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[cafab8c8-4658-404c-bd83-6fd92bb18abc] Started GET "/" for 178.22.106.230 at 2026-03-09 01:15:57 +0000
+[cafab8c8-4658-404c-bd83-6fd92bb18abc] Processing by HomeController#index as HTML
+[cafab8c8-4658-404c-bd83-6fd92bb18abc]   Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+[cafab8c8-4658-404c-bd83-6fd92bb18abc] Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[adfee33e-a261-4772-8450-ee396701cc45] Started GET "/assets/js/auth.js" for 178.22.106.230 at 2026-03-09 01:16:02 +0000
+[adfee33e-a261-4772-8450-ee396701cc45]   
+[adfee33e-a261-4772-8450-ee396701cc45] ActionController::RoutingError (No route matches [GET] "/assets/js/auth.js"):
+[adfee33e-a261-4772-8450-ee396701cc45]   
+[a8d29116-7f2d-4442-bce1-8bea71b79213]   
+[a8d29116-7f2d-4442-bce1-8bea71b79213] ActionController::RoutingError (No route matches [GET] "/static/style/sys_files/index.js"):
+[a8d29116-7f2d-4442-bce1-8bea71b79213] Started GET "/static/style/sys_files/index.js" for 178.22.106.230 at 2026-03-09 01:16:04 +0000
+[a8d29116-7f2d-4442-bce1-8bea71b79213]   
+[807c4197-e5cf-43ef-876a-8924c98982da] Started GET "/static/style/protect/index.js" for 178.22.106.230 at 2026-03-09 01:16:09 +0000
+[807c4197-e5cf-43ef-876a-8924c98982da]   
+[807c4197-e5cf-43ef-876a-8924c98982da] ActionController::RoutingError (No route matches [GET] "/static/style/protect/index.js"):
+[807c4197-e5cf-43ef-876a-8924c98982da]   
+[9fa43800-b2f7-412d-b23e-bc93004b486e] Started GET "/assets/js/qr_modal.js" for 178.22.106.230 at 2026-03-09 01:16:12 +0000
+[9fa43800-b2f7-412d-b23e-bc93004b486e]   
+[9fa43800-b2f7-412d-b23e-bc93004b486e] ActionController::RoutingError (No route matches [GET] "/assets/js/qr_modal.js"):
+[9fa43800-b2f7-412d-b23e-bc93004b486e]   
+[8fefb27a-fb91-409c-baf3-7a939171e303] Started GET "/assets/js/message.js" for 178.22.106.230 at 2026-03-09 01:16:31 +0000
+[8fefb27a-fb91-409c-baf3-7a939171e303]   
+[8fefb27a-fb91-409c-baf3-7a939171e303] ActionController::RoutingError (No route matches [GET] "/assets/js/message.js"):
+[8fefb27a-fb91-409c-baf3-7a939171e303]   
+[7a32875a-6e7d-4164-ae61-c672bc6a1317] Started GET "/css/support_parent.css" for 178.22.106.230 at 2026-03-09 01:16:35 +0000
+[7a32875a-6e7d-4164-ae61-c672bc6a1317]   
+[7a32875a-6e7d-4164-ae61-c672bc6a1317] ActionController::RoutingError (No route matches [GET] "/css/support_parent.css"):
+[7a32875a-6e7d-4164-ae61-c672bc6a1317]   
+[bcc6d3c9-88ae-4e5f-80fb-172437030808] Started GET "/js/lkk_ch.js" for 178.22.106.230 at 2026-03-09 01:16:38 +0000
+[bcc6d3c9-88ae-4e5f-80fb-172437030808]   
+[bcc6d3c9-88ae-4e5f-80fb-172437030808] ActionController::RoutingError (No route matches [GET] "/js/lkk_ch.js"):
+[bcc6d3c9-88ae-4e5f-80fb-172437030808]   
+[d03b2644-e639-4047-aac7-9b62c605d9f1] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[d03b2644-e639-4047-aac7-9b62c605d9f1] Completed 406 Not Acceptable in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.4ms)
+[d03b2644-e639-4047-aac7-9b62c605d9f1] Started GET "/" for 43.135.36.201 at 2026-03-09 02:07:08 +0000
+[d03b2644-e639-4047-aac7-9b62c605d9f1] Processing by HomeController#index as HTML
+[da7f2877-e643-47c0-b856-2314fe71a0fa] Started GET "/saju" for 147.160.31.137 at 2026-03-09 02:39:06 +0000
+[da7f2877-e643-47c0-b856-2314fe71a0fa]   
+[da7f2877-e643-47c0-b856-2314fe71a0fa] ActionController::RoutingError (No route matches [GET] "/saju"):
+[da7f2877-e643-47c0-b856-2314fe71a0fa]   
+[56a9f799-0465-4394-b5e1-d47cce135709] Started GET "/saju" for 167.160.63.117 at 2026-03-09 02:39:08 +0000
+[56a9f799-0465-4394-b5e1-d47cce135709]   
+[56a9f799-0465-4394-b5e1-d47cce135709] ActionController::RoutingError (No route matches [GET] "/saju"):
+[56a9f799-0465-4394-b5e1-d47cce135709]   
+[327baa43-65f0-4262-a3a1-f2973af3e7e4] Started GET "/favicon.ico" for 167.160.63.117 at 2026-03-09 02:39:08 +0000
+[327baa43-65f0-4262-a3a1-f2973af3e7e4]   
+[327baa43-65f0-4262-a3a1-f2973af3e7e4] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[327baa43-65f0-4262-a3a1-f2973af3e7e4]   
+[0f0f0161-3c08-4c06-a1de-ba9f70529509] Started GET "/" for 118.43.202.74 at 2026-03-09 03:21:11 +0000
+[0f0f0161-3c08-4c06-a1de-ba9f70529509] Processing by HomeController#index as HTML
+[0f0f0161-3c08-4c06-a1de-ba9f70529509]   Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.2ms)
+[0f0f0161-3c08-4c06-a1de-ba9f70529509] Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+[c6049ed6-03a7-4777-8551-af7d48f1104b] Started GET "/saju/new" for 118.43.202.74 at 2026-03-09 03:21:15 +0000
+[c6049ed6-03a7-4777-8551-af7d48f1104b] Processing by SajuController#new as HTML
+[c6049ed6-03a7-4777-8551-af7d48f1104b]   Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.0ms)
+[c6049ed6-03a7-4777-8551-af7d48f1104b] Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[32748f88-a7d7-4a19-8411-d3a400eb17d9] Started GET "/fortunes/daily" for 118.43.202.74 at 2026-03-09 03:21:19 +0000
+[32748f88-a7d7-4a19-8411-d3a400eb17d9] Processing by FortunesController#daily as HTML
+[32748f88-a7d7-4a19-8411-d3a400eb17d9] Redirected to https://www.1minsaju.com/saju/new
+[32748f88-a7d7-4a19-8411-d3a400eb17d9] Filter chain halted as :check_session rendered or redirected
+[32748f88-a7d7-4a19-8411-d3a400eb17d9] Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[209321ea-cae7-459c-a5ce-2f279b21864f] Started GET "/saju/new" for 118.43.202.74 at 2026-03-09 03:21:19 +0000
+[209321ea-cae7-459c-a5ce-2f279b21864f] Processing by SajuController#new as HTML
+[209321ea-cae7-459c-a5ce-2f279b21864f]   Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+[209321ea-cae7-459c-a5ce-2f279b21864f] Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[418ceaba-0a89-4857-834e-07df379b3165] Started GET "/" for 118.43.202.74 at 2026-03-09 03:21:33 +0000
+[418ceaba-0a89-4857-834e-07df379b3165] Processing by HomeController#index as HTML
+[418ceaba-0a89-4857-834e-07df379b3165]   Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+[418ceaba-0a89-4857-834e-07df379b3165] Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[51cc9aa4-efe8-4441-8cfa-57d3c46567ac] Started GET "/" for 123.187.240.242 at 2026-03-09 03:24:33 +0000
+[51cc9aa4-efe8-4441-8cfa-57d3c46567ac] Processing by HomeController#index as HTML
+[51cc9aa4-efe8-4441-8cfa-57d3c46567ac] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[51cc9aa4-efe8-4441-8cfa-57d3c46567ac] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[96a7e1b5-6c96-45b3-82ea-ad3267e40caa] Started GET "/" for 48.192.92.25 at 2026-03-09 03:29:48 +0000
+[96a7e1b5-6c96-45b3-82ea-ad3267e40caa] Processing by HomeController#index as HTML
+[96a7e1b5-6c96-45b3-82ea-ad3267e40caa]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[96a7e1b5-6c96-45b3-82ea-ad3267e40caa] Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[fcd5173d-d31e-4005-8533-8c1770ff3990] Started GET "/" for 45.148.10.238 at 2026-03-09 03:41:24 +0000
+[fcd5173d-d31e-4005-8533-8c1770ff3990] Processing by HomeController#index as HTML
+[fcd5173d-d31e-4005-8533-8c1770ff3990]   Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+[fcd5173d-d31e-4005-8533-8c1770ff3990] Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+[ce1204f4-156d-4614-a7c4-9eed39386885] Started GET "//t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" for 45.148.10.238 at 2026-03-09 03:41:37 +0000
+[ce1204f4-156d-4614-a7c4-9eed39386885]   
+[ce1204f4-156d-4614-a7c4-9eed39386885] ActionController::RoutingError (No route matches [GET] "/t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js"):
+[ce1204f4-156d-4614-a7c4-9eed39386885]   
+[e11d9056-88e7-43f0-8c60-088cad147e4b]   
+[e11d9056-88e7-43f0-8c60-088cad147e4b] ActionController::RoutingError (No route matches [GET] "/t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js"):
+[e11d9056-88e7-43f0-8c60-088cad147e4b] Started GET "//t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" for 45.148.10.238 at 2026-03-09 03:42:06 +0000
+[e11d9056-88e7-43f0-8c60-088cad147e4b]   
+[8da82b30-2758-4b13-9312-4b34e716a12c] Started GET "//t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" for 45.148.10.238 at 2026-03-09 03:42:33 +0000
+[8da82b30-2758-4b13-9312-4b34e716a12c]   
+[8da82b30-2758-4b13-9312-4b34e716a12c] ActionController::RoutingError (No route matches [GET] "/t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js"):
+[8da82b30-2758-4b13-9312-4b34e716a12c]   
+[d4c1cf31-cd4c-48bb-adfd-1b6395dc7922] Started GET "/.well-known/assetlinks.json" for 74.125.218.226 at 2026-03-09 04:11:51 +0000
+[d4c1cf31-cd4c-48bb-adfd-1b6395dc7922]   
+[d4c1cf31-cd4c-48bb-adfd-1b6395dc7922] ActionController::RoutingError (No route matches [GET] "/.well-known/assetlinks.json"):
+[d4c1cf31-cd4c-48bb-adfd-1b6395dc7922]   
+[ce7c262e-68bb-4b92-b639-6b92e7a0056e] Started GET "/.git/config" for 195.178.110.241 at 2026-03-09 05:00:02 +0000
+[ce7c262e-68bb-4b92-b639-6b92e7a0056e]   
+[ce7c262e-68bb-4b92-b639-6b92e7a0056e] ActionController::RoutingError (No route matches [GET] "/.git/config"):
+[ce7c262e-68bb-4b92-b639-6b92e7a0056e]   
+[4d5653fb-aebb-4ea5-ab46-1375df3d4647] Started GET "/saju/new" for 118.43.202.74 at 2026-03-09 05:18:13 +0000
+[4d5653fb-aebb-4ea5-ab46-1375df3d4647] Processing by SajuController#new as HTML
+[4d5653fb-aebb-4ea5-ab46-1375df3d4647]   Rendered layout layouts/application.html.erb (Duration: 7.8ms | GC: 0.0ms)
+[4d5653fb-aebb-4ea5-ab46-1375df3d4647] Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[0971b511-4cd6-4141-9d5a-4484257063d3] Started GET "/" for 43.159.148.221 at 2026-03-09 06:23:25 +0000
+[0971b511-4cd6-4141-9d5a-4484257063d3] Processing by HomeController#index as HTML
+[0971b511-4cd6-4141-9d5a-4484257063d3] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[0971b511-4cd6-4141-9d5a-4484257063d3] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[cb611dea-6bfc-41fd-9a3d-16cdd47fe553] Started GET "/" for 3.88.133.97 at 2026-03-09 08:23:13 +0000
+[cb611dea-6bfc-41fd-9a3d-16cdd47fe553] Processing by HomeController#index as HTML
+[cb611dea-6bfc-41fd-9a3d-16cdd47fe553]   Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.3ms)
+[cb611dea-6bfc-41fd-9a3d-16cdd47fe553] Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+[b629e403-3db4-4587-b4fc-265c296a05b7] Started GET "/" for 3.88.133.97 at 2026-03-09 08:23:14 +0000
+[b629e403-3db4-4587-b4fc-265c296a05b7] Processing by HomeController#index as */*
+[b629e403-3db4-4587-b4fc-265c296a05b7]   Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+[b629e403-3db4-4587-b4fc-265c296a05b7] Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[67b5eb45-fbc0-4627-92f6-6f4a3043ea0d] Started GET "/" for 18.205.153.92 at 2026-03-09 08:23:16 +0000
+[67b5eb45-fbc0-4627-92f6-6f4a3043ea0d] Processing by HomeController#index as HTML
+[67b5eb45-fbc0-4627-92f6-6f4a3043ea0d] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[67b5eb45-fbc0-4627-92f6-6f4a3043ea0d] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+[4e21ba92-6fc1-4d06-bdc3-89d06fd77742] Started GET "/favicon.ico" for 18.205.153.92 at 2026-03-09 08:23:16 +0000
+[4e21ba92-6fc1-4d06-bdc3-89d06fd77742]   
+[4e21ba92-6fc1-4d06-bdc3-89d06fd77742] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[4e21ba92-6fc1-4d06-bdc3-89d06fd77742]   
+[19ef4b55-e76f-43f2-990a-ac4b50d47bd2] Started GET "/" for 209.97.191.6 at 2026-03-09 08:41:25 +0000
+[19ef4b55-e76f-43f2-990a-ac4b50d47bd2] Processing by HomeController#index as HTML
+[19ef4b55-e76f-43f2-990a-ac4b50d47bd2]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[19ef4b55-e76f-43f2-990a-ac4b50d47bd2] Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[625fb7d6-f5fa-451c-b6d0-239b3385dffc] Started GET "/" for 43.159.152.4 at 2026-03-09 11:17:47 +0000
+[625fb7d6-f5fa-451c-b6d0-239b3385dffc] Processing by HomeController#index as HTML
+[625fb7d6-f5fa-451c-b6d0-239b3385dffc] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[625fb7d6-f5fa-451c-b6d0-239b3385dffc] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[37ac9a7d-84ff-4ad8-81ac-a26680531a93] Started GET "/" for 43.133.91.48 at 2026-03-09 12:03:15 +0000
+[37ac9a7d-84ff-4ad8-81ac-a26680531a93] Processing by HomeController#index as HTML
+[37ac9a7d-84ff-4ad8-81ac-a26680531a93] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[37ac9a7d-84ff-4ad8-81ac-a26680531a93] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[11928cdc-b57d-451a-a5f5-e947a6debce9] Started HEAD "/" for 167.82.237.62 at 2026-03-09 12:37:52 +0000
+[11928cdc-b57d-451a-a5f5-e947a6debce9] Processing by HomeController#index as */*
+[11928cdc-b57d-451a-a5f5-e947a6debce9]   Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+[11928cdc-b57d-451a-a5f5-e947a6debce9] Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+[f0d5f65d-7aac-4e70-ba65-b2e6765ba66d] Started GET "/" for 167.82.237.87 at 2026-03-09 12:37:53 +0000
+[f0d5f65d-7aac-4e70-ba65-b2e6765ba66d] Processing by HomeController#index as */*
+[f0d5f65d-7aac-4e70-ba65-b2e6765ba66d]   Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.4ms)
+[f0d5f65d-7aac-4e70-ba65-b2e6765ba66d] Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+[3fcf1f4e-31af-4cc0-80b3-18482741846e] Started GET "/" for 140.248.68.134 at 2026-03-09 13:02:17 +0000
+[3fcf1f4e-31af-4cc0-80b3-18482741846e] Processing by HomeController#index as */*
+[3fcf1f4e-31af-4cc0-80b3-18482741846e]   Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.2ms)
+[3fcf1f4e-31af-4cc0-80b3-18482741846e] Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+[df0f3c76-adbd-4b18-be96-a08fdb250c39] Started GET "/" for 140.248.68.22 at 2026-03-09 13:02:18 +0000
+[df0f3c76-adbd-4b18-be96-a08fdb250c39] Processing by HomeController#index as */*
+[df0f3c76-adbd-4b18-be96-a08fdb250c39]   Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+[df0f3c76-adbd-4b18-be96-a08fdb250c39] Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[e96cd6fb-dfb4-492d-868a-b923274b8556] Started GET "/.git/config" for 45.148.10.238 at 2026-03-09 13:57:19 +0000
+[e96cd6fb-dfb4-492d-868a-b923274b8556]   
+[e96cd6fb-dfb4-492d-868a-b923274b8556] ActionController::RoutingError (No route matches [GET] "/.git/config"):
+[e96cd6fb-dfb4-492d-868a-b923274b8556]   
+[144ff1cc-79c1-4c12-b2fb-6ec74c32e8c6] Started HEAD "/" for 140.248.68.81 at 2026-03-09 14:00:15 +0000
+[144ff1cc-79c1-4c12-b2fb-6ec74c32e8c6] Processing by HomeController#index as HTML
+[144ff1cc-79c1-4c12-b2fb-6ec74c32e8c6] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[144ff1cc-79c1-4c12-b2fb-6ec74c32e8c6] Completed 406 Not Acceptable in 4ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[544b858a-1fdd-4b84-a325-5f554c2bdf66] Started GET "/" for 140.248.68.126 at 2026-03-09 14:00:15 +0000
+[544b858a-1fdd-4b84-a325-5f554c2bdf66] Processing by HomeController#index as HTML
+[544b858a-1fdd-4b84-a325-5f554c2bdf66] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[544b858a-1fdd-4b84-a325-5f554c2bdf66] Completed 406 Not Acceptable in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[89fc08f6-ac32-4f54-b9fb-19ee1614c292] Started GET "/" for 140.248.68.21 at 2026-03-09 14:00:16 +0000
+[89fc08f6-ac32-4f54-b9fb-19ee1614c292] Processing by HomeController#index as */*
+[89fc08f6-ac32-4f54-b9fb-19ee1614c292]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[89fc08f6-ac32-4f54-b9fb-19ee1614c292] Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[6cceb54f-1a1e-4397-b54d-241b17ddd74b] Started HEAD "/" for 140.248.67.40 at 2026-03-09 14:00:16 +0000
+[6cceb54f-1a1e-4397-b54d-241b17ddd74b] Processing by HomeController#index as HTML
+[6cceb54f-1a1e-4397-b54d-241b17ddd74b] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[6cceb54f-1a1e-4397-b54d-241b17ddd74b] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[14aa802e-507d-4137-91dc-f03a3ce5b9d7] Started GET "/" for 140.248.67.45 at 2026-03-09 14:00:17 +0000
+[14aa802e-507d-4137-91dc-f03a3ce5b9d7] Processing by HomeController#index as HTML
+[14aa802e-507d-4137-91dc-f03a3ce5b9d7] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[14aa802e-507d-4137-91dc-f03a3ce5b9d7] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[5911987f-94ed-4308-9004-600d48668ed8] Started GET "/" for 140.248.88.29 at 2026-03-09 14:00:18 +0000
+[5911987f-94ed-4308-9004-600d48668ed8] Processing by HomeController#index as */*
+[5911987f-94ed-4308-9004-600d48668ed8]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[5911987f-94ed-4308-9004-600d48668ed8] Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[4884b69a-845e-4532-95ae-5c6b3346c8e9] Processing by HomeController#index as */*
+[4884b69a-845e-4532-95ae-5c6b3346c8e9]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[4884b69a-845e-4532-95ae-5c6b3346c8e9] Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[b6ca74ac-8a97-4f55-8a82-88e2a3fea3b9] Started GET "/" for 167.82.143.95 at 2026-03-09 14:01:54 +0000
+[b6ca74ac-8a97-4f55-8a82-88e2a3fea3b9] Processing by HomeController#index as HTML
+[b6ca74ac-8a97-4f55-8a82-88e2a3fea3b9]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.1ms)
+[b6ca74ac-8a97-4f55-8a82-88e2a3fea3b9] Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+[4884b69a-845e-4532-95ae-5c6b3346c8e9] Started GET "/" for 167.82.143.95 at 2026-03-09 14:01:55 +0000
+[c2b121f0-3e8b-4ffa-beb7-8865677e25f7] Started GET "/" for 43.153.123.3 at 2026-03-09 15:03:02 +0000
+[c2b121f0-3e8b-4ffa-beb7-8865677e25f7] Processing by HomeController#index as HTML
+[c2b121f0-3e8b-4ffa-beb7-8865677e25f7] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[c2b121f0-3e8b-4ffa-beb7-8865677e25f7] Completed 406 Not Acceptable in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[39e628ff-fd56-4304-b87a-c3f8b150f1dc] Started GET "/" for 184.32.220.182 at 2026-03-09 16:00:03 +0000
+[39e628ff-fd56-4304-b87a-c3f8b150f1dc] Processing by HomeController#index as HTML
+[39e628ff-fd56-4304-b87a-c3f8b150f1dc] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[39e628ff-fd56-4304-b87a-c3f8b150f1dc] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[1e584def-f28a-4e97-843e-e8053a36cbb0] Started GET "/" for 43.166.128.86 at 2026-03-09 16:01:52 +0000
+[1e584def-f28a-4e97-843e-e8053a36cbb0] Processing by HomeController#index as HTML
+[1e584def-f28a-4e97-843e-e8053a36cbb0] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[1e584def-f28a-4e97-843e-e8053a36cbb0] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[f71afcff-b75c-4427-a6e1-c3063f889182] Started GET "/" for 104.156.83.106 at 2026-03-09 16:24:27 +0000
+[f71afcff-b75c-4427-a6e1-c3063f889182] Processing by HomeController#index as HTML
+[f71afcff-b75c-4427-a6e1-c3063f889182] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[f71afcff-b75c-4427-a6e1-c3063f889182] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[b24b456e-85ff-4dc8-bb0b-aa9fc43e2fb5] Started GET "/favicon.ico" for 104.156.83.163 at 2026-03-09 16:24:28 +0000
+[b24b456e-85ff-4dc8-bb0b-aa9fc43e2fb5]   
+[b24b456e-85ff-4dc8-bb0b-aa9fc43e2fb5] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[b24b456e-85ff-4dc8-bb0b-aa9fc43e2fb5]   
+[223bc15e-3e6d-4bce-8191-0e9c570e515c] Started GET "/" for 104.156.83.43 at 2026-03-09 16:24:33 +0000
+[223bc15e-3e6d-4bce-8191-0e9c570e515c] Processing by HomeController#index as HTML
+[223bc15e-3e6d-4bce-8191-0e9c570e515c]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[223bc15e-3e6d-4bce-8191-0e9c570e515c] Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[ac79d596-afee-4c19-aff7-598e10b269b8] Started GET "/" for 104.156.83.43 at 2026-03-09 16:24:35 +0000
+[ac79d596-afee-4c19-aff7-598e10b269b8] Processing by HomeController#index as */*
+[ac79d596-afee-4c19-aff7-598e10b269b8]   Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+[ac79d596-afee-4c19-aff7-598e10b269b8] Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[d6c9bfea-ca3f-4cfc-997b-8dda8699d69d] Started GET "/" for 104.156.83.119 at 2026-03-09 16:25:46 +0000
+[d6c9bfea-ca3f-4cfc-997b-8dda8699d69d] Processing by HomeController#index as HTML
+[d6c9bfea-ca3f-4cfc-997b-8dda8699d69d] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[d6c9bfea-ca3f-4cfc-997b-8dda8699d69d] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[c9c2c866-c737-49f1-a837-bcb18ede51d7] Started GET "/favicon.ico" for 104.156.83.139 at 2026-03-09 16:25:46 +0000
+[c9c2c866-c737-49f1-a837-bcb18ede51d7]   
+[c9c2c866-c737-49f1-a837-bcb18ede51d7] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[c9c2c866-c737-49f1-a837-bcb18ede51d7]   
+[c18e7d6f-c357-4057-972e-61cb1fa1897e] Started GET "/.well-known/assetlinks.json" for 64.233.173.137 at 2026-03-09 16:27:45 +0000
+[c18e7d6f-c357-4057-972e-61cb1fa1897e]   
+[c18e7d6f-c357-4057-972e-61cb1fa1897e] ActionController::RoutingError (No route matches [GET] "/.well-known/assetlinks.json"):
+[c18e7d6f-c357-4057-972e-61cb1fa1897e]   
+[3583a301-074a-4a6f-b428-d833ca969d04] Started GET "/" for 182.42.111.213 at 2026-03-09 16:54:28 +0000
+[3583a301-074a-4a6f-b428-d833ca969d04] Processing by HomeController#index as HTML
+[3583a301-074a-4a6f-b428-d833ca969d04] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[3583a301-074a-4a6f-b428-d833ca969d04] Completed 406 Not Acceptable in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[cb4e5796-b067-4eb8-be0f-e6dd4e30b56b] Started GET "/" for 104.156.83.54 at 2026-03-09 17:14:20 +0000
+[cb4e5796-b067-4eb8-be0f-e6dd4e30b56b] Processing by HomeController#index as HTML
+[cb4e5796-b067-4eb8-be0f-e6dd4e30b56b]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[cb4e5796-b067-4eb8-be0f-e6dd4e30b56b] Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[cd06151e-7d36-4d5a-907f-08383d5ebb5a] Started GET "/" for 104.156.83.54 at 2026-03-09 17:14:21 +0000
+[cd06151e-7d36-4d5a-907f-08383d5ebb5a] Processing by HomeController#index as */*
+[cd06151e-7d36-4d5a-907f-08383d5ebb5a]   Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+[cd06151e-7d36-4d5a-907f-08383d5ebb5a] Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[c4c75a82-653e-4b2f-b45c-0b76b04919d3] Started GET "/" for 104.156.83.110 at 2026-03-09 18:10:14 +0000
+[c4c75a82-653e-4b2f-b45c-0b76b04919d3] Processing by HomeController#index as */*
+[c4c75a82-653e-4b2f-b45c-0b76b04919d3]   Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+[c4c75a82-653e-4b2f-b45c-0b76b04919d3] Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[ed4746cc-2597-49d0-a59d-f23e37652a05] Started GET "/" for 192.104.34.34 at 2026-03-09 18:31:46 +0000
+[ed4746cc-2597-49d0-a59d-f23e37652a05] Processing by HomeController#index as HTML
+[ed4746cc-2597-49d0-a59d-f23e37652a05]   Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+[ed4746cc-2597-49d0-a59d-f23e37652a05] Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[c7c667fe-532b-4f13-9d36-b978a6dd8384] Started GET "/saju" for 84.37.117.52 at 2026-03-09 20:53:54 +0000
+[c7c667fe-532b-4f13-9d36-b978a6dd8384]   
+[c7c667fe-532b-4f13-9d36-b978a6dd8384] ActionController::RoutingError (No route matches [GET] "/saju"):
+[c7c667fe-532b-4f13-9d36-b978a6dd8384]   
+[4074664c-b245-4027-9782-89e739dccc50] Started GET "/favicon.ico" for 84.37.117.52 at 2026-03-09 20:53:54 +0000
+[4074664c-b245-4027-9782-89e739dccc50]   
+[4074664c-b245-4027-9782-89e739dccc50] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[4074664c-b245-4027-9782-89e739dccc50]   
+[64307898-a30b-45e8-8075-ea7292ef3a77] Started GET "/" for 43.130.12.43 at 2026-03-09 21:11:17 +0000
+[64307898-a30b-45e8-8075-ea7292ef3a77] Processing by HomeController#index as HTML
+[64307898-a30b-45e8-8075-ea7292ef3a77] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[64307898-a30b-45e8-8075-ea7292ef3a77] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[e33e0fd4-ca0b-4327-aafb-f260c7558bef] Processing by HomeController#index as HTML
+[e33e0fd4-ca0b-4327-aafb-f260c7558bef]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[e33e0fd4-ca0b-4327-aafb-f260c7558bef] Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[f78b1918-7062-4e4b-ac48-ea41c9e5230c] Started GET "/" for 166.88.60.227 at 2026-03-09 21:36:09 +0000
+[f78b1918-7062-4e4b-ac48-ea41c9e5230c] Processing by HomeController#index as */*
+[f78b1918-7062-4e4b-ac48-ea41c9e5230c]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[f78b1918-7062-4e4b-ac48-ea41c9e5230c] Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[e33e0fd4-ca0b-4327-aafb-f260c7558bef] Started GET "/" for 166.88.60.227 at 2026-03-09 21:36:06 +0000
+[2ac77580-0450-4c1a-bfe1-ec1159d0231d] Started GET "/" for 104.156.83.76 at 2026-03-10 00:24:38 +0000
+[2ac77580-0450-4c1a-bfe1-ec1159d0231d] Processing by HomeController#index as HTML
+[2ac77580-0450-4c1a-bfe1-ec1159d0231d] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[2ac77580-0450-4c1a-bfe1-ec1159d0231d] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[004417df-0f49-4582-9bd3-b3af034ed438] Started GET "/favicon.ico" for 104.156.83.81 at 2026-03-10 00:24:39 +0000
+[004417df-0f49-4582-9bd3-b3af034ed438]   
+[004417df-0f49-4582-9bd3-b3af034ed438] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[004417df-0f49-4582-9bd3-b3af034ed438]   
+[9ff32487-496d-4c05-95e5-0d71c254250a] Started GET "/" for 104.156.83.28 at 2026-03-10 00:24:52 +0000
+[9ff32487-496d-4c05-95e5-0d71c254250a] Processing by HomeController#index as HTML
+[9ff32487-496d-4c05-95e5-0d71c254250a]   Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+[9ff32487-496d-4c05-95e5-0d71c254250a] Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+[313aa151-9fe6-4e33-aff2-5ea31b3d23c7] Started GET "/" for 104.156.83.28 at 2026-03-10 00:24:53 +0000
+[313aa151-9fe6-4e33-aff2-5ea31b3d23c7] Processing by HomeController#index as */*
+[313aa151-9fe6-4e33-aff2-5ea31b3d23c7]   Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+[313aa151-9fe6-4e33-aff2-5ea31b3d23c7] Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+[c0522233-6ef0-4174-ae40-3ee0fd93581d] Started GET "/.well-known/assetlinks.json" for 66.249.77.225 at 2026-03-10 01:46:33 +0000
+[c0522233-6ef0-4174-ae40-3ee0fd93581d]   
+[c0522233-6ef0-4174-ae40-3ee0fd93581d] ActionController::RoutingError (No route matches [GET] "/.well-known/assetlinks.json"):
+[c0522233-6ef0-4174-ae40-3ee0fd93581d]   
+[53bbce67-6d5f-4357-af89-410ed630c5fd] Started GET "/" for 43.166.226.57 at 2026-03-10 02:03:47 +0000
+[53bbce67-6d5f-4357-af89-410ed630c5fd] Processing by HomeController#index as HTML
+[53bbce67-6d5f-4357-af89-410ed630c5fd] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[53bbce67-6d5f-4357-af89-410ed630c5fd] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[7282c7ab-4ef0-40cd-bd1e-f5e231c46ef2] Started GET "/" for 43.157.38.228 at 2026-03-10 02:20:14 +0000
+[7282c7ab-4ef0-40cd-bd1e-f5e231c46ef2] Processing by HomeController#index as HTML
+[7282c7ab-4ef0-40cd-bd1e-f5e231c46ef2] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[7282c7ab-4ef0-40cd-bd1e-f5e231c46ef2] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[89ba2b35-06fe-47e9-9d03-b809c42c9de7] Started GET "/.well-known/assetlinks.json" for 74.125.218.224 at 2026-03-10 02:50:29 +0000
+[89ba2b35-06fe-47e9-9d03-b809c42c9de7]   
+[89ba2b35-06fe-47e9-9d03-b809c42c9de7] ActionController::RoutingError (No route matches [GET] "/.well-known/assetlinks.json"):
+[89ba2b35-06fe-47e9-9d03-b809c42c9de7]   
+[50531e6a-8b3e-40e8-9720-a345539a52b1] Started GET "/.well-known/assetlinks.json" for 74.125.218.225 at 2026-03-10 03:43:56 +0000
+[50531e6a-8b3e-40e8-9720-a345539a52b1]   
+[50531e6a-8b3e-40e8-9720-a345539a52b1] ActionController::RoutingError (No route matches [GET] "/.well-known/assetlinks.json"):
+[50531e6a-8b3e-40e8-9720-a345539a52b1]   
+[6ac53328-fca8-4bc3-8b75-7f70a662fe4b] Started GET "/" for 43.153.96.233 at 2026-03-10 07:11:46 +0000
+[6ac53328-fca8-4bc3-8b75-7f70a662fe4b] Processing by HomeController#index as HTML
+[6ac53328-fca8-4bc3-8b75-7f70a662fe4b] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[6ac53328-fca8-4bc3-8b75-7f70a662fe4b] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[429992db-2fa8-4df1-b3d9-304662ca2811] Started GET "/" for 141.51.110.126 at 2026-03-10 07:41:48 +0000
+[429992db-2fa8-4df1-b3d9-304662ca2811] Processing by HomeController#index as */*
+[429992db-2fa8-4df1-b3d9-304662ca2811]   Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+[429992db-2fa8-4df1-b3d9-304662ca2811] Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[d31686dd-a3d8-49a0-8df4-a0845091f4b8] Started GET "/" for 140.248.88.38 at 2026-03-10 08:14:29 +0000
+[d31686dd-a3d8-49a0-8df4-a0845091f4b8] Processing by HomeController#index as HTML
+[d31686dd-a3d8-49a0-8df4-a0845091f4b8] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[d31686dd-a3d8-49a0-8df4-a0845091f4b8] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[f22be9d4-ae6a-4906-9ede-12bdedfa53ee] Started GET "/" for 104.156.83.58 at 2026-03-10 08:24:54 +0000
+[f22be9d4-ae6a-4906-9ede-12bdedfa53ee] Processing by HomeController#index as HTML
+[f22be9d4-ae6a-4906-9ede-12bdedfa53ee]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[f22be9d4-ae6a-4906-9ede-12bdedfa53ee] Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[3f0a06f9-9d98-4917-8838-554db62cf4bd] Started GET "/" for 104.156.83.58 at 2026-03-10 08:24:55 +0000
+[3f0a06f9-9d98-4917-8838-554db62cf4bd] Processing by HomeController#index as */*
+[3f0a06f9-9d98-4917-8838-554db62cf4bd]   Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+[3f0a06f9-9d98-4917-8838-554db62cf4bd] Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+[c6eec60e-4f78-4dab-b963-d8abf5278b21] Started GET "/" for 104.156.83.116 at 2026-03-10 08:25:05 +0000
+[c6eec60e-4f78-4dab-b963-d8abf5278b21] Processing by HomeController#index as HTML
+[c6eec60e-4f78-4dab-b963-d8abf5278b21] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[c6eec60e-4f78-4dab-b963-d8abf5278b21] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[3bcb82f9-30d8-42ea-9ba9-5e935f927a50] Started GET "/favicon.ico" for 104.156.83.33 at 2026-03-10 08:25:06 +0000
+[3bcb82f9-30d8-42ea-9ba9-5e935f927a50]   
+[3bcb82f9-30d8-42ea-9ba9-5e935f927a50] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[3bcb82f9-30d8-42ea-9ba9-5e935f927a50]   
+[ca1e7dc9-5818-496a-86c2-fac91330041a] Started GET "/.env" for 193.24.123.41 at 2026-03-10 10:05:19 +0000
+[ca1e7dc9-5818-496a-86c2-fac91330041a]   
+[ca1e7dc9-5818-496a-86c2-fac91330041a] ActionController::RoutingError (No route matches [GET] "/.env"):
+[ca1e7dc9-5818-496a-86c2-fac91330041a]   
+[c2277046-5600-4492-a900-5eb7f9cc116c] Started GET "/" for 43.159.128.237 at 2026-03-10 12:04:23 +0000
+[c2277046-5600-4492-a900-5eb7f9cc116c] Processing by HomeController#index as HTML
+[c2277046-5600-4492-a900-5eb7f9cc116c] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[c2277046-5600-4492-a900-5eb7f9cc116c] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[ae96e53c-944d-4e5e-9cae-3241bc57c2e0] Started GET "/" for 176.125.229.14 at 2026-03-10 12:47:14 +0000
+[ae96e53c-944d-4e5e-9cae-3241bc57c2e0] Processing by HomeController#index as HTML
+[ae96e53c-944d-4e5e-9cae-3241bc57c2e0]   Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+[ae96e53c-944d-4e5e-9cae-3241bc57c2e0] Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[3f0af868-cede-464b-9eb3-a28d0fa4ab5b] Started GET "/" for 176.125.229.14 at 2026-03-10 12:47:24 +0000
+[3f0af868-cede-464b-9eb3-a28d0fa4ab5b] Processing by HomeController#index as */*
+[3f0af868-cede-464b-9eb3-a28d0fa4ab5b]   Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+[3f0af868-cede-464b-9eb3-a28d0fa4ab5b] Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[0dee9026-445a-4241-85a7-d61de8e1aa4f] Started GET "/favicon.ico" for 176.125.229.14 at 2026-03-10 12:47:28 +0000
+[0dee9026-445a-4241-85a7-d61de8e1aa4f]   
+[0dee9026-445a-4241-85a7-d61de8e1aa4f] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[0dee9026-445a-4241-85a7-d61de8e1aa4f]   
+[07ed75e1-62c5-4601-b308-f6dd1ab8fdd1] Started GET "/apple-touch-icon.png" for 176.125.229.14 at 2026-03-10 12:47:35 +0000
+[07ed75e1-62c5-4601-b308-f6dd1ab8fdd1]   
+[07ed75e1-62c5-4601-b308-f6dd1ab8fdd1] ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+[07ed75e1-62c5-4601-b308-f6dd1ab8fdd1]   
+[29e77672-ed0d-43f1-b602-eb63d1c1cbcb] Processing by HomeController#index as HTML
+[29e77672-ed0d-43f1-b602-eb63d1c1cbcb]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[29e77672-ed0d-43f1-b602-eb63d1c1cbcb] Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[5008ef74-0d2d-4918-844d-e4e7a4d77e1f] Started GET "/" for 151.241.125.239 at 2026-03-10 12:58:22 +0000
+[5008ef74-0d2d-4918-844d-e4e7a4d77e1f] Processing by HomeController#index as HTML
+[5008ef74-0d2d-4918-844d-e4e7a4d77e1f]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[5008ef74-0d2d-4918-844d-e4e7a4d77e1f] Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[29e77672-ed0d-43f1-b602-eb63d1c1cbcb] Started GET "/" for 151.241.125.239 at 2026-03-10 12:58:23 +0000
+[56db80a8-f7a2-4dfc-8ea6-aa29308f686f] Started GET "/favicon.ico" for 151.241.125.239 at 2026-03-10 12:59:11 +0000
+[56db80a8-f7a2-4dfc-8ea6-aa29308f686f]   
+[56db80a8-f7a2-4dfc-8ea6-aa29308f686f] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[56db80a8-f7a2-4dfc-8ea6-aa29308f686f]   
+[00683ce2-f305-4bda-a87f-d0d7f4b8e886] Started GET "/apple-touch-icon.png" for 151.241.125.239 at 2026-03-10 12:59:11 +0000
+[00683ce2-f305-4bda-a87f-d0d7f4b8e886]   
+[00683ce2-f305-4bda-a87f-d0d7f4b8e886] ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+[00683ce2-f305-4bda-a87f-d0d7f4b8e886]   
+[dff3980b-e41b-4aa6-a520-b6b1bb036bfe] Started GET "/" for 43.153.104.196 at 2026-03-10 15:03:29 +0000
+[dff3980b-e41b-4aa6-a520-b6b1bb036bfe] Processing by HomeController#index as HTML
+[dff3980b-e41b-4aa6-a520-b6b1bb036bfe] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[dff3980b-e41b-4aa6-a520-b6b1bb036bfe] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[f08327c0-c148-49cd-bc97-0fecd7349794] Started GET "/" for 45.145.139.134 at 2026-03-10 15:19:19 +0000
+[f08327c0-c148-49cd-bc97-0fecd7349794] Processing by HomeController#index as HTML
+[f08327c0-c148-49cd-bc97-0fecd7349794]   Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+[f08327c0-c148-49cd-bc97-0fecd7349794] Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[5abfd0c3-72ac-4603-8975-539872021bcf] Started GET "/" for 45.145.139.134 at 2026-03-10 15:19:21 +0000
+[5abfd0c3-72ac-4603-8975-539872021bcf] Processing by HomeController#index as */*
+[5abfd0c3-72ac-4603-8975-539872021bcf]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[5abfd0c3-72ac-4603-8975-539872021bcf] Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[5c44160e-2cb6-48c4-8976-7e5dd1d15067] Started GET "/.env" for 193.24.123.41 at 2026-03-10 16:24:52 +0000
+[5c44160e-2cb6-48c4-8976-7e5dd1d15067]   
+[5c44160e-2cb6-48c4-8976-7e5dd1d15067] ActionController::RoutingError (No route matches [GET] "/.env"):
+[5c44160e-2cb6-48c4-8976-7e5dd1d15067]   
+[2acad3a6-99a1-430a-8795-0a74a806c980] Processing by HomeController#index as */*
+[2acad3a6-99a1-430a-8795-0a74a806c980]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[2acad3a6-99a1-430a-8795-0a74a806c980] Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[eda43da6-13cc-4a4f-b18d-37fe940b14c9] Started GET "/" for 104.156.83.37 at 2026-03-10 16:25:49 +0000
+[eda43da6-13cc-4a4f-b18d-37fe940b14c9] Processing by HomeController#index as HTML
+[eda43da6-13cc-4a4f-b18d-37fe940b14c9] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[eda43da6-13cc-4a4f-b18d-37fe940b14c9] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[48ae7cce-0eb6-4994-a7d3-474c88414dfa] Started GET "/favicon.ico" for 104.156.83.90 at 2026-03-10 16:25:50 +0000
+[405e7c80-7269-4c3a-bb09-d457cd69d69e] Started GET "/" for 104.156.83.42 at 2026-03-10 16:25:45 +0000
+[405e7c80-7269-4c3a-bb09-d457cd69d69e] Processing by HomeController#index as HTML
+[405e7c80-7269-4c3a-bb09-d457cd69d69e]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[405e7c80-7269-4c3a-bb09-d457cd69d69e] Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[2acad3a6-99a1-430a-8795-0a74a806c980] Started GET "/" for 104.156.83.42 at 2026-03-10 16:25:47 +0000
+[48ae7cce-0eb6-4994-a7d3-474c88414dfa]   
+[48ae7cce-0eb6-4994-a7d3-474c88414dfa] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[48ae7cce-0eb6-4994-a7d3-474c88414dfa]   
+[ff7ec5e2-30e6-4ecd-b96d-f11861fcdc87] Started GET "/" for 43.154.250.181 at 2026-03-10 16:49:13 +0000
+[ff7ec5e2-30e6-4ecd-b96d-f11861fcdc87] Processing by HomeController#index as HTML
+[ff7ec5e2-30e6-4ecd-b96d-f11861fcdc87] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[ff7ec5e2-30e6-4ecd-b96d-f11861fcdc87] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[69bea25d-8e57-4bd1-ad3d-c686613f697f] Started GET "/" for 52.167.144.156 at 2026-03-10 17:14:46 +0000
+[69bea25d-8e57-4bd1-ad3d-c686613f697f] Processing by HomeController#index as */*
+[69bea25d-8e57-4bd1-ad3d-c686613f697f]   Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+[69bea25d-8e57-4bd1-ad3d-c686613f697f] Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[d6979c65-b8cb-45c3-806f-34e59f6000ef] Started GET "/saju" for 85.254.125.88 at 2026-03-10 18:12:10 +0000
+[d6979c65-b8cb-45c3-806f-34e59f6000ef]   
+[d6979c65-b8cb-45c3-806f-34e59f6000ef] ActionController::RoutingError (No route matches [GET] "/saju"):
+[d6979c65-b8cb-45c3-806f-34e59f6000ef]   
+[ac26e9cd-de40-473d-89de-2f0e524c7587] Started GET "/favicon.ico" for 85.254.125.88 at 2026-03-10 18:12:10 +0000
+[ac26e9cd-de40-473d-89de-2f0e524c7587]   
+[ac26e9cd-de40-473d-89de-2f0e524c7587] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[ac26e9cd-de40-473d-89de-2f0e524c7587]   
+[40edc70c-3091-4fa5-8397-c857ca9b1efb] Started GET "/" for 62.60.234.67 at 2026-03-10 18:59:02 +0000
+[40edc70c-3091-4fa5-8397-c857ca9b1efb] Processing by HomeController#index as HTML
+[40edc70c-3091-4fa5-8397-c857ca9b1efb]   Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.3ms)
+[40edc70c-3091-4fa5-8397-c857ca9b1efb] Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+[cfdbcb57-c022-435a-bae9-eee3f7f31791] Started GET "/auspicious_dates/new" for 62.60.234.67 at 2026-03-10 18:59:04 +0000
+[cfdbcb57-c022-435a-bae9-eee3f7f31791] Processing by AuspiciousDatesController#new as HTML
+[cfdbcb57-c022-435a-bae9-eee3f7f31791]   Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.2ms)
+[cfdbcb57-c022-435a-bae9-eee3f7f31791] Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+[18ace028-51da-41d0-a97d-a947ae52ca21] Started GET "/ads.txt" for 62.60.234.67 at 2026-03-10 18:59:05 +0000
+[18ace028-51da-41d0-a97d-a947ae52ca21]   
+[18ace028-51da-41d0-a97d-a947ae52ca21] ActionController::RoutingError (No route matches [GET] "/ads.txt"):
+[18ace028-51da-41d0-a97d-a947ae52ca21]   
+[869e0e20-af8f-48c4-a6d0-9e0c8ae966c9] Processing by HomeController#index as HTML
+[869e0e20-af8f-48c4-a6d0-9e0c8ae966c9] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[869e0e20-af8f-48c4-a6d0-9e0c8ae966c9] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[869e0e20-af8f-48c4-a6d0-9e0c8ae966c9] Started GET "/" for 49.234.192.248 at 2026-03-10 19:14:15 +0000
+[f0081d98-d988-44da-a3fa-d79efa94c0fc] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[f0081d98-d988-44da-a3fa-d79efa94c0fc] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[f0081d98-d988-44da-a3fa-d79efa94c0fc] Started GET "/" for 43.166.255.102 at 2026-03-10 21:59:14 +0000
+[f0081d98-d988-44da-a3fa-d79efa94c0fc] Processing by HomeController#index as HTML
+[f2ba98f3-b56b-4004-bec5-3afe681bd458] Started GET "/chat" for 40.77.167.38 at 2026-03-10 23:55:09 +0000
+[f2ba98f3-b56b-4004-bec5-3afe681bd458] Processing by ChatController#show as */*
+[f2ba98f3-b56b-4004-bec5-3afe681bd458] Redirected to https://www.1minsaju.com/saju/new
+[f2ba98f3-b56b-4004-bec5-3afe681bd458] Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[eb4a6544-97a3-44db-8625-4faf697beae8] Started GET "/saju/new" for 40.77.167.38 at 2026-03-10 23:55:09 +0000
+[eb4a6544-97a3-44db-8625-4faf697beae8] Processing by SajuController#new as */*
+[eb4a6544-97a3-44db-8625-4faf697beae8]   Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+[eb4a6544-97a3-44db-8625-4faf697beae8] Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[08cbab6b-f8d5-4360-9bf5-62681a4c77e0] Started GET "/fortunes/daily" for 40.77.167.38 at 2026-03-10 23:58:09 +0000
+[08cbab6b-f8d5-4360-9bf5-62681a4c77e0] Processing by FortunesController#daily as */*
+[08cbab6b-f8d5-4360-9bf5-62681a4c77e0] Redirected to https://www.1minsaju.com/saju/new
+[08cbab6b-f8d5-4360-9bf5-62681a4c77e0] Filter chain halted as :check_session rendered or redirected
+[08cbab6b-f8d5-4360-9bf5-62681a4c77e0] Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[c56cb829-f035-4c31-8ae4-3f809d9480ba] Started GET "/saju/new" for 40.77.167.38 at 2026-03-10 23:58:10 +0000
+[c56cb829-f035-4c31-8ae4-3f809d9480ba] Processing by SajuController#new as */*
+[c56cb829-f035-4c31-8ae4-3f809d9480ba]   Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.3ms)
+[c56cb829-f035-4c31-8ae4-3f809d9480ba] Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+[ee746102-ea19-48f2-9d68-48d60fa8c84f] Started GET "/saju/new" for 40.77.167.53 at 2026-03-10 23:58:14 +0000
+[ee746102-ea19-48f2-9d68-48d60fa8c84f] Processing by SajuController#new as */*
+[ee746102-ea19-48f2-9d68-48d60fa8c84f]   Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+[ee746102-ea19-48f2-9d68-48d60fa8c84f] Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[98b2340b-7599-42ab-b4a4-9a886f197293] Started GET "/" for 40.77.177.162 at 2026-03-10 23:58:14 +0000
+[98b2340b-7599-42ab-b4a4-9a886f197293] Processing by HomeController#index as */*
+[98b2340b-7599-42ab-b4a4-9a886f197293]   Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+[98b2340b-7599-42ab-b4a4-9a886f197293] Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[5cefd43b-654b-4d23-b2e2-ef72a89f18ce] Started GET "/" for 118.43.202.74 at 2026-03-11 00:19:25 +0000
+[5cefd43b-654b-4d23-b2e2-ef72a89f18ce] Processing by HomeController#index as HTML
+[5cefd43b-654b-4d23-b2e2-ef72a89f18ce]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.1ms)
+[5cefd43b-654b-4d23-b2e2-ef72a89f18ce] Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+[5ada2d19-b1d0-4fbd-9ae9-07c09119a2b9] Started GET "/dreams/new" for 118.43.202.74 at 2026-03-11 00:19:29 +0000
+[5ada2d19-b1d0-4fbd-9ae9-07c09119a2b9] Processing by DreamsController#new as HTML
+[5ada2d19-b1d0-4fbd-9ae9-07c09119a2b9]   Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.0ms)
+[5ada2d19-b1d0-4fbd-9ae9-07c09119a2b9] Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[e041f043-846c-44b4-a44c-2be517d6d4cc] Started GET "/saju/new" for 118.43.202.74 at 2026-03-11 00:19:33 +0000
+[e041f043-846c-44b4-a44c-2be517d6d4cc] Processing by SajuController#new as HTML
+[e041f043-846c-44b4-a44c-2be517d6d4cc]   Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+[e041f043-846c-44b4-a44c-2be517d6d4cc] Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+[443f9ca9-81e8-4d46-be23-aa612c34fa03] Started GET "/" for 118.43.202.74 at 2026-03-11 00:19:35 +0000
+[443f9ca9-81e8-4d46-be23-aa612c34fa03] Processing by HomeController#index as HTML
+[443f9ca9-81e8-4d46-be23-aa612c34fa03]   Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+[443f9ca9-81e8-4d46-be23-aa612c34fa03] Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)

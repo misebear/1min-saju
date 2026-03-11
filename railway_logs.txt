@@ -1,0 +1,200 @@
+[313aa151-9fe6-4e33-aff2-5ea31b3d23c7] Processing by HomeController#index as */*
+[313aa151-9fe6-4e33-aff2-5ea31b3d23c7]   Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+[313aa151-9fe6-4e33-aff2-5ea31b3d23c7] Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+[c0522233-6ef0-4174-ae40-3ee0fd93581d] Started GET "/.well-known/assetlinks.json" for 66.249.77.225 at 2026-03-10 01:46:33 +0000
+[c0522233-6ef0-4174-ae40-3ee0fd93581d]   
+[c0522233-6ef0-4174-ae40-3ee0fd93581d] ActionController::RoutingError (No route matches [GET] "/.well-known/assetlinks.json"):
+[c0522233-6ef0-4174-ae40-3ee0fd93581d]   
+[53bbce67-6d5f-4357-af89-410ed630c5fd] Started GET "/" for 43.166.226.57 at 2026-03-10 02:03:47 +0000
+[53bbce67-6d5f-4357-af89-410ed630c5fd] Processing by HomeController#index as HTML
+[53bbce67-6d5f-4357-af89-410ed630c5fd] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[53bbce67-6d5f-4357-af89-410ed630c5fd] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[7282c7ab-4ef0-40cd-bd1e-f5e231c46ef2] Started GET "/" for 43.157.38.228 at 2026-03-10 02:20:14 +0000
+[7282c7ab-4ef0-40cd-bd1e-f5e231c46ef2] Processing by HomeController#index as HTML
+[7282c7ab-4ef0-40cd-bd1e-f5e231c46ef2] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[7282c7ab-4ef0-40cd-bd1e-f5e231c46ef2] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[89ba2b35-06fe-47e9-9d03-b809c42c9de7] Started GET "/.well-known/assetlinks.json" for 74.125.218.224 at 2026-03-10 02:50:29 +0000
+[89ba2b35-06fe-47e9-9d03-b809c42c9de7]   
+[89ba2b35-06fe-47e9-9d03-b809c42c9de7] ActionController::RoutingError (No route matches [GET] "/.well-known/assetlinks.json"):
+[89ba2b35-06fe-47e9-9d03-b809c42c9de7]   
+[50531e6a-8b3e-40e8-9720-a345539a52b1] Started GET "/.well-known/assetlinks.json" for 74.125.218.225 at 2026-03-10 03:43:56 +0000
+[50531e6a-8b3e-40e8-9720-a345539a52b1]   
+[50531e6a-8b3e-40e8-9720-a345539a52b1] ActionController::RoutingError (No route matches [GET] "/.well-known/assetlinks.json"):
+[50531e6a-8b3e-40e8-9720-a345539a52b1]   
+[6ac53328-fca8-4bc3-8b75-7f70a662fe4b] Started GET "/" for 43.153.96.233 at 2026-03-10 07:11:46 +0000
+[6ac53328-fca8-4bc3-8b75-7f70a662fe4b] Processing by HomeController#index as HTML
+[6ac53328-fca8-4bc3-8b75-7f70a662fe4b] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[6ac53328-fca8-4bc3-8b75-7f70a662fe4b] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[429992db-2fa8-4df1-b3d9-304662ca2811] Started GET "/" for 141.51.110.126 at 2026-03-10 07:41:48 +0000
+[429992db-2fa8-4df1-b3d9-304662ca2811] Processing by HomeController#index as */*
+[429992db-2fa8-4df1-b3d9-304662ca2811]   Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+[429992db-2fa8-4df1-b3d9-304662ca2811] Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[d31686dd-a3d8-49a0-8df4-a0845091f4b8] Started GET "/" for 140.248.88.38 at 2026-03-10 08:14:29 +0000
+[d31686dd-a3d8-49a0-8df4-a0845091f4b8] Processing by HomeController#index as HTML
+[d31686dd-a3d8-49a0-8df4-a0845091f4b8] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[d31686dd-a3d8-49a0-8df4-a0845091f4b8] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[f22be9d4-ae6a-4906-9ede-12bdedfa53ee] Started GET "/" for 104.156.83.58 at 2026-03-10 08:24:54 +0000
+[f22be9d4-ae6a-4906-9ede-12bdedfa53ee] Processing by HomeController#index as HTML
+[f22be9d4-ae6a-4906-9ede-12bdedfa53ee]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[f22be9d4-ae6a-4906-9ede-12bdedfa53ee] Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[3f0a06f9-9d98-4917-8838-554db62cf4bd] Started GET "/" for 104.156.83.58 at 2026-03-10 08:24:55 +0000
+[3f0a06f9-9d98-4917-8838-554db62cf4bd] Processing by HomeController#index as */*
+[3f0a06f9-9d98-4917-8838-554db62cf4bd]   Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+[3f0a06f9-9d98-4917-8838-554db62cf4bd] Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+[c6eec60e-4f78-4dab-b963-d8abf5278b21] Started GET "/" for 104.156.83.116 at 2026-03-10 08:25:05 +0000
+[c6eec60e-4f78-4dab-b963-d8abf5278b21] Processing by HomeController#index as HTML
+[c6eec60e-4f78-4dab-b963-d8abf5278b21] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[c6eec60e-4f78-4dab-b963-d8abf5278b21] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[3bcb82f9-30d8-42ea-9ba9-5e935f927a50] Started GET "/favicon.ico" for 104.156.83.33 at 2026-03-10 08:25:06 +0000
+[3bcb82f9-30d8-42ea-9ba9-5e935f927a50]   
+[3bcb82f9-30d8-42ea-9ba9-5e935f927a50] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[3bcb82f9-30d8-42ea-9ba9-5e935f927a50]   
+[ca1e7dc9-5818-496a-86c2-fac91330041a] Started GET "/.env" for 193.24.123.41 at 2026-03-10 10:05:19 +0000
+[ca1e7dc9-5818-496a-86c2-fac91330041a]   
+[ca1e7dc9-5818-496a-86c2-fac91330041a] ActionController::RoutingError (No route matches [GET] "/.env"):
+[ca1e7dc9-5818-496a-86c2-fac91330041a]   
+[c2277046-5600-4492-a900-5eb7f9cc116c] Started GET "/" for 43.159.128.237 at 2026-03-10 12:04:23 +0000
+[c2277046-5600-4492-a900-5eb7f9cc116c] Processing by HomeController#index as HTML
+[c2277046-5600-4492-a900-5eb7f9cc116c] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[c2277046-5600-4492-a900-5eb7f9cc116c] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[ae96e53c-944d-4e5e-9cae-3241bc57c2e0] Started GET "/" for 176.125.229.14 at 2026-03-10 12:47:14 +0000
+[ae96e53c-944d-4e5e-9cae-3241bc57c2e0] Processing by HomeController#index as HTML
+[ae96e53c-944d-4e5e-9cae-3241bc57c2e0]   Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+[ae96e53c-944d-4e5e-9cae-3241bc57c2e0] Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[3f0af868-cede-464b-9eb3-a28d0fa4ab5b] Started GET "/" for 176.125.229.14 at 2026-03-10 12:47:24 +0000
+[3f0af868-cede-464b-9eb3-a28d0fa4ab5b] Processing by HomeController#index as */*
+[3f0af868-cede-464b-9eb3-a28d0fa4ab5b]   Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+[3f0af868-cede-464b-9eb3-a28d0fa4ab5b] Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[0dee9026-445a-4241-85a7-d61de8e1aa4f] Started GET "/favicon.ico" for 176.125.229.14 at 2026-03-10 12:47:28 +0000
+[0dee9026-445a-4241-85a7-d61de8e1aa4f]   
+[0dee9026-445a-4241-85a7-d61de8e1aa4f] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[0dee9026-445a-4241-85a7-d61de8e1aa4f]   
+[07ed75e1-62c5-4601-b308-f6dd1ab8fdd1] Started GET "/apple-touch-icon.png" for 176.125.229.14 at 2026-03-10 12:47:35 +0000
+[07ed75e1-62c5-4601-b308-f6dd1ab8fdd1]   
+[07ed75e1-62c5-4601-b308-f6dd1ab8fdd1] ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+[07ed75e1-62c5-4601-b308-f6dd1ab8fdd1]   
+[29e77672-ed0d-43f1-b602-eb63d1c1cbcb] Processing by HomeController#index as HTML
+[29e77672-ed0d-43f1-b602-eb63d1c1cbcb]   Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+[29e77672-ed0d-43f1-b602-eb63d1c1cbcb] Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[5008ef74-0d2d-4918-844d-e4e7a4d77e1f] Started GET "/" for 151.241.125.239 at 2026-03-10 12:58:22 +0000
+[5008ef74-0d2d-4918-844d-e4e7a4d77e1f] Processing by HomeController#index as HTML
+[5008ef74-0d2d-4918-844d-e4e7a4d77e1f]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[5008ef74-0d2d-4918-844d-e4e7a4d77e1f] Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[29e77672-ed0d-43f1-b602-eb63d1c1cbcb] Started GET "/" for 151.241.125.239 at 2026-03-10 12:58:23 +0000
+[56db80a8-f7a2-4dfc-8ea6-aa29308f686f] Started GET "/favicon.ico" for 151.241.125.239 at 2026-03-10 12:59:11 +0000
+[56db80a8-f7a2-4dfc-8ea6-aa29308f686f]   
+[56db80a8-f7a2-4dfc-8ea6-aa29308f686f] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[56db80a8-f7a2-4dfc-8ea6-aa29308f686f]   
+[00683ce2-f305-4bda-a87f-d0d7f4b8e886] Started GET "/apple-touch-icon.png" for 151.241.125.239 at 2026-03-10 12:59:11 +0000
+[00683ce2-f305-4bda-a87f-d0d7f4b8e886]   
+[00683ce2-f305-4bda-a87f-d0d7f4b8e886] ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+[00683ce2-f305-4bda-a87f-d0d7f4b8e886]   
+[dff3980b-e41b-4aa6-a520-b6b1bb036bfe] Started GET "/" for 43.153.104.196 at 2026-03-10 15:03:29 +0000
+[dff3980b-e41b-4aa6-a520-b6b1bb036bfe] Processing by HomeController#index as HTML
+[dff3980b-e41b-4aa6-a520-b6b1bb036bfe] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[dff3980b-e41b-4aa6-a520-b6b1bb036bfe] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[f08327c0-c148-49cd-bc97-0fecd7349794] Started GET "/" for 45.145.139.134 at 2026-03-10 15:19:19 +0000
+[f08327c0-c148-49cd-bc97-0fecd7349794] Processing by HomeController#index as HTML
+[f08327c0-c148-49cd-bc97-0fecd7349794]   Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+[f08327c0-c148-49cd-bc97-0fecd7349794] Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[5abfd0c3-72ac-4603-8975-539872021bcf] Started GET "/" for 45.145.139.134 at 2026-03-10 15:19:21 +0000
+[5abfd0c3-72ac-4603-8975-539872021bcf] Processing by HomeController#index as */*
+[5abfd0c3-72ac-4603-8975-539872021bcf]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[5abfd0c3-72ac-4603-8975-539872021bcf] Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[5c44160e-2cb6-48c4-8976-7e5dd1d15067] Started GET "/.env" for 193.24.123.41 at 2026-03-10 16:24:52 +0000
+[5c44160e-2cb6-48c4-8976-7e5dd1d15067]   
+[5c44160e-2cb6-48c4-8976-7e5dd1d15067] ActionController::RoutingError (No route matches [GET] "/.env"):
+[5c44160e-2cb6-48c4-8976-7e5dd1d15067]   
+[2acad3a6-99a1-430a-8795-0a74a806c980] Processing by HomeController#index as */*
+[2acad3a6-99a1-430a-8795-0a74a806c980]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[2acad3a6-99a1-430a-8795-0a74a806c980] Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[eda43da6-13cc-4a4f-b18d-37fe940b14c9] Started GET "/" for 104.156.83.37 at 2026-03-10 16:25:49 +0000
+[eda43da6-13cc-4a4f-b18d-37fe940b14c9] Processing by HomeController#index as HTML
+[eda43da6-13cc-4a4f-b18d-37fe940b14c9] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[eda43da6-13cc-4a4f-b18d-37fe940b14c9] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[48ae7cce-0eb6-4994-a7d3-474c88414dfa] Started GET "/favicon.ico" for 104.156.83.90 at 2026-03-10 16:25:50 +0000
+[405e7c80-7269-4c3a-bb09-d457cd69d69e] Started GET "/" for 104.156.83.42 at 2026-03-10 16:25:45 +0000
+[405e7c80-7269-4c3a-bb09-d457cd69d69e] Processing by HomeController#index as HTML
+[405e7c80-7269-4c3a-bb09-d457cd69d69e]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+[405e7c80-7269-4c3a-bb09-d457cd69d69e] Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[2acad3a6-99a1-430a-8795-0a74a806c980] Started GET "/" for 104.156.83.42 at 2026-03-10 16:25:47 +0000
+[48ae7cce-0eb6-4994-a7d3-474c88414dfa]   
+[48ae7cce-0eb6-4994-a7d3-474c88414dfa] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[48ae7cce-0eb6-4994-a7d3-474c88414dfa]   
+[ff7ec5e2-30e6-4ecd-b96d-f11861fcdc87] Started GET "/" for 43.154.250.181 at 2026-03-10 16:49:13 +0000
+[ff7ec5e2-30e6-4ecd-b96d-f11861fcdc87] Processing by HomeController#index as HTML
+[ff7ec5e2-30e6-4ecd-b96d-f11861fcdc87] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[ff7ec5e2-30e6-4ecd-b96d-f11861fcdc87] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[69bea25d-8e57-4bd1-ad3d-c686613f697f] Started GET "/" for 52.167.144.156 at 2026-03-10 17:14:46 +0000
+[69bea25d-8e57-4bd1-ad3d-c686613f697f] Processing by HomeController#index as */*
+[69bea25d-8e57-4bd1-ad3d-c686613f697f]   Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+[69bea25d-8e57-4bd1-ad3d-c686613f697f] Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[d6979c65-b8cb-45c3-806f-34e59f6000ef] Started GET "/saju" for 85.254.125.88 at 2026-03-10 18:12:10 +0000
+[d6979c65-b8cb-45c3-806f-34e59f6000ef]   
+[d6979c65-b8cb-45c3-806f-34e59f6000ef] ActionController::RoutingError (No route matches [GET] "/saju"):
+[d6979c65-b8cb-45c3-806f-34e59f6000ef]   
+[ac26e9cd-de40-473d-89de-2f0e524c7587] Started GET "/favicon.ico" for 85.254.125.88 at 2026-03-10 18:12:10 +0000
+[ac26e9cd-de40-473d-89de-2f0e524c7587]   
+[ac26e9cd-de40-473d-89de-2f0e524c7587] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[ac26e9cd-de40-473d-89de-2f0e524c7587]   
+[40edc70c-3091-4fa5-8397-c857ca9b1efb] Started GET "/" for 62.60.234.67 at 2026-03-10 18:59:02 +0000
+[40edc70c-3091-4fa5-8397-c857ca9b1efb] Processing by HomeController#index as HTML
+[40edc70c-3091-4fa5-8397-c857ca9b1efb]   Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.3ms)
+[40edc70c-3091-4fa5-8397-c857ca9b1efb] Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+[cfdbcb57-c022-435a-bae9-eee3f7f31791] Started GET "/auspicious_dates/new" for 62.60.234.67 at 2026-03-10 18:59:04 +0000
+[cfdbcb57-c022-435a-bae9-eee3f7f31791] Processing by AuspiciousDatesController#new as HTML
+[cfdbcb57-c022-435a-bae9-eee3f7f31791]   Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.2ms)
+[cfdbcb57-c022-435a-bae9-eee3f7f31791] Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+[18ace028-51da-41d0-a97d-a947ae52ca21] Started GET "/ads.txt" for 62.60.234.67 at 2026-03-10 18:59:05 +0000
+[18ace028-51da-41d0-a97d-a947ae52ca21]   
+[18ace028-51da-41d0-a97d-a947ae52ca21] ActionController::RoutingError (No route matches [GET] "/ads.txt"):
+[18ace028-51da-41d0-a97d-a947ae52ca21]   
+[869e0e20-af8f-48c4-a6d0-9e0c8ae966c9] Processing by HomeController#index as HTML
+[869e0e20-af8f-48c4-a6d0-9e0c8ae966c9] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[869e0e20-af8f-48c4-a6d0-9e0c8ae966c9] Completed 406 Not Acceptable in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[869e0e20-af8f-48c4-a6d0-9e0c8ae966c9] Started GET "/" for 49.234.192.248 at 2026-03-10 19:14:15 +0000
+[f0081d98-d988-44da-a3fa-d79efa94c0fc] Filter chain halted as #<Proc:0x00007fa3f1b51728 /usr/local/bundle/ruby/3.3.0/gems/actionpack-8.1.2/lib/action_controller/metal/allow_browser.rb:58 (lambda)> rendered or redirected
+[f0081d98-d988-44da-a3fa-d79efa94c0fc] Completed 406 Not Acceptable in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[f0081d98-d988-44da-a3fa-d79efa94c0fc] Started GET "/" for 43.166.255.102 at 2026-03-10 21:59:14 +0000
+[f0081d98-d988-44da-a3fa-d79efa94c0fc] Processing by HomeController#index as HTML
+[f2ba98f3-b56b-4004-bec5-3afe681bd458] Started GET "/chat" for 40.77.167.38 at 2026-03-10 23:55:09 +0000
+[f2ba98f3-b56b-4004-bec5-3afe681bd458] Processing by ChatController#show as */*
+[f2ba98f3-b56b-4004-bec5-3afe681bd458] Redirected to https://www.1minsaju.com/saju/new
+[f2ba98f3-b56b-4004-bec5-3afe681bd458] Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[eb4a6544-97a3-44db-8625-4faf697beae8] Started GET "/saju/new" for 40.77.167.38 at 2026-03-10 23:55:09 +0000
+[eb4a6544-97a3-44db-8625-4faf697beae8] Processing by SajuController#new as */*
+[eb4a6544-97a3-44db-8625-4faf697beae8]   Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+[eb4a6544-97a3-44db-8625-4faf697beae8] Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[08cbab6b-f8d5-4360-9bf5-62681a4c77e0] Started GET "/fortunes/daily" for 40.77.167.38 at 2026-03-10 23:58:09 +0000
+[08cbab6b-f8d5-4360-9bf5-62681a4c77e0] Processing by FortunesController#daily as */*
+[08cbab6b-f8d5-4360-9bf5-62681a4c77e0] Redirected to https://www.1minsaju.com/saju/new
+[08cbab6b-f8d5-4360-9bf5-62681a4c77e0] Filter chain halted as :check_session rendered or redirected
+[08cbab6b-f8d5-4360-9bf5-62681a4c77e0] Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[c56cb829-f035-4c31-8ae4-3f809d9480ba] Started GET "/saju/new" for 40.77.167.38 at 2026-03-10 23:58:10 +0000
+[c56cb829-f035-4c31-8ae4-3f809d9480ba] Processing by SajuController#new as */*
+[c56cb829-f035-4c31-8ae4-3f809d9480ba]   Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.3ms)
+[c56cb829-f035-4c31-8ae4-3f809d9480ba] Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+[ee746102-ea19-48f2-9d68-48d60fa8c84f] Started GET "/saju/new" for 40.77.167.53 at 2026-03-10 23:58:14 +0000
+[ee746102-ea19-48f2-9d68-48d60fa8c84f] Processing by SajuController#new as */*
+[ee746102-ea19-48f2-9d68-48d60fa8c84f]   Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+[ee746102-ea19-48f2-9d68-48d60fa8c84f] Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[98b2340b-7599-42ab-b4a4-9a886f197293] Started GET "/" for 40.77.177.162 at 2026-03-10 23:58:14 +0000
+[98b2340b-7599-42ab-b4a4-9a886f197293] Processing by HomeController#index as */*
+[98b2340b-7599-42ab-b4a4-9a886f197293]   Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+[98b2340b-7599-42ab-b4a4-9a886f197293] Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[5cefd43b-654b-4d23-b2e2-ef72a89f18ce] Started GET "/" for 118.43.202.74 at 2026-03-11 00:19:25 +0000
+[5cefd43b-654b-4d23-b2e2-ef72a89f18ce] Processing by HomeController#index as HTML
+[5cefd43b-654b-4d23-b2e2-ef72a89f18ce]   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.1ms)
+[5cefd43b-654b-4d23-b2e2-ef72a89f18ce] Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+[5ada2d19-b1d0-4fbd-9ae9-07c09119a2b9] Started GET "/dreams/new" for 118.43.202.74 at 2026-03-11 00:19:29 +0000
+[5ada2d19-b1d0-4fbd-9ae9-07c09119a2b9] Processing by DreamsController#new as HTML
+[5ada2d19-b1d0-4fbd-9ae9-07c09119a2b9]   Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.0ms)
+[5ada2d19-b1d0-4fbd-9ae9-07c09119a2b9] Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+[e041f043-846c-44b4-a44c-2be517d6d4cc] Started GET "/saju/new" for 118.43.202.74 at 2026-03-11 00:19:33 +0000
+[e041f043-846c-44b4-a44c-2be517d6d4cc] Processing by SajuController#new as HTML
+[e041f043-846c-44b4-a44c-2be517d6d4cc]   Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+[e041f043-846c-44b4-a44c-2be517d6d4cc] Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+[443f9ca9-81e8-4d46-be23-aa612c34fa03] Started GET "/" for 118.43.202.74 at 2026-03-11 00:19:35 +0000
+[443f9ca9-81e8-4d46-be23-aa612c34fa03] Processing by HomeController#index as HTML
+[443f9ca9-81e8-4d46-be23-aa612c34fa03]   Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+[443f9ca9-81e8-4d46-be23-aa612c34fa03] Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
