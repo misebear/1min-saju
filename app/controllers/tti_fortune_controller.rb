@@ -23,11 +23,23 @@ class TtiFortuneController < ApplicationController
     @tti_fortunes = branches.map.with_index do |branch, i|
       data = TTI_DATA[branch]
       s = (seed + i * 13) % 100
-      score = [s + 30, 100].min
+      score = [ s + 30, 100 ].min
       fortune = tti_fortune(s, data[:name])
       { branch: branch, data: data, score: score, fortune: fortune }
     end
     @date = today
+
+    # 특정 띠 파라미터가 있는 경우 (롱테일 SEO 랜딩)
+    if params[:animal].present?
+      animal_name = params[:animal]
+      target_item = @tti_fortunes.find { |f| f[:data][:name].include?(animal_name) }
+      if target_item
+        @selected_animal = target_item
+        # 최상단으로 끌어올리거나 해당 띠만 포커스해서 보여줄 수 있음
+        @tti_fortunes.delete(target_item)
+        @tti_fortunes.unshift(target_item)
+      end
+    end
   end
 
   private

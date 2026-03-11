@@ -39,7 +39,8 @@ Rails.application.routes.draw do
   get "dreams/result", to: "dreams#show", as: :dream_result
 
   # 별자리 운세
-  get "zodiac", to: "zodiac#show", as: :zodiac
+  get "zodiac", to: "zodiac#show", as: :zodiac_main
+  get "zodiac/:sign", to: "zodiac#show", as: :zodiac
 
   # 택일 (살풀이)
   get "auspicious_dates/new", to: "auspicious_dates#new", as: :new_auspicious_date
@@ -57,7 +58,8 @@ Rails.application.routes.draw do
   post "fortunes/specific", to: "fortunes#specific", as: :specific_fortune
 
   # 띠운세
-  get "tti", to: "tti_fortune#show", as: :tti_fortune
+  get "tti", to: "tti_fortune#show", as: :tti_fortune_main
+  get "tti/:animal", to: "tti_fortune#show", as: :tti_fortune
 
   # 타로
   get "tarot/new", to: "tarot#new", as: :new_tarot

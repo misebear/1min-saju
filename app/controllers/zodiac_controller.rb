@@ -2,7 +2,9 @@
 
 class ZodiacController < ApplicationController
   def show
-    if session[:birth_date].present?
+    if params[:sign].present?
+      @sign_name = params[:sign]
+    elsif session[:birth_date].present?
       @birth_date = Date.parse(session[:birth_date])
       @sign_name = SajuEngine::ZodiacEngine.find_sign(@birth_date.month, @birth_date.day)
     else

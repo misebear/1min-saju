@@ -1,7 +1,13 @@
-<% content_for(:title) { "띠운세 - 1분 사주" } %>
+<% if @selected_animal %>
+  <% animal_name = @selected_animal[:data][:name] %>
+  <% content_for(:title) { "2026년 오늘의 #{animal_name} 운세 소름 돋는 무료 사주풀이 - 1분 사주" } %>
+  <% content_for(:description) { "회원가입 없이 무료로 보는 2026년 오늘 #{animal_name} 운세! 재물운, 애정운, 건강운, 직업운을 로그인 없이 1분 안에 지금 바로 확인해보세요. 나랑 똑같은 #{animal_name} 유명인은 누구?" } %>
+<% else %>
+  <% content_for(:title) { "띠운세 - 1분 사주" } %>
+<% end %>
 <div class="page-header animate-fadeIn">
-  <h1>🐲 오늘의 띠운세</h1>
-  <p class="subtitle"><%= @date.strftime("%Y년 %m월 %d일") %></p>
+  <h1><%= @selected_animal ? "#{@selected_animal[:data][:name]} 운세" : "🐲 오늘의 띠운세" %></h1>
+  <p class="subtitle"><%= @selected_animal ? "오늘 나의 기운은 어떨까? 🌟" : @date.strftime("%Y년 %m월 %d일") %></p>
 </div>
 <% @tti_fortunes.each do |tf| %>
   <div class="card animate-fadeInUp" style="padding:16px;">
