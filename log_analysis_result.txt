@@ -1,0 +1,39 @@
+=== 일별 서버 접속 및 사주 조회 통계 ===
+
+[2026-03-08] 방문자(Unique IP): 3명
+  -> 실제로 사주/운세를 본 사람(Unique IP): 0명
+  -> 주요 요청 경로:
+      /: 3회
+      /sample-config.php: 1회
+      /storage/sendgrid.json: 1회
+      /config/sendgrid.php: 1회
+      /config/secrets/dev/sendgrid_keys.json: 1회
+
+[2026-03-09] 방문자(Unique IP): 47명
+  -> 실제로 사주/운세를 본 사람(Unique IP): 0명
+  -> 주요 요청 경로:
+      /: 52회
+      /favicon.ico: 7회
+      /.well-known/assetlinks.json: 3회
+      //t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js: 3회
+      /saju/new: 3회
+
+[2026-03-10] 방문자(Unique IP): 34명
+  -> 실제로 사주/운세를 본 사람(Unique IP): 0명
+  -> 주요 요청 경로:
+      /: 31회
+      /favicon.ico: 7회
+      /.well-known/assetlinks.json: 4회
+      /apple-touch-icon.png: 2회
+      /saju: 1회
+
+[2026-03-11] 방문자(Unique IP): 21명
+  -> 실제로 사주/운세를 본 사람(Unique IP): 0명
+  -> 주요 요청 경로:
+      /: 18회
+      /saju/new: 5회
+      /favicon.ico: 3회
+      /fortunes/daily: 2회
+      /.env: 1회
+
+=====================================

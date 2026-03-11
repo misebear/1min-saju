@@ -2612,3 +2612,108 @@ select.form-control {
   margin-bottom: 8px;
   justify-content: center;
 }
+
+/* ─── CTA 개선용 애니메이션 및 레이아웃 ─── */
+
+.btn-pulse {
+  animation: pulse-ring 2s infinite;
+  position: relative;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.5);
+  }
+
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 10px rgba(236, 72, 153, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(236, 72, 153, 0);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2.5s infinite;
+}
+
+@keyframes bounce-slow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* 소셜 프루프 팝업 (토스트) */
+.social-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  width: 90%;
+  max-width: 380px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 100px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(236, 72, 153, 0.2);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-toast.slide-up {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.social-toast.slide-down {
+  transform: translateX(-50%) translateY(100px);
+  opacity: 0;
+}
+
+.social-toast.hidden {
+  display: none !important;
+}
+
+.toast-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.toast-content {
+  flex: 1;
+}
+
+.toast-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--tint);
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.toast-message {
+  font-size: 13px;
+  color: var(--text-1);
+  line-height: 1.4;
+}
+
+.toast-message strong {
+  color: #ec4899;
+}

@@ -375,6 +375,11 @@
 <% else %>
   <!-- Empty state - no birth data -->
   <div class="empty-state">
+    <!-- 가입 NO 결제 NO 초강조 배너 -->
+    <div class="free-banner animate-bounce-slow" style="margin: 0 auto 20px; max-width: 320px; padding: 12px 20px; background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%); border-radius: 100px; color: #d61f69; font-weight: 800; font-size: 15px; box-shadow: 0 4px 15px rgba(255,154,158,0.4); border: 2px solid white;">
+      💸 가입 NO! 결제 NO! 100% 무료 사주
+    </div>
+
     <div class="mascot-wrapper">
       <%= image_tag "logo_1min_saju.png", class: "snowcat-mascot snowcat-mascot-lg", alt: "1분 사주" %>
     </div>
@@ -384,14 +389,20 @@
       1분만에 사주를 풀어줄게! ✨
     </p>
 
-    <div class="speech-bubble" style="text-align: left;">
-      사주풀이는 태어난 날의 하늘과 땅의 기운으로<br>
-      너의 성격, 재능, 운세를 알아보는 거야!<br>
-      재밌으니까 한번 해볼래? 😸
+    <!-- 샘플 결과 스켈레톤 오버레이 (가짜 결과 기대감 부여) -->
+    <div class="sample-skeleton-card" style="margin: 24px auto; max-width: 340px; padding: 20px; background: rgba(255,255,255,0.8); border-radius: var(--r-xl); box-shadow: var(--glass-shadow); border: 1px solid var(--glass-border); text-align: left; position: relative; overflow: hidden;">
+      <div style="font-size: 13px; font-weight: 700; color: var(--tint); margin-bottom: 12px;">🌟 너랑 똑같은 명식 리뷰</div>
+      <div style="width: 80%; height: 16px; background: #eee; border-radius: 4px; margin-bottom: 8px;"></div>
+      <div style="width: 60%; height: 14px; background: #eee; border-radius: 4px; margin-bottom: 8px;"></div>
+      <div style="width: 90%; height: 14px; background: #eee; border-radius: 4px;"></div>
+      
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 10px;">
+        <span style="font-size: 14px; font-weight: 800; color: var(--text-1);">나의 운명은 어떨까? 🫣</span>
+      </div>
     </div>
 
-    <a href="<%= new_saju_path %>" class="btn-primary mt-lg" style="display: inline-block; text-decoration: none; max-width: 300px;">
-      🔮 사주풀이 시작하기
+    <a href="<%= new_saju_path %>" class="btn-primary btn-pulse mt-lg" style="display: block; width: 100%; max-width: 340px; margin: 0 auto; text-decoration: none; padding: 18px 24px; font-size: 18px; font-weight: 800; text-align: center; letter-spacing: -0.02em;">
+      👉 지금 내 사주팔자 무료 확인하기
     </a>
 
     <div class="quick-menu mt-lg">
@@ -428,5 +439,58 @@
         <span class="label">취업운</span>
       </a>
     </div>
+    </div>
   </div>
+
+  <!-- 가짜 소셜 프루프(푸시 토스트) 시스템 -->
+  <div id="social-proof-toast" class="social-toast hidden">
+    <div class="toast-icon">👀</div>
+    <div class="toast-content">
+      <div class="toast-title">실시간 방문자 조회</div>
+      <div class="toast-message" id="toast-msg">방금 누군가 사주 결과를 확인하고 소름돋았어요!</div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const names = ['김**', '이**', '박**', '최**', '강**', '조**', '윤**', '장**', '임**', '한**'];
+      const actions = [
+        '본인 명식을 보고 소름 돋아하는 중! 😱', 
+        '오늘의 재물운을 확인했어요! 💰', 
+        '운명의 짝꿍 궁합을 보고 있어요! 💕', 
+        '소름 돋는 사주풀이를 경험했어요! 🔥',
+        '토정비결로 올해 운세를 확인했어요! 📅'
+      ];
+      const toast = document.getElementById('social-proof-toast');
+      const msgEl = document.getElementById('toast-msg');
+
+      if(!toast || !msgEl) return;
+
+      // 3~8초 무작위 첫 팝업 설정
+      setTimeout(showToast, Math.floor(Math.random() * 5000) + 3000);
+
+      function showToast() {
+        const randomName = names[Math.floor(Math.random() * names.length)];
+        const randomAction = actions[Math.floor(Math.random() * actions.length)];
+        const minAgo = Math.floor(Math.random() * 5) + 1;
+        
+        msgEl.innerHTML = `<strong>${minAgo}분 전</strong>, ${randomName}님이 <br>${randomAction}`;
+        
+        toast.classList.remove('hidden');
+        toast.classList.add('slide-up');
+
+        // 4초 뒤 사라짐
+        setTimeout(() => {
+          toast.classList.remove('slide-up');
+          toast.classList.add('slide-down');
+          setTimeout(() => {
+            toast.classList.add('hidden');
+            toast.classList.remove('slide-down');
+            // 8~15초 뒤 다시 팝업
+            setTimeout(showToast, Math.floor(Math.random() * 7000) + 8000);
+          }, 500);
+        }, 4000);
+      }
+    });
+  </script>
 <% end %>

@@ -1,12 +1,17 @@
 <% content_for(:title) { "사주풀이 입력 - 1분 사주" } %>
 
 <div class="page-header animate-fadeIn">
+  <!-- 가입 NO 결제 NO 초강조 배너 -->
+  <div class="free-banner animate-bounce-slow" style="margin: 0 auto 16px; max-width: 320px; padding: 10px 20px; background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%); border-radius: 100px; color: #d61f69; font-weight: 800; font-size: 14px; box-shadow: 0 4px 15px rgba(255,154,158,0.4); border: 2px solid white;">
+    💸 평생 가입 NO! 결제 NO! 100% 무료
+  </div>
+
   <%= image_tag "snowcat/icon_cat_snowcat_1771225044956.png", class: "snowcat-mascot", alt: "1분 사주" %>
   <h1>사주풀이</h1>
   <p class="subtitle">태어난 날짜와 시간을 알려줘! 🐱</p>
 </div>
 
-<%= form_tag saju_path, method: :post, class: "animate-fadeInUp" do %>
+<%= form_tag saju_path, method: :post, class: "animate-fadeInUp", id: "sajuForm" do %>
   <!-- 생년월일 -->
   <div class="form-section">
     <label class="form-label">📅 생년월일</label>
@@ -85,8 +90,8 @@
 
   <div class="divider"></div>
 
-  <button type="submit" class="btn-primary">
-    🔮 사주 풀어보기
+  <button type="submit" class="btn-primary btn-pulse" id="submitBtn" style="padding: 18px 24px; font-size: 18px; font-weight: 800; letter-spacing: -0.02em;">
+    👉 사주 명식 분석하기
   </button>
 <% end %>
 
@@ -102,10 +107,39 @@
   </p>
 </div>
 
+
+<!-- 폼 제출 시 보여줄 오버레이 (디폴트는 숨김) -->
+<div id="loading-overlay" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(255,255,255,0.9); z-index: 9999; justify-content: center; align-items: center; flex-direction: column;">
+  <div style="font-size: 40px; margin-bottom: 20px;" class="animate-bounce">🔮</div>
+  <h3 style="color: var(--tint); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-bottom: 8px;">명식을 분석하고 있어요...</h3>
+  <p style="color: var(--text-3); font-size: 14px;">음양오행의 기운을 확인하는 중입니다 ✨</p>
+</div>
+
 <script>
 function selectGender(value, el) {
   document.querySelectorAll('.gender-btn').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
   el.querySelector('input').checked = true;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('sajuForm');
+  const overlay = document.getElementById('loading-overlay');
+  
+  if (form && overlay) {
+    form.addEventListener('submit', function(e) {
+      const btn = document.getElementById('submitBtn');
+      if (btn) {
+        btn.innerHTML = '⏳ 분석 중...';
+        btn.style.opacity = '0.7';
+        btn.style.pointerEvents = 'none';
+      }
+      
+      // 약간의 지연 후 폼 제출되도록 (눈길 사로잡기 위함)
+      overlay.style.display = 'flex';
+      
+      // 이미 submit 이벤트 내라서 별도 제어 없이 전송되지만, UX를 위해 화면만 덮어둠.
+    });
+  }
+});
 </script>
