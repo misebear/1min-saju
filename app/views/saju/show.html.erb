@@ -145,15 +145,14 @@
   backdrop-filter: blur(4px);
 }
 
-/* 탭 영역 */
-.story-tap-left, .story-tap-right {
+/* 탭 영역 (화면 전체 클릭 → 다음 카드) */
+.story-tap-area {
   position: absolute;
   top: 40px; bottom: 0;
+  left: 0; right: 0;
   z-index: 10001;
   cursor: pointer;
 }
-.story-tap-left { left: 0; width: 35%; }
-.story-tap-right { right: 0; width: 65%; }
 
 /* 닫기 버튼 */
 .story-close {
@@ -522,7 +521,7 @@
     box-shadow: 0 0 60px rgba(0,0,0,0.5);
   }
   .story-progress { left: calc(50% - 198px); right: calc(50% - 198px); }
-  .story-tap-left, .story-tap-right { max-width: 420px; }
+  .story-tap-area { max-width: 420px; }
   .story-close { right: calc(50% - 198px); }
   .story-counter { left: calc(50% - 198px); }
   .sc-tap-hint { bottom: 40px; }
@@ -547,9 +546,8 @@
   <!-- 닫기 -->
   <button class="story-close" onclick="closeStory()">✕</button>
 
-  <!-- 탭 영역 -->
-  <div class="story-tap-left" id="tapLeft"></div>
-  <div class="story-tap-right" id="tapRight"></div>
+  <!-- 탭 영역 (화면 전체 클릭 → 다음 카드) -->
+  <div class="story-tap-area" id="tapArea"></div>
 
   <div class="story-cards" id="storyCards">
 
@@ -565,7 +563,7 @@
           <div class="sc-badge sc-animate sc-animate-d4" style="font-size: 11px;">🔧 시간보정 적용 (총 <%= @correction[:total_minutes] > 0 ? '+' : '' %><%= @correction[:total_minutes] %>분)</div>
         <% end %>
       </div>
-      <div class="sc-tap-hint">탭해서 넘기기 →</div>
+      <div class="sc-tap-hint">탭해서 넘기기 👆</div>
     </div>
 
     <!-- 카드 2: 사주 네 기둥 -->
@@ -812,9 +810,8 @@
     cards[current].scrollTop = 0;
   }
 
-  // 탭 이벤트
-  document.getElementById('tapRight').addEventListener('click', () => goTo(current + 1));
-  document.getElementById('tapLeft').addEventListener('click', () => goTo(current - 1));
+  // 화면 클릭 → 다음 카드
+  document.getElementById('tapArea').addEventListener('click', () => goTo(current + 1));
 
   // 스와이프 지원
   viewport.addEventListener('touchstart', (e) => {
