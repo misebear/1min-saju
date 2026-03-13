@@ -41,6 +41,8 @@
   <div class="compatibility-grade"><%= @compatibility[:grade] %></div>
 </div>
 
+<% gemini = @gemini_compatibility %>
+
 <!-- Analysis -->
 <div class="card card-gradient-pink animate-fadeInUp">
   <div class="section-header">
@@ -48,9 +50,48 @@
     <h3>궁합 분석</h3>
   </div>
   <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.8;">
-    <%= @compatibility[:analysis] %>
+    <%= gemini&.analysis.presence || @compatibility[:analysis] %>
   </p>
 </div>
+
+<% if gemini.present? %>
+  <div class="card animate-fadeInUp">
+    <div class="section-header">
+      <span class="emoji">✨</span>
+      <h3>AI 현대 해석</h3>
+    </div>
+    <div class="fortune-grid">
+      <% if gemini.chemistry_type.present? %>
+        <div class="fortune-item">
+          <span class="emoji">💞</span>
+          <span class="label">케미 타입</span>
+          <span class="value"><%= gemini.chemistry_type %></span>
+        </div>
+      <% end %>
+      <% if gemini.lucky_date.present? %>
+        <div class="fortune-item">
+          <span class="emoji">📅</span>
+          <span class="label">추천 데이트</span>
+          <span class="value"><%= gemini.lucky_date %></span>
+        </div>
+      <% end %>
+    </div>
+
+    <% if gemini.dating_style.present? %>
+      <div class="speech-bubble mt-md">
+        <strong class="text-pink">연애 스타일</strong><br>
+        <%= gemini.dating_style %>
+      </div>
+    <% end %>
+
+    <% if gemini.caution_point.present? %>
+      <div class="speech-bubble mt-sm" style="background: rgba(239, 68, 68, 0.08); border-color: rgba(239, 68, 68, 0.18);">
+        <strong style="color:#ef4444;">주의 포인트</strong><br>
+        <%= gemini.caution_point %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
 <!-- Five Elements Comparison -->
 <div class="card animate-fadeInUp">

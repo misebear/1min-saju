@@ -31,5 +31,6 @@ class CompatibilityController < ApplicationController
     @person1 = SajuEngine.full_analysis(birth_date1, cp["hour1"].to_i, cp["gender1"])
     @person2 = SajuEngine.full_analysis(birth_date2, cp["hour2"].to_i, cp["gender2"])
     @compatibility = SajuEngine.compatibility(@person1, @person2)
+    @gemini_compatibility = lookup_gemini_compatibility_for_dates(birth_date1, birth_date2)
   end
 end

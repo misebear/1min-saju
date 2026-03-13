@@ -3,6 +3,7 @@
 <%
   score = @compatibility[:score]
   details = @compatibility[:details] || {}
+  gemini = @gemini_compatibility
   element1 = SajuEngine::HeavenlyStems.element(@person1[:saju][:day][:stem])
   element2 = SajuEngine::HeavenlyStems.element(@person2[:saju][:day][:stem])
   element_icons = { '목' => '🌿', '화' => '🔥', '토' => '🪨', '금' => '🪙', '수' => '💧' }
@@ -185,7 +186,10 @@
           <div class="bc-score-unit">점</div>
         </div>
         <h1 class="bc-title bc-animate bc-animate-d1" style="color: <%= grade[:color] %>"><%= grade[:text] %></h1>
-        <p class="bc-subtitle bc-animate bc-animate-d2"><%= @compatibility[:summary] %></p>
+        <p class="bc-subtitle bc-animate bc-animate-d2"><%= gemini&.analysis.presence || @compatibility[:summary] %></p>
+        <% if gemini&.chemistry_type.present? %>
+          <div class="bc-badge bc-animate bc-animate-d2"><%= gemini.chemistry_type %></div>
+        <% end %>
         <div class="bc-vs bc-animate bc-animate-d3">
           <div class="bc-vs-person">
             <div class="bc-vs-icon"><%= element_icons[element1] %></div>
@@ -249,7 +253,7 @@
           <% end %>
         </div>
         <div class="bc-text bc-animate bc-animate-d3">
-          <%= @compatibility[:love_analysis] || "#{@name1}과 #{@name2}의 연애 스타일이 서로를 자극하며 성장하는 관계예요. 서로의 차이를 이해하면 더욱 깊은 사랑이 될 수 있어요!" %>
+          <%= gemini&.dating_style.presence || @compatibility[:love_analysis] || "#{@name1}과 #{@name2}의 연애 스타일이 서로를 자극하며 성장하는 관계예요. 서로의 차이를 이해하면 더욱 깊은 사랑이 될 수 있어요!" %>
         </div>
       </div>
     </div>
@@ -277,7 +281,7 @@
           <% end %>
         </div>
         <div class="bc-text bc-animate bc-animate-d3">
-          <%= @compatibility[:friend_analysis] || "두 사람이 함께하면 서로의 부족한 부분을 채워줄 수 있어요. 특히 #{element_names[element1]}의 추진력과 #{element_names[element2]}의 안정감이 시너지를 만들어요!" %>
+          <%= gemini&.analysis.presence || @compatibility[:friend_analysis] || "두 사람이 함께하면 서로의 부족한 부분을 채워줄 수 있어요. 특히 #{element_names[element1]}의 추진력과 #{element_names[element2]}의 안정감이 시너지를 만들어요!" %>
         </div>
       </div>
     </div>
@@ -289,8 +293,11 @@
         <h2 class="bc-title bc-animate">1분 팩폭!</h2>
         <p class="bc-subtitle bc-animate bc-animate-d1"><%= @name1 %> ❤️ <%= @name2 %>에게</p>
         <div class="bc-text bc-animate bc-animate-d2" style="font-size: 16px; text-align: center; line-height: 2;">
-          <%= @compatibility[:advice] || "두 사람의 궁합은 노력하면 더 좋아질 수 있어요! 서로의 차이를 존중하고, 공통 관심사를 늘려가면 최고의 파트너가 될 수 있답니다 💕" %>
+          <%= gemini&.caution_point.presence || @compatibility[:advice] || "두 사람의 궁합은 노력하면 더 좋아질 수 있어요! 서로의 차이를 존중하고, 공통 관심사를 늘려가면 최고의 파트너가 될 수 있답니다 💕" %>
         </div>
+        <% if gemini&.lucky_date.present? %>
+          <div class="bc-badge bc-animate bc-animate-d2">📅 추천 데이트: <%= gemini.lucky_date %></div>
+        <% end %>
         <div class="bc-divider"></div>
         <div class="bc-cta-grid bc-animate bc-animate-d3">
           <button onclick="shareResult()" class="bc-cta-btn primary" style="background: #FEE500; color: #3C1E1E;">💬 카톡으로 결과 공유</button>

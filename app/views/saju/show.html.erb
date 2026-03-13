@@ -110,7 +110,8 @@
 .story-card[data-card="5"] { background: linear-gradient(160deg, #0d7377, #14ffec10); }
 .story-card[data-card="6"] { background: linear-gradient(160deg, #f7971e, #ffd200); }
 .story-card[data-card="7"] { background: linear-gradient(160deg, #141e30, #243b55); }
-.story-card[data-card="8"] { background: linear-gradient(160deg, #1a0530, #2d1b69, #000); }
+.story-card[data-card="8"] { background: linear-gradient(160deg, #7b2ff7, #f107a3, #1a0530); }
+.story-card[data-card="9"] { background: linear-gradient(160deg, #1a0530, #2d1b69, #000); }
 
 /* MBTI 축 바 */
 .sc-mbti-axes { width: 100%; margin-top: 16px; }
@@ -533,7 +534,7 @@
 <div class="story-viewport" id="storyViewport">
   <!-- 프로그레스 바 -->
   <div class="story-progress" id="storyProgress">
-    <% 9.times do |i| %>
+    <% 10.times do |i| %>
       <div class="story-progress-seg" data-seg="<%= i %>">
         <div class="story-progress-fill"></div>
       </div>
@@ -541,7 +542,7 @@
   </div>
 
   <!-- 카드 번호 -->
-  <div class="story-counter" id="storyCounter">1 / 9</div>
+  <div class="story-counter" id="storyCounter">1 / 10</div>
 
   <!-- 닫기 -->
   <button class="story-close" onclick="closeStory()">✕</button>
@@ -642,8 +643,41 @@
       </div>
     </div>
 
-    <!-- 카드 5: 오행 밸런스 -->
+    <!-- 카드 6: 감성 해석 -->
     <div class="story-card" data-card="5">
+      <div class="sc-content">
+        <div class="sc-emoji-hero">✨</div>
+        <h2 class="sc-title sc-animate">오늘 마음의 결</h2>
+        <p class="sc-subtitle sc-animate sc-animate-d1">지금의 나를 스쳐 가는 기분과 분위기</p>
+        <% if @gemini_fortune.present? %>
+          <% if @gemini_fortune.vibe.present? %>
+            <div class="sc-badge sc-animate sc-animate-d2"><%= @gemini_fortune.vibe %></div>
+          <% end %>
+          <div class="sc-text sc-animate sc-animate-d2"><%= @gemini_fortune.relationship.presence || @gemini_fortune.money.presence || @analysis[:love] %></div>
+          <div class="sc-divider"></div>
+          <p class="sc-subtitle sc-animate sc-animate-d3" style="font-size: 13px; margin-bottom: 12px;">오늘은 이런 결이 은근히 따라와요</p>
+          <div class="sc-stars-grid sc-animate sc-animate-d3">
+            <% if @gemini_fortune.money.present? %>
+              <span class="sc-star-chip">💰 흐르는 기운 · <%= @gemini_fortune.money %></span>
+            <% end %>
+            <% if @gemini_fortune.relationship.present? %>
+              <span class="sc-star-chip">💕 마음의 온도 · <%= @gemini_fortune.relationship %></span>
+            <% end %>
+            <% if @gemini_fortune.style.present? %>
+              <span class="sc-star-chip">👗 어울리는 무드 · <%= @gemini_fortune.style %></span>
+            <% end %>
+            <% if @gemini_fortune.lucky_item.present? %>
+              <span class="sc-star-chip">🍀 은근한 행운 · <%= @gemini_fortune.lucky_item %></span>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="sc-text sc-animate sc-animate-d2"><%= @analysis.dig(:trend_2026, :daily) || @analysis.dig(:trend_2026, :general) || @analysis[:love] %></div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- 카드 7: 오행 밸런스 -->
+    <div class="story-card" data-card="6">
       <div class="sc-content">
         <div class="sc-emoji-hero">⚖️</div>
         <h2 class="sc-title sc-animate">오행 에너지 밸런스</h2>
@@ -667,8 +701,8 @@
       </div>
     </div>
 
-    <!-- 카드 6: 용신 -->
-    <div class="story-card" data-card="6">
+    <!-- 카드 8: 용신 -->
+    <div class="story-card" data-card="7">
       <div class="sc-content">
         <div class="sc-emoji-hero">🎯</div>
         <h2 class="sc-title sc-animate">나의 핵심 용신</h2>
@@ -694,8 +728,8 @@
       </div>
     </div>
 
-    <!-- 카드 7: 십성 + 신살 -->
-    <div class="story-card" data-card="7">
+    <!-- 카드 9: 십성 + 신살 -->
+    <div class="story-card" data-card="8">
       <div class="sc-content">
         <div class="sc-emoji-hero">🌟</div>
         <h2 class="sc-title sc-animate">십성 분석</h2>
@@ -733,8 +767,8 @@
       </div>
     </div>
 
-    <!-- 카드 8: 대운 + 2026 운세 + CTA -->
-    <div class="story-card" data-card="8">
+    <!-- 카드 10: 대운 + 2026 운세 + CTA -->
+    <div class="story-card" data-card="9">
       <div class="sc-content">
         <div class="sc-emoji-hero">🔄</div>
         <h2 class="sc-title sc-animate">10년 대운</h2>
@@ -769,7 +803,7 @@
 
 <script>
 (function() {
-  const totalCards = 9;
+  const totalCards = 10;
   let current = 0;
   let touchStartX = 0;
   let isAnimating = false;
@@ -812,6 +846,14 @@
 
   // 화면 클릭 → 다음 카드
   document.getElementById('tapArea').addEventListener('click', () => goTo(current + 1));
+
+  // 카드 본문을 눌러도 다음 카드로 이동
+  cards.forEach((card) => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a, button')) return;
+      goTo(current + 1);
+    });
+  });
 
   // 스와이프 지원
   viewport.addEventListener('touchstart', (e) => {

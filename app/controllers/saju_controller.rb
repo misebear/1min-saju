@@ -58,6 +58,7 @@ class SajuController < ApplicationController
     @special_stars = @analysis[:special_stars]
     @major_fortune = @analysis[:major_fortune]
     @city = city
+    @gemini_fortune = lookup_gemini_fortune_for_birth_date(birth_date)
 
     # Famous people with similar day pillar
     saju = @analysis[:saju]

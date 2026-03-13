@@ -84,6 +84,7 @@ class BlindCompatController < ApplicationController
     @person1 = SajuEngine.full_analysis(@link.person1_birth_date, @link.person1_hour, @link.person1_gender)
     @person2 = SajuEngine.full_analysis(@link.person2_birth_date, @link.person2_hour, @link.person2_gender)
     @compatibility = SajuEngine.compatibility(@person1, @person2)
+    @gemini_compatibility = lookup_gemini_compatibility_for_dates(@link.person1_birth_date, @link.person2_birth_date)
 
     @name1 = @link.person1_name.presence || "A"
     @name2 = @link.person2_name.presence || "B"

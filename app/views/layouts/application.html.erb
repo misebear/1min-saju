@@ -9,6 +9,8 @@
     <meta name="theme-color" content="#1a1a2e">
     <meta name="description" content="<%= content_for(:description) || '무료 사주팔자, 오늘의 운세, 궁합, 꿈해몽, 별자리 운세까지 가입 없이 1분 안에 확인해보세요! 소름돋는 족집게 풀이 선사 ✨' %>">
     <meta name="keywords" content="사주, 무료 사주, 사주풀이, 소름돋는 사주, 오늘운세, 무료 궁합, 꿈해몽, 사주팔자, 토정비결, 별자리운세, 타로, 1분사주">
+    <meta name="robots" content="<%= content_for(:robots) || 'index,follow,max-image-preview:large' %>">
+    <link rel="canonical" href="<%= content_for(:canonical_url) || request.original_url %>">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -27,7 +29,7 @@
 
     <!-- Webmaster Tools Verification -->
     <meta name="google-site-verification" content="Mmr1rVXsSLk2uamhfuPACTn2GEjcxU5Q7K3neQ95CLU" />
-    <meta name="naver-site-verification" content="364aecca41dd60b46f332cc3dc7dae2bae0d1c59" />
+    <meta name="naver-site-verification" content="6db8ead3cf9297e3fbdc09fe192798967118e1c5" />
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -47,7 +49,7 @@
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "1분 사주",
-      "url": "https://www.1min-saju.com",
+      "url": "https://www.1minsaju.com",
       "description": "가입 없이 평생 무료로 보는 사주팔자, 궁합, 운세 플랫폼. 1분 안에 내 사주 명식을 확인하세요.",
       "applicationCategory": "LifestyleApplication",
       "operatingSystem": "All",
@@ -63,8 +65,8 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "1분 사주",
-      "url": "https://www.1min-saju.com",
-      "logo": "https://www.1min-saju.com/icon-512.png"
+      "url": "https://www.1minsaju.com",
+      "logo": "https://www.1minsaju.com/icon-512.png"
     }
     </script>
 
@@ -121,7 +123,7 @@
             <span class="nav-icon">🌙</span>
             <span>꿈해몽</span>
           </a>
-          <a href="<%= zodiac_path %>" class="desktop-nav-item <%= 'active' if controller_name == 'zodiac' %>">
+          <a href="<%= zodiac_main_path %>" class="desktop-nav-item <%= 'active' if controller_name == 'zodiac' %>">
             <span class="nav-icon">⭐</span>
             <span>별자리</span>
           </a>
@@ -174,7 +176,7 @@
           <a href="<%= new_dream_path %>" class="sidebar-link <%= 'active' if controller_name == 'dreams' %>">
             <span>🌙</span> 꿈해몽
           </a>
-          <a href="<%= zodiac_path %>" class="sidebar-link <%= 'active' if controller_name == 'zodiac' %>">
+          <a href="<%= zodiac_main_path %>" class="sidebar-link <%= 'active' if controller_name == 'zodiac' %>">
             <span>⭐</span> 별자리 운세
           </a>
           <a href="<%= new_auspicious_date_path %>" class="sidebar-link <%= 'active' if controller_name == 'auspicious_dates' %>">

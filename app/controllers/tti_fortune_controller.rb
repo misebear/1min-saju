@@ -19,13 +19,23 @@ class TtiFortuneController < ApplicationController
     branches = %w[자 축 인 묘 진 사 오 미 신 유 술 해]
     today = Date.today
     seed = today.year * 31 + today.month * 37 + today.day * 41
+    iljin = today_iljin(today)
 
     @tti_fortunes = branches.map.with_index do |branch, i|
       data = TTI_DATA[branch]
+      gemini = lookup_gemini_tti_fortune(data[:name], today)
       s = (seed + i * 13) % 100
-      score = [ s + 30, 100 ].min
-      fortune = tti_fortune(s, data[:name])
-      { branch: branch, data: data, score: score, fortune: fortune }
+      fallback_score = [ s + 30, 100 ].min
+      fallback_fortune = tti_fortune(s, data[:name])
+      {
+        branch: branch,
+        data: data,
+        score: gemini&.tension_level || fallback_score,
+        fortune: gemini&.fortune_text || fallback_fortune,
+        headline: gemini&.headline,
+        lucky_point: gemini&.lucky_point,
+        iljin: iljin
+      }
     end
     @date = today
 

@@ -1,9 +1,15 @@
 User-agent: *
 Allow: /
 Disallow: /admin
+Disallow: /saju/history
 Disallow: /saju/result
 Disallow: /compatibility/result
-Disallow: /chat/result
+Disallow: /chat
+Disallow: /chat/message
+Disallow: /fortunes/daily
+Disallow: /fortunes/yearly
+Disallow: /fortunes/tomorrow
+Disallow: /fortunes/specific
 Disallow: /psychology/result
 Disallow: /tojeong/result
-Sitemap: https://www.1min-saju.com/sitemap.xml
+Sitemap: https://www.1minsaju.com/sitemap.xml

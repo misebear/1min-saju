@@ -1,4 +1,39 @@
-<% content_for(:title) { "1분 사주 ⏱️ 빠르고 정확한 사주풀이" } %>
+<% content_for(:title) { "무료 사주풀이 · 오늘운세 · 궁합 보는 곳 | 1분 사주" } %>
+<% content_for(:description) { "무료 사주풀이, 오늘의 운세, 궁합, 타로, 꿈해몽, 토정비결까지 회원가입 없이 바로 보는 1분 사주. 생년월일시 입력만으로 내 사주팔자와 오늘 운세를 빠르게 확인해보세요." } %>
+<% content_for :head do %>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "1분 사주는 어떤 사이트인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1분 사주는 무료 사주풀이, 오늘의 운세, 궁합, 타로, 꿈해몽, 토정비결을 회원가입 없이 빠르게 확인할 수 있는 운세 사이트입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "사주풀이를 보려면 무엇이 필요한가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "생년월일과 태어난 시간, 성별을 입력하면 기본 사주 분석과 오늘의 운세, 궁합 등 연결 기능을 함께 볼 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "오늘운세와 궁합도 무료인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네. 오늘운세, 내일운세, 궁합, 띠운세, 별자리 운세, 꿈해몽, 타로 등 주요 기능을 무료로 이용할 수 있습니다."
+        }
+      }
+    ]
+  }
+  </script>
+<% end %>
 
 <% if @analysis %>
   <%
@@ -383,7 +418,7 @@
     <div class="mascot-wrapper">
       <%= image_tag "logo_1min_saju.png", class: "snowcat-mascot snowcat-mascot-lg", alt: "1분 사주" %>
     </div>
-    <h2>반가워! <span class="text-pink">1분 사주</span>야 ⏱️</h2>
+    <h1 class="landing-main-title">무료 사주풀이, 오늘운세, 궁합을 <span class="text-pink">1분 안에</span></h1>
     <p>
       생년월일시를 알려주면<br>
       1분만에 사주를 풀어줄게! ✨
@@ -439,8 +474,87 @@
         <span class="label">취업운</span>
       </a>
     </div>
-    </div>
   </div>
+
+  <section class="card landing-copy-card animate-fadeInUp">
+    <div class="section-header">
+      <span class="emoji">🔮</span>
+      <h2>1분 사주에서 볼 수 있는 것</h2>
+    </div>
+    <p class="landing-copy-lead">한 번 입력한 생년월일시로 사주팔자부터 오늘의 운세, 궁합, 타로, 꿈해몽까지 바로 이어서 볼 수 있어요.</p>
+    <div class="landing-feature-grid">
+      <a href="<%= new_saju_path %>" class="landing-feature-tile">
+        <strong>무료 사주풀이</strong>
+        <span>오행, 일주, 대운, 성격 분석</span>
+      </a>
+      <a href="<%= daily_fortune_path %>" class="landing-feature-tile">
+        <strong>오늘의 운세</strong>
+        <span>재물운, 애정운, 건강운, 직업운</span>
+      </a>
+      <a href="<%= new_compatibility_path %>" class="landing-feature-tile">
+        <strong>궁합 보기</strong>
+        <span>연애 궁합과 관계 성향 확인</span>
+      </a>
+      <a href="<%= new_tarot_path %>" class="landing-feature-tile">
+        <strong>타로 · 꿈해몽</strong>
+        <span>가벼운 고민과 꿈 해석까지</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="card landing-copy-card animate-fadeInUp">
+    <div class="section-header">
+      <span class="emoji">✨</span>
+      <h2>왜 많이 찾는지</h2>
+    </div>
+    <div class="landing-benefits">
+      <div class="landing-benefit">
+        <strong>회원가입 없이 바로 확인</strong>
+        <p>검색에서 들어와도 결제나 가입 없이 바로 결과 화면으로 이어집니다.</p>
+      </div>
+      <div class="landing-benefit">
+        <strong>사주 + 운세 + 궁합 한 번에</strong>
+        <p>사주 결과를 기반으로 오늘운세, 내일운세, 궁합, 띠운세까지 연속해서 볼 수 있어요.</p>
+      </div>
+      <div class="landing-benefit">
+        <strong>모바일에서 빠르게 사용</strong>
+        <p>카톡 공유나 모바일 유입을 고려한 구조라 휴대폰에서도 빠르게 확인할 수 있습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card landing-copy-card animate-fadeInUp">
+    <div class="section-header">
+      <span class="emoji">📚</span>
+      <h2>무료 사주 사이트를 찾는 분들에게</h2>
+    </div>
+    <p class="landing-copy-text">
+      1분 사주는 <strong>무료 사주풀이</strong>, <strong>오늘의 운세</strong>, <strong>무료 궁합</strong>, <strong>타로</strong>, <strong>꿈해몽</strong> 같은 키워드로 들어온 사용자가
+      한 곳에서 여러 운세 콘텐츠를 이어서 볼 수 있도록 만든 서비스예요. 사주는 참고용 콘텐츠이지만,
+      태어난 날짜와 시간 기준으로 오행 분포, 일주, 성격 흐름, 연애 성향, 직업 성향까지 이해하기 쉽게 정리해줍니다.
+    </p>
+  </section>
+
+  <section class="card landing-copy-card animate-fadeInUp">
+    <div class="section-header">
+      <span class="emoji">❓</span>
+      <h2>자주 묻는 질문</h2>
+    </div>
+    <div class="landing-faq-list">
+      <div class="landing-faq-item">
+        <strong>사주풀이 보려면 무엇을 입력해야 하나요?</strong>
+        <p>생년월일, 태어난 시간, 성별을 입력하면 기본 사주 결과를 볼 수 있어요. 태어난 시간을 알수록 더 자세한 해석이 가능합니다.</p>
+      </div>
+      <div class="landing-faq-item">
+        <strong>오늘운세와 궁합도 같이 볼 수 있나요?</strong>
+        <p>네. 사주 입력 후 오늘운세, 내일운세, 궁합, 타로, 꿈해몽 같은 기능으로 이어서 이동할 수 있습니다.</p>
+      </div>
+      <div class="landing-faq-item">
+        <strong>정말 무료인가요?</strong>
+        <p>현재 홈에서 제공하는 주요 기능은 무료로 바로 이용할 수 있도록 구성되어 있습니다.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- 가짜 소셜 프루프(푸시 토스트) 시스템 -->
   <div id="social-proof-toast" class="social-toast hidden">

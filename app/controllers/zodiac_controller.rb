@@ -15,6 +15,11 @@ class ZodiacController < ApplicationController
 
     @sign_info = SajuEngine::ZodiacEngine::ZODIAC_SIGNS[@sign_name]
     @fortune = SajuEngine::ZodiacEngine.daily_fortune(@sign_name)
+    @gemini_zodiac_fortune = lookup_gemini_zodiac_fortune(@sign_name)
+    if @gemini_zodiac_fortune&.tension_level.present?
+      @fortune[:score] = @gemini_zodiac_fortune.tension_level
+      @fortune[:mood] = @gemini_zodiac_fortune.headline if @gemini_zodiac_fortune.headline.present?
+    end
     @all_signs = SajuEngine::ZodiacEngine::ZODIAC_SIGNS
   end
 end

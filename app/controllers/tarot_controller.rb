@@ -21,5 +21,8 @@ class TarotController < ApplicationController
     birth_date = Date.parse(p["birth_date"]) rescue Date.today
     spread = (p["spread"] || "three_card").to_sym
     @result = SajuEngine::TarotEngine.draw(birth_date, spread)
+    @result[:cards].each do |reading|
+      reading[:gemini] = lookup_gemini_tarot_reading(reading[:card][:name], reading[:card][:reversed])
+    end
   end
 end
