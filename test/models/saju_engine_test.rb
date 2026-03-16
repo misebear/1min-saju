@@ -36,9 +36,9 @@ class SajuEngineTest < ActiveSupport::TestCase
   end
 
   test "시간별 지지 결정" do
-    assert_equal "자", SajuEngine::EarthlyBranches.branch_for_hour(0)  # 자시 0~1시
-    assert_equal "자", SajuEngine::EarthlyBranches.branch_for_hour(1)
-    assert_equal "인", SajuEngine::EarthlyBranches.branch_for_hour(3)  # 인시 3~5시
+    assert_equal "자", SajuEngine::EarthlyBranches.branch_for_hour(0)  # 자시 23~01시
+    assert_equal "축", SajuEngine::EarthlyBranches.branch_for_hour(1)  # 축시 01~03시
+    assert_equal "인", SajuEngine::EarthlyBranches.branch_for_hour(3)  # 인시 03~05시
     assert_equal "오", SajuEngine::EarthlyBranches.branch_for_hour(12) # 오시 11~13시
   end
 
@@ -115,11 +115,11 @@ class SajuEngineTest < ActiveSupport::TestCase
     distribution = SajuEngine::FiveElements.analyze_distribution(pillars)
 
     assert distribution.is_a?(Hash)
-    assert distribution[:목].present? || distribution[:목] == 0
-    assert distribution[:화].present? || distribution[:화] == 0
-    assert distribution[:토].present? || distribution[:토] == 0
-    assert distribution[:금].present? || distribution[:금] == 0
-    assert distribution[:수].present? || distribution[:수] == 0
+    assert distribution["목"].present? || distribution["목"] == 0
+    assert distribution["화"].present? || distribution["화"] == 0
+    assert distribution["토"].present? || distribution["토"] == 0
+    assert distribution["금"].present? || distribution["금"] == 0
+    assert distribution["수"].present? || distribution["수"] == 0
   end
 
   # === 궁합 분석 ===
@@ -147,7 +147,7 @@ class SajuEngineTest < ActiveSupport::TestCase
 
   # === 타로 ===
   test "타로 카드 데이터 존재" do
-    assert SajuEngine::TarotEngine.respond_to?(:draw_cards) || SajuEngine::TarotEngine.respond_to?(:interpret)
+    assert SajuEngine::TarotEngine.respond_to?(:draw) || SajuEngine::TarotEngine.respond_to?(:all_cards)
   end
 
   # === 심리풀이 ===

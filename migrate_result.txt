@@ -1,0 +1,73 @@
+Source locally installed gems is ignoring #<Bundler::StubSpecification name=unicode version=0.4.4.5 platform=ruby> because it is missing extensions
+Source locally installed gems is ignoring #<Bundler::StubSpecification name=unicode version=0.4.4.5 platform=ruby> because it is missing extensions
+C:/Users/db019/.local/share/gem/ruby/3.4.0/gems/reline-0.6.3/lib/reline/io/windows.rb:1: warning: C:/Ruby34-x64/lib/ruby/3.4.0/fiddle/import.rb is found in fiddle, which will no longer be part of the default gems starting from Ruby 4.0.0.
+You can add fiddle to your Gemfile or gemspec to silence this warning.
+Also please contact the author of reline-0.6.3 to request adding fiddle into its gemspec.
+== 20260301000001 CreateSajuRecords: migrating ================================
+-- create_table(:saju_records)
+   -> 0.0010s
+-- add_index(:saju_records, :birth_date)
+   -> 0.0002s
+-- add_index(:saju_records, :created_at)
+   -> 0.0001s
+== 20260301000001 CreateSajuRecords: migrated (0.0014s) =======================
+
+== 20260301000002 CreateCelebrityImages: migrating ============================
+-- create_table(:celebrity_images)
+   -> 0.0006s
+-- add_index(:celebrity_images, :name, {unique: true})
+   -> 0.0002s
+== 20260301000002 CreateCelebrityImages: migrated (0.0008s) ===================
+
+== 20260301000003 CreateDreamInterpretations: migrating =======================
+-- create_table(:dream_interpretations)
+   -> 0.0006s
+-- add_index(:dream_interpretations, :keywords_key)
+   -> 0.0001s
+== 20260301000003 CreateDreamInterpretations: migrated (0.0008s) ==============
+
+== 20260305000001 CreateBlindCompatLinks: migrating ===========================
+-- create_table(:blind_compat_links)
+   -> 0.0008s
+== 20260305000001 CreateBlindCompatLinks: migrated (0.0008s) ==================
+
+== 20260306000001 CreateGeminiFortunes: migrating =============================
+-- create_table(:gemini_fortunes)
+   -> 0.0008s
+-- add_index(:gemini_fortunes, [:today_iljin, :user_ilju], {unique: true, name: "idx_gemini_fortunes_iljin_ilju"})
+   -> 0.0003s
+== 20260306000001 CreateGeminiFortunes: migrated (0.0012s) ====================
+
+== 20260306230000 CreateGeminiCompatibilities: migrating ======================
+-- create_table(:gemini_compatibilities)
+   -> 0.0007s
+-- add_index(:gemini_compatibilities, [:ilju_a, :ilju_b], {unique: true, name: "idx_compat_ilju_pair"})
+   -> 0.0002s
+-- add_index(:gemini_compatibilities, :ilju_a)
+   -> 0.0001s
+-- add_index(:gemini_compatibilities, :ilju_b)
+   -> 0.0001s
+== 20260306230000 CreateGeminiCompatibilities: migrated (0.0012s) =============
+
+== 20260307002800 CreateGeminiTtiFortunesAndMore: migrating ===================
+-- create_table(:gemini_tti_fortunes)
+   -> 0.0006s
+-- add_index(:gemini_tti_fortunes, [:animal, :iljin], {unique: true, name: "idx_tti_animal_iljin"})
+   -> 0.0006s
+-- create_table(:gemini_zodiac_fortunes)
+   -> 0.0006s
+-- add_index(:gemini_zodiac_fortunes, [:sign, :iljin], {unique: true, name: "idx_zodiac_sign_iljin"})
+   -> 0.0001s
+-- create_table(:gemini_tarot_readings)
+   -> 0.0004s
+-- add_index(:gemini_tarot_readings, [:card_name, :position], {unique: true, name: "idx_tarot_card_pos"})
+   -> 0.0001s
+== 20260307002800 CreateGeminiTtiFortunesAndMore: migrated (0.0026s) ==========
+
+== 20260307084800 CreateDailyVisits: migrating ================================
+-- create_table(:daily_visits)
+   -> 0.0006s
+-- add_index(:daily_visits, :visit_date, {unique: true})
+   -> 0.0002s
+== 20260307084800 CreateDailyVisits: migrated (0.0008s) =======================
+

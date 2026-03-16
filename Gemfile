@@ -41,6 +41,9 @@ gem "image_processing", "~> 1.2"
 # 음양력 변환 (한국 음력 달력)
 gem "ruby_lunardate"
 
+# Ruby 3.4+ 호환 (기본 gem에서 제외된 라이브러리)
+gem "csv"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
