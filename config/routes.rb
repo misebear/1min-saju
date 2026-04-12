@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "home#index"
+  get "/ads.txt", to: "site_files#ads_txt", defaults: { format: :text }
   get "/sitemap.xml", to: "sitemaps#show", format: "xml", as: :sitemap
 
   # 사주 분석

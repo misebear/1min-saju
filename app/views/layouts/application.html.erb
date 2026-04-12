@@ -30,6 +30,9 @@
     <!-- Webmaster Tools Verification -->
     <meta name="google-site-verification" content="Mmr1rVXsSLk2uamhfuPACTn2GEjcxU5Q7K3neQ95CLU" />
     <meta name="naver-site-verification" content="6db8ead3cf9297e3fbdc09fe192798967118e1c5" />
+    <% if adsense_enabled? %>
+      <meta name="google-adsense-account" content="<%= adsense_publisher_id %>">
+    <% end %>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -69,6 +72,20 @@
       "logo": "https://www.1minsaju.com/icon-512.png"
     }
     </script>
+
+    <% if ga_enabled? %>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=<%= ga_measurement_id %>"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '<%= ga_measurement_id %>', { anonymize_ip: true });
+      </script>
+    <% end %>
+
+    <% if adsense_enabled? %>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<%= adsense_publisher_id %>" crossorigin="anonymous"></script>
+    <% end %>
 
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>

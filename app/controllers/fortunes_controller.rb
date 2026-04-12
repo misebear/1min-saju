@@ -1,9 +1,14 @@
 # frozen_string_literal: true
 
 class FortunesController < ApplicationController
-  before_action :check_session
+  before_action :check_session, except: [ :daily, :yearly ]
 
   def daily
+    unless session[:birth_date].present?
+      render :daily_landing
+      return
+    end
+
     @analysis = load_analysis
     @daily = @analysis[:daily_fortune]
     @yearly = @analysis[:yearly_fortune]
@@ -13,6 +18,12 @@ class FortunesController < ApplicationController
   end
 
   def yearly
+    unless session[:birth_date].present?
+      @year = Date.today.year
+      render :yearly_landing
+      return
+    end
+
     @analysis = load_analysis
     @yearly = @analysis[:yearly_fortune]
     @major_fortune = @analysis[:major_fortune]

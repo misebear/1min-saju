@@ -1,0 +1,41 @@
+<% content_for(:title) { "#{@year}년 연간 운세 무료 확인 | 1분 사주" } %>
+<% content_for(:description) { "#{@year}년 연간 운세를 무료로 확인해보세요. 생년월일시 입력 후 올해의 큰 흐름, 대운, 재물운, 연애운, 커리어 흐름까지 빠르게 볼 수 있습니다." } %>
+
+<div class="page-header animate-fadeIn">
+  <h1><%= @year %>년 연간 운세</h1>
+  <p class="subtitle">올해의 큰 흐름과 대운을 미리 살펴보세요</p>
+</div>
+
+<div class="card card-gradient-pink animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">📆</span>
+    <h3>연간 운세에서 보는 것</h3>
+  </div>
+  <p style="line-height: 1.9; color: var(--text-secondary);">
+    한 해의 전체 기운, 중요한 변화 타이밍, 재물과 관계 흐름, 그리고 대운의 방향성을 함께 읽습니다.
+    올해를 길게 보고 계획할 때 도움을 주는 페이지예요.
+  </p>
+</div>
+
+<div class="card animate-fadeInUp">
+  <div class="fortune-grid">
+    <div class="fortune-item"><span class="emoji">🌊</span><span class="label">큰 흐름</span><span class="value">올해의 전체 분위기</span></div>
+    <div class="fortune-item"><span class="emoji">📊</span><span class="label">대운</span><span class="value">10년 단위 변화</span></div>
+    <div class="fortune-item"><span class="emoji">💰</span><span class="label">재물운</span><span class="value">돈의 흐름과 기회</span></div>
+    <div class="fortune-item"><span class="emoji">💕</span><span class="label">연애운</span><span class="value">관계의 흐름</span></div>
+  </div>
+</div>
+
+<div class="card text-center animate-fadeInUp">
+  <%= image_tag "snowcat/icon_dog_snowcat_1771225147086.png", class: "snowcat-mascot snowcat-mascot-sm", alt: "사주멍이" %>
+  <p class="mt-sm text-small text-muted" style="line-height: 1.8;">
+    올해 운세는 방향을 보는 지도 같은 거예요.<br>
+    내 사주 기준으로 한 해의 흐름을 차분히 정리해보세요.
+  </p>
+</div>
+
+<div class="mt-md mb-lg">
+  <a href="<%= new_saju_path %>" class="btn-primary" style="text-decoration: none; display: block;">
+    📊 연간 운세 보러 가기
+  </a>
+</div>

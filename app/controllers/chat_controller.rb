@@ -3,7 +3,7 @@
 class ChatController < ApplicationController
   def show
     unless session[:birth_date].present?
-      redirect_to new_saju_path, notice: "먼저 생년월일을 입력해줘! 🐱"
+      render :landing
       return
     end
 

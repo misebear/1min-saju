@@ -1,0 +1,56 @@
+<% content_for(:title) { "오늘의 운세 무료 확인 | 1분 사주" } %>
+<% content_for(:description) { "오늘의 운세를 무료로 확인해보세요. 생년월일시 입력 후 재물운, 연애운, 건강운, 커리어 운세까지 1분 안에 확인할 수 있습니다." } %>
+
+<div class="page-header animate-fadeIn">
+  <h1>오늘의 운세</h1>
+  <p class="subtitle"><%= Date.today.strftime("%Y년 %m월 %d일") %> 오늘의 흐름을 가볍게 확인해보세요</p>
+</div>
+
+<div class="card card-gradient-pink animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">🔮</span>
+    <h3>오늘의 운세는 어떻게 보나요?</h3>
+  </div>
+  <p style="line-height: 1.9; color: var(--text-secondary);">
+    생년월일과 태어난 시간을 입력하면 오늘의 종합 운세 점수, 재물운, 연애운, 건강운, 커리어 운세,
+    행운의 색과 숫자까지 한 번에 볼 수 있어요.
+  </p>
+</div>
+
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">🍀</span>
+    <h3>이 페이지에서 볼 수 있는 내용</h3>
+  </div>
+  <div class="fortune-grid">
+    <div class="fortune-item"><span class="emoji">💰</span><span class="label">재물운</span><span class="value">오늘의 금전 흐름</span></div>
+    <div class="fortune-item"><span class="emoji">💕</span><span class="label">연애운</span><span class="value">관계와 감정 기류</span></div>
+    <div class="fortune-item"><span class="emoji">💪</span><span class="label">건강운</span><span class="value">컨디션 체크</span></div>
+    <div class="fortune-item"><span class="emoji">💼</span><span class="label">커리어운</span><span class="value">일과 공부 운세</span></div>
+  </div>
+</div>
+
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">✨</span>
+    <h3>1분 사주 오늘운세의 특징</h3>
+  </div>
+  <p style="line-height: 1.9; color: var(--text-secondary);">
+    단순한 랜덤 문구가 아니라 사주 명식과 오늘의 흐름을 함께 읽는 구조라, 입력 후에는 오늘 운세뿐 아니라
+    연간 운세, 궁합, AI 챗봇까지 이어서 볼 수 있습니다.
+  </p>
+</div>
+
+<div class="card text-center animate-fadeInUp">
+  <%= image_tag "snowcat/icon_cat_snowcat_1771225160958.png", class: "snowcat-mascot snowcat-mascot-sm", alt: "1분 사주" %>
+  <div class="speech-bubble mt-sm">
+    오늘의 운세를 제대로 보려면<br>
+    <strong class="text-pink">생년월일시 입력</strong>부터 시작하면 돼요.
+  </div>
+</div>
+
+<div class="mt-md mb-lg">
+  <a href="<%= new_saju_path %>" class="btn-primary" style="text-decoration: none; display: block;">
+    🔮 오늘의 운세 보러 가기
+  </a>
+</div>
