@@ -1,9 +1,12 @@
 module ApplicationHelper
+  DEFAULT_ADSENSE_PUBLISHER_ID = "ca-pub-9072876824288260"
+
   def adsense_publisher_id
     ENV["ADSENSE_PUBLISHER_ID"].presence ||
-      Rails.application.credentials.dig(:adsense, :publisher_id).presence
+      Rails.application.credentials.dig(:adsense, :publisher_id).presence ||
+      DEFAULT_ADSENSE_PUBLISHER_ID
   rescue
-    nil
+    DEFAULT_ADSENSE_PUBLISHER_ID
   end
 
   def adsense_enabled?
