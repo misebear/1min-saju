@@ -1,5 +1,39 @@
 <% content_for(:title) { "AI 사주 챗봇 | 1분 사주" } %>
 <% content_for(:description) { "사주 기반 AI 챗봇으로 오늘의 운세, 연애운, 재물운, 커리어, 성격을 물어보세요. 먼저 사주를 입력하면 더 정확한 대화를 이어갈 수 있습니다." } %>
+<% content_for :head do %>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "사주 챗봇에서는 무엇을 물어볼 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "오늘의 운세, 연애운, 재물운, 커리어, 성격 흐름처럼 사주를 바탕으로 한 질문을 자연스럽게 이어서 물어볼 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "사주를 먼저 입력해야 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "더 정확한 답변을 위해서는 생년월일시를 먼저 입력하는 것이 좋지만, 페이지 구조와 기능 설명은 누구나 확인할 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "챗봇 다음에는 무엇을 같이 보면 좋나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "사주 챗봇과 함께 오늘의 운세, 무료 궁합, 연간 운세를 같이 보면 전체 흐름을 이해하는 데 도움이 됩니다."
+        }
+      }
+    ]
+  }
+  </script>
+<% end %>
 
 <div class="page-header animate-fadeIn">
   <%= image_tag "snowcat/icon_cat_snowcat_1771225044956.png", class: "snowcat-mascot", alt: "1분 사주" %>
@@ -30,6 +64,29 @@
     내 명식을 바탕으로 성격, 오늘운세, 연애, 재물, 인간관계까지 이어서 물어볼 수 있어요.
   </p>
 </div>
+
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">❓</span>
+    <h3>사주 챗봇 FAQ</h3>
+  </div>
+  <div class="landing-faq-list">
+    <div class="landing-faq-item">
+      <strong>챗봇은 어떤 질문에 잘 맞나요?</strong>
+      <p>짧게 오늘 운세를 묻거나, 연애와 재물 흐름처럼 특정 주제만 따로 확인하고 싶을 때 특히 편합니다.</p>
+    </div>
+    <div class="landing-faq-item">
+      <strong>그냥 대화만 하면 되나요?</strong>
+      <p>네. 사주 입력 뒤에는 일상적인 말투로 질문해도 흐름을 이어서 보기 쉽게 답을 받을 수 있어요.</p>
+    </div>
+    <div class="landing-faq-item">
+      <strong>다른 페이지와 같이 써도 되나요?</strong>
+      <p>오늘의 운세나 연간 운세를 먼저 본 뒤 챗봇에서 더 깊게 물어보는 방식이 가장 자연스럽습니다.</p>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/public_discovery_panel" %>
 
 <div class="mt-md mb-lg">
   <a href="<%= new_saju_path %>" class="btn-primary" style="text-decoration: none; display: block;">

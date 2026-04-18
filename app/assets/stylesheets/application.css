@@ -2734,67 +2734,53 @@ select.form-control {
   }
 }
 
-/* 소셜 프루프 팝업 (토스트) */
-.social-toast {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%) translateY(100px);
-  width: 90%;
-  max-width: 380px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 100px;
-  padding: 12px 20px;
+.public-discovery-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(245, 238, 255, 0.92));
+}
+
+.public-discovery-copy {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.public-discovery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.public-discovery-link {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(236, 72, 153, 0.2);
-  z-index: 1000;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.social-toast.slide-up {
-  transform: translateX(-50%) translateY(0);
-  opacity: 1;
-}
-
-.social-toast.slide-down {
-  transform: translateX(-50%) translateY(100px);
-  opacity: 0;
-}
-
-.social-toast.hidden {
-  display: none !important;
-}
-
-.toast-icon {
-  font-size: 24px;
-  flex-shrink: 0;
-}
-
-.toast-content {
-  flex: 1;
-}
-
-.toast-title {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--tint);
-  margin-bottom: 2px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.toast-message {
-  font-size: 13px;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border-radius: var(--r-md);
+  background: var(--bg-grouped);
+  border: 1px solid rgba(180, 122, 232, 0.1);
   color: var(--text-1);
-  line-height: 1.4;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.toast-message strong {
-  color: #ec4899;
+.public-discovery-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(180, 122, 232, 0.08);
+}
+
+.public-discovery-link strong {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.public-discovery-link span {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-3);
+}
+
+@media (max-width: 380px) {
+  .public-discovery-grid {
+    grid-template-columns: 1fr;
+  }
 }

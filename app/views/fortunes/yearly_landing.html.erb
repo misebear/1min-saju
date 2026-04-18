@@ -1,5 +1,39 @@
 <% content_for(:title) { "#{@year}년 연간 운세 무료 확인 | 1분 사주" } %>
 <% content_for(:description) { "#{@year}년 연간 운세를 무료로 확인해보세요. 생년월일시 입력 후 올해의 큰 흐름, 대운, 재물운, 연애운, 커리어 흐름까지 빠르게 볼 수 있습니다." } %>
+<% content_for :head do %>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "<%= @year %>년 연간 운세는 무엇을 알려주나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "<%= @year %>년 연간 운세는 한 해의 큰 흐름, 재물운, 관계 흐름, 대운의 방향성 같은 장기적인 움직임을 정리해줍니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "연간 운세도 무료인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네. 1분 사주에서는 연간 운세를 무료로 확인할 수 있고, 사주풀이와 함께 이어서 보는 구조입니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "연간 운세를 보면 무엇이 좋은가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "올해의 큰 흐름과 변화 시기를 미리 파악해 계획을 세우는 데 도움이 됩니다."
+        }
+      }
+    ]
+  }
+  </script>
+<% end %>
 
 <div class="page-header animate-fadeIn">
   <h1><%= @year %>년 연간 운세</h1>
@@ -25,6 +59,50 @@
     <div class="fortune-item"><span class="emoji">💕</span><span class="label">연애운</span><span class="value">관계의 흐름</span></div>
   </div>
 </div>
+
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">🗂️</span>
+    <h3>연간 운세를 볼 때 자주 보는 포인트</h3>
+  </div>
+  <div class="landing-benefits">
+    <div class="landing-benefit">
+      <strong>올해의 분위기</strong>
+      <p>내 사주 기준으로 올해가 정리와 안정의 해인지, 변화와 도전의 해인지 흐름을 먼저 봅니다.</p>
+    </div>
+    <div class="landing-benefit">
+      <strong>재물과 관계 흐름</strong>
+      <p>돈과 인간관계가 확장되는 시기인지, 조심스럽게 관리해야 하는 시기인지 함께 체크합니다.</p>
+    </div>
+    <div class="landing-benefit">
+      <strong>장기 계획 보정</strong>
+      <p>연간 운세는 단기 기분보다 방향을 보는 데 강해서, 이직, 공부, 연애 계획을 정리할 때 유용해요.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">❓</span>
+    <h3>연간 운세 FAQ</h3>
+  </div>
+  <div class="landing-faq-list">
+    <div class="landing-faq-item">
+      <strong>연간 운세는 매년 달라지나요?</strong>
+      <p>네. 해마다 들어오는 기운이 달라지기 때문에 같은 사람이라도 연도별 흐름은 달라집니다.</p>
+    </div>
+    <div class="landing-faq-item">
+      <strong>오늘의 운세와 차이가 있나요?</strong>
+      <p>오늘의 운세가 하루 컨디션이라면, 연간 운세는 한 해 전체의 분위기와 방향을 보는 데 더 가깝습니다.</p>
+    </div>
+    <div class="landing-faq-item">
+      <strong>연간 운세만 먼저 봐도 되나요?</strong>
+      <p>가능하지만, 기본 사주풀이를 함께 보면 해석의 맥락이 더 또렷해집니다.</p>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/public_discovery_panel" %>
 
 <div class="card text-center animate-fadeInUp">
   <%= image_tag "snowcat/icon_dog_snowcat_1771225147086.png", class: "snowcat-mascot snowcat-mascot-sm", alt: "사주멍이" %>
