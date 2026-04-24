@@ -1,53 +1,38 @@
+<%
+  faqs = [
+    {
+      question: "#{@year}년 연간 운세는 무엇을 알려주나요?",
+      answer: "#{@year}년 연간 운세는 한 해의 큰 흐름, 재물운, 관계 흐름, 대운의 방향성 같은 장기적인 움직임을 정리해줍니다."
+    },
+    {
+      question: "연간 운세도 무료인가요?",
+      answer: "네. 1분 사주에서는 연간 운세를 무료로 확인할 수 있고, 사주풀이와 함께 이어서 보는 구조입니다."
+    },
+    {
+      question: "연간 운세를 보면 무엇이 좋은가요?",
+      answer: "올해의 큰 흐름과 변화 시기를 미리 파악해 계획을 세우는 데 도움이 됩니다."
+    }
+  ]
+%>
 <% content_for(:title) { "#{@year}년 연간 운세 무료 확인 | 1분 사주" } %>
 <% content_for(:description) { "#{@year}년 연간 운세를 무료로 확인해보세요. 생년월일시 입력 후 올해의 큰 흐름, 대운, 재물운, 연애운, 커리어 흐름까지 빠르게 볼 수 있습니다." } %>
 <% content_for :head do %>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "<%= @year %>년 연간 운세는 무엇을 알려주나요?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "<%= @year %>년 연간 운세는 한 해의 큰 흐름, 재물운, 관계 흐름, 대운의 방향성 같은 장기적인 움직임을 정리해줍니다."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "연간 운세도 무료인가요?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "네. 1분 사주에서는 연간 운세를 무료로 확인할 수 있고, 사주풀이와 함께 이어서 보는 구조입니다."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "연간 운세를 보면 무엇이 좋은가요?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "올해의 큰 흐름과 변화 시기를 미리 파악해 계획을 세우는 데 도움이 됩니다."
-        }
-      }
-    ]
-  }
-  </script>
+  <script type="application/ld+json"><%= raw faq_schema_json(faqs) %></script>
 <% end %>
 
 <div class="page-header animate-fadeIn">
-  <h1><%= @year %>년 연간 운세</h1>
-  <p class="subtitle">올해의 큰 흐름과 대운을 미리 살펴보세요</p>
+  <h1><%= @year %>년 연간 운세 무료 확인</h1>
+  <p class="subtitle">올해의 큰 흐름, 변화 타이밍, 대운 방향을 길게 살펴보세요</p>
 </div>
 
 <div class="card card-gradient-pink animate-fadeInUp">
   <div class="section-header">
     <span class="emoji">📆</span>
-    <h3>연간 운세에서 보는 것</h3>
+    <h3>연간 운세에서 주로 보는 것</h3>
   </div>
   <p style="line-height: 1.9; color: var(--text-secondary);">
     한 해의 전체 기운, 중요한 변화 타이밍, 재물과 관계 흐름, 그리고 대운의 방향성을 함께 읽습니다.
-    올해를 길게 보고 계획할 때 도움을 주는 페이지예요.
+    올해를 길게 보고 계획할 때 도움을 주는 공개 랜딩 페이지예요.
   </p>
 </div>
 
@@ -60,10 +45,20 @@
   </div>
 </div>
 
+<%= render "shared/seo_cta_card",
+  page_type: "yearly_landing",
+  source_section: "mid_cta",
+  event_name: "landing_cta_click",
+  target_tool: "saju",
+  href: new_saju_path,
+  title: "올해의 흐름을 무료로 확인해보세요",
+  body: "생년월일시를 입력하면 연간 운세와 사주풀이를 함께 보면서 장기 흐름을 더 또렷하게 읽을 수 있어요.",
+  button_text: "연간 운세 보러 가기" %>
+
 <div class="card animate-fadeInUp">
   <div class="section-header">
     <span class="emoji">🗂️</span>
-    <h3>연간 운세를 볼 때 자주 보는 포인트</h3>
+    <h3>연간 운세를 찾는 분께</h3>
   </div>
   <div class="landing-benefits">
     <div class="landing-benefit">
@@ -76,7 +71,7 @@
     </div>
     <div class="landing-benefit">
       <strong>장기 계획 보정</strong>
-      <p>연간 운세는 단기 기분보다 방향을 보는 데 강해서, 이직, 공부, 연애 계획을 정리할 때 유용해요.</p>
+      <p>이직, 공부, 연애처럼 한 해 계획을 세우는 분이 먼저 참고하기 좋은 페이지입니다.</p>
     </div>
   </div>
 </div>
@@ -87,33 +82,23 @@
     <h3>연간 운세 FAQ</h3>
   </div>
   <div class="landing-faq-list">
-    <div class="landing-faq-item">
-      <strong>연간 운세는 매년 달라지나요?</strong>
-      <p>네. 해마다 들어오는 기운이 달라지기 때문에 같은 사람이라도 연도별 흐름은 달라집니다.</p>
-    </div>
-    <div class="landing-faq-item">
-      <strong>오늘의 운세와 차이가 있나요?</strong>
-      <p>오늘의 운세가 하루 컨디션이라면, 연간 운세는 한 해 전체의 분위기와 방향을 보는 데 더 가깝습니다.</p>
-    </div>
-    <div class="landing-faq-item">
-      <strong>연간 운세만 먼저 봐도 되나요?</strong>
-      <p>가능하지만, 기본 사주풀이를 함께 보면 해석의 맥락이 더 또렷해집니다.</p>
-    </div>
+    <% faqs.each do |faq| %>
+      <div class="landing-faq-item">
+        <strong><%= faq[:question] %></strong>
+        <p><%= faq[:answer] %></p>
+      </div>
+    <% end %>
   </div>
 </div>
 
-<%= render "shared/public_discovery_panel" %>
+<%= render "shared/public_discovery_panel", page_type: "yearly_landing" %>
 
-<div class="card text-center animate-fadeInUp">
-  <%= image_tag "snowcat/icon_dog_snowcat_1771225147086.png", class: "snowcat-mascot snowcat-mascot-sm", alt: "사주멍이" %>
-  <p class="mt-sm text-small text-muted" style="line-height: 1.8;">
-    올해 운세는 방향을 보는 지도 같은 거예요.<br>
-    내 사주 기준으로 한 해의 흐름을 차분히 정리해보세요.
-  </p>
-</div>
-
-<div class="mt-md mb-lg">
-  <a href="<%= new_saju_path %>" class="btn-primary" style="text-decoration: none; display: block;">
-    📊 연간 운세 보러 가기
-  </a>
-</div>
+<%= render "shared/seo_cta_card",
+  page_type: "yearly_landing",
+  source_section: "bottom_cta",
+  event_name: "landing_cta_click",
+  target_tool: "saju",
+  href: new_saju_path,
+  title: "연간 운세를 사주와 함께 보고 싶다면",
+  body: "무료 사주풀이를 먼저 입력하면 올해 흐름을 더 자연스럽게 이해하기 좋아요.",
+  button_text: "무료 사주풀이 시작" %>

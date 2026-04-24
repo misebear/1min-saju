@@ -1,23 +1,79 @@
-<% if @selected_animal %>
-  <% animal_name = @selected_animal[:data][:name] %>
-  <% content_for(:title) { "2026년 오늘의 #{animal_name} 운세 소름 돋는 무료 사주풀이 - 1분 사주" } %>
-  <% content_for(:description) { "회원가입 없이 무료로 보는 2026년 오늘 #{animal_name} 운세! 재물운, 애정운, 건강운, 직업운을 로그인 없이 1분 안에 지금 바로 확인해보세요. 나랑 똑같은 #{animal_name} 유명인은 누구?" } %>
+<%
+  animal_specific = @selected_animal.present?
+  selected_name = @selected_animal&.dig(:data, :name)
+  faqs = [
+    {
+      question: "#{selected_name || '띠'}운세에서는 무엇을 볼 수 있나요?",
+      answer: "#{selected_name || '띠'} 기준 오늘의 분위기, 점수, 행운 포인트를 가볍게 확인할 수 있습니다."
+    },
+    {
+      question: "띠운세도 무료인가요?",
+      answer: "네. 1분 사주에서는 띠운세를 무료로 볼 수 있고, 다른 공개 운세 페이지로 이어서 이동할 수 있습니다."
+    },
+    {
+      question: "띠운세 뒤에 무엇을 같이 보면 좋나요?",
+      answer: "오늘의 운세, 별자리 운세, 무료 사주풀이와 함께 비교해보면 하루 흐름을 더 입체적으로 읽기 좋습니다."
+    }
+  ]
+  animal_items = @tti_fortunes.map do |fortune|
+    short_name = fortune[:data][:name].delete_suffix("띠")
+    { name: "#{fortune[:data][:emoji]} #{fortune[:data][:name]} 운세", url: tti_fortune_url(animal: short_name) }
+  end
+%>
+<% if animal_specific %>
+  <% content_for(:title) { "오늘의 #{selected_name} 운세 무료 확인 | 1분 사주" } %>
+  <% content_for(:description) { "오늘 #{selected_name} 운세를 무료로 확인해보세요. 점수, 흐름, 행운 포인트와 함께 다른 띠운세도 비교해볼 수 있습니다." } %>
+  <% content_for(:canonical_url) { tti_fortune_url(animal: selected_name.delete_suffix("띠")) } %>
 <% else %>
-  <% content_for(:title) { "띠운세 - 1분 사주" } %>
+  <% content_for(:title) { "오늘의 띠운세 무료 확인 | 1분 사주" } %>
+  <% content_for(:description) { "오늘의 띠운세를 무료로 확인해보세요. 12띠별 점수, 분위기, 행운 포인트를 한 화면에서 가볍게 읽어볼 수 있습니다." } %>
+  <% content_for(:canonical_url) { tti_fortune_main_url } %>
 <% end %>
+<% content_for :head do %>
+  <script type="application/ld+json"><%= raw faq_schema_json(faqs) %></script>
+  <script type="application/ld+json"><%= raw item_list_schema_json(name: "12띠 운세", items: animal_items) %></script>
+<% end %>
+
 <div class="page-header animate-fadeIn">
-  <h1><%= @selected_animal ? "#{@selected_animal[:data][:name]} 운세" : "🐲 오늘의 띠운세" %></h1>
-  <p class="subtitle"><%= @selected_animal ? "오늘 나의 기운은 어떨까? 🌟" : @date.strftime("%Y년 %m월 %d일") %></p>
+  <h1><%= animal_specific ? "#{selected_name} 운세" : "오늘의 띠운세" %></h1>
+  <p class="subtitle"><%= animal_specific ? "오늘 #{selected_name}의 흐름과 행운 포인트를 확인해보세요" : @date.strftime("%Y년 %m월 %d일") %></p>
 </div>
+
+<div class="card card-gradient-pink animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">🐲</span>
+    <h3>띠운세를 찾는 분께</h3>
+  </div>
+  <div class="seo-intent-list">
+    <div class="seo-intent-item">
+      <strong>가볍게 오늘 기분을 보고 싶은 분</strong>
+      <p>띠 기준의 오늘 흐름과 분위기를 짧게 먼저 확인해보고 싶은 경우에 잘 맞습니다.</p>
+    </div>
+    <div class="seo-intent-item">
+      <strong>12띠를 비교해서 보고 싶은 분</strong>
+      <p>같은 화면에서 다른 띠 흐름까지 함께 비교해볼 수 있어서 가족이나 친구와 보기 좋아요.</p>
+    </div>
+    <div class="seo-intent-item">
+      <strong>다른 운세 콘텐츠로 이어서 보고 싶은 분</strong>
+      <p>오늘의 운세, 별자리 운세, 무료 사주풀이와 함께 비교해보면 하루 분위기를 더 입체적으로 읽을 수 있습니다.</p>
+    </div>
+  </div>
+</div>
+
 <% @tti_fortunes.each do |tf| %>
   <% polished_headline = polished_gemini_tti_headline(tf[:headline]) %>
   <% polished_fortune = polished_gemini_tti_text(tf[:fortune]) %>
   <% polished_lucky_point = polished_gemini_tti_lucky_point(tf[:lucky_point]) %>
+  <% short_name = tf[:data][:name].delete_suffix("띠") %>
   <div class="card animate-fadeInUp" style="padding:16px;">
     <div style="display:flex; align-items:center; gap:12px;">
       <div style="font-size:36px;"><%= tf[:data][:emoji] %></div>
       <div style="flex:1;">
-        <div style="font-weight:800; font-size:16px;"><%= tf[:data][:name] %></div>
+        <% if animal_specific %>
+          <div style="font-weight:800; font-size:16px;"><%= tf[:data][:name] %></div>
+        <% else %>
+          <%= link_to tf[:data][:name], tti_fortune_url(animal: short_name), style: "font-weight:800; font-size:16px; color: var(--text-1); text-decoration:none;", **track_click_data(event: "related_tool_click", page_type: "tti", source_section: "animal_cards", target_tool: "tti_#{short_name}") %>
+        <% end %>
         <div style="font-size:11px; color:var(--text-3);"><%= tf[:data][:years] %></div>
       </div>
       <div style="font-weight:900; font-size:18px; color:var(--primary);"><%= tf[:score] %>점</div>
@@ -33,3 +89,46 @@
     <% end %>
   </div>
 <% end %>
+
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">🐾</span>
+    <h3>12띠 전체 보기</h3>
+  </div>
+  <div class="seo-chip-grid">
+    <% @tti_fortunes.each do |fortune| %>
+      <% short_name = fortune[:data][:name].delete_suffix("띠") %>
+      <%= link_to tti_fortune_url(animal: short_name), **track_click_data(event: "related_tool_click", page_type: "tti", source_section: "all_animals", target_tool: "tti_#{short_name}") do %>
+        <span><%= fortune[:data][:emoji] %></span>
+        <span><%= fortune[:data][:name] %></span>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">❓</span>
+    <h3>띠운세 FAQ</h3>
+  </div>
+  <div class="landing-faq-list">
+    <% faqs.each do |faq| %>
+      <div class="landing-faq-item">
+        <strong><%= faq[:question] %></strong>
+        <p><%= faq[:answer] %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/public_discovery_panel", page_type: "tti" %>
+
+<%= render "shared/seo_cta_card",
+  page_type: "tti",
+  source_section: "bottom_cta",
+  event_name: "landing_cta_click",
+  target_tool: "saju",
+  href: new_saju_path,
+  title: "띠운세와 사주풀이를 함께 보고 싶다면",
+  body: "무료 사주풀이를 같이 보면 오늘의 흐름을 더 넓게 비교해서 보기 좋습니다.",
+  button_text: "무료 사주풀이 시작" %>

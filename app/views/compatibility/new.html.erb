@@ -1,19 +1,69 @@
-<% content_for(:title) { "궁합 보기 - 1분 사주" } %>
+<%
+  faqs = [
+    {
+      question: "무료 궁합은 무엇을 보나요?",
+      answer: "두 사람의 생년월일과 태어난 시간을 바탕으로 관계 케미, 연애 스타일, 주의 포인트를 함께 봅니다."
+    },
+    {
+      question: "궁합은 연인만 볼 수 있나요?",
+      answer: "연인뿐 아니라 썸, 친구, 부부, 협업 관계처럼 두 사람의 결이 궁금할 때 참고용으로 볼 수 있습니다."
+    },
+    {
+      question: "태어난 시간이 꼭 필요하나요?",
+      answer: "알면 더 자세한 해석이 가능하지만, 기본 흐름을 보는 용도로는 가까운 시간대를 선택해도 됩니다."
+    }
+  ]
+%>
+<% content_for(:title) { "무료 궁합 보기 | 1분 사주" } %>
+<% content_for(:description) { "무료 궁합 보기로 두 사람의 사주 케미를 확인해보세요. 생년월일시 입력만으로 관계 흐름, 연애 스타일, 주의 포인트를 빠르게 볼 수 있습니다." } %>
+<% content_for :head do %>
+  <script type="application/ld+json"><%= raw faq_schema_json(faqs) %></script>
+<% end %>
 
 <div class="page-header animate-fadeIn">
   <%= image_tag "snowcat/icon_human_snowcat_1771224922818.png", class: "snowcat-mascot", alt: "1분 사주" %>
-  <h1>궁합 보기</h1>
-  <p class="subtitle">두 사람의 사주 궁합을 알아봐! 💕</p>
+  <h1>무료 궁합 보기</h1>
+  <p class="subtitle">두 사람의 사주 궁합, 관계 케미, 연애 흐름을 바로 확인해보세요</p>
 </div>
 
-<%= form_tag compatibility_path, method: :post do %>
-  <!-- Person 1 -->
+<div class="card card-gradient-pink animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">💕</span>
+    <h3>이 궁합 페이지에서 확인하는 것</h3>
+  </div>
+  <div class="landing-benefits">
+    <div class="landing-benefit">
+      <strong>두 사람의 기본 케미</strong>
+      <p>사주 기준으로 잘 맞는 부분과 온도 차가 생기는 포인트를 함께 확인할 수 있어요.</p>
+    </div>
+    <div class="landing-benefit">
+      <strong>연애 스타일과 주의 포인트</strong>
+      <p>관계가 편해지는 지점과 자주 엇갈릴 수 있는 부분을 읽기 쉽게 정리해줍니다.</p>
+    </div>
+    <div class="landing-benefit">
+      <strong>검색에서 바로 시작 가능한 구조</strong>
+      <p>회원가입 없이 입력 후 결과로 이어지기 때문에 무료 궁합 사이트를 찾는 분께 특히 편합니다.</p>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/seo_cta_card",
+  page_type: "compatibility_entry",
+  source_section: "mid_cta",
+  event_name: "landing_cta_click",
+  target_tool: "compatibility",
+  href: "#compatibility-entry-form",
+  title: "두 사람의 궁합을 지금 바로 확인해보세요",
+  body: "생년월일시를 입력하면 관계 흐름, 연애 케미, 주의 포인트를 한 번에 볼 수 있어요.",
+  button_text: "무료 궁합 입력하기" %>
+
+<%= form_tag compatibility_path, method: :post, id: "compatibility-entry-form" do %>
   <div class="person-section animate-fadeInUp">
     <div class="person-title">
       <%= image_tag "snowcat/icon_cat_snowcat_1771225044956.png", class: "snowcat-mascot snowcat-mascot-sm", alt: "" %>
       첫 번째 사람
     </div>
-    
+
     <div class="form-section">
       <label class="form-label">📅 생년월일</label>
       <div class="form-row">
@@ -21,7 +71,7 @@
           <select name="year1" class="form-control" required>
             <option value="">년도</option>
             <% (1940..2025).reverse_each do |y| %>
-              <option value="<%= y %>" <%= 'selected' if y == 2000 %>><%= y %>년</option>
+              <option value="<%= y %>" <%= "selected" if y == 2000 %>><%= y %>년</option>
             <% end %>
           </select>
         </div>
@@ -74,13 +124,12 @@
 
   <div class="text-center" style="font-size: 32px; margin: -8px 0;">💕</div>
 
-  <!-- Person 2 -->
   <div class="person-section animate-fadeInUp">
     <div class="person-title">
       <%= image_tag "snowcat/icon_dog_snowcat_1771224973007.png", class: "snowcat-mascot snowcat-mascot-sm", alt: "" %>
       두 번째 사람
     </div>
-    
+
     <div class="form-section">
       <label class="form-label">📅 생년월일</label>
       <div class="form-row">
@@ -88,7 +137,7 @@
           <select name="year2" class="form-control" required>
             <option value="">년도</option>
             <% (1940..2025).reverse_each do |y| %>
-              <option value="<%= y %>" <%= 'selected' if y == 2000 %>><%= y %>년</option>
+              <option value="<%= y %>" <%= "selected" if y == 2000 %>><%= y %>년</option>
             <% end %>
           </select>
         </div>
@@ -139,7 +188,34 @@
     </div>
   </div>
 
-  <button type="submit" class="btn-primary mt-md">
+  <button type="submit" class="btn-primary mt-md" data-analytics-event="landing_cta_click" data-analytics-page-type="compatibility_entry" data-analytics-source-section="form_submit" data-analytics-target-tool="compatibility">
     💕 궁합 보기
   </button>
 <% end %>
+
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">❓</span>
+    <h3>무료 궁합 FAQ</h3>
+  </div>
+  <div class="landing-faq-list">
+    <% faqs.each do |faq| %>
+      <div class="landing-faq-item">
+        <strong><%= faq[:question] %></strong>
+        <p><%= faq[:answer] %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/public_discovery_panel", page_type: "compatibility_entry" %>
+
+<%= render "shared/seo_cta_card",
+  page_type: "compatibility_entry",
+  source_section: "bottom_cta",
+  event_name: "landing_cta_click",
+  target_tool: "compatibility",
+  href: "#compatibility-entry-form",
+  title: "두 사람의 관계 흐름을 더 선명하게 보고 싶다면",
+  body: "입력만 마치면 관계 케미, 연애 스타일, 주의 포인트를 빠르게 이어서 확인할 수 있어요.",
+  button_text: "궁합 입력하고 결과 보기" %>

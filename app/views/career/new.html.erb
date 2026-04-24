@@ -1,14 +1,68 @@
-<% content_for(:title) { "취업운 - 1분 사주" } %>
+<%
+  faqs = [
+    {
+      question: "취업운에서는 무엇을 볼 수 있나요?",
+      answer: "사주 흐름을 바탕으로 일과 진로 방향, 적성에 맞는 분야, 커리어 집중 포인트를 참고용으로 볼 수 있습니다."
+    },
+    {
+      question: "진로 고민 중일 때도 볼 수 있나요?",
+      answer: "네. 취업 준비뿐 아니라 직무 전환, 공부 방향, 일 스타일이 궁금할 때도 참고용으로 보기 좋습니다."
+    },
+    {
+      question: "태어난 시간이 꼭 필요한가요?",
+      answer: "정확한 해석에는 도움이 되지만, 기본 진로 흐름을 보는 용도로는 가까운 시간대 입력도 가능합니다."
+    }
+  ]
+%>
+<% content_for(:title) { "무료 취업운 · 진로운 보기 | 1분 사주" } %>
+<% content_for(:description) { "무료 취업운과 진로운을 확인해보세요. 생년월일시 입력으로 일과 커리어 흐름, 적성 방향, 집중 포인트를 빠르게 읽어볼 수 있습니다." } %>
+<% content_for :head do %>
+  <script type="application/ld+json"><%= raw faq_schema_json(faqs) %></script>
+<% end %>
+
 <div class="page-header animate-fadeIn">
   <%= image_tag "logo_1min_saju.png", class: "snowcat-mascot", alt: "1분 사주" %>
-  <h1>💼 취업운</h1>
-  <p class="subtitle">사주 기반 직업 적성 분석!</p>
+  <h1>무료 취업운 · 진로운</h1>
+  <p class="subtitle">일과 커리어 흐름, 적성 방향을 사주 기준으로 가볍게 정리해보세요</p>
 </div>
-<%= form_tag career_path, method: :post do %>
+
+<div class="card card-gradient-pink animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">💼</span>
+    <h3>취업운에서 확인하는 핵심 포인트</h3>
+  </div>
+  <div class="landing-benefits">
+    <div class="landing-benefit">
+      <strong>일과 진로 방향</strong>
+      <p>지금이 확장에 가까운 시기인지, 준비와 정리에 가까운 시기인지 흐름을 먼저 읽습니다.</p>
+    </div>
+    <div class="landing-benefit">
+      <strong>적성에 맞는 분야</strong>
+      <p>내 성향과 잘 맞는 직업 결, 업무 스타일, 집중하면 좋은 포인트를 참고형으로 확인할 수 있어요.</p>
+    </div>
+    <div class="landing-benefit">
+      <strong>취업 준비 동선 정리</strong>
+      <p>막연한 불안보다 지금 어떤 준비를 붙잡는 게 좋은지 방향을 정리하는 데 도움이 됩니다.</p>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/seo_cta_card",
+  page_type: "career_entry",
+  source_section: "mid_cta",
+  event_name: "landing_cta_click",
+  target_tool: "career",
+  href: "#career-entry-form",
+  title: "지금 진로 흐름을 먼저 확인해보세요",
+  body: "무료 취업운 입력만 마치면 적성 방향과 커리어 흐름을 빠르게 읽어볼 수 있어요.",
+  button_text: "취업운 입력하기" %>
+
+<%= form_tag career_path, method: :post, id: "career-entry-form" do %>
   <div class="person-section animate-fadeInUp">
-    <div class="form-section"><label class="form-label">📅 생년월일</label>
+    <div class="form-section">
+      <label class="form-label">📅 생년월일</label>
       <div class="form-row">
-        <div class="form-group"><select name="year" class="form-control" required><option value="">년도</option><% (1940..2025).reverse_each do |y| %><option value="<%= y %>" <%= 'selected' if y == 2000 %>><%= y %>년</option><% end %></select></div>
+        <div class="form-group"><select name="year" class="form-control" required><option value="">년도</option><% (1940..2025).reverse_each do |y| %><option value="<%= y %>" <%= "selected" if y == 2000 %>><%= y %>년</option><% end %></select></div>
         <div class="form-group"><select name="month" class="form-control" required><option value="">월</option><% (1..12).each do |m| %><option value="<%= m %>"><%= m %>월</option><% end %></select></div>
         <div class="form-group"><select name="day" class="form-control" required><option value="">일</option><% (1..31).each do |d| %><option value="<%= d %>"><%= d %>일</option><% end %></select></div>
       </div>
@@ -18,5 +72,32 @@
       <div class="form-group"><label class="form-label">👤 성별</label><select name="gender" class="form-control"><option value="남">🙋‍♂️ 남자</option><option value="여">🙋‍♀️ 여자</option></select></div>
     </div>
   </div>
-  <button type="submit" class="btn-primary mt-md">💼 취업운 보기</button>
+  <button type="submit" class="btn-primary mt-md" data-analytics-event="landing_cta_click" data-analytics-page-type="career_entry" data-analytics-source-section="form_submit" data-analytics-target-tool="career">💼 취업운 보기</button>
 <% end %>
+
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">❓</span>
+    <h3>무료 취업운 FAQ</h3>
+  </div>
+  <div class="landing-faq-list">
+    <% faqs.each do |faq| %>
+      <div class="landing-faq-item">
+        <strong><%= faq[:question] %></strong>
+        <p><%= faq[:answer] %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/public_discovery_panel", page_type: "career_entry" %>
+
+<%= render "shared/seo_cta_card",
+  page_type: "career_entry",
+  source_section: "bottom_cta",
+  event_name: "landing_cta_click",
+  target_tool: "career",
+  href: "#career-entry-form",
+  title: "취업운과 진로 방향을 같이 보고 싶다면",
+  body: "입력 후 적성 흐름과 집중 포인트를 빠르게 정리해보세요. 무료로 바로 시작할 수 있어요.",
+  button_text: "무료 취업운 시작" %>

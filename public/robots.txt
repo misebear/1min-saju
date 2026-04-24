@@ -4,10 +4,7 @@ Disallow: /admin
 Disallow: /saju/history
 Disallow: /saju/result
 Disallow: /compatibility/result
-Disallow: /chat
 Disallow: /chat/message
-Disallow: /fortunes/daily
-Disallow: /fortunes/yearly
 Disallow: /fortunes/tomorrow
 Disallow: /fortunes/specific
 Disallow: /psychology/result

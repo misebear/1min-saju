@@ -1,12 +1,63 @@
-<% content_for(:title) { "꿈해몽 - 1분 사주" } %>
+<%
+  faqs = [
+    {
+      question: "꿈해몽은 어떤 꿈에 잘 맞나요?",
+      answer: "동물, 물, 돈, 하늘, 결혼, 아기처럼 상징이 선명한 꿈일수록 해석 포인트를 정리하기 좋습니다."
+    },
+    {
+      question: "길게 적어야 하나요?",
+      answer: "짧게 핵심 장면만 적어도 되고, 기억나는 인물이나 감정까지 함께 적으면 더 풍부하게 읽을 수 있습니다."
+    },
+    {
+      question: "사주 정보가 없어도 꿈해몽을 볼 수 있나요?",
+      answer: "네. 꿈 내용만으로도 기본 해석이 가능하고, 사주 정보가 있으면 오행 흐름과 함께 참고할 수 있습니다."
+    }
+  ]
+%>
+<% content_for(:title) { "무료 꿈해몽 바로 보기 | 1분 사주" } %>
+<% content_for(:description) { "무료 꿈해몽을 바로 확인해보세요. 어젯밤 꾼 꿈의 상징, 감정, 흐름을 입력하면 꿈해석을 빠르게 읽어볼 수 있습니다." } %>
+<% content_for :head do %>
+  <script type="application/ld+json"><%= raw faq_schema_json(faqs) %></script>
+<% end %>
 
 <div class="page-header animate-fadeIn">
   <%= image_tag "snowcat/icon_cat_snowcat_1771225044956.png", class: "snowcat-mascot", alt: "1분 사주" %>
-  <h1>꿈해몽 🌙</h1>
-  <p class="subtitle">어젯밤 꾼 꿈을 알려줘! 해석해줄게~ 🐱</p>
+  <h1>무료 꿈해몽</h1>
+  <p class="subtitle">어젯밤 꾼 꿈의 상징과 감정을 입력하면 흐름을 바로 읽어볼 수 있어요</p>
 </div>
 
-<%= form_tag dreams_path, method: :post, class: "animate-fadeInUp" do %>
+<div class="card card-gradient-pink animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">🌙</span>
+    <h3>꿈해몽에서 자주 보는 포인트</h3>
+  </div>
+  <div class="landing-benefits">
+    <div class="landing-benefit">
+      <strong>꿈 속 상징</strong>
+      <p>뱀, 용, 물, 불, 하늘, 돈처럼 자주 등장하는 상징의 의미를 먼저 읽습니다.</p>
+    </div>
+    <div class="landing-benefit">
+      <strong>내가 느낀 감정</strong>
+      <p>무서웠는지, 가벼웠는지, 신기했는지에 따라 같은 꿈도 해석의 결이 달라집니다.</p>
+    </div>
+    <div class="landing-benefit">
+      <strong>현실과 연결되는 흐름</strong>
+      <p>꿈 내용과 현재 마음 상태를 함께 참고해서 가볍게 읽는 참고형 해석에 잘 맞습니다.</p>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/seo_cta_card",
+  page_type: "dreams_entry",
+  source_section: "mid_cta",
+  event_name: "landing_cta_click",
+  target_tool: "dreams",
+  href: "#dream-entry-form",
+  title: "꿈 내용을 바로 입력해보세요",
+  body: "큰 장면 몇 개만 적어도 무료 꿈해몽을 바로 시작할 수 있어요.",
+  button_text: "꿈해몽 입력하기" %>
+
+<%= form_tag dreams_path, method: :post, class: "animate-fadeInUp", id: "dream-entry-form" do %>
   <div class="form-section">
     <label class="form-label">🌙 꿈 내용을 알려줘!</label>
     <textarea name="dream_text" class="form-control" rows="5" placeholder="예: 큰 뱀이 나오는 꿈을 꿨어, 하늘을 날았어, 돈을 주웠어..." required style="resize: vertical; font-size: 16px; line-height: 1.8;"></textarea>
@@ -15,12 +66,11 @@
   <div class="card mt-md" style="background: rgba(175,142,245,0.08); border: 1px solid rgba(175,142,245,0.2);">
     <div class="section-header">
       <span class="emoji">💡</span>
-      <h3>이런 키워드를 포함해봐!</h3>
+      <h3>이런 키워드를 함께 적어보세요</h3>
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
       <% %w[뱀 용 호랑이 돼지 물고기 비행기 돈 바다 꽃 산 불 물 해 달 결혼 아기].each do |kw| %>
-        <span class="keyword-badge" style="cursor: pointer; background: rgba(175,142,245,0.12); color: #AF8EF5; border: 1px solid rgba(175,142,245,0.3);"
-              onclick="document.querySelector('textarea[name=dream_text]').value += ' <%= kw %>'">
+        <span class="keyword-badge" style="cursor: pointer; background: rgba(175,142,245,0.12); color: #AF8EF5; border: 1px solid rgba(175,142,245,0.3);" onclick="document.querySelector('textarea[name=dream_text]').value += ' <%= kw %>'">
           <%= kw %>
         </span>
       <% end %>
@@ -29,7 +79,7 @@
 
   <div class="divider"></div>
 
-  <button type="submit" class="btn-primary">
+  <button type="submit" class="btn-primary" data-analytics-event="landing_cta_click" data-analytics-page-type="dreams_entry" data-analytics-source-section="form_submit" data-analytics-target-tool="dreams">
     🌙 꿈 해석하기
   </button>
 <% end %>
@@ -37,12 +87,37 @@
 <div class="card mt-lg animate-fadeInUp">
   <div class="section-header">
     <%= image_tag "snowcat/icon_dog_snowcat_1771224888733.png", class: "snowcat-mascot snowcat-mascot-sm", alt: "사주멍이" %>
-    <h3>꿈해몽이란?</h3>
+    <h3>꿈해몽을 찾는 분께</h3>
   </div>
   <p class="text-small text-muted" style="line-height: 1.8;">
-    💡 꿈해몽은 꿈 속에 나타난 상징들을 해석하는 거야!<br>
-    🐍 뱀, 용, 돼지 등 동물 꿈은 재물운과 관련이 많아~<br>
-    🌊 자연현상 꿈은 마음의 상태를 반영하기도 해!<br>
-    ✨ 사주 정보가 있으면 오행 기반 보조 해석도 해줄게!
+    꿈해몽은 정답을 단정하는 기능보다, 꿈 속 상징과 현재 마음 상태를 함께 읽어보는 참고형 콘텐츠에 가깝습니다.<br>
+    동물, 자연현상, 돈, 관계 같은 키워드를 함께 적으면 해석 포인트가 더 또렷해져요.
   </p>
 </div>
+
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">❓</span>
+    <h3>무료 꿈해몽 FAQ</h3>
+  </div>
+  <div class="landing-faq-list">
+    <% faqs.each do |faq| %>
+      <div class="landing-faq-item">
+        <strong><%= faq[:question] %></strong>
+        <p><%= faq[:answer] %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/public_discovery_panel", page_type: "dreams_entry" %>
+
+<%= render "shared/seo_cta_card",
+  page_type: "dreams_entry",
+  source_section: "bottom_cta",
+  event_name: "landing_cta_click",
+  target_tool: "dreams",
+  href: "#dream-entry-form",
+  title: "방금 꾼 꿈이 자꾸 남는다면",
+  body: "기억나는 장면만 적어도 흐름을 읽는 데 충분해요. 지금 바로 꿈해몽을 시작해보세요.",
+  button_text: "무료 꿈해몽 시작" %>

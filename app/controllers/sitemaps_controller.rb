@@ -3,7 +3,10 @@ class SitemapsController < ApplicationController
     @pages = [
       { url: root_url, lastmod: Date.today, changefreq: "daily", priority: 1.0 },
       { url: new_saju_url, lastmod: Date.today, changefreq: "weekly", priority: 0.9 },
+      { url: daily_fortune_url, lastmod: Date.today, changefreq: "daily", priority: 0.95 },
+      { url: yearly_fortune_url, lastmod: Date.today, changefreq: "weekly", priority: 0.9 },
       { url: new_compatibility_url, lastmod: Date.today, changefreq: "weekly", priority: 0.9 },
+      { url: chat_url, lastmod: Date.today, changefreq: "weekly", priority: 0.85 },
       { url: new_blind_compat_url, lastmod: Date.today, changefreq: "weekly", priority: 0.9 },
       { url: new_solo_destiny_url, lastmod: Date.today, changefreq: "weekly", priority: 0.8 },
       { url: new_dream_url, lastmod: Date.today, changefreq: "weekly", priority: 0.8 },
@@ -27,7 +30,7 @@ class SitemapsController < ApplicationController
     end
 
     # 2. 별자리 운세 상세 URL (12개 별자리)
-    signs = %w[양 황소 쌍둥이 게 사자 처녀 천칭 전갈 사수 염소 물병 물고기]
+    signs = %w[양자리 황소자리 쌍둥이자리 게자리 사자자리 처녀자리 천칭자리 전갈자리 사수자리 염소자리 물병자리 물고기자리]
     signs.each do |sign|
       @pages << { url: zodiac_url(sign: sign), lastmod: Date.today, changefreq: "daily", priority: 0.8 }
     end

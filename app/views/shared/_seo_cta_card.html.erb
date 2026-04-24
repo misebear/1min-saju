@@ -1,0 +1,19 @@
+<%
+  page_type = local_assigns.fetch(:page_type, "generic")
+  source_section = local_assigns.fetch(:source_section, "cta_card")
+  event_name = local_assigns.fetch(:event_name, "landing_cta_click")
+  target_tool = local_assigns.fetch(:target_tool, "saju")
+  href = local_assigns.fetch(:href, new_saju_path)
+  title = local_assigns.fetch(:title, "지금 바로 시작해보세요")
+  body = local_assigns.fetch(:body, "생년월일시만 입력하면 이어서 결과를 확인할 수 있어요.")
+  button_text = local_assigns.fetch(:button_text, "무료 사주풀이 시작")
+%>
+
+<section class="card seo-cta-card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">🚀</span>
+    <h3><%= title %></h3>
+  </div>
+  <p class="seo-cta-copy"><%= body %></p>
+  <%= link_to button_text, href, class: "btn-primary", style: "text-decoration: none; display: block;", **track_click_data(event: event_name, page_type: page_type, source_section: source_section, target_tool: target_tool) %>
+</section>

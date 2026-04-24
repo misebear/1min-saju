@@ -436,7 +436,7 @@
       </div>
     </div>
 
-    <a href="<%= new_saju_path %>" class="btn-primary btn-pulse mt-lg" style="display: block; width: 100%; max-width: 340px; margin: 0 auto; text-decoration: none; padding: 18px 24px; font-size: 18px; font-weight: 800; text-align: center; letter-spacing: -0.02em;">
+    <a href="<%= new_saju_path %>" class="btn-primary btn-pulse mt-lg" style="display: block; width: 100%; max-width: 340px; margin: 0 auto; text-decoration: none; padding: 18px 24px; font-size: 18px; font-weight: 800; text-align: center; letter-spacing: -0.02em;" data-analytics-event="landing_cta_click" data-analytics-page-type="home" data-analytics-source-section="hero_cta" data-analytics-target-tool="saju">
       👉 지금 내 사주팔자 무료 확인하기
     </a>
 
@@ -483,19 +483,19 @@
     </div>
     <p class="landing-copy-lead">한 번 입력한 생년월일시로 사주팔자부터 오늘의 운세, 궁합, 타로, 꿈해몽까지 바로 이어서 볼 수 있어요.</p>
     <div class="landing-feature-grid">
-      <a href="<%= new_saju_path %>" class="landing-feature-tile">
+      <a href="<%= new_saju_path %>" class="landing-feature-tile" data-analytics-event="related_tool_click" data-analytics-page-type="home" data-analytics-source-section="feature_grid" data-analytics-target-tool="saju">
         <strong>무료 사주풀이</strong>
         <span>오행, 일주, 대운, 성격 분석</span>
       </a>
-      <a href="<%= daily_fortune_path %>" class="landing-feature-tile">
+      <a href="<%= daily_fortune_path %>" class="landing-feature-tile" data-analytics-event="related_tool_click" data-analytics-page-type="home" data-analytics-source-section="feature_grid" data-analytics-target-tool="daily_fortune">
         <strong>오늘의 운세</strong>
         <span>재물운, 애정운, 건강운, 직업운</span>
       </a>
-      <a href="<%= new_compatibility_path %>" class="landing-feature-tile">
+      <a href="<%= new_compatibility_path %>" class="landing-feature-tile" data-analytics-event="related_tool_click" data-analytics-page-type="home" data-analytics-source-section="feature_grid" data-analytics-target-tool="compatibility">
         <strong>궁합 보기</strong>
         <span>연애 궁합과 관계 성향 확인</span>
       </a>
-      <a href="<%= new_tarot_path %>" class="landing-feature-tile">
+      <a href="<%= new_tarot_path %>" class="landing-feature-tile" data-analytics-event="related_tool_click" data-analytics-page-type="home" data-analytics-source-section="feature_grid" data-analytics-target-tool="tarot">
         <strong>타로 · 꿈해몽</strong>
         <span>가벼운 고민과 꿈 해석까지</span>
       </a>
@@ -555,5 +555,17 @@
       </div>
     </div>
   </section>
+
+  <%= render "shared/public_discovery_panel", page_type: "home" %>
+
+  <%= render "shared/seo_cta_card",
+    page_type: "home",
+    source_section: "bottom_cta",
+    event_name: "landing_cta_click",
+    target_tool: "saju",
+    href: new_saju_path,
+    title: "무료 사주풀이를 지금 바로 시작해보세요",
+    body: "검색으로 들어와도 회원가입 없이 바로 시작할 수 있고, 결과 뒤에는 오늘운세와 궁합까지 자연스럽게 이어집니다.",
+    button_text: "무료 사주풀이 시작" %>
 
 <% end %>

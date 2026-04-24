@@ -1,9 +1,62 @@
-<% content_for(:title) { "타로 카드 - 1분 사주" } %>
+<%
+  faqs = [
+    {
+      question: "무료 타로는 어떤 고민에 잘 맞나요?",
+      answer: "연애, 커리어, 오늘의 흐름처럼 지금 머릿속에 떠오르는 주제를 가볍게 정리하고 싶을 때 잘 맞습니다."
+    },
+    {
+      question: "생년월일을 꼭 입력해야 하나요?",
+      answer: "기본 타로는 입력 없이도 가능하지만, 생년월일이 있으면 현재 흐름과 연결해서 참고하기 더 좋습니다."
+    },
+    {
+      question: "어떤 스프레드를 고르면 되나요?",
+      answer: "전체 흐름은 과거·현재·미래, 관계 고민은 연애 타로, 일과 방향은 커리어 타로를 먼저 고르면 편합니다."
+    }
+  ]
+%>
+<% content_for(:title) { "무료 타로 카드 뽑기 | 1분 사주" } %>
+<% content_for(:description) { "무료 타로 카드 뽑기로 오늘의 흐름, 연애 고민, 커리어 방향을 가볍게 확인해보세요. 스프레드 선택 후 바로 타로 해석을 볼 수 있습니다." } %>
+<% content_for :head do %>
+  <script type="application/ld+json"><%= raw faq_schema_json(faqs) %></script>
+<% end %>
+
 <div class="page-header animate-fadeIn">
-  <h1>🃏 타로 카드</h1>
-  <p class="subtitle">오늘 당신에게 필요한 메시지!</p>
+  <h1>무료 타로 카드</h1>
+  <p class="subtitle">오늘의 흐름, 연애 고민, 커리어 방향을 카드로 가볍게 읽어보세요</p>
 </div>
-<%= form_tag tarot_path, method: :post do %>
+
+<div class="card card-gradient-pink animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">🃏</span>
+    <h3>무료 타로에서 바로 보는 것</h3>
+  </div>
+  <div class="landing-benefits">
+    <div class="landing-benefit">
+      <strong>과거·현재·미래 흐름</strong>
+      <p>지금의 흐름을 세 장 카드로 가볍게 정리해보고 싶을 때 가장 보기 편합니다.</p>
+    </div>
+    <div class="landing-benefit">
+      <strong>연애와 커리어 질문</strong>
+      <p>감정선과 선택지, 지금 집중할 포인트를 짧고 직관적으로 읽어볼 수 있어요.</p>
+    </div>
+    <div class="landing-benefit">
+      <strong>가벼운 고민 정리용</strong>
+      <p>정답을 단정하기보다, 지금 마음속 질문을 한 번 정리해보는 참고용 콘텐츠에 잘 맞습니다.</p>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/seo_cta_card",
+  page_type: "tarot_entry",
+  source_section: "mid_cta",
+  event_name: "landing_cta_click",
+  target_tool: "tarot",
+  href: "#tarot-entry-form",
+  title: "지금 무료 타로 카드를 뽑아보세요",
+  body: "스프레드를 고르고 카드만 뽑으면 오늘 필요한 메시지를 바로 읽을 수 있어요.",
+  button_text: "타로 카드 선택하기" %>
+
+<%= form_tag tarot_path, method: :post, id: "tarot-entry-form" do %>
   <div class="card animate-fadeInUp" style="text-align:center;">
     <h3>📌 스프레드 선택</h3>
     <div style="display:flex; flex-direction:column; gap:10px; margin-top:12px;">
@@ -18,16 +71,46 @@
       </label>
     </div>
   </div>
+
   <% unless @has_birth_data %>
     <div class="person-section animate-fadeInUp">
-      <div class="form-section"><label class="form-label">📅 생년월일</label>
+      <div class="form-section">
+        <label class="form-label">📅 생년월일</label>
         <div class="form-row">
-          <div class="form-group"><select name="year" class="form-control" required><option value="">년도</option><% (1940..2025).reverse_each do |y| %><option value="<%= y %>" <%= 'selected' if y == 2000 %>><%= y %>년</option><% end %></select></div>
+          <div class="form-group"><select name="year" class="form-control" required><option value="">년도</option><% (1940..2025).reverse_each do |y| %><option value="<%= y %>" <%= "selected" if y == 2000 %>><%= y %>년</option><% end %></select></div>
           <div class="form-group"><select name="month" class="form-control" required><option value="">월</option><% (1..12).each do |m| %><option value="<%= m %>"><%= m %>월</option><% end %></select></div>
           <div class="form-group"><select name="day" class="form-control" required><option value="">일</option><% (1..31).each do |d| %><option value="<%= d %>"><%= d %>일</option><% end %></select></div>
         </div>
       </div>
     </div>
   <% end %>
-  <button type="submit" class="btn-primary mt-md">🃏 카드 뽑기</button>
+
+  <button type="submit" class="btn-primary mt-md" data-analytics-event="landing_cta_click" data-analytics-page-type="tarot_entry" data-analytics-source-section="form_submit" data-analytics-target-tool="tarot">🃏 카드 뽑기</button>
 <% end %>
+
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">❓</span>
+    <h3>무료 타로 FAQ</h3>
+  </div>
+  <div class="landing-faq-list">
+    <% faqs.each do |faq| %>
+      <div class="landing-faq-item">
+        <strong><%= faq[:question] %></strong>
+        <p><%= faq[:answer] %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/public_discovery_panel", page_type: "tarot_entry" %>
+
+<%= render "shared/seo_cta_card",
+  page_type: "tarot_entry",
+  source_section: "bottom_cta",
+  event_name: "landing_cta_click",
+  target_tool: "tarot",
+  href: "#tarot-entry-form",
+  title: "지금 떠오르는 질문이 있다면",
+  body: "짧은 고민도 카드 한 번 뽑아보면 정리되는 경우가 많아요. 무료 타로로 가볍게 시작해보세요.",
+  button_text: "무료 타로 시작" %>

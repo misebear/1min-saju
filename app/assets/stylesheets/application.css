@@ -2745,6 +2745,31 @@ select.form-control {
   margin-bottom: 14px;
 }
 
+.public-discovery-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.public-discovery-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.public-discovery-group-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+.public-discovery-group-title strong {
+  font-size: 14px;
+  color: var(--text-1);
+}
+
 .public-discovery-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2777,6 +2802,64 @@ select.form-control {
   font-size: 12px;
   line-height: 1.6;
   color: var(--text-3);
+}
+
+.seo-cta-card {
+  background: linear-gradient(135deg, rgba(255, 248, 251, 0.95), rgba(245, 238, 255, 0.95));
+  border: 1px solid rgba(232, 119, 95, 0.14);
+}
+
+.seo-cta-copy {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-2);
+  margin-bottom: 14px;
+}
+
+.seo-intent-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.seo-intent-item {
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  background: var(--bg-grouped);
+  border: 1px solid rgba(180, 122, 232, 0.1);
+}
+
+.seo-intent-item strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.seo-intent-item p {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+.seo-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.seo-chip-grid a,
+.seo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(180, 122, 232, 0.08);
+  border: 1px solid rgba(180, 122, 232, 0.14);
+  color: var(--text-1);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 @media (max-width: 380px) {

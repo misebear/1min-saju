@@ -1,18 +1,88 @@
-<% content_for(:title) { "사주풀이 입력 - 1분 사주" } %>
+<%
+  faqs = [
+    {
+      question: "무료 사주풀이를 보려면 무엇이 필요한가요?",
+      answer: "생년월일과 태어난 시간, 성별, 출생지를 입력하면 무료 사주풀이를 바로 시작할 수 있습니다."
+    },
+    {
+      question: "태어난 시간을 모르면 사주풀이를 못 보나요?",
+      answer: "기본 확인은 가능하지만, 태어난 시간을 알수록 사주 명식과 흐름 해석이 더 자세해집니다."
+    },
+    {
+      question: "사주풀이 뒤에 무엇을 더 볼 수 있나요?",
+      answer: "사주풀이 결과를 본 뒤 오늘의 운세, 연간 운세, 궁합, 챗봇 같은 연결 기능으로 이어서 볼 수 있습니다."
+    }
+  ]
+%>
+<% content_for(:title) { "무료 사주풀이 바로 시작 | 1분 사주" } %>
+<% content_for(:description) { "무료 사주풀이를 바로 시작해보세요. 생년월일시 입력만으로 내 사주 명식, 오행 흐름, 오늘운세와 연결 콘텐츠까지 1분 안에 확인할 수 있습니다." } %>
+<% content_for :head do %>
+  <script type="application/ld+json"><%= raw faq_schema_json(faqs) %></script>
+<% end %>
 
 <div class="page-header animate-fadeIn">
-  <!-- 가입 NO 결제 NO 초강조 배너 -->
   <div class="free-banner animate-bounce-slow" style="margin: 0 auto 16px; max-width: 320px; padding: 10px 20px; background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%); border-radius: 100px; color: #d61f69; font-weight: 800; font-size: 14px; box-shadow: 0 4px 15px rgba(255,154,158,0.4); border: 2px solid white;">
     💸 평생 가입 NO! 결제 NO! 100% 무료
   </div>
 
   <%= image_tag "snowcat/icon_cat_snowcat_1771225044956.png", class: "snowcat-mascot", alt: "1분 사주" %>
-  <h1>사주풀이</h1>
-  <p class="subtitle">태어난 날짜와 시간을 알려줘! 🐱</p>
+  <h1>무료 사주풀이</h1>
+  <p class="subtitle">생년월일시를 입력하면 내 사주 명식과 오늘의 흐름을 바로 확인할 수 있어요</p>
 </div>
 
-<%= form_tag saju_path, method: :post, class: "animate-fadeInUp", id: "sajuForm" do %>
-  <!-- 생년월일 -->
+<div class="card card-gradient-pink animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">🔮</span>
+    <h3>이 페이지에서 바로 보는 것</h3>
+  </div>
+  <div class="landing-benefits">
+    <div class="landing-benefit">
+      <strong>사주 명식과 오행 흐름</strong>
+      <p>내 사주팔자의 일주, 오행 분포, 기본 성향을 한 번에 정리해줍니다.</p>
+    </div>
+    <div class="landing-benefit">
+      <strong>오늘운세와 연결 해석</strong>
+      <p>사주풀이 후에는 오늘의 운세, 연간 운세, 궁합 같은 연결 기능으로 이어서 볼 수 있어요.</p>
+    </div>
+    <div class="landing-benefit">
+      <strong>무료로 바로 시작</strong>
+      <p>회원가입 없이 입력만 하면 결과를 볼 수 있어서 검색으로 들어와도 빠르게 확인할 수 있습니다.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">🧭</span>
+    <h3>이런 분께 잘 맞아요</h3>
+  </div>
+  <div class="seo-intent-list">
+    <div class="seo-intent-item">
+      <strong>무료 사주 사이트를 찾는 분</strong>
+      <p>복잡한 가입 절차 없이 내 사주를 먼저 확인하고 싶은 경우에 가장 빠르게 시작할 수 있어요.</p>
+    </div>
+    <div class="seo-intent-item">
+      <strong>오늘의 운세까지 같이 보고 싶은 분</strong>
+      <p>사주풀이를 기반으로 하루 흐름과 연간 방향까지 이어서 확인하는 구조에 잘 맞습니다.</p>
+    </div>
+    <div class="seo-intent-item">
+      <strong>궁합이나 챗봇으로 더 깊게 보고 싶은 분</strong>
+      <p>한 번 입력한 정보로 다른 운세 기능까지 자연스럽게 연결해보기 좋습니다.</p>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/seo_cta_card",
+  page_type: "saju_entry",
+  source_section: "mid_cta",
+  event_name: "landing_cta_click",
+  target_tool: "saju",
+  href: "#saju-entry-form",
+  title: "지금 무료 사주풀이를 시작해보세요",
+  body: "태어난 날짜와 시간만 입력하면 바로 사주 명식과 오늘의 흐름을 확인할 수 있어요.",
+  button_text: "무료 사주풀이 입력하기" %>
+
+<%= form_tag saju_path, method: :post, class: "animate-fadeInUp", id: "saju-entry-form" do %>
   <div class="form-section">
     <label class="form-label">📅 생년월일</label>
     <div class="form-row">
@@ -43,7 +113,6 @@
     </div>
   </div>
 
-  <!-- 태어난 시간 -->
   <div class="form-section">
     <label class="form-label">🕐 태어난 시간</label>
     <select name="hour" class="form-control" required>
@@ -63,7 +132,6 @@
     </select>
   </div>
 
-  <!-- 출생지 -->
   <div class="form-section">
     <label class="form-label">📍 출생지 <span class="term-note">지역 시차 + 서머타임 자동 보정에 사용돼요</span></label>
     <select name="city" class="form-control">
@@ -73,7 +141,6 @@
     </select>
   </div>
 
-  <!-- 성별 -->
   <div class="form-section">
     <label class="form-label">👤 성별</label>
     <div class="gender-toggle">
@@ -90,7 +157,7 @@
 
   <div class="divider"></div>
 
-  <button type="submit" class="btn-primary btn-pulse" id="submitBtn" style="padding: 18px 24px; font-size: 18px; font-weight: 800; letter-spacing: -0.02em;">
+  <button type="submit" class="btn-primary btn-pulse" id="submitBtn" style="padding: 18px 24px; font-size: 18px; font-weight: 800; letter-spacing: -0.02em;" data-analytics-event="start_saju_from_landing" data-analytics-page-type="saju_entry" data-analytics-source-section="form_submit" data-analytics-target-tool="saju">
     👉 사주 명식 분석하기
   </button>
 <% end %>
@@ -98,17 +165,42 @@
 <div class="card mt-lg animate-fadeInUp">
   <div class="section-header">
     <%= image_tag "snowcat/icon_dog_snowcat_1771224888733.png", class: "snowcat-mascot snowcat-mascot-sm", alt: "사주멍이" %>
-    <h3>알아두면 좋은 꿀팁!</h3>
+    <h3>무료 사주풀이 전에 알아두면 좋아요</h3>
   </div>
   <p class="text-small text-muted" style="line-height: 1.8;">
-    💡 정확한 태어난 시간을 입력하면 더 정확한 사주풀이를 받을 수 있어!<br>
-    📝 태어난 시간을 모르면 가장 가까운 시간대를 선택해도 괜찮아~<br>
-    🌙 사주는 음양오행(나무, 불, 흙, 쇠, 물)의 조화로 너의 운명을 읽어내는 거야!
+    💡 정확한 태어난 시간을 입력하면 더 자세한 흐름을 볼 수 있어요.<br>
+    📝 시간을 모르면 가장 가까운 시간대를 선택한 뒤 참고용으로 먼저 봐도 괜찮아요.<br>
+    🌙 입력 후에는 사주 결과뿐 아니라 오늘운세, 궁합, 챗봇으로도 이어서 이동할 수 있어요.
   </p>
 </div>
 
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">❓</span>
+    <h3>무료 사주풀이 FAQ</h3>
+  </div>
+  <div class="landing-faq-list">
+    <% faqs.each do |faq| %>
+      <div class="landing-faq-item">
+        <strong><%= faq[:question] %></strong>
+        <p><%= faq[:answer] %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<!-- 폼 제출 시 보여줄 오버레이 (디폴트는 숨김) -->
+<%= render "shared/public_discovery_panel", page_type: "saju_entry" %>
+
+<%= render "shared/seo_cta_card",
+  page_type: "saju_entry",
+  source_section: "bottom_cta",
+  event_name: "landing_cta_click",
+  target_tool: "saju",
+  href: "#saju-entry-form",
+  title: "입력만 하면 바로 결과로 이어집니다",
+  body: "무료 사주풀이부터 오늘의 운세, 궁합, 챗봇까지 한 번에 연결해서 보기 좋게 준비돼 있어요.",
+  button_text: "지금 사주풀이 시작하기" %>
+
 <div id="loading-overlay" style="display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(255,255,255,0.9); z-index: 9999; justify-content: center; align-items: center; flex-direction: column;">
   <div style="font-size: 40px; margin-bottom: 20px;" class="animate-bounce">🔮</div>
   <h3 style="color: var(--tint); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; margin-bottom: 8px;">명식을 분석하고 있어요...</h3>
@@ -123,22 +215,19 @@ function selectGender(value, el) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('sajuForm');
+  const form = document.getElementById('saju-entry-form');
   const overlay = document.getElementById('loading-overlay');
-  
+
   if (form && overlay) {
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function() {
       const btn = document.getElementById('submitBtn');
       if (btn) {
         btn.innerHTML = '⏳ 분석 중...';
         btn.style.opacity = '0.7';
         btn.style.pointerEvents = 'none';
       }
-      
-      // 약간의 지연 후 폼 제출되도록 (눈길 사로잡기 위함)
+
       overlay.style.display = 'flex';
-      
-      // 이미 submit 이벤트 내라서 별도 제어 없이 전송되지만, UX를 위해 화면만 덮어둠.
     });
   }
 });

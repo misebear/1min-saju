@@ -1,5 +1,37 @@
-<% content_for(:title) { "2026년 오늘의 #{@sign_name}자리 운세 무료 확인 - 1분 사주" } %>
-<% content_for(:description) { "가입과 결제 없이 평생 무료로 보는 오늘 #{@sign_name}자리 운세! 서양 점성술 기반의 맞춤형 행운의 컬러, 숫자, 아이템과 오늘의 조언을 즉시 확인해보세요." } %>
+<%
+  sign_specific = params[:sign].present?
+  sign_label = @sign_name
+  faqs = [
+    {
+      question: "#{sign_label} 운세는 무엇을 볼 수 있나요?",
+      answer: "#{sign_label} 기준 오늘의 분위기, 행운 포인트, 연애와 커리어 흐름을 가볍게 확인할 수 있습니다."
+    },
+    {
+      question: "별자리 운세는 무료인가요?",
+      answer: "네. 1분 사주에서는 별자리 운세를 무료로 볼 수 있고, 다른 공개 운세 페이지로도 이어서 이동할 수 있습니다."
+    },
+    {
+      question: "별자리 운세 뒤에 무엇을 같이 보면 좋나요?",
+      answer: "오늘의 운세, 띠운세, 무료 사주풀이를 같이 보면 하루 흐름을 더 입체적으로 비교하기 좋습니다."
+    }
+  ]
+  sign_items = @all_signs.map do |name, info|
+    { name: "#{info[:emoji]} #{name} 운세", url: zodiac_url(sign: name) }
+  end
+%>
+<% if sign_specific %>
+  <% content_for(:title) { "오늘의 #{sign_label} 운세 무료 확인 | 1분 사주" } %>
+  <% content_for(:description) { "오늘 #{sign_label} 운세를 무료로 확인해보세요. 분위기, 행운 포인트, 연애와 커리어 흐름까지 바로 읽어볼 수 있습니다." } %>
+  <% content_for(:canonical_url) { zodiac_url(sign: sign_label) } %>
+<% else %>
+  <% content_for(:title) { "오늘의 별자리 운세 무료 확인 | 1분 사주" } %>
+  <% content_for(:description) { "오늘의 별자리 운세를 무료로 확인해보세요. 12별자리별 분위기, 행운 포인트, 연애와 커리어 흐름을 가볍게 읽어볼 수 있습니다." } %>
+  <% content_for(:canonical_url) { zodiac_main_url } %>
+<% end %>
+<% content_for :head do %>
+  <script type="application/ld+json"><%= raw faq_schema_json(faqs) %></script>
+  <script type="application/ld+json"><%= raw item_list_schema_json(name: "12별자리 운세", items: sign_items) %></script>
+<% end %>
 
 <%
   color = @sign_info[:color]
@@ -14,15 +46,13 @@
 
 <% gemini_zodiac = polished_gemini_zodiac(@gemini_zodiac_fortune) %>
 
-<!-- 별자리 히어로 -->
 <div class="card animate-fadeIn" style="text-align: center; padding: 32px 16px;">
   <div style="font-size: 4em; margin-bottom: 8px;"><%= @sign_info[:emoji] %></div>
-  <h1 style="font-size: 1.6em; margin: 0 0 4px;"><%= @sign_name %></h1>
+  <h1 style="font-size: 1.6em; margin: 0 0 4px;"><%= sign_specific ? "#{sign_label} 운세" : "오늘의 별자리 운세" %></h1>
   <p class="text-muted text-small"><%= @sign_info[:planet] %> · <%= @sign_info[:element] %> 원소</p>
   <p style="margin-top: 12px; line-height: 1.7; font-size: 0.92em;"><%= @sign_info[:traits] %></p>
 </div>
 
-<!-- 오늘의 운세 점수 -->
 <div class="card fortune-hero-card animate-fadeInUp">
   <div class="fortune-hero-header">
     <h3><%= @sign_info[:emoji] %> 오늘의 별자리 운세</h3>
@@ -56,11 +86,10 @@
   </div>
 </div>
 
-<!-- 운세 카테고리 -->
 <div class="card animate-fadeInUp">
   <div class="section-header">
     <span class="emoji">🔮</span>
-    <h3>오늘의 열쇠</h3>
+    <h3><%= sign_label %>가 오늘 볼 만한 포인트</h3>
   </div>
   <% if gemini_zodiac&.headline.present? %>
     <div style="margin-bottom:10px;">
@@ -73,6 +102,27 @@
   <% if gemini_zodiac&.lucky_point.present? %>
     <p style="margin-top:10px; color:<%= color %>; font-weight:700;">행운 포인트: <%= gemini_zodiac.lucky_point %></p>
   <% end %>
+</div>
+
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">🧭</span>
+    <h3>별자리 운세를 찾는 분께</h3>
+  </div>
+  <div class="seo-intent-list">
+    <div class="seo-intent-item">
+      <strong>가볍게 오늘 흐름을 먼저 보고 싶은 분</strong>
+      <p><%= sign_label %> 특유의 분위기와 오늘의 행운 포인트를 빠르게 확인하기 좋습니다.</p>
+    </div>
+    <div class="seo-intent-item">
+      <strong>연애와 커리어 흐름을 같이 보고 싶은 분</strong>
+      <p>별자리 운세 안에서 관계와 일 흐름을 함께 보기 때문에 짧은 참고용 운세로 잘 맞아요.</p>
+    </div>
+    <div class="seo-intent-item">
+      <strong>다른 운세 메뉴까지 이어서 보고 싶은 분</strong>
+      <p>오늘의 운세, 띠운세, 무료 사주풀이와 함께 비교해보면 하루 흐름을 더 입체적으로 볼 수 있습니다.</p>
+    </div>
+  </div>
 </div>
 
 <div class="fortune-grid-premium animate-fadeInUp" style="margin-top: 12px;">
@@ -88,7 +138,6 @@
   </div>
 </div>
 
-<!-- 행운 정보 -->
 <div class="card animate-fadeInUp">
   <div class="section-header">
     <span class="emoji">🍀</span>
@@ -119,11 +168,10 @@
   </div>
 </div>
 
-<!-- 별자리 성격 -->
 <div class="card animate-fadeInUp">
   <div class="section-header">
     <span class="emoji">💕</span>
-    <h3>연애 스타일</h3>
+    <h3><%= sign_label %> 연애 스타일</h3>
   </div>
   <p style="line-height: 1.8;"><%= @sign_info[:love] %></p>
 </div>
@@ -131,28 +179,53 @@
 <div class="card animate-fadeInUp">
   <div class="section-header">
     <span class="emoji">💼</span>
-    <h3>추천 분야</h3>
+    <h3><%= sign_label %> 추천 분야</h3>
   </div>
   <p style="line-height: 1.8;"><%= @sign_info[:career] %></p>
 </div>
 
-<!-- 12별자리 리스트 -->
 <div class="card animate-fadeInUp">
   <div class="section-header">
     <span class="emoji">⭐</span>
-    <h3>12별자리</h3>
+    <h3>12별자리 전체 보기</h3>
   </div>
-  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px;">
+  <div class="seo-chip-grid">
     <% @all_signs.each do |name, info| %>
-      <div style="text-align: center; padding: 12px 4px; border-radius: 12px; background: <%= name == @sign_name ? "#{info[:color]}15" : 'transparent' %>; border: 1px solid <%= name == @sign_name ? "#{info[:color]}40" : 'transparent' %>;">
-        <div style="font-size: 1.5em;"><%= info[:emoji] %></div>
-        <div style="font-size: 0.75em; margin-top: 4px; font-weight: <%= name == @sign_name ? '700' : '400' %>; color: <%= name == @sign_name ? info[:color] : '#888' %>;"><%= name %></div>
+      <%= link_to zodiac_path(sign: name), **track_click_data(event: "related_tool_click", page_type: "zodiac", source_section: "all_signs", target_tool: "zodiac_#{name}") do %>
+        <span><%= info[:emoji] %></span>
+        <span><%= name %></span>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="card animate-fadeInUp">
+  <div class="section-header">
+    <span class="emoji">❓</span>
+    <h3>별자리 운세 FAQ</h3>
+  </div>
+  <div class="landing-faq-list">
+    <% faqs.each do |faq| %>
+      <div class="landing-faq-item">
+        <strong><%= faq[:question] %></strong>
+        <p><%= faq[:answer] %></p>
       </div>
     <% end %>
   </div>
 </div>
 
-<!-- 하단 액션 -->
+<%= render "shared/public_discovery_panel", page_type: "zodiac" %>
+
+<%= render "shared/seo_cta_card",
+  page_type: "zodiac",
+  source_section: "bottom_cta",
+  event_name: "landing_cta_click",
+  target_tool: "saju",
+  href: new_saju_path,
+  title: "별자리 운세와 사주풀이를 함께 보고 싶다면",
+  body: "무료 사주풀이를 같이 보면 오늘의 흐름을 더 넓게 비교해서 보기 좋습니다.",
+  button_text: "무료 사주풀이 시작" %>
+
 <div class="quick-menu animate-fadeInUp">
   <a href="<%= root_path %>" class="quick-item">
     <div class="icon-circle">🏠</div>
@@ -162,9 +235,9 @@
     <div class="icon-circle">🔮</div>
     <span class="label">사주풀이</span>
   </a>
-  <a href="<%= new_dream_path %>" class="quick-item">
-    <div class="icon-circle">🌙</div>
-    <span class="label">꿈해몽</span>
+  <a href="<%= daily_fortune_path %>" class="quick-item">
+    <div class="icon-circle">📅</div>
+    <span class="label">오늘 운세</span>
   </a>
   <a href="<%= chat_path %>" class="quick-item">
     <div class="icon-circle">💬</div>
@@ -174,6 +247,6 @@
 
 <%= render partial: "shared/kakao_share", locals: {
   title: "#{@sign_info[:emoji]} #{@sign_name} 오늘의 운세: #{score}점!",
-  description: @fortune[:advice].gsub("'", "\\\\'"),
+  description: (@fortune[:advice] || gemini_zodiac&.fortune_text || "").gsub("'", "\\\\'"),
   path: request.path
 } %>

@@ -1,40 +1,62 @@
+<%
+  page_type = local_assigns.fetch(:page_type, "generic")
+  groups = [
+    {
+      emoji: "🔮",
+      title: "입문형",
+      items: [
+        { name: "무료 사주풀이", description: "오행, 일주, 성향 흐름 정리", path: new_saju_path, target_tool: "saju" },
+        { name: "오늘의 운세", description: "재물운, 애정운, 건강운 확인", path: daily_fortune_path, target_tool: "daily_fortune" },
+        { name: "연간 운세", description: "올해의 흐름과 변화 타이밍", path: yearly_fortune_path, target_tool: "yearly_fortune" }
+      ]
+    },
+    {
+      emoji: "💕",
+      title: "관계형",
+      items: [
+        { name: "무료 궁합", description: "연애 궁합과 관계 케미 보기", path: new_compatibility_path, target_tool: "compatibility" },
+        { name: "블라인드 궁합", description: "링크 공유형 궁합 테스트", path: new_blind_compat_path, target_tool: "blind_compatibility" },
+        { name: "사주 챗봇", description: "궁금한 포인트만 바로 질문", path: chat_path, target_tool: "chat" }
+      ]
+    },
+    {
+      emoji: "✨",
+      title: "가벼운 재미형",
+      items: [
+        { name: "띠운세", description: "오늘의 띠별 흐름과 행운 포인트", path: tti_fortune_main_path, target_tool: "tti" },
+        { name: "별자리 운세", description: "12별자리 오늘의 기분 읽기", path: zodiac_main_path, target_tool: "zodiac" },
+        { name: "타로 카드", description: "짧은 고민을 카드 흐름으로 보기", path: new_tarot_path, target_tool: "tarot" },
+        { name: "꿈해몽", description: "꿈 상징과 감정 흐름 해석", path: new_dream_path, target_tool: "dreams" }
+      ]
+    }
+  ]
+%>
+
 <section class="card public-discovery-card animate-fadeInUp">
   <div class="section-header">
     <span class="emoji">🧭</span>
-    <h3>함께 많이 보는 무료 메뉴</h3>
+    <h3>지금 많이 이어서 보는 무료 메뉴</h3>
   </div>
   <p class="public-discovery-copy">
-    한 페이지 보고 끝내기보다, 지금 궁금한 흐름에 맞는 메뉴로 바로 이어서 보면 훨씬 편해요.
+    검색으로 들어왔더라도 지금 궁금한 흐름에 맞는 다음 메뉴로 바로 이어보면 훨씬 편하게 볼 수 있어요.
   </p>
 
-  <div class="public-discovery-grid">
-    <a href="<%= new_saju_path %>" class="public-discovery-link">
-      <strong>무료 사주풀이</strong>
-      <span>오행, 일주, 성향 흐름 정리</span>
-    </a>
-    <a href="<%= daily_fortune_path %>" class="public-discovery-link">
-      <strong>오늘의 운세</strong>
-      <span>재물운, 애정운, 건강운 확인</span>
-    </a>
-    <a href="<%= yearly_fortune_path %>" class="public-discovery-link">
-      <strong>연간 운세</strong>
-      <span>올해의 큰 흐름과 변화 타이밍</span>
-    </a>
-    <a href="<%= new_compatibility_path %>" class="public-discovery-link">
-      <strong>무료 궁합</strong>
-      <span>연애 궁합과 관계 케미 보기</span>
-    </a>
-    <a href="<%= zodiac_main_path %>" class="public-discovery-link">
-      <strong>별자리 운세</strong>
-      <span>가볍게 보는 오늘의 별자리 흐름</span>
-    </a>
-    <a href="<%= tti_fortune_main_path %>" class="public-discovery-link">
-      <strong>띠운세</strong>
-      <span>띠별 기운과 행운 포인트 확인</span>
-    </a>
-    <a href="<%= chat_path %>" class="public-discovery-link">
-      <strong>사주 챗봇</strong>
-      <span>궁금한 포인트만 대화로 질문</span>
-    </a>
+  <div class="public-discovery-groups">
+    <% groups.each do |group| %>
+      <section class="public-discovery-group">
+        <div class="public-discovery-group-title">
+          <span><%= group[:emoji] %></span>
+          <strong><%= group[:title] %></strong>
+        </div>
+        <div class="public-discovery-grid">
+          <% group[:items].each do |item| %>
+            <%= link_to item[:path], class: "public-discovery-link", **track_click_data(event: "related_tool_click", page_type: page_type, source_section: group[:title], target_tool: item[:target_tool]) do %>
+              <strong><%= item[:name] %></strong>
+              <span><%= item[:description] %></span>
+            <% end %>
+          <% end %>
+        </div>
+      </section>
+    <% end %>
   </div>
 </section>
