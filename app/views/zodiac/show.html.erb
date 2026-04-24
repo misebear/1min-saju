@@ -12,6 +12,8 @@
                 end
 %>
 
+<% gemini_zodiac = polished_gemini_zodiac(@gemini_zodiac_fortune) %>
+
 <!-- 별자리 히어로 -->
 <div class="card animate-fadeIn" style="text-align: center; padding: 32px 16px;">
   <div style="font-size: 4em; margin-bottom: 8px;"><%= @sign_info[:emoji] %></div>
@@ -48,7 +50,7 @@
     </div>
     <div class="score-grade">
       <span class="grade-badge" style="background: <%= score_color %>18; color: <%= score_color %>; border: 1px solid <%= score_color %>30;">
-        오늘의 무드: <%= @fortune[:mood] %>
+        오늘의 무드: <%= gemini_zodiac&.headline.presence || @fortune[:mood] %>
       </span>
     </div>
   </div>
@@ -60,16 +62,16 @@
     <span class="emoji">🔮</span>
     <h3>오늘의 열쇠</h3>
   </div>
-  <% if @gemini_zodiac_fortune&.headline.present? %>
+  <% if gemini_zodiac&.headline.present? %>
     <div style="margin-bottom:10px;">
       <span class="grade-badge" style="background: <%= color %>18; color: <%= color %>; border: 1px solid <%= color %>30;">
-        <%= @gemini_zodiac_fortune.headline %>
+        <%= gemini_zodiac.headline %>
       </span>
     </div>
   <% end %>
-  <p style="line-height: 1.8;"><%= @gemini_zodiac_fortune&.fortune_text.presence || @fortune[:advice] %></p>
-  <% if @gemini_zodiac_fortune&.lucky_point.present? %>
-    <p style="margin-top:10px; color:<%= color %>; font-weight:700;">행운 포인트: <%= @gemini_zodiac_fortune.lucky_point %></p>
+  <p style="line-height: 1.8;"><%= gemini_zodiac&.fortune_text.presence || @fortune[:advice] %></p>
+  <% if gemini_zodiac&.lucky_point.present? %>
+    <p style="margin-top:10px; color:<%= color %>; font-weight:700;">행운 포인트: <%= gemini_zodiac.lucky_point %></p>
   <% end %>
 </div>
 

@@ -23,6 +23,7 @@
     '수' => { '양' => '깊은 바다 🌊', '음' => '맑은 시냇물 💧' }
   }
   my_nature = day_master_easy.dig(day_element, day_yinyang) || '특별한 존재 ✨'
+  gemini_fortune = polished_gemini_fortune(@gemini_fortune, surface: :saju)
 
   total = distribution.values.sum.to_f
 %>
@@ -649,25 +650,25 @@
         <div class="sc-emoji-hero">✨</div>
         <h2 class="sc-title sc-animate">오늘 마음의 결</h2>
         <p class="sc-subtitle sc-animate sc-animate-d1">지금의 나를 스쳐 가는 기분과 분위기</p>
-        <% if @gemini_fortune.present? %>
-          <% if @gemini_fortune.vibe.present? %>
-            <div class="sc-badge sc-animate sc-animate-d2"><%= @gemini_fortune.vibe %></div>
+        <% if gemini_fortune.present? %>
+          <% if gemini_fortune.vibe.present? %>
+            <div class="sc-badge sc-animate sc-animate-d2"><%= gemini_fortune.vibe %></div>
           <% end %>
-          <div class="sc-text sc-animate sc-animate-d2"><%= @gemini_fortune.relationship.presence || @gemini_fortune.money.presence || @analysis[:love] %></div>
+          <div class="sc-text sc-animate sc-animate-d2"><%= gemini_fortune.relationship.presence || gemini_fortune.money.presence || @analysis[:love] %></div>
           <div class="sc-divider"></div>
           <p class="sc-subtitle sc-animate sc-animate-d3" style="font-size: 13px; margin-bottom: 12px;">오늘은 이런 결이 은근히 따라와요</p>
           <div class="sc-stars-grid sc-animate sc-animate-d3">
-            <% if @gemini_fortune.money.present? %>
-              <span class="sc-star-chip">💰 흐르는 기운 · <%= @gemini_fortune.money %></span>
+            <% if gemini_fortune.money.present? %>
+              <span class="sc-star-chip">💰 흐르는 기운 · <%= gemini_fortune.money %></span>
             <% end %>
-            <% if @gemini_fortune.relationship.present? %>
-              <span class="sc-star-chip">💕 마음의 온도 · <%= @gemini_fortune.relationship %></span>
+            <% if gemini_fortune.relationship.present? %>
+              <span class="sc-star-chip">💕 마음의 온도 · <%= gemini_fortune.relationship %></span>
             <% end %>
-            <% if @gemini_fortune.style.present? %>
-              <span class="sc-star-chip">👗 어울리는 무드 · <%= @gemini_fortune.style %></span>
+            <% if gemini_fortune.style.present? %>
+              <span class="sc-star-chip">👗 어울리는 무드 · <%= gemini_fortune.style %></span>
             <% end %>
-            <% if @gemini_fortune.lucky_item.present? %>
-              <span class="sc-star-chip">🍀 은근한 행운 · <%= @gemini_fortune.lucky_item %></span>
+            <% if gemini_fortune.lucky_item.present? %>
+              <span class="sc-star-chip">🍀 은근한 행운 · <%= gemini_fortune.lucky_item %></span>
             <% end %>
           </div>
         <% else %>

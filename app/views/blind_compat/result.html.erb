@@ -3,7 +3,7 @@
 <%
   score = @compatibility[:score]
   details = @compatibility[:details] || {}
-  gemini = @gemini_compatibility
+  gemini = polished_gemini_compatibility(@gemini_compatibility)
   element1 = SajuEngine::HeavenlyStems.element(@person1[:saju][:day][:stem])
   element2 = SajuEngine::HeavenlyStems.element(@person2[:saju][:day][:stem])
   element_icons = { '목' => '🌿', '화' => '🔥', '토' => '🪨', '금' => '🪙', '수' => '💧' }
@@ -290,7 +290,7 @@
     <div class="bc-card" data-card="4">
       <div class="bc-content">
         <div class="bc-emoji-hero">💥</div>
-        <h2 class="bc-title bc-animate">1분 팩폭!</h2>
+        <h2 class="bc-title bc-animate">서로를 위한 한마디</h2>
         <p class="bc-subtitle bc-animate bc-animate-d1"><%= @name1 %> ❤️ <%= @name2 %>에게</p>
         <div class="bc-text bc-animate bc-animate-d2" style="font-size: 16px; text-align: center; line-height: 2;">
           <%= gemini&.caution_point.presence || @compatibility[:advice] || "두 사람의 궁합은 노력하면 더 좋아질 수 있어요! 서로의 차이를 존중하고, 공통 관심사를 늘려가면 최고의 파트너가 될 수 있답니다 💕" %>

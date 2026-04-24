@@ -10,6 +10,9 @@
   <p class="subtitle"><%= @selected_animal ? "오늘 나의 기운은 어떨까? 🌟" : @date.strftime("%Y년 %m월 %d일") %></p>
 </div>
 <% @tti_fortunes.each do |tf| %>
+  <% polished_headline = polished_gemini_tti_headline(tf[:headline]) %>
+  <% polished_fortune = polished_gemini_tti_text(tf[:fortune]) %>
+  <% polished_lucky_point = polished_gemini_tti_lucky_point(tf[:lucky_point]) %>
   <div class="card animate-fadeInUp" style="padding:16px;">
     <div style="display:flex; align-items:center; gap:12px;">
       <div style="font-size:36px;"><%= tf[:data][:emoji] %></div>
@@ -19,14 +22,14 @@
       </div>
       <div style="font-weight:900; font-size:18px; color:var(--primary);"><%= tf[:score] %>점</div>
     </div>
-    <% if tf[:headline].present? %>
+    <% if polished_headline.present? %>
       <div style="margin-top:10px;">
-        <span style="display:inline-block; padding:4px 10px; border-radius:999px; background:#ec489920; color:#ec4899; font-size:12px; font-weight:700;"><%= tf[:headline] %></span>
+        <span style="display:inline-block; padding:4px 10px; border-radius:999px; background:#ec489920; color:#ec4899; font-size:12px; font-weight:700;"><%= polished_headline %></span>
       </div>
     <% end %>
-    <p style="font-size:13px; color:var(--text-2); margin-top:8px; line-height:1.6;"><%= tf[:fortune] %></p>
-    <% if tf[:lucky_point].present? %>
-      <p style="font-size:12px; color:var(--primary); margin-top:8px; font-weight:700;">행운 포인트: <%= tf[:lucky_point] %></p>
+    <p style="font-size:13px; color:var(--text-2); margin-top:8px; line-height:1.6;"><%= polished_fortune %></p>
+    <% if polished_lucky_point.present? %>
+      <p style="font-size:12px; color:var(--primary); margin-top:8px; font-weight:700;">행운 포인트: <%= polished_lucky_point %></p>
     <% end %>
   </div>
 <% end %>
