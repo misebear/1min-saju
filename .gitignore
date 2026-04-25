@@ -33,3 +33,7 @@
 # Ignore key files for decrypting credentials and more.
 /config/*.key
 
+# Local AI handoff exports
+ChatGPT_Codex_Master_Context.txt
+_AI_HANDOVER.md
+export_to_claude.ps1
