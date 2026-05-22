@@ -7,11 +7,19 @@ class ApplicationController < ActionController::Base
   # Changes to the importmap will invalidate the etag for HTML responses
   stale_when_importmap_changes
 
+  before_action :redirect_bare_domain_to_www
+
   # 모든 페이지에서 세션에 저장된 사용자 생년월일 정보를 로드
   before_action :load_user_birth_info
   before_action :track_visit
 
   private
+
+  def redirect_bare_domain_to_www
+    return unless request.host == "1minsaju.com"
+
+    redirect_to "https://www.1minsaju.com#{request.fullpath}", status: :moved_permanently, allow_other_host: true
+  end
 
   # 방문자 수 추적
   def track_visit
