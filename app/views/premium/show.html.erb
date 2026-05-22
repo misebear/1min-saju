@@ -1,0 +1,45 @@
+<% content_for(:title) { "1분 사주 프리미엄 · 광고 제거 · AI 사주 챗봇" } %>
+<% content_for(:description) { "1분 사주 프리미엄은 광고 제거, 광고 시청 후 상세 풀이, 오늘운세 알림, 사주 기록 저장, 궁합 공유, AI 사주 챗봇을 묶은 수익화 안내 페이지입니다." } %>
+
+<section class="card" style="padding:28px;border-radius:24px;background:linear-gradient(135deg,#fff7ed,#f5f3ff);box-shadow:0 18px 45px rgba(15,23,42,.08);">
+  <div style="font-size:14px;font-weight:800;color:#e8775f;margin-bottom:8px;">1분 사주 앱 수익화 플랜</div>
+  <h1 style="font-size:32px;line-height:1.25;margin:0 0 12px;color:#111827;">프리미엄 운세를 더 깊게 보는 방법</h1>
+  <p style="font-size:16px;line-height:1.8;color:#4b5563;margin:0;">
+    무료 운세는 그대로 제공하고, 더 자세한 풀이와 편의 기능은 광고 시청 또는 프리미엄 구독으로 열 수 있게 설계합니다.
+  </p>
+</section>
+
+<section class="card mt-lg" style="padding:24px;border-radius:22px;">
+  <h2 style="margin-top:0;">수익화 기능</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;">
+    <% [
+      ["🔕", "광고 제거", "구독 사용자는 배너/전면 광고 없이 운세 결과를 볼 수 있습니다."],
+      ["🎁", "광고 보면 상세 풀이", "무료 사용자는 리워드 광고를 본 뒤 재물운·연애운·직업운 상세 풀이를 추가로 확인합니다."],
+      ["🤖", "AI 사주 챗봇", "궁금한 주제를 질문하면 사주 기반으로 대화형 해석을 제공합니다."],
+      ["🔔", "오늘운세 알림", "매일 아침 오늘운세를 앱 푸시/위젯 진입으로 확인하게 만들어 재방문을 늘립니다."],
+      ["📚", "사주 기록 저장", "내 사주와 지난 운세 결과를 저장해 다시 볼 수 있게 합니다."],
+      ["💞", "궁합 공유", "친구/연인에게 궁합 링크를 보내 자연 유입을 만듭니다."]
+    ].each do |emoji, title, body| %>
+      <div style="padding:18px;border-radius:18px;background:#fff;border:1px solid #f1f5f9;box-shadow:0 8px 24px rgba(15,23,42,.05);">
+        <div style="font-size:28px;margin-bottom:8px;"><%= emoji %></div>
+        <strong style="display:block;font-size:17px;color:#111827;margin-bottom:6px;"><%= title %></strong>
+        <p style="font-size:14px;line-height:1.65;color:#6b7280;margin:0;"><%= body %></p>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<section class="card mt-lg" style="padding:24px;border-radius:22px;background:#111827;color:#fff;">
+  <h2 style="margin-top:0;color:#fff;">우선 적용 순서</h2>
+  <ol style="line-height:1.9;color:#e5e7eb;">
+    <li>AdSense/AdMob/ads.txt 정상화</li>
+    <li>오늘운세 알림과 사주 기록 저장으로 재방문 확보</li>
+    <li>광고 보면 상세 풀이 추가로 리워드 광고 수익화</li>
+    <li>프리미엄 구독: 광고 제거 + 프리미엄 풀이 + AI 사주 챗봇</li>
+  </ol>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;">
+    <%= link_to "AI 사주 챗봇 체험", chat_path, class: "btn btn-primary" %>
+    <%= link_to "오늘운세 보기", daily_fortune_path, class: "btn btn-secondary" %>
+    <%= link_to "사주 기록 보기", saju_history_path, class: "btn btn-secondary" %>
+  </div>
+</section>

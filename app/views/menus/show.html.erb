@@ -1,0 +1,84 @@
+<% content_for(:title) { "더보기 | 1분 사주" } %>
+<% content_for(:description) { "1분 사주의 무료 사주풀이, 운세, 궁합, 타로, 꿈해몽, 챗봇 메뉴를 한곳에서 확인하세요." } %>
+
+<%
+  menu_groups = [
+    {
+      title: "사주/운세",
+      icon: "🔮",
+      items: [
+        { name: "사주풀이", desc: "명식, 오행, 오늘 흐름", icon: "🔮", path: new_saju_path, target: "saju" },
+        { name: "오늘 운세", desc: "재물, 애정, 건강, 직업", icon: "⭐", path: daily_fortune_path, target: "daily_fortune" },
+        { name: "연간 운세", desc: "올해의 흐름과 타이밍", icon: "📅", path: yearly_fortune_path, target: "yearly_fortune" },
+        { name: "사주 기록", desc: "최근 입력 정보 확인", icon: "📋", path: saju_history_path, target: "saju_history" }
+      ]
+    },
+    {
+      title: "관계/상담",
+      icon: "💕",
+      items: [
+        { name: "궁합", desc: "두 사람의 관계 흐름", icon: "💕", path: new_compatibility_path, target: "compatibility" },
+        { name: "블라인드 궁합", desc: "카톡으로 같이 보는 궁합", icon: "💌", path: new_blind_compat_path, target: "blind_compatibility" },
+        { name: "인연 풀이", desc: "나는솔로식 인연 분석", icon: "💘", path: new_solo_destiny_path, target: "solo_destiny" },
+        { name: "AI 챗봇", desc: "사주 궁금증 바로 질문", icon: "💬", path: chat_path, target: "chat" },
+        { name: "프리미엄", desc: "광고 제거와 상세 풀이", icon: "👑", path: premium_path, target: "premium" }
+      ]
+    },
+    {
+      title: "재미풀이",
+      icon: "✨",
+      items: [
+        { name: "꿈해몽", desc: "꿈 상징과 감정 해석", icon: "🌙", path: new_dream_path, target: "dreams" },
+        { name: "타로", desc: "짧은 고민 카드 리딩", icon: "🃏", path: new_tarot_path, target: "tarot" },
+        { name: "심리풀이", desc: "가볍게 보는 성향 테스트", icon: "🧠", path: new_psychology_path, target: "psychology" },
+        { name: "전생운", desc: "상상력으로 보는 전생", icon: "🪄", path: new_past_life_path, target: "past_life" }
+      ]
+    },
+    {
+      title: "기타",
+      icon: "🧭",
+      items: [
+        { name: "띠운세", desc: "띠별 오늘 흐름", icon: "🐲", path: tti_fortune_main_path, target: "tti" },
+        { name: "별자리", desc: "12별자리 운세", icon: "⭐", path: zodiac_main_path, target: "zodiac" },
+        { name: "택일", desc: "좋은 날짜 고르기", icon: "📆", path: new_auspicious_date_path, target: "auspicious_dates" },
+        { name: "취업운", desc: "커리어 흐름 보기", icon: "💼", path: new_career_path, target: "career" },
+        { name: "탄생석", desc: "내 달의 상징 보석", icon: "💎", path: birthstone_path, target: "birthstone" },
+        { name: "지정일 운세", desc: "궁금한 날짜의 흐름", icon: "🗓️", path: specific_fortune_form_path, target: "specific_fortune" }
+      ]
+    }
+  ]
+%>
+
+<div class="app-menu-page animate-fadeIn">
+  <header class="app-page-header">
+    <span class="app-page-kicker">전체 메뉴</span>
+    <h1>궁금한 풀이를 골라봐요</h1>
+    <p>자주 쓰는 메뉴는 아래 탭에 두고, 나머지는 여기에서 빠르게 찾을 수 있어요.</p>
+  </header>
+
+  <div class="app-menu-groups">
+    <% menu_groups.each do |group| %>
+      <section class="app-menu-group">
+        <div class="app-menu-group-title">
+          <span aria-hidden="true"><%= group[:icon] %></span>
+          <h2><%= group[:title] %></h2>
+        </div>
+
+        <div class="app-menu-list">
+          <% group[:items].each do |item| %>
+            <%= link_to item[:path],
+              class: "app-menu-link",
+              **track_click_data(event: "menu_tool_click", page_type: "menu", source_section: group[:title], target_tool: item[:target]) do %>
+              <span class="app-menu-icon" aria-hidden="true"><%= item[:icon] %></span>
+              <span class="app-menu-copy">
+                <strong><%= item[:name] %></strong>
+                <small><%= item[:desc] %></small>
+              </span>
+              <span class="app-menu-arrow" aria-hidden="true">›</span>
+            <% end %>
+          <% end %>
+        </div>
+      </section>
+    <% end %>
+  </div>
+</div>

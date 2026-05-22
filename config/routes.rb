@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root "home#index"
+  get "menu", to: "menus#show", as: :app_menu
+  get "premium", to: "premium#show", as: :premium
   get "/ads.txt", to: "site_files#ads_txt", defaults: { format: :text }
+  get "/.well-known/assetlinks.json", to: "site_files#assetlinks", defaults: { format: :json }
   get "/sitemap.xml", to: "sitemaps#show", format: "xml", as: :sitemap
 
   # 사주 분석
@@ -16,6 +19,7 @@ Rails.application.routes.draw do
   # 블라인드 궁합 (카톡 바이럴)
   get "blind/new", to: "blind_compat#new", as: :new_blind_compat
   post "blind", to: "blind_compat#create", as: :blind_compat
+  get "blind/:token/created", to: "blind_compat#created", as: :blind_created
   get "blind/:token", to: "blind_compat#invite", as: :blind_invite
   post "blind/:token/match", to: "blind_compat#match", as: :blind_match
   get "blind/:token/result", to: "blind_compat#result", as: :blind_result
@@ -88,9 +92,12 @@ Rails.application.routes.draw do
   # PWA
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
+  get "widget/setup", to: "widget_setup#show", as: :widget_setup
 
   # API
   namespace :api do
+    post "widget_profiles", to: "widget_profiles#create", as: :widget_profiles
+    get "widget/daily", to: "widget#daily", as: :widget_daily
     resources :celebrity_images, only: [ :create ]
   end
 
