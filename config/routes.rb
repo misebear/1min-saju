@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get "about", to: "static_pages#about", as: :about
   get "contact", to: "static_pages#contact", as: :contact
   get "terms", to: "static_pages#terms", as: :terms
-  get "privacy", to: redirect("/privacy-policy.html"), as: :privacy
+  get "privacy", to: "static_pages#privacy", as: :privacy
+  get "privacy-policy.html", to: "static_pages#privacy"
   get "/ads.txt", to: "site_files#ads_txt", defaults: { format: :text }
   get "/.well-known/assetlinks.json", to: "site_files#assetlinks", defaults: { format: :json }
   get "/sitemap.xml", to: "sitemaps#show", format: "xml", as: :sitemap
