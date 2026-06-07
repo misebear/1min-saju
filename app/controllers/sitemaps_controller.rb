@@ -2,6 +2,10 @@ class SitemapsController < ApplicationController
   def show
     @pages = [
       { url: root_url, lastmod: Date.today, changefreq: "daily", priority: 1.0 },
+      { url: about_url, lastmod: Date.today, changefreq: "yearly", priority: 0.4 },
+      { url: contact_url, lastmod: Date.today, changefreq: "yearly", priority: 0.4 },
+      { url: terms_url, lastmod: Date.today, changefreq: "yearly", priority: 0.4 },
+      { url: privacy_url, lastmod: Date.today, changefreq: "yearly", priority: 0.4 },
       { url: new_saju_url, lastmod: Date.today, changefreq: "weekly", priority: 0.9 },
       { url: daily_fortune_url, lastmod: Date.today, changefreq: "daily", priority: 0.95 },
       { url: yearly_fortune_url, lastmod: Date.today, changefreq: "weekly", priority: 0.9 },

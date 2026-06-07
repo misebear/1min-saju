@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   root "home#index"
   get "menu", to: "menus#show", as: :app_menu
   get "premium", to: "premium#show", as: :premium
+  get "about", to: "static_pages#about", as: :about
+  get "contact", to: "static_pages#contact", as: :contact
+  get "terms", to: "static_pages#terms", as: :terms
+  get "privacy", to: redirect("/privacy-policy.html"), as: :privacy
   get "/ads.txt", to: "site_files#ads_txt", defaults: { format: :text }
   get "/.well-known/assetlinks.json", to: "site_files#assetlinks", defaults: { format: :json }
   get "/sitemap.xml", to: "sitemaps#show", format: "xml", as: :sitemap

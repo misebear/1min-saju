@@ -11,6 +11,9 @@
     <span>누적 방문: <strong><%= number_with_delimiter(@total_visitors || 0) %></strong></span>
   </div>
   <div style="margin-bottom: 12px; font-size: 11px; color: var(--text-3, #888); display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+    <a href="<%= about_path %>" style="color: inherit; text-decoration: none;">소개</a>
+    <a href="<%= contact_path %>" style="color: inherit; text-decoration: none;">문의</a>
+    <a href="<%= terms_path %>" style="color: inherit; text-decoration: none;">이용약관</a>
     <a href="/privacy-policy.html" style="color: inherit; text-decoration: none;">개인정보처리방침</a>
     <a href="/ads.txt" style="color: inherit; text-decoration: none;">ads.txt</a>
     <a href="/sitemap.xml" style="color: inherit; text-decoration: none;">sitemap</a>
